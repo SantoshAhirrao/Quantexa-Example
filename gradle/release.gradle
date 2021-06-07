@@ -1,0 +1,72 @@
+ext.set('releaseArtifacts', (subprojects - project(':app-graph-script') - project(':app-resolve') - project(':app-search') - project(':app-investigate') - project(':app-security') - project(':gateway') - project(':config-service') - project(':example-ui')))
+
+configure(releaseArtifacts) { subproject ->
+  apply plugin: 'com.bmuschko.nexus'
+  apply plugin: 'maven-publish'
+  apply plugin: 'nu.studer.credentials'
+  apply plugin: 'scala'
+
+  nexus {
+    sign = false
+    repositoryUrl = quantexa_accelerators_releases
+    snapshotRepositoryUrl = quantexa_accelerators_snapshots
+  }
+
+  checkUserProperty('maven_user')
+  String maven_password = credentials.maven_password
+
+  def repository
+  if (project.version.endsWith('-SNAPSHOT')) {
+    repository = quantexa_accelerators_snapshots
+  } else {
+    repository = quantexa_accelerators_releases
+  }
+
+  publishing {
+    publications {
+      maven(MavenPublication) {
+        artifactId = project.name + '_2.11'
+        from components.java
+      }
+    }
+    repositories {
+      maven {
+        credentials {
+          username maven_user
+          password maven_password
+        }
+        url repository
+      }
+    }
+  }
+  
+  modifyPom { pom ->
+    pom
+
+    pom.dependencies.findAll {dep -> dep.groupId == 'com.quantexa.example' && !dep.artifactId.endsWith('_2.11')}.each { dep ->
+      dep.artifactId = dep.artifactId + '_2.11'
+    }
+  }
+}
+
+apply plugin: 'net.researchgate.release'
+release {
+  failOnSnapshotDependencies = false
+  buildTasks = ['releaseBuild']
+
+  git {
+    requireBranch = ''
+    pushToRemote = 'origin'
+  }
+}
+
+task releaseBuild {
+  dependsOn releaseArtifacts.findResults {
+    it.tasks.findByName('clean') 
+  }
+  dependsOn releaseArtifacts.findResults {
+    it.tasks.findByName('build')
+  }
+}
+
+afterReleaseBuild.dependsOn releaseArtifacts.publishMavenPublicationToMavenRepository

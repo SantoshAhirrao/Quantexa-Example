@@ -1,0 +1,16 @@
+@import "~reset-css/reset";
+@import "~primeng/resources/components/progressspinner/progressspinner";
+
+$qeFontPath: "~@quantexa/explorer-web-core/styles/fonts";
+$qLogoPath: "../../src/assets/img/q-logo.svg";
+
+@import "~@quantexa/explorer-web-core/styles/layout";
+@import "~@quantexa/explorer-web-core/styles/headings";
+@import "~@quantexa/explorer-web-core/styles/fonts/fonts";
+@import "~@quantexa/explorer-web-core/styles/inputs";
+@import "~@quantexa/explorer-web-core/styles/buttons";
+@import "~@quantexa/explorer-web-core/styles/forms";
+
+body {
+    background-color: $color-primary-background;
+}

@@ -1,0 +1,120 @@
+#
+# Helm configuration that:
+#  - uses Minikube
+#  - creates PostgreSQL
+#
+# You can deploy this configuration using gradle from the repository root:
+#
+#  $ gradle helmInstallOrUpgrade -Phosting_environment=minikube
+#
+# When done, you might have to supply the secrets to Kubernetes. You can do so
+# using the following command:
+#
+#  $ kubectl apply -f <yaml_secrets_file>
+#
+# Check kubernetes/sample-secrets.yml for more information
+#
+
+app-investigate:
+  appInvestigate:
+    image:
+      registry: example
+      tag: latest
+      pullPolicy: Never
+    httpProbe:
+      delay: 180
+
+app-resolve:
+  appResolve:
+    image:
+      registry: example
+      tag: latest
+      pullPolicy: Never
+
+app-search:
+  appSearch:
+    image:
+      registry: example
+      tag: latest
+      pullPolicy: Never
+
+app-transaction:
+  enabled: false
+
+app-graph-script:
+  enabled: false
+
+config-server:
+  configServer:
+    image:
+      registry: example
+      tag: latest
+      pullPolicy: Never
+
+front-end:
+  explorerUI:
+    image:
+      registry: example
+      tag: latest
+      pullPolicy: Never
+  gateway:
+    image:
+      registry: example
+      tag: latest
+      pullPolicy: Never
+    tls:
+      enabled: false
+  nginx:
+    enabled: false
+  nginxService: 
+    enabled: false
+
+etcd:
+  replicaCount: 1
+  etcd:
+    image:
+      registry: example
+      tag: latest
+      pullPolicy: Never
+    storage:
+      class: standard
+
+postgres-investigation:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 250Mi
+
+postgres-quadit:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 250Mi
+
+postgres-security:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 250Mi
+
+postgres-acl:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 100Mi
+
+postgres-connect:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 100Mi

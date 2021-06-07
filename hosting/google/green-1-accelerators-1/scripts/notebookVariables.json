@@ -1,0 +1,113 @@
+{
+    "app_gateway_subnet_cidr": {
+        "sensitive": false,
+        "type": "string",
+        "value": "10.32.0.0/26"
+    },
+    "app_net_self_link": {
+        "sensitive": false,
+        "type": "string",
+        "value": "https://www.googleapis.com/compute/v1/projects/green-1-accelerators-1/global/networks/green-1-accelerators-1-app-net"
+    },
+    "cloud_platform_project_admins": {
+        "sensitive": false,
+        "type": "list",
+        "value": [
+            "user:adampitt@quantexa.com",
+            "user:daveburt@quantexa.com",
+            "user:harrybudd@quantexa.com",
+            "user:kaxilnaik@quantexa.com",
+            "serviceAccount:jenkins-project-example-cicd@qcp-core-green-1.iam.gserviceaccount.com"
+        ]
+    },
+    "dpr_subnet_self_link": {
+        "sensitive": false,
+        "type": "string",
+        "value": "https://www.googleapis.com/compute/v1/projects/green-1-accelerators-1/regions/europe-west1/subnetworks/green-1-accelerators-1-app-dataproc-subnet"
+    },
+    "ela_subnet_self_link": {
+        "sensitive": false,
+        "type": "string",
+        "value": "https://www.googleapis.com/compute/v1/projects/green-1-accelerators-1/regions/europe-west1/subnetworks/green-1-accelerators-1-app-elastic-subnet"
+    },
+    "elastic_svc_account": {
+        "sensitive": false,
+        "type": "string",
+        "value": "svc-elastic@green-1-accelerators-1.iam.gserviceaccount.com"
+    },
+    "gke_master_cidr": {
+        "sensitive": false,
+        "type": "string",
+        "value": "10.32.4.0/28"
+    },
+    "gke_pod_secondary_range_name": {
+        "sensitive": false,
+        "type": "string",
+        "value": "green-1-accelerators-1-app-k8s-pods"
+    },
+    "gke_subnet_self_link": {
+        "sensitive": false,
+        "type": "string",
+        "value": "https://www.googleapis.com/compute/v1/projects/green-1-accelerators-1/regions/europe-west1/subnetworks/green-1-accelerators-1-app-k8s-subnet"
+    },
+    "gke_svc_account": {
+        "sensitive": false,
+        "type": "string",
+        "value": "svc-kubernetes@green-1-accelerators-1.iam.gserviceaccount.com"
+    },
+    "gke_svc_secondary_range_name": {
+        "sensitive": false,
+        "type": "string",
+        "value": "green-1-accelerators-1-app-k8s-services"
+    },
+    "ops_gateway_subnet_cidr": {
+        "sensitive": false,
+        "type": "string",
+        "value": "10.34.2.128/26"
+    },
+    "project_id": {
+        "sensitive": false,
+        "type": "string",
+        "value": "green-1-accelerators-1"
+    },
+    "project_users": {
+        "sensitive": false,
+        "type": "list",
+        "value": [
+            "user:nicksutcliffe@quantexa.com",
+            "user:aaronlee@quantexa.com",
+            "user:katyrubin@quantexa.com",
+            "user:raffaeleromeo@quantexa.com",
+            "user:ryanamiri@quantexa.com",
+            "user:tomgeary@quantexa.com",
+            "user:thomaseastgate@quantexa.com",
+            "user:williamtun@quantexa.com",
+            "user:felixhoddinott@quantexa.com"
+        ]
+    },
+    "region": {
+        "sensitive": false,
+        "type": "string",
+        "value": "europe-west1"
+    },
+    "users_dataproc_svc_acc_email": {
+        "sensitive": false,
+        "type": "list",
+        "value": [
+            "svc-nicksutcliffe-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-aaronlee-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-katyrubin-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-raffaeleromeo-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-ryanamiri-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-tomgeary-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-thomaseastgate-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-williamtun-dpr@green-1-accelerators-1.iam.gserviceaccount.com",
+            "svc-felixhoddinott-dpr@green-1-accelerators-1.iam.gserviceaccount.com"
+        ]
+    },
+    "zone": {
+        "sensitive": false,
+        "type": "string",
+        "value": "europe-west1-b"
+    }
+}

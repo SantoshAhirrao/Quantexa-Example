@@ -1,0 +1,10 @@
+group,description,chooseInGroupFunction
+CancelledGroup,Configuration for cancelled group,highestWeightSeverity
+NewCustomerGroup,Configuration for new customer group,highestWeightSeverity
+HighRiskGroup,Configuration for high risk group,highestWeightSeverity
+HighRiskCountryGroup,Configuration for high risk country group,highestWeightSeverity
+LowValuePostcodeGroup,Configuration for low value postcode group,highestWeightSeverity
+RoundAmountGroup,Configuration for round amount group,highestWeightSeverity
+UnusualVolumeGroup,Configuration for unusual volume group,highestWeightSeverity
+HighToLowRiskCountryGroup,Configuration for high to low risk country group,highestWeightSeverity
+RollupTransactionCountryGroup,Configuration for rollup transaction group,highestWeightSeverity

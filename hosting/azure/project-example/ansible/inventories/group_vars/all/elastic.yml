@@ -1,0 +1,8 @@
+---
+# ElasticSearch by default configures each node to be Master and Data Node
+# To Override this behaviour we set these to false
+# This settings would be overriden in 'elastic-data' and 'elastic-master' groups allowing
+# us to choose which node should be dedicated Data Node, dedicated Master Node or the node
+# serves both as master and data node
+node_data: false
+node_master: false

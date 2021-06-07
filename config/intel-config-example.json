@@ -1,0 +1,29 @@
+{
+  "privilegeSets": [
+    {
+      "name": "INTELLIGENCE_READ",
+      "privileges": [ "View" ]
+    },
+    {
+      "name": "INTELLIGENCE_WRITE",
+      "privileges": [ "Update", "UpdateLinkedEntities" ]
+    },
+    {
+      "name": "INTELLIGENCE_DELETE",
+      "privileges": [ "Delete" ]
+    },
+    {
+      "name": "INTELLIGENCE_UPDATE_PRIVILEGES",
+      "privileges": [ "ReadPrivileges", "UpdatePrivileges" ]
+    }
+  ],
+  "initialPrivileges": {
+    "notes": {
+      "creatorPrivileges": [
+        "INTELLIGENCE_READ", "INTELLIGENCE_WRITE", "INTELLIGENCE_DELETE", "INTELLIGENCE_UPDATE_PRIVILEGES"
+      ],
+      "rolePrivileges": {}
+    }
+  },
+  "defaultPrivilegeSets": []
+}

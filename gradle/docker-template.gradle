@@ -1,0 +1,63 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+apply plugin: "com.palantir.docker"
+
+docker {
+  name "example/${project.name}"
+  dockerfile project.file('src/main/docker/Dockerfile')
+  dependsOn tasks.build
+  files 'src/main/docker'
+  buildArgs([GIT_COMMIT: echoGitCommit()])
+}
+
+tasks.docker.doFirst {
+  copy {
+    from "build/libs"
+    into "build/docker/"
+    include "*.jar"
+    exclude "*javadoc.jar"
+    exclude "*sources.jar"
+    exclude "*bootrun*.jar"
+  }
+  copy {
+    from "../config"
+    into "build/docker/config-files"
+    include "*"
+    exclude "quantexa.licence"
+    exclude "*.yml"
+  }
+  copy {
+    from "../config"
+    into "build/docker/config-yml-files"
+    include "*.yml"
+  }
+  copy {
+    from "../config"
+    into "build/docker/quantexa-licence"
+    include "quantexa.licence"
+  }
+}
+
+task dockerTagAndPush(type: Exec) {
+  description 'Pushes docker image to registry'
+
+  group = "Docker"
+
+  workingDir '../scripts'
+
+  def dockerTag = 'git rev-parse HEAD'.execute().text.trim()
+
+  if (project.hasProperty('docker_tag')) {
+    dockerTag = project.property('docker_tag')
+  } else if (!project.version.endsWith('-SNAPSHOT')) {
+    dockerTag = project.version
+  }
+
+  if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+    commandLine 'cmd', '/c', 'docker-push.bat', docker.name, dockerTag, docker_registry
+  } else {
+    commandLine 'sh', './docker-push.sh', docker.name, dockerTag, docker_registry
+  }
+}
+
+dockerTagAndPush.dependsOn(tasks.docker)

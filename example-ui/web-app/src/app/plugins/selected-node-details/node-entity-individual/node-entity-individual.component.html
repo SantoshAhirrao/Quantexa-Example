@@ -1,0 +1,46 @@
+<div class="main">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab header="Entity individual" *ngIf="model" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngIf="model.attributes.fullName">
+                    <dt class="ui-g-4">Full Name:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.fullName|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.individualDisplay">
+                    <dt class="ui-g-4">Full Name:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.individualDisplay|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.customerStartDate">
+                    <dt class="ui-g-4">Start Date:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.customerStartDate|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.customerStartDate">
+                    <dt class="ui-g-4">End Date:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.customerEndDate|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.gender">
+                    <dt class="ui-g-4">Gender:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.gender|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.nationality">
+                    <dt class="ui-g-4">Nationality:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.nationality|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.residenceCountry">
+                    <dt class="ui-g-4">Residence Country:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.residenceCountry|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.personalNationalIdNumber">
+                    <dt class="ui-g-4">Personal National Id Number:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.personalNationalIdNumber|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.employeeFlag">
+                    <dt class="ui-g-4">Employee Flag:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.employeeFlag|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.customerRiskRating">
+                    <dt class="ui-g-4">Risk rating:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.customerRiskRating|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.txnSum12Month">
+                    <dt class="ui-g-4">Transaction Volume:</dt>
+                    <dd class="ui-g-8" [innerHTML]="model.attributes.txnSum12Month| number : '1.2-2'"></dd>
+                </ng-container>
+                <dt class="ui-g-4">Documents:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_documents}}</dd>
+                <dt class="ui-g-4">Records:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_records}}</dd>
+            </dl>
+        </p-accordionTab>
+    </p-accordion>
+</div>

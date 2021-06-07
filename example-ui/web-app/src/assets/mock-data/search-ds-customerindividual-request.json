@@ -1,0 +1,10 @@
+{
+    "dataSource": "customerindividual",
+    "runAggregations": true,
+    "entitiesToResolve": [
+        "business",
+        "individual"
+    ],
+    "pageNumber": 0,
+    "queryString": "michael greene"
+}

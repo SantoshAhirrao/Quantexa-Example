@@ -1,0 +1,52 @@
+{
+  "PROJECT_EXAMPLE_CONFIG": {
+    "HOSTING_ENVIRONMENT_FOLDER_PATH": "/quantexa/projects/project-example/project-example/hosting/azure/project-example",
+    "ETL_VERSION": "2.11-0.8.3-SNAPSHOT",
+    "ANSIBLE_VAULT_KEY_PATH": "/quantexa/projects/project-example/ansible-vault.key",
+    "PROJECT_ETL_CONFIG_FILE_PATH": "/quantexa/projects/project-example/configs/example-etl-common/src/it/docker/ci/mount/config/application.conf",
+    "SLACK_ALERT_CHANNEL": "project-exampl-alerts",
+    "SSH_CONN_ID": "project-example-hdinsight-ssh",
+    "PROJECT_AZURE_CONN_ID": "project-example-azure",
+    "NEXUS_CONN_ID": "project-example-nexus",
+    "SLACK_CONN_ID": "project-example-slack",
+    "ES_KEYSTORE_CONN_ID": "project-example-es-keystore",
+    "TRUST_STORE_CONN_ID": "project-example-trust-store",
+    "PROJECT_JARS": [
+      "http://10.1.1.5:8081/repository/maven-snapshots/com/quantexa/example/example-etl/0.8.3-SNAPSHOT/example-etl-model-shadow_2.11-0.8.3-SNAPSHOT-dependency.jar",
+      "http://10.1.1.5:8081/repository/maven-snapshots/com/quantexa/example/example-etl/0.8.3-SNAPSHOT/example-etl-model-shadow_2.11-0.8.3-SNAPSHOT-project.jar"
+    ],
+    "LIBPOSTAL_DIR_PATH": "wasbs:///quantexa/libpostal_1.0",
+    "SOURCES": [
+      {
+        "name": "customer",
+        "es_indices_to_backup": [
+          "customerindex1",
+          "customerindex2"
+        ]
+      },
+      {
+        "name": "hotlist",
+        "es_indices_to_backup": [
+          "hotlistindex3",
+          "hotlistindex4"
+        ]
+      }
+    ],
+    "ELASTIC_MASTER_NODE_CONF": {
+      "ip": "",
+      "port": "9200"
+    },
+    "ENVIRONMENT_VARIABLES": {
+      "AZURE_CLIENT_ID": "",
+      "AZURE_TENANT": "",
+      "AZURE_SUBSCRIPTION_ID": "",
+      "GOOGLE_APPLICATION_CREDENTIALS": "/quantexa/projects/project-example/gcp_cred.json",
+      "TF_VAR_hdi_ambari_username": "airflow",
+      "TF_VAR_hdi_ambari_password": "Passw0rd",
+      "TF_VAR_ssh_username": "airflow-admin",
+      "TF_VAR_ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQwmmv4AzUrN3O3Qrnd7v5TtLDKW4VJ03Y6j4xOkJC8Fr/zZs4voumfEe76+CIFhgAUd4D9P+pvJQALtFXJT60l+4F3sLjXW4B+FIlxOn9LloU93VRKGUkAxdhbn2wsqNqeVsxNCw5+whil1HYofiTfVwPHMf4DvkrYb+XslFgd3I4zp+gm1VZWNC11oblhwnS7dXD0GrgJ26X9amj3DcIX3QT3vZ/CUkZ6FzQfDGNVyBcUnsU62EIbUhDRWvapNkWAf2NU/xNCjV8dSlVddKMu3xOoHijm/bO79OT1YVncRXjEOELbHpInPc2V8HXBz2OKRJZBA8DgevjUmh2Kdz/b1slYX5sWQIgS0lSqDfG8fBtGY8kUNIVWmYv8cdlWZDSpvGQdZY3H4v6jGpY4qvvhN/valhU0YVYe70XlKAHg4UqPc1L9alfUQmXN2FQMY8ynFI9+qhBQWsX77l0gVInGlM5kgJSM9vV6lhnCe20oCiRE/iKrWz/GVgI2LQ1yK8DafusTXnULrVYbUKlxB/gqvtb9mxDn3bgpFDtjyYCGKolcOsKG5kiApWSq6N1ZrVQZElqEZwbJOMbliBmGGm7wYvqG+UnuOxnKj/TmrvgGphUA1ZMs9ARJXC/cA++/RtcPrQgSL3Z0ioYoltB2GBEzP9jf2xGYkXW9TvsTP/kGw== airflow@airflow",
+      "TF_VAR_kube_id": "test",
+      "TF_VAR_kube_secret": "test"
+    }
+  }
+}

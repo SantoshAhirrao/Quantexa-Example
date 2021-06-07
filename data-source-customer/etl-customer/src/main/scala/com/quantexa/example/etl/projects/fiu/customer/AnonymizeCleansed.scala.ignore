@@ -1,0 +1,65 @@
+package com.quantexa.example.etl.projects.fiu.customer
+
+import com.quantexa.anonymizer.AnonymizerConfig
+import com.quantexa.anonymizer.masking.DataMask
+import com.quantexa.anonymizer.utils.LensUtils._
+import com.quantexa.anonymizer.utils.LensUtils._
+import monocle.function.all._
+import com.quantexa.example.model.fiu.customer.FiuModel
+import monocle.macros.GenLens
+import org.apache.log4j.Logger
+import org.apache.spark.sql.SparkSession
+import com.quantexa.scriptrunner.QuantexaSparkScript
+import com.quantexa.scriptrunner.NoConfigSparkScript
+
+/***
+  * QuantexaSparkScript used to anonymize cleansed data for the FIU Smoke Test Data
+  */
+object AnonymizeCleansed extends NoConfigSparkScript {
+
+  val name: String = "Anonymize"
+  val fileDependencies = Map.empty[String, String]
+  val scriptDependencies = Set.empty[QuantexaSparkScript]
+
+  val account = GenLens[FiuModel.Customer](_.accounts) ~~> each
+  val compositeAccountName = account ~> GenLens[FiuModel.Account](_.composite_acc_name) ~~> each
+
+  def anonymizeAccount(in:FiuModel.Account):FiuModel.Account = {
+    in.copy(
+      acc_cus_id_no = Some(0)
+    )
+  }
+
+  def anonymizeCustomer(in:FiuModel.Customer):FiuModel.Customer = {
+    in.copy(
+      cus_id_no = 0l
+    )
+  }
+
+  def toUpper(in:String):String = in.toUpperCase
+
+  def transformations: Seq[(FiuModel.Customer) => FiuModel.Customer] = Seq(
+    createLensFunction(compositeAccountName)(toUpper)
+    , createLensFunction(account)(anonymizeAccount)
+    , createLensFunction(anonymizeCustomer)
+  )
+
+  def run(sparkSession: SparkSession, logger: Logger, args: Seq[String]): Unit = {
+
+    if(args.length != 1) {
+      throw new IllegalArgumentException("Incorrect arguments, please define <anon.conf>")
+    }
+    val config = AnonymizerConfig(args.head)
+
+    import sparkSession.implicits._
+
+    val maskedDS = DataMask(sparkSession,config).as[FiuModel.Customer]
+
+    //Ian - unable to get this to compile - seems broken
+    
+    /*  maskedDS.map(row => {
+        applyLensFunctions(row, transformations)
+      })
+      .show(false)*/
+  }
+}

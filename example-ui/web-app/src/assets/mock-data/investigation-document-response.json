@@ -1,0 +1,95 @@
+{
+    "documents": [
+        {
+            "documentId": "customerindividual-91606192934",
+            "documentType": "customerindividual",
+            "source": {
+                "cus_id_no": 91606192934,
+                "cus_stat": "A",
+                "bus_registered_name": null,
+                "parsed_bus_name": null,
+                "bus_registration_no": null,
+                "bus_ctry_registration": null,
+                "cus_start_dt": "1995-12-23",
+                "cus_end_dt": "2003-11-24",
+                "personal_bus_flg": "P",
+                "gender": "F",
+                "dt_of_birth": "1961-03-01",
+                "dob_parts": {
+                    "date": "1961-03-01",
+                    "year": "1961",
+                    "month": "03",
+                    "day": "01"
+                },
+                "initials": "LD",
+                "forename": "LINDSAY",
+                "family_name": "DAVID",
+                "maiden_name": null,
+                "full_name": "LINDSAY DAVID",
+                "parsed_cus_name": [
+                    {
+                        "node_id": 1,
+                        "name_display": "LINDSAY DAVID",
+                        "forename": "LINDSAY",
+                        "middlename": null,
+                        "surname": "DAVID",
+                        "initial": "L",
+                        "parent": null
+                    }
+                ],
+                "nationality": "US",
+                "personal_national_id_no": 376776090,
+                "cus_risk_rtng": 5673,
+                "employee_flag": false,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 91606192934,
+                        "prim_acc_no": 78496238580062,
+                        "acc_opened_dt": "1999-11-13",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1999-11-13",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "GB",
+                        "composite_acc_name": "LINDSAY DAVID",
+                        "consolidated_acc_address": "7 Rue du Sermon, Sark, GY90SF, Guernsey",
+                        "parsed_address": {
+                            "address_display": "7 Rue du Sermon, Sark, GY90SF, Guernsey",
+                            "flatno_houseno_housename": "|7",
+                            "houseno_housename": "7",
+                            "flat_number": null,
+                            "house_name": "LA PREMIE FRENE CLOS DE LA PRINCESSE SARK CHANNEL ISLANDS GUERNSEY CHANNEL ISLES",
+                            "house_number": "7",
+                            "po_box": null,
+                            "road": "Rue du Sermon",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "Sark",
+                            "state": null,
+                            "state_district": null,
+                            "postcode": "GY90SF",
+                            "country": "Guernsey",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Sark",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "LINDSAY DAVID",
+                        "addr_line_one": null,
+                        "city": "Sark",
+                        "state": null,
+                        "postal_cde": "GY90SF",
+                        "ctry": "GB",
+                        "acc_risk_rtng": 3360.0,
+                        "aml_alr_flg": "t",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+server:
+  port: 8421
+
+quantexa.security:
+  models:
+
+search.config: fiu-smoke
+expansionMaxNodesThreshold: 1000
+
+#security:
+#  bootstrap.location: classpath:security-populate.json
+
+# ENABLE THE LINE BELOW ONCE THE MIGRATOR HAS BEEN RUN
+# acl.persistence.compression.mode: full
+
+ldap:
+  url: ldap://localhost:8388/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+
+quadit4j:
+  file:
+    dir: .
+    prefix: app-graph-script
+
+quantexa:
+  bulk:
+    cache-size: 750
+    cache-timeout: 30
+  resolver-config.cache-timeout-minutes: 30 minutes
+  gateway:
+    uri: http://localhost:8080
+  client:
+    username: svc-graph-script
+    password: Qu@rk123
+  resolverConfigPath: ${config-files.dir}/resolver-config-fiu-smoke.json
+
+---
+
+spring:
+  profiles: docker
+
+ldap:
+  url: ldap://gateway:8388/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+
+quadit4j:
+  file:
+    dir: /var/log
+
+---
+
+spring:
+  profiles: docker-production
+
+quantexa.security.authentication.instance-role: user
+
+ldap:
+  url: ldap://ldap-host:389/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+  manager:
+    dn: cn=admin,dc=quantexa,dc=com
+    password: Sp@rkh@d00p!
+
+---
+
+spring.profiles: kubernetes
+
+quantexa.gateway.uri: https://gateway.${NAMESPACE}.svc.cluster.local:8080
+quantexa.sslEnabled: false
+
+ldap:
+  url: ldap://gateway-ldap:8388/

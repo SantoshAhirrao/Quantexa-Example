@@ -1,0 +1,183 @@
+version: "2.1"
+services:
+  app-investigate:
+    image: quantexacontainerregistry.azurecr.io/example/app-investigate:1.0.5
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+    mem_limit: 1024M
+    environment:
+        - "JAVA_OPTS=-Xmx1024M -Xms1024M"
+  app-resolve:
+    image: quantexacontainerregistry.azurecr.io/example/app-resolve:1.0.5
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+      app-security:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+    mem_limit: 1024M
+    environment:
+        - "JAVA_OPTS=-Xmx1024M -Xms1024M"
+  app-search:
+    image: quantexacontainerregistry.azurecr.io/example/app-search:1.0.5
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+      app-security:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+    mem_limit: 1024M
+    environment:
+        - "JAVA_OPTS=-Xmx1024M -Xms1024M"
+  app-security:
+    image: quantexacontainerregistry.azurecr.io/example/app-security:1.0.5
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+    mem_limit: 1024M
+    environment:
+        - "JAVA_OPTS=-Xmx1024M -Xms1024M"
+  app-graph-script:
+    image: quantexacontainerregistry.azurecr.io/example/app-graph-script:1.0.5
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+    mem_limit: 1024M
+    environment:
+        - "JAVA_OPTS=-Xmx1024M -Xms1024M"
+  gateway:
+    image: quantexacontainerregistry.azurecr.io/example/gateway:1.0.5
+    ports:
+     - 44431:8080
+    networks:
+      - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+  config-server:
+    image: quantexacontainerregistry.azurecr.io/example/config-service:1.0.5
+    networks:
+      - quantexa-internal
+    depends_on:
+     - etcd
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://etcd:2379/v2/quantexa/explorer/configserver/configserver:native:8888"]
+      #test: ["CMD", "sleep", "25"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - ./logs:/var/log:rw
+      - ./config:/config
+    # restart: always
+  explorer-ui:
+    image: quantexacontainerregistry.azurecr.io/example/example-ui:1.0.5
+    networks:
+      - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+
+  etcd:
+    image: quay.io/coreos/etcd
+    command:
+      /usr/local/bin/etcd
+      -name etcd
+      -advertise-client-urls http://etcd:2379,http://etcd:4001
+      -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:4001
+      -initial-advertise-peer-urls http://etcd:2380
+      -listen-peer-urls http://0.0.0.0:2380
+      -initial-cluster-token etcd-cluster-1
+      -initial-cluster etcd=http://etcd:2380
+      -initial-cluster-state new
+    networks:
+      - quantexa-internal
+    # restart: always
+  db-acl:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_DB=acl
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=Qu@ntexaD3mo
+    command: ["-c", "shared_buffers=256MB", "-c", "max_connections=1000"]
+    volumes:
+      - db-acl:/var/lib/postgresql/data
+    networks:
+      - quantexa-internal
+    # restart: always
+  db-investigation:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_DB=explorer_investigation
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=Qu@ntexaD3mo
+    command: ["-c", "shared_buffers=256MB", "-c", "max_connections=1000"]
+    volumes:
+      - db-investigation:/var/lib/postgresql/data
+    networks:
+      - quantexa-internal
+    # restart: always
+  db-security:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_DB=security
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=Qu@ntexaD3mo
+    command: ["-c", "shared_buffers=256MB", "-c", "max_connections=1000"]
+    volumes:
+      - db-security:/var/lib/postgresql/data
+    networks:
+      - quantexa-internal
+    mem_limit: 500M
+    # restart: always
+networks:
+  quantexa-internal:
+
+volumes:
+  db-acl:
+  db-investigation:
+  db-security:

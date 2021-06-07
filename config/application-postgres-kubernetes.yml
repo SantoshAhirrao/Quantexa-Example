@@ -1,0 +1,87 @@
+database.type: postgres
+
+acl.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://postgres-acl:5432/acl?user=postgres&password=${postgres.password}
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+connect.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://postgres-connect:5432/connect?user=postgres&password=postgres
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+security.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://postgres-security:5432/security?user=postgres&password=${postgres.password}
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+investigation.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://postgres-investigation:5432/explorer_investigation?user=postgres&password=${postgres.password}
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+intelligence.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://postgres-intelligence:5432/intelligence?user=postgres&password=${postgres.password}
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+task.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://postgres-task:5432/task?user=postgres&password=${postgres.password}
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+quadit4j:
+  db:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://postgres-quadit:5432/quadit
+    user: postgres
+    password: ${postgres.password}
+    table-name: quadit

@@ -1,0 +1,7 @@
+id,entity_type,document_type,label,date_valid_from,date_valid_to,string_role,int_count,double_total
+biz7_1,business,,acc7_1,01/01/1960,01/01/1980,subject,3,32.4
+cp7_1,business,,cp7_1,02/01/1960,02/01/1980,cp7_1,3,32.4
+cp7_2,business,,cp7_2,02/01/1960,02/01/1980,cp7_2,3,32.4
+cp7_3,business,,cp7_3,02/01/1960,02/01/1980,cp7_3,3,32.4
+cp7_4,business,,cp7_4,02/01/1960,02/01/1980,cp7_4,3,32.4
+addr7_1,address,,1 Wandle Way,02/01/1960,02/01/1980,addr7_1,3,32.4

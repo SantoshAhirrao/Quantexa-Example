@@ -1,0 +1,32 @@
+pipeline {
+    agent{
+        label 'accelerators-analyst-no-cache'
+    }
+
+    stages {
+        stage('Release') {
+            steps {
+                sshagent(credentials: ['jenkins-accelerators-gitlab-key']) {
+                    sh(returnStdout: true, script: """cd $WORKSPACE/cicd/release; ./release.sh \
+                        ${params.Q_VERSION} \
+                        ${params.Q_NEW_VERSION} \
+                        ${params.Q_DEPENDENCY_VERSION} \
+                        ${params.Q_NEW_DEPENDENCY_VERSION} \
+                        ${params.Q_INCUBATORS_DEPENDENCY_VERSION} \
+                        ${params.Q_NEW_INCUBATORS_DEPENDENCY_VERSION} \
+                        ${params.BRANCH}""")
+                }
+            }
+        }
+    }
+    post {
+        success {
+            slackSend (baseUrl: 'https://quantexa.slack.com/services/hooks/jenkins-ci/', color: '#00FF00', message: "Daily Build Succeeded Today (${env.BUILD_URL})")
+        }
+
+        failure {
+            slackSend (baseUrl: 'https://quantexa.slack.com/services/hooks/jenkins-ci/', color: '#FF0000', message: "Daily Build Failed Today (${env.BUILD_URL})")
+        }
+    }
+}
+

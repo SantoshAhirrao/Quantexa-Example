@@ -1,0 +1,55 @@
+pipeline {
+    agent{
+        label 'accelerators-analyst-no-cache'
+    }
+
+    /*
+
+    NOTE: THIS IS ***NOT*** AN EXAMPLE FOR PROJECTS TO FOLLOW.
+
+    THIS IS ***NOT*** A SENSIBLE WORKFLOW. THIS IS A TECHNICAL TASK TO ENSURE THE TASK LOADING PROCESS WORKS CORRECTLY.
+
+    */
+
+    stages {
+        stage('Build') {
+            steps {
+               sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/batchscoretaskloading; ./compile.sh")
+            }
+        }
+        stage('Copy jars') {
+            steps {
+                echo "copying over jars to containers..."
+                sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/batchscoretaskloading; ./copy_jars.sh")
+            }
+        }
+        stage('Run ETL and ENG') {
+            steps {
+                echo "Running ETL and ENG..."
+                sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/batchscoretaskloading; ./run_etl.sh")
+            }
+        }
+        stage('Run batch scoring'){
+            steps {
+                echo "Running batch scoring..."
+                sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/batchscoretaskloading; ./run_batch_scoring.sh")
+            }
+        }
+        stage('Run graph scripts'){
+            steps {
+                withCredentials([file(credentialsId: 'default-trust-store', variable: 'TRUST_STORE')]) {
+                    echo "Running the graph script..."
+                    sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/batchscoretaskloading; ./run_graph_scripts.sh")
+                }
+            }
+        }
+        stage('Run task loading'){
+            steps {
+                withCredentials([file(credentialsId: 'default-trust-store', variable: 'TRUST_STORE')]) {
+                    echo "Run task loading"
+                    sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/batchscoretaskloading; ./run_task_loading.sh ${params.CREATE_TASK_LIST}")
+                }
+            }
+        }
+    }
+}

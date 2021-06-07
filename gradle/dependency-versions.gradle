@@ -1,0 +1,95 @@
+/*
+ * Use this file to declare the versions of dependent libraries.
+ */
+
+ext {
+  quantexaLibraries = "1.0.5"
+  quantexaDataModels = "1.0.5"
+  quantexaIncubators = "1.0.5"
+  quantexaAddressParser = "1.0.5"
+  
+  elasticsearch = "elastic6"
+  elastic4sCore = "6.4.1-QUANTEXA"
+  elasticSearchExternal = "6.4.0"
+  akka = "2.5.19"
+  apachePoi = "3.17"
+  audit4j = "2.4.3-QUANTEXA-BUILD"
+  circeConfig = "0.4.1"
+  circeGeneric = "0.9.3"  
+  frameless = "0.5.2"
+  gradleCredentials = "1.0.4"
+  guava = "18.0"
+  iban4j = "3.0.4"
+  jackson = "2.9.8"
+  janino = "3.0.8"
+  jacksonSpark = "2.6.5"
+  jsonWebToken = "0.7.0"
+  junit = "4.12"
+  kryo = "0.4.1"
+  log4j = "2.7"
+  log4jCore = "2.11.1"
+  logback = "1.2.3"
+  logbackClassic = "1.1.11"
+  loggingSlf4j = "2.1.2"
+  micrometer = "1.0.5"
+  monocle = "1.5.0"
+  postgreSQL = "42.1.3"
+  randomDataGenerator = "2.6"
+  saml = "1.0.6-QUANTEXA"
+  scalaCache = "0.26.0"
+  scalacheck = "1.14.0"
+  scalamacros = "2.1.0-M5"
+  scalaparadise = "2.11.7"
+  scalatest = "3.0.2"
+  scalamock = "3.6.0"
+  shapeless = "2.3.2"
+  sparkTestingBase = "0.10.0"
+  sparkDaria = "0.28.0-s"
+  sparkKNN = "0.2.0"
+  springCloudEtcd = "1.0.7.QUANTEXA-BUILD"
+  slf4j = "1.7.13"
+  spark = "2.2.2"
+  springCloudConfigServer = "1.3.1.RELEASE"
+  springCloudConfigClient = "1.3.1.RELEASE"
+  springBootStarterWeb = "1.3.1.RELEASE"
+  springCloudStarterConfig = "1.1.0.RELEASE"
+  springBootStarterActuator = "1.3.1.RELEASE"
+  springfoxSwagger = "2.7.0"
+  unboundIdLdapSdk = "3.2.0"
+}
+
+ext.libraries = [
+  spring_boot: ["org.scala-lang:scala-library:$scalaLibVersion",
+    "org.springframework.boot:spring-boot-starter-actuator:1.5.1.RELEASE",
+    "org.springframework.boot:spring-boot-actuator-docs",
+    "org.springframework.boot:spring-boot-starter-security",
+    "org.springframework.session:spring-session",
+    "org.springframework.boot:spring-boot-starter-web",
+    "org.springframework.ldap:spring-ldap-core",
+    "org.springframework.security:spring-security-ldap",
+    "ch.qos.logback:logback-classic:1.1.9",
+    "org.springframework.cloud:spring-cloud-starter",
+    "org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd",
+    "org.springframework.cloud:spring-cloud-context"
+  ],
+  jackson: [
+    "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jackson",
+    "com.fasterxml.jackson.module:jackson-module-scala_$scalaVersion:$jackson",
+    "com.fasterxml.jackson.core:jackson-core:$jackson",
+    "com.fasterxml.jackson.core:jackson-annotations:$jackson",
+    "com.fasterxml.jackson.core:jackson-databind:$jackson"
+  ],
+  akka: ["com.typesafe.akka:akka-slf4j_$scalaVersion:$akka",
+    "com.typesafe.akka:akka-remote_$scalaVersion:$akka",
+    "com.github.romix.akka:akka-kryo-serialization_$scalaVersion:$kryo"
+  ],
+  spring_boot_test: ["org.springframework.boot:spring-boot-starter-test",
+    "org.scalatest:scalatest_$scalaVersion:$scalatest",
+    "org.scalamock:scalamock-scalatest-support_$scalaVersion:3.2.2"
+  ]
+]
+
+ext.libraries += [
+  quantexa_boot: libraries.spring_boot + libraries.jackson + libraries.akka,
+  quantexa_boot_test: libraries.spring_boot_test
+]

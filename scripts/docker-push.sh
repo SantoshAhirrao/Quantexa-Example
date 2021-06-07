@@ -1,0 +1,13 @@
+#!/bin/bash +x
+
+IMAGENAME=$1
+DOCKERTAG=$2
+REGISTRY=$3
+
+echo Tagging and pushing $REGISTRY/$IMAGENAME:$DOCKERTAG
+
+echo "docker tag $IMAGENAME:latest $REGISTRY/$IMAGENAME:$DOCKERTAG"
+docker tag $IMAGENAME:latest $REGISTRY/$IMAGENAME:$DOCKERTAG
+
+echo "docker push $REGISTRY/$IMAGENAME:$DOCKERTAG"
+docker push $REGISTRY/$IMAGENAME:$DOCKERTAG

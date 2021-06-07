@@ -1,0 +1,8 @@
+id,entId,docId,string_blank
+E1,biz5_1,50000001,ho
+E2,biz5_1,TRADE5_1,hum
+E3,biz5_1,TRADE5_2,lm
+E4,cp5_1,TRADE5_1,s
+E5,cp5_2,TRADE5_2,s
+E6,cp5_1,BVD1,ham
+E7,cp5_2,BVD1,o

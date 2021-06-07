@@ -1,0 +1,555 @@
+{
+    "resolverRequest": {
+        "entities": [
+            {
+                "recordIdSets": [
+                    [
+                        {
+                            "id": "/document_id[atWhVvWc7PqIGaVQvwWLzQ]/node_id[1252683947]/node_id[-1672130795]",
+                            "entityType": "individual",
+                            "documentType": "offshore"
+                        },
+                        {
+                            "id": "/agg_wire_id[78751770517870|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/document_id[vB9s_WjSrfjIfZL8aUu7eA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        },
+                        {
+                            "id": "/agg_wire_id[39239917066466|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[78705676965651|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/document_id[COcu6mB6TVqj2Yec6jgs8Q]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        },
+                        {
+                            "id": "/document_id[iGZvwjBTvitHXMjxdPfj_g]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        },
+                        {
+                            "id": "/document_id[PdxP5Xx5aBbVn95gVqaSYQ]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        },
+                        {
+                            "id": "/agg_wire_id[89466998767505|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/document_id[8bfEAWA1Ky9lpG8hzPKodg]/director_id[v4yVsfcXBNngRLG6vyRqXg]/profile_id[1]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        },
+                        {
+                            "id": "/document_id[8bfEAWA1Ky9lpG8hzPKodg]/director_id[v4yVsfcXBNngRLG6vyRqXg]/profile_id[2]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        },
+                        {
+                            "id": "/agg_wire_id[90177234532362|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/cus_id_no[45078203947]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "customerindividual"
+                        },
+                        {
+                            "id": "/document_id[GfKVa9sJ9p15SV3YUIWG1w]/node_id[1252683947]/node_id[-1672130795]",
+                            "entityType": "individual",
+                            "documentType": "offshore"
+                        },
+                        {
+                            "id": "/document_id[KuMOGkjxfL65LRYR0wRdjQ]/node_id[-918864214]/node_id[-1672130795]",
+                            "entityType": "individual",
+                            "documentType": "offshore"
+                        },
+                        {
+                            "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/document_id[w0Vjy3K4cdAspDVT4HLb2w]/node_id[-918864214]/node_id[-1672130795]",
+                            "entityType": "individual",
+                            "documentType": "offshore"
+                        },
+                        {
+                            "id": "/document_id[2H-txaaIsLfWHNaOTvGDQA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        },
+                        {
+                            "id": "/document_id[DvaUUFR3pvioCBNsmhPyeA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "bvd"
+                        }
+                    ]
+                ],
+                "resolutionTemplates": {
+                    "individual": {
+                        "type": "ResolutionTemplate",
+                        "name": "default",
+                        "entityDefinition": "individual",
+                        "compoundDefinitions": {
+                            "fore_pcde_dob": {
+                                "name": "fore_pcde_dob",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_eml": {
+                                "name": "fore_sur_eml",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_acc": {
+                                "name": "fore_sur_acc",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_meta1_sur_meta1_num_pcde_dob_yyyy": {
+                                "name": "fore_meta1_sur_meta1_num_pcde_dob_yyyy",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_pcde": {
+                                "name": "fore_sur_pcde",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_dob": {
+                                "name": "fore_sur_dob",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "num_pcde_dob": {
+                                "name": "num_pcde_dob",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_company_id": {
+                                "name": "fore_sur_company_id",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_num_pcde": {
+                                "name": "fore_sur_num_pcde",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_mid_sur_pcde": {
+                                "name": "fore_mid_sur_pcde",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_mid_sur_company_clean": {
+                                "name": "fore_mid_sur_company_clean",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_mid_sur_dob": {
+                                "name": "fore_mid_sur_dob",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_road_city": {
+                                "name": "fore_sur_road_city",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_tel": {
+                                "name": "fore_sur_tel",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_document": {
+                                "name": "fore_sur_document",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "road_city_ctry_dob": {
+                                "name": "road_city_ctry_dob",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_road_pcde": {
+                                "name": "fore_sur_road_pcde",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_mid_sur_company_id": {
+                                "name": "fore_mid_sur_company_id",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "sur_dob_company_name": {
+                                "name": "sur_dob_company_name",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "bvd_uci": {
+                                "name": "bvd_uci",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_company_clean": {
+                                "name": "fore_sur_company_clean",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "sur_pcde_dob": {
+                                "name": "sur_pcde_dob",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "uid": {
+                                "name": "uid",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "bvd_id": {
+                                "name": "bvd_id",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_meta1_sur_meta1_flat_and_num_pcde": {
+                                "name": "fore_meta1_sur_meta1_flat_and_num_pcde",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "fore_sur_dob_sic": {
+                                "name": "fore_sur_dob_sic",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            },
+                            "initial_dob_company_clean": {
+                                "name": "initial_dob_company_clean",
+                                "termType": {
+                                    "type": "Undirected",
+                                    "documents": [
+                                        "aggregatedwire",
+                                        "uploadaggregatedwire",
+                                        "bvd",
+                                        "uploadcustomer",
+                                        "customerindividual",
+                                        "offshore",
+                                        "dowjones",
+                                        "customerbusiness"
+                                    ]
+                                }
+                            }
+                        },
+                        "profligateThreshold": 1000,
+                        "exclusions": []
+                    }
+                }
+            }
+        ]
+    }
+}

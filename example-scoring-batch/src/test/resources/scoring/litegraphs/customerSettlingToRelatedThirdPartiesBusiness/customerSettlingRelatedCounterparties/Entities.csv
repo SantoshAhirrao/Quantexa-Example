@@ -1,0 +1,4 @@
+id,entity_type,document_type,label,date_valid_from,date_valid_to,string_role,int_count,double_total
+biz5_1,business,,biz5_1,01/01/1960,01/01/1980,subject,3,32.4
+cp5_1,business,,cp5_1,02/01/1960,02/01/1980,cp5_1,3,32.4
+cp5_2,business,,cp5_2,03/01/1960,03/01/1980,cp5_2,3,32.4

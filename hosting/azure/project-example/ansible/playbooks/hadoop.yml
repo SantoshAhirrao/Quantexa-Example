@@ -1,0 +1,26 @@
+---
+
+#
+# Configuration for the Hadoop Master nodes
+#
+- hosts: project-example:&hadoop_headnode
+  become: yes
+  roles:
+   # Security
+   - role: base-security
+   # Users and their environment
+   - role: users
+   - role: sudo
+   # Logging and Monitoring
+   - role: node-exporter
+
+#
+# Configuration for the Hadoop Worker nodes
+#
+- hosts: project-example:&hadoop_workernode
+  become: yes
+  roles:
+   # Security
+   - role: base-security
+   # Logging and Monitoring
+   - role: node-exporter

@@ -1,0 +1,10 @@
+{
+    "TransactionQueryRestController.getTransactions" : [ ],
+    "TransactionQueryRestController.getSignificantCounterparties" : [ ],
+    "TransactionQueryRestController.getSharedCounterparties" : [ ],
+    "GraphScriptingRestController.runFullScript" : [ ],
+    "GraphScriptingRestController.scoreCustomerNetwork" : [ ],
+    "GraphScriptingRestController.linkedRiskyAddress" : [ ],
+    "GraphScriptingRestController.oneHopCustomer" : [ ],
+    "GraphScriptingRestController.oneHopCustomerCheck" : [ ]
+}

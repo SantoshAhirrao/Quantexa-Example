@@ -1,0 +1,114 @@
+#
+# Helm configuration that:
+#  - uses AKS Kubernetes
+#
+# You can deploy this configuration using gradle from the repository root:
+#
+#  gradle helmInstallOrUpgrade -Phosting_cloud_provider=azure -Phosting_environment=project-example -Phelm_chart_name=QuantexaExplorer
+
+app-investigate:
+  enabled: true
+  replicaCount: 2
+  appInvestigate:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      tag: @imageTag@
+    azurePostgres:
+      serverName: project-example-postgres-server
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-azure
+
+app-resolve:
+  enabled: true
+  replicaCount: 2
+  appResolve:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      tag: @imageTag@
+    azurePostgres:
+      serverName: project-example-postgres-server
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-azure
+
+app-search:
+  enabled: true
+  replicaCount: 2
+  appSearch:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      tag: @imageTag@
+    azurePostgres:
+      serverName: project-example-postgres-server
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-azure
+
+app-security:
+  enabled: true
+  replicaCount: 2
+  appSecurity:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      tag: @imageTag@
+    azurePostgres:
+      serverName: project-example-postgres-server
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-azure
+
+app-graph-script:
+  enabled: true
+  replicaCount: 2
+  appGraphScript:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      tag: @imageTag@
+    azurePostgres:
+      serverName: project-example-postgres-server
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-azure
+
+config-server:
+  replicaCount: 2
+  configServer:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      tag: @imageTag@
+
+front-end:
+  replicaCount: 2
+  explorerUI:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      name: example-ui
+      tag: @imageTag@
+    azurePostgres:
+      serverName: project-example-postgres-server
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-azure
+  gateway:
+    image:
+      registry: containerregprojectexamp.azurecr.io/example
+      tag: @imageTag@
+    azurePostgres:
+      serverName: project-example-postgres-server
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-azure
+
+etcd:
+  replicaCount: 3
+  etcd:
+    image:
+      registry: containerregprojectexamp.azurecr.io
+      tag: 0.1.0
+
+global:
+  tls:
+    quantexa:
+      hostname: "*.quantexa.com"
+  fluentd:
+    image:
+      registry: containerregprojectexamp.azurecr.io
+      tag: 0.3.0
+    output:
+      azure:
+        enabled: true
+        accountName: akslogarchiveprojectexam

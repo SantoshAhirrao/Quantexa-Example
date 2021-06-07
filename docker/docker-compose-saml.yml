@@ -1,0 +1,66 @@
+version: "2.1"
+services:
+  explorer-ui:
+          #  image: quantexacontainerregistry.azurecr.io/shell-lead-identification/shell-lead-identification-ui:0.8.1
+    image: example/example-ui
+    hostname: explorer-ui
+    container_name: explorer-ui
+    networks:
+      - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    ports:
+      - 8081:8081
+  config-server:
+    image: example/config-service
+    container_name: config-server
+    hostname: config-server
+    networks:
+      - quantexa-internal
+    depends_on:
+     - etcd
+    healthcheck:
+      #test: ["CMD", "curl", "-f", "http://etcd:2379/v2/quantexa/explorer/configserver/configserver:native:8888"]
+      test: ["CMD", "sleep", "25"]
+      interval: 5ms
+      timeout: 30s
+      retries: 5
+    volumes:
+      - ./logs:/var/log:rw
+      - ./config:/config
+    # restart: always
+    ports:
+      - 8888:8888
+  etcd:
+    image: quay.io/coreos/etcd
+    container_name: etcd
+    hostname: etcd
+    command:
+      /usr/local/bin/etcd
+      -name etcd
+      -advertise-client-urls http://etcd:2379,http://etcd:4001
+      -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:4001
+      -initial-advertise-peer-urls http://etcd:2380
+      -listen-peer-urls http://0.0.0.0:2380
+      -initial-cluster-token etcd-cluster-1
+      -initial-cluster etcd=http://etcd:2380
+      -initial-cluster-state new
+    networks:
+      - quantexa-internal
+    ports:
+      - 2379:2379
+      - 2380:2380
+      - 4001:4001    
+    # restart: always
+
+networks:
+  quantexa-internal:
+
+volumes:
+  db-investigation:
+  db-security:

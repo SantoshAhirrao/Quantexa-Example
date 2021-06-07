@@ -1,0 +1,101 @@
+apply plugin: 'com.moowork.node'
+
+apply from: file("../gradle/dependency-versions.gradle")
+
+node {
+  download = true
+  // Version of node to use.
+  version = '9.11.1'
+
+  // Version of npm to use.
+  npmVersion = '5.6.0'
+
+  workDir = file("${projectDir}/.gradle/nodejs_$version")
+}
+
+task npmLogin(type: NpmTask) {
+  workingDir = file("${projectDir}/web-app")
+  args = ['login', 'username']
+}
+
+task installNPM(type: NpmTask) {
+  workingDir = file("${projectDir}/web-app")
+  args = ['install']
+}
+
+task runNPMBuild(type: NpmTask) {
+  workingDir = file("${projectDir}/web-app")
+  args = ['run', 'build']
+}
+
+task runNPMBuildLogin(type: NpmTask) {
+  workingDir = file("${projectDir}/web-app")
+  args = ['run', 'build-login']
+}
+
+task setWebCoreVersion {
+  doLast {
+    ext.webCoreVersionParser = { version ->
+      def versionSegments1 = version.split('-')
+      def versionSegments = versionSegments1[0].split("\\.")
+      def parsed = versionSegments[0..2].join(".")
+      if (versionSegments.size() == 4) parsed += "-patch.${versionSegments[3]}"
+      if (versionSegments1.size() == 2) parsed += "-snapshot"
+      parsed
+    }
+    def file = "${projectDir}/web-app/package.json"
+    def webCoreVersion = webCoreVersionParser(quantexaLibraries)
+    if (webCoreVersion.contains("-snapshot")) webCoreVersion = "^" + webCoreVersion
+    def updatedContent = new File(file).getText('UTF-8').replaceAll(".*explorer-web-core.*", "    \"@quantexa\\/explorer-web-core\\\": \\\"${webCoreVersion}\\\",")
+    new File(file).write(updatedContent, 'UTF-8')
+  }
+}
+
+build.dependsOn(runNPMBuild, runNPMBuildLogin)
+runNPMBuildLogin.dependsOn(installNPM)
+runNPMBuild.dependsOn(installNPM)
+//installNPM.dependsOn(setWebCoreVersion)
+
+processResources.dependsOn(runNPMBuild, runNPMBuildLogin)
+
+task webcoreNpmInstall(type: NpmTask) {
+  workingDir = file("${projectDir}/../../QuantexaExplorer/web-core")
+  args = ['install']
+}
+
+task webcoreNpmBuild(type: NpmTask) {
+  workingDir = file("${projectDir}/../../QuantexaExplorer/web-core")
+  args = ['run', 'lib:build']
+}
+
+task webcoreNpmPrepublish(type: NpmTask) {
+  workingDir = file("${projectDir}/../../QuantexaExplorer/web-core")
+  args = ['run', 'lib:prepublish']
+}
+
+task npmLink(type: NpmTask) {
+  workingDir = file("${projectDir}/../../QuantexaExplorer/web-core/dist/@quantexa/explorer-web-core")
+  args = ['link']
+}
+
+task deleteQNodeModules(type: Delete) {
+  delete "${projectDir}/web-app/node_modules/@quantexa"
+}
+
+task npmLink2(type: NpmTask) {
+  workingDir = file("${projectDir}/web-app")
+  args = ['link', '@quantexa/explorer-web-core']
+}
+
+task compositeBuild {}
+compositeBuild.dependsOn(npmLink2)
+npmLink2.dependsOn(deleteQNodeModules)
+deleteQNodeModules.dependsOn(npmLink)
+npmLink.dependsOn(webcoreNpmPrepublish)
+webcoreNpmPrepublish.dependsOn(webcoreNpmBuild)
+webcoreNpmBuild.dependsOn(webcoreNpmInstall)
+
+clean.doFirst {
+  delete "${projectDir}/web-app/dist"
+  delete "${projectDir}/web-app/dist-login"
+}

@@ -1,0 +1,82 @@
+---
+
+#
+# Project specific configuration
+#
+# NOTE: Update this section with the project's specific details. Put the
+# associated access key in the encrypted secrets file.
+#
+
+# Name of the project
+project_name:              project-example
+
+# Storage account for ElasticSearch snapshots
+storage_account_es_name: essnapshotrepoprojectexa
+
+# Use internal repositories (no outbound internet access)
+internal_repositories_enabled: true
+
+#
+# ElasticSearch configuration
+#
+
+es_java_install:           false
+es_plugins_reinstall:      false
+es_instance_name:          "{{ ansible_hostname }}"
+es_network_host:           "[_local_, {{ ansible_eth0.ipv4.address }}]"
+es_data_dirs:              "{{ encrypt_disk_mount_path }}"
+es_plugins:
+ - plugin:                 "{{ internal_repositories_url }}/binaries/elasticsearch-repository-azure.zip"
+es_config:
+  cluster.name:            "{{ project_name }}"
+  node.name:               node1
+  http.port:               9200
+  transport.tcp.port:      9300
+  node.data:               "{{ node_data }}"
+  node.master:             "{{ node_master }}"
+  bootstrap.memory_lock:   true
+  discovery.zen.ping.unicast.hosts: "{{ groups['elastic'] | map('extract', hostvars, ['ansible_default_ipv4', 'address']) | join(',') }}"
+  # To avoid Split brain: discovery.zen.minimum_master_nodes = (NUMBER_OF_ES_MASTER_ELIGIBLE_NODES/2 + 1)
+  discovery.zen.minimum_master_nodes: "{{ ((((groups['elastic-master'] | length)/2) | int) + 1) }}"
+  cloud.azure.storage.my_account.key: "{{ storage_account_es_access_key }}"
+  cloud.azure.storage.my_account.account: "{{ storage_account_es_name }}"
+  http.publish_port:       "{{ nginx_http_template_listen }}"
+# Heap Size uses the recommendations from:
+#   https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html
+# Reserve 1GB for the operating system and allocate no more than half of the
+# available memory. Always allocate at least 256MB and never more that 31GB.
+es_heap_size:              "{{ [31766, [256, (ansible_memtotal_mb - 1024) / 2] | max] | min | int }}m"
+
+# ES Shard Awareness with Azure Availability Set
+es_shard_awareness:    true
+
+#
+# Persistent and Encrypted data volumes
+#
+
+# Device to encrypt
+encrypt_disk_device:            sdb1
+encrypt_disk_azure_device_size: 1.4T
+# Path where the encrypted disk will be mounted
+encrypt_disk_mount_path:   /var/data/elasticsearch
+
+# Additional commands to add to the bash script that encrypts the disk
+encrypt_disk_additional_reboot_commands:
+  - chown -R {{ es_user }}:{{ es_group }} {{ encrypt_disk_mount_path }}
+  - systemctl restart {{ es_instance_name }}_elasticsearch.service || exit 0
+
+# What device to mount
+data_volume_azure_device_size: 20G
+# Path where the log device will be mounted
+data_volume_mount_path:    /data
+# Symlinks from standard system location to data volume directories
+data_volume_symlinks:
+ - src:   elasticsearch
+   dest:  /var/log/elasticsearch
+   force: yes
+ - src:   nginx
+   dest:  /var/log/nginx
+   force: yes
+ - src:   clamav
+   dest:  /var/log/clamav
+   force: yes

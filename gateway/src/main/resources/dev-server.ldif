@@ -1,0 +1,208 @@
+dn: dc=quantexa,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: quantexa
+
+dn: ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=test@user.com,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: test@user.com
+sn: test@user.com
+uid: test@user.com
+userPassword: $2a$10$4ZWWHmqJwwBAKnVxJgnNp.C4xMdFeC3kXXs/xfoOhBLhFHS5dpXoy
+
+dn: uid=quantexa-demo,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: quantexa-demo
+sn: quantexa-demo
+uid: quantexa-demo
+userPassword: $2a$10$4ZWWHmqJwwBAKnVxJgnNp.C4xMdFeC3kXXs/xfoOhBLhFHS5dpXoy
+
+dn: uid=svc-graph-script,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: svc-graph-script
+sn: svc-graph-script
+uid: svc-graph-script
+userPassword: $2a$10$6gwMyFW/EfDiobV4amMjku6XFrS3Tb.ElStoJX.jnx48BRhYsjh/S
+
+dn: uid=read-only,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: read-only
+sn: read-only
+uid: read-only
+userPassword: $2a$10$4ZWWHmqJwwBAKnVxJgnNp.C4xMdFeC3kXXs/xfoOhBLhFHS5dpXoy
+
+dn: uid=form-search,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: form-search
+sn: form-search
+uid: form-search
+userPassword: $2a$10$4ZWWHmqJwwBAKnVxJgnNp.C4xMdFeC3kXXs/xfoOhBLhFHS5dpXoy
+
+dn: uid=security-admin,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: security-admin
+sn: security-admin
+uid: security-admin
+userPassword: $2a$10$NQ9CCnIMLO97yyLx5BHADuo06wN289.sv8au/uvngbri4SYFcICwu
+
+dn: uid=admin,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: admin
+sn: admin
+uid: admin
+userPassword: $2a$10$NQ9CCnIMLO97yyLx5BHADuo06wN289.sv8au/uvngbri4SYFcICwu
+
+dn: uid=super-admin,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: super-admin
+sn: super-admin
+uid: super-admin
+userPassword: $2a$10$NQ9CCnIMLO97yyLx5BHADuo06wN289.sv8au/uvngbri4SYFcICwu
+
+dn: uid=bdd,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: bdd
+sn: bdd
+uid: bdd
+userPassword: $2a$10$NQ9CCnIMLO97yyLx5BHADuo06wN289.sv8au/uvngbri4SYFcICwu
+
+dn: uid=qa,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: qa
+sn: qa
+uid: qa
+userPassword: $2a$10$NQ9CCnIMLO97yyLx5BHADuo06wN289.sv8au/uvngbri4SYFcICwu
+
+dn: uid=audit,ou=people,dc=quantexa,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: audit
+sn: audit
+uid: audit
+userPassword: $2a$10$NQ9CCnIMLO97yyLx5BHADuo06wN289.sv8au/uvngbri4SYFcICwu
+
+dn: cn=user,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: user
+ou: user
+uniqueMember: uid=quantexa-demo,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=form-search,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=audit,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=super-admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=bdd,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=qa,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=test@user.com,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=svc-graph-script,ou=people,dc=quantexa,dc=com
+
+
+dn: cn=readers,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: reader
+ou: reader
+uniqueMember: uid=admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=audit,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=read-only,ou=people,dc=quantexa,dc=com
+
+dn: cn=writers,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: writer
+ou: writer
+uniqueMember: uid=admin,ou=people,dc=quantexa,dc=com
+
+dn: cn=graph-script,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: writer
+ou: writer
+uniqueMember: uid=svc-graph-script,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=super-admin,ou=people,dc=quantexa,dc=com
+
+dn: cn=only-admin,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: only-admin
+ou: only-admin
+uniqueMember: uid=security-admin,ou=people,dc=quantexa,dc=com
+
+dn: cn=admins,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admin
+ou: admin
+uniqueMember: uid=admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=audit,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=super-admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=bdd,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=qa,ou=people,dc=quantexa,dc=com
+
+dn: cn=super-admins,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: super-admin
+ou: super-admin
+uniqueMember: uid=super-admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=bdd,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=qa,ou=people,dc=quantexa,dc=com
+
+dn: cn=company-intel,ou=groups,dc=quantexa,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: company-intel
+ou: company-intel
+uniqueMember: uid=quantexa-demo,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=form-search,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=audit,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=read-only,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=super-admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=bdd,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=qa,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=security-admin,ou=people,dc=quantexa,dc=com
+uniqueMember: uid=test@user.com,ou=people,dc=quantexa,dc=com

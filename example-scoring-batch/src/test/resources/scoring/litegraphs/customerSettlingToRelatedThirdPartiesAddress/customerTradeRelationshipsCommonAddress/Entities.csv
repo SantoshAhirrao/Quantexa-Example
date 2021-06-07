@@ -1,0 +1,3 @@
+id,entity_type,document_type,label,date_valid_from,date_valid_to,string_role,int_count,double_total
+BIZ4_1,business,,acc4_1,01/01/1960,01/01/1980,subject,3,32.4
+AD4_1,address,,addr4_1,02/01/1960,02/01/1980,addr4_1,3,32.4

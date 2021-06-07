@@ -1,0 +1,138 @@
+#
+# Helm configuration that:
+#  - uses GKE
+#  - creates PostgreSQL
+#
+# You can deploy this configuration using gradle from the repository root:
+#
+#  $ gradle helmInstallOrUpgrade -Phosting_environment=google
+#
+# When done, you might have to supply the secrets to Kubernetes. You can do so
+# using the following command:
+#
+#  $ kubectl apply -f <yaml_secrets_file>
+#
+# Check kubernetes/sample-secrets.yml for more information
+#
+
+app-investigate:
+  appInvestigate:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+
+app-resolve:
+  appResolve:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+
+
+app-search:
+  appSearch:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+
+app-security:
+  appSecurity:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+
+app-transaction:
+  enabled: false
+
+app-graph-script:
+  enabled: false
+
+config-server:
+  configServer:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+
+front-end:
+  ingress:
+    enabled: false
+  explorerUI:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+  gateway:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    tls:
+      enabled: false
+  nginx:
+    enabled: false
+  nginxService:
+    enabled: false
+
+etcd:
+  replicaCount: 1
+  etcd:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: 0.0.1
+    storage:
+      class: standard
+
+postgres-investigation:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 250Mi
+
+postgres-quadit:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 100Mi
+
+postgres-security:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 100Mi
+
+postgres-acl:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 100Mi
+
+postgres-connect:
+  postgres:
+    storage:
+      class: standard
+    computeResource:
+      cpu: 0.1
+      memory: 100Mi
+
+global:
+  postgres:
+    enabled: true
+  tls:
+    quantexa:
+      hostname: "*.quantexa.com"
+  fluentd:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/quantexa-fluentd
+      tag: 0.3.0
+    output:
+      google:
+        enabled: true
+        projectName: example
+        bucketName: quantexa-green-1-project-example-sink-archive
+        buffer:
+          path: /var/fluentd-buffers/gcs.buffer

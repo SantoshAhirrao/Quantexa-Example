@@ -1,0 +1,1184 @@
+{
+  "documentDefinitions": {
+    "customer": {
+      "icon": "documents1.png",
+      "displayName": "FIU Smoke Test - Customer",
+      "labelAttribute": "label",
+      "validFromAttribute": "customerStartDate",
+      "validToAttribute": "customerEndDate",
+      "dataLocation": "/user/<your-name>/customer/1/Compounds/DocumentIndexInput.parquet",
+      "dataModelRootClass": "com.quantexa.example.model.fiu.customer.CustomerModel.Customer",
+      "dataModelRecordExtractor": "com.quantexa.example.model.fiu.customer.CustomerExtractor"
+    },
+    "hotlist": {
+      "icon": "blacklist.png",
+      "displayName": "FIU Smoke Test - Hotlist",
+      "labelAttribute": "label",
+      "validFromAttribute": "dateAdded",
+      "validToAttribute": "dateAdded",
+      "dataLocation": "/user/<your-name>/hotlist/Compounds/DocumentIndexInput.parquet",
+      "dataModelRootClass": "com.quantexa.example.model.fiu.hotlist.HotlistModel.Hotlist",
+      "dataModelRecordExtractor": "com.quantexa.example.model.fiu.hotlist.HotlistExtractor"
+    }
+  },
+  "elementDefinitions": {
+    "registeredBusinessName": {
+      "exclusionCriteria": []
+    },
+    "countryOfRegisteredBusiness": {
+      "exclusionCriteria": []
+    },
+    "customerStartDate": {
+      "exclusionCriteria": []
+    },
+    "customerEndDate": {
+      "exclusionCriteria": []
+    },
+    "customerStatus": {
+      "exclusionCriteria": []
+    },
+    "gender": {
+      "exclusionCriteria": []
+    },
+    "fullName": {
+      "exclusionCriteria": []
+    },
+    "nationality": {
+      "exclusionCriteria": []
+    },
+    "customerRiskRating": {
+      "exclusionCriteria": []
+    },
+    "employeeFlag": {
+      "exclusionCriteria": []
+    },
+    "residenceCountry": {
+      "exclusionCriteria": []
+    },
+    "primaryAccountNumber": {
+      "exclusionCriteria": []
+    },
+    "accountOpenedDate": {
+      "exclusionCriteria": []
+    },
+    "accountClosedDate": {
+      "exclusionCriteria": []
+    },
+    "compositeAccountName": {
+      "exclusionCriteria": []
+    },
+    "accountStatus": {
+      "exclusionCriteria": []
+    },
+    "relationalManagerName": {
+      "exclusionCriteria": []
+    },
+    "accountRiskRating": {
+      "exclusionCriteria": []
+    },
+    "amlALRFlag": {
+      "exclusionCriteria": []
+    },
+    "businessNameClean": {
+      "exclusionCriteria": []
+    },
+    "businessName": {
+      "exclusionCriteria": []
+    },
+    "telephone": {
+      "exclusionCriteria": []
+    },
+    "houseNumberOrHouseNameOrPOBox": {
+      "exclusionCriteria": []
+    },
+    "flatAndHouseNumberOrNameOrPOBox": {
+      "exclusionCriteria": []
+    },
+    "poBox": {
+      "exclusionCriteria": []
+    },
+    "road": {
+      "exclusionCriteria": []
+    },
+    "suburb": {
+      "exclusionCriteria": []
+    },
+    "cityDistrict": {
+      "exclusionCriteria": []
+    },
+    "city": {
+      "exclusionCriteria": []
+    },
+    "state": {
+      "exclusionCriteria": []
+    },
+    "stateDistrict": {
+      "exclusionCriteria": []
+    },
+    "postcode": {
+      "exclusionCriteria": []
+    },
+    "country": {
+      "exclusionCriteria": []
+    },
+    "countryCode": {
+      "exclusionCriteria": []
+    },
+    "forename": {
+      "exclusionCriteria": []
+    },
+    "middlename": {
+      "exclusionCriteria": []
+    },
+    "surname": {
+      "exclusionCriteria": []
+    },
+    "initial": {
+      "exclusionCriteria": []
+    },
+    "forenameMetaphone1": {
+      "exclusionCriteria": []
+    },
+    "surnameMetaphone1": {
+      "exclusionCriteria": []
+    },
+    "dob": {
+      "exclusionCriteria": []
+    },
+    "dobMonth": {
+      "exclusionCriteria": []
+    },
+    "dobYear": {
+      "exclusionCriteria": []
+    },
+    "dobMMYYYY": {
+      "exclusionCriteria": []
+    },
+    "registeredBusinessNumber": {
+      "exclusionCriteria": []
+    },
+    "personalNationalIdNumber": {
+      "exclusionCriteria": []
+    },
+    "customerIdNumber": {
+      "exclusionCriteria": []
+    },
+    "accountId": {
+      "exclusionCriteria": []
+    },
+    "accountNumber": {
+      "exclusionCriteria": []
+    }
+  },
+  "compoundDefinitions": {
+    "personalNationalIdNumber": {
+      "documentDefinitions": ["customer"],
+      "elementDefinitions": ["personalNationalIdNumber"]
+    },
+    "customerIdNumber": {
+      "documentDefinitions": ["customer"],
+      "elementDefinitions": ["customerIdNumber"]
+    },
+    "forename_surname_road_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "road", "postcode"]
+    },
+    "forename_surname_city": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "city"]
+    },
+    "forename_surname_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "postcode"]
+    },
+    "forename_surname_houseNumberOrHouseNameOrPOBox_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forename",
+        "surname",
+        "houseNumberOrHouseNameOrPOBox",
+        "postcode"
+      ]
+    },
+    "forename_surname_road_city": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "road", "city"]
+    },
+    "forename_surname_postcode_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "postcode", "countryCode"]
+    },
+    "forename_surname_road_city_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forename",
+        "surname",
+        "road",
+        "city",
+        "countryCode"
+      ]
+    },
+    "forename_surname_road_city_state_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forename",
+        "surname",
+        "road",
+        "city",
+        "state",
+        "countryCode"
+      ]
+    },
+    "forename_surname_flatAndHouseNumberOrNameOrPOBox_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forename",
+        "surname",
+        "flatAndHouseNumberOrNameOrPOBox",
+        "postcode"
+      ]
+    },
+    "forenameMetaphone1_surnameMetaphone1_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forenameMetaphone1",
+        "surnameMetaphone1",
+        "postcode"
+      ]
+    },
+    "forenameMetaphone1_surnameMetaphone1_city_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forenameMetaphone1",
+        "surnameMetaphone1",
+        "city",
+        "countryCode"
+      ]
+    },
+    "forenameMetaphone1_surnameMetaphone1_city_state_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forenameMetaphone1",
+        "surnameMetaphone1",
+        "city",
+        "state",
+        "countryCode"
+      ]
+    },
+    "forenameMetaphone1_surnameMetaphone1_flatAndHouseNumberOrNameOrPOBox_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forenameMetaphone1",
+        "surnameMetaphone1",
+        "flatAndHouseNumberOrNameOrPOBox",
+        "postcode"
+      ]
+    },
+    "forename_middlename_surname_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "middlename", "surname", "postcode"]
+    },
+    "primaryAccountNumber": {
+      "documentDefinitions": ["customer"],
+      "elementDefinitions": ["primaryAccountNumber"]
+    },
+    "forename_surname_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "dob"]
+    },
+    "surname_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["surname", "dob"]
+    },
+    "forename_middlename_surname_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "middlename", "surname", "dob"]
+    },
+    "forenameMetaphone1_surnameMetaphone1_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forenameMetaphone1", "surnameMetaphone1", "dob"]
+    },
+    "forename_surname_dobMMYYYY": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "dobMMYYYY"]
+    },
+    "forename_surname_dobYear": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "dobYear"]
+    },
+    "forename_middlename_surname_dobYear": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "middlename", "surname", "dobYear"]
+    },
+    "forename_postcode_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "postcode", "dob"]
+    },
+    "surname_postcode_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["surname", "postcode", "dob"]
+    },
+    "houseNumberOrHouseNameOrPOBox_postcode_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["houseNumberOrHouseNameOrPOBox", "postcode", "dob"]
+    },
+    "flatAndHouseNumberOrNameOrPOBox_postcode_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "flatAndHouseNumberOrNameOrPOBox",
+        "postcode",
+        "dob"
+      ]
+    },
+    "road_city_country_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["road", "city", "country", "dob"]
+    },
+    "forenameMetaphone1_surnameMetaphone1_houseNumberOrHouseNameOrPOBox_postcode_dobYear": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forenameMetaphone1",
+        "surnameMetaphone1",
+        "houseNumberOrHouseNameOrPOBox",
+        "postcode",
+        "dobYear"
+      ]
+    },
+    "forename_surname_houseNumberOrHouseNameOrPOBox_postcode_dobYear": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forename",
+        "surname",
+        "houseNumberOrHouseNameOrPOBox",
+        "postcode",
+        "dobYear"
+      ]
+    },
+    "forename_surname_postcode_dobMMYYYY": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "postcode", "dobMMYYYY"]
+    },
+    "forename_surname_telephone": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "telephone"]
+    },
+    "forename_surname_businessNameClean": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname", "businessNameClean"]
+    },
+    "forename_middlename_surname_businessNameClean": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forename",
+        "middlename",
+        "surname",
+        "businessNameClean"
+      ]
+    },
+    "forenameMetaphone1_businessNameClean": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forenameMetaphone1", "businessNameClean"]
+    },
+    "forenameMetaphone1_surnameMetaphone1_businessNameClean": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "forenameMetaphone1",
+        "surnameMetaphone1",
+        "businessNameClean"
+      ]
+    },
+    "forename_businessNameClean_dob": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "dob", "businessNameClean"]
+    },
+    "surname_dob_businessName": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["surname", "dob", "businessNameClean"]
+    },
+    "initial_dob_businessNameClean": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["initial", "dob", "businessNameClean"]
+    },
+    "forename_surname": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["forename", "surname"]
+    },
+    "forename_middlename_surname": {
+      "documentDefinitions": ["customer"],
+      "elementDefinitions": ["forename", "middlename", "surname"]
+    },
+    "houseNumberOrHouseNameOrPOBox_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["houseNumberOrHouseNameOrPOBox", "postcode"]
+    },
+    "flatAndHouseNumberOrNameOrPOBox_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["flatAndHouseNumberOrNameOrPOBox", "postcode"]
+    },
+    "houseNumberOrHouseNameOrPOBox_postcode_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "houseNumberOrHouseNameOrPOBox",
+        "postcode",
+        "countryCode"
+      ]
+    },
+    "flatAndHouseNumberOrNameOrPOBox_postcode_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "flatAndHouseNumberOrNameOrPOBox",
+        "postcode",
+        "countryCode"
+      ]
+    },
+    "houseNumberOrHouseNameOrPOBox_road_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "houseNumberOrHouseNameOrPOBox",
+        "road",
+        "postcode"
+      ]
+    },
+    "flatAndHouseNumberOrNameOrPOBox_road_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "flatAndHouseNumberOrNameOrPOBox",
+        "road",
+        "postcode"
+      ]
+    },
+    "houseNumberOrHouseNameOrPOBox_road_city_state": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "houseNumberOrHouseNameOrPOBox",
+        "road",
+        "city",
+        "state"
+      ]
+    },
+    "houseNumberOrHouseNameOrPOBox_road_city_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "houseNumberOrHouseNameOrPOBox",
+        "road",
+        "city",
+        "countryCode"
+      ]
+    },
+    "houseNumberOrHouseNameOrPOBox_road_city": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["houseNumberOrHouseNameOrPOBox", "road", "city"]
+    },
+    "flatAndHouseNumberOrNameOrPOBox_road_city_state": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "flatAndHouseNumberOrNameOrPOBox",
+        "road",
+        "city",
+        "state"
+      ]
+    },
+    "flatAndHouseNumberOrNameOrPOBox_road_city_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": [
+        "flatAndHouseNumberOrNameOrPOBox",
+        "road",
+        "city",
+        "countryCode"
+      ]
+    },
+    "flatAndHouseNumberOrNameOrPOBox_road_city": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["flatAndHouseNumberOrNameOrPOBox", "road", "city"]
+    },
+    "businessNameClean_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessNameClean", "postcode"]
+    },
+    "businessNameClean_city": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessNameClean", "city"]
+    },
+    "businessNameClean_road": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessNameClean", "road"]
+    },
+    "businessNameClean_road_postcode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessNameClean", "road", "postcode"]
+    },
+    "businessName_countryCode": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessName", "countryCode"]
+    },
+    "businessNameClean_telephone": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessNameClean", "telephone"]
+    },
+    "company_clean": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessNameClean"]
+    },
+    "company_name": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["businessName"]
+    },
+    "telephoneClean": {
+      "documentDefinitions": ["customer", "hotlist"],
+      "elementDefinitions": ["telephone"]
+    },
+    "registeredBusinessNumber": {
+      "documentDefinitions": ["customer"],
+      "elementDefinitions": ["registeredBusinessNumber"]
+    }
+  },
+  "entityDefinitions": {
+    "address": {
+      "label": "addressDisplay",
+      "icon": "Address.png",
+      "documentDefinitions": ["customer", "hotlist"],
+      "compoundDefinitions": [
+        "houseNumberOrHouseNameOrPOBox_postcode",
+        "flatAndHouseNumberOrNameOrPOBox_postcode",
+        "houseNumberOrHouseNameOrPOBox_postcode_countryCode",
+        "flatAndHouseNumberOrNameOrPOBox_postcode_countryCode",
+        "houseNumberOrHouseNameOrPOBox_road_postcode",
+        "flatAndHouseNumberOrNameOrPOBox_road_postcode",
+        "houseNumberOrHouseNameOrPOBox_road_city_state",
+        "houseNumberOrHouseNameOrPOBox_road_city_countryCode",
+        "houseNumberOrHouseNameOrPOBox_road_city",
+        "flatAndHouseNumberOrNameOrPOBox_road_city_state",
+        "flatAndHouseNumberOrNameOrPOBox_road_city_countryCode",
+        "flatAndHouseNumberOrNameOrPOBox_road_city",
+        "businessNameClean_postcode",
+        "businessNameClean_city",
+        "businessNameClean_road",
+        "businessNameClean_road_postcode",
+        "businessName_countryCode"
+      ],
+      "attributeDefinitions": {
+        "addressDisplay": {
+          "aggregation": "MostCommon"
+        },
+        "country": {
+          "aggregation": "Count"
+        },
+        "postcode": {
+          "aggregation": "Count"
+        }
+      },
+      "exclusionCriteria": [
+        {
+          "analysisType": "entityAttributes",
+          "variableName": "total_documents",
+          "condition": "GreaterThan",
+          "value": "10"
+        }
+      ]
+    },
+    "business": {
+      "label": "businessNameDisplay",
+      "icon": "Business.png",
+      "validFrom": "businessJoinedDate",
+      "validTo": "businessLeftDate",
+      "documentDefinitions": ["customer", "hotlist"],
+      "compoundDefinitions": [
+        "businessNameClean_postcode",
+        "businessNameClean_city",
+        "businessNameClean_road",
+        "businessNameClean_road_postcode",
+        "businessName_countryCode",
+        "businessNameClean_telephone",
+        "company_clean",
+        "company_name",
+        "registeredBusinessNumber"
+      ],
+      "attributeDefinitions": {
+        "businessNameDisplay": {
+          "aggregation": "MostCommon"
+        },
+        "registeredBusinessNumber": {
+          "aggregation": "Count"
+        },
+        "registeredBusinessName": {
+          "aggregation": "MostCommon"
+        },
+        "countryOfRegisteredBusiness": {
+          "aggregation": "MostCommon"
+        },
+        "businessJoinedDate": {
+          "aggregation": "MostCommon"
+        },
+        "businessLeftDate": {
+          "aggregation": "MostCommon"
+        }
+      },
+      "linkAttributeDefinitions": {
+        "businessOnHotlist": {
+          "variableName": "businessOnHotlist",
+          "aggregation": "Max"
+        }
+      },
+      "exclusionCriteria": [
+        {
+          "analysisType": "entityAttributes",
+          "variableName": "total_documents",
+          "condition": "GreaterThan",
+          "value": "10"
+        }
+      ]
+    },
+    "individual": {
+      "label": "fullName",
+      "icon": "Individual.png",
+      "validFrom": "customerStartDateLong",
+      "validTo": "customerEndDateLong",
+      "documentDefinitions": ["customer", "hotlist"],
+      "compoundDefinitions": [
+        "forename_surname_road_postcode",
+        "forename_surname_city",
+        "forename_surname_postcode",
+        "forename_surname_houseNumberOrHouseNameOrPOBox_postcode",
+        "forename_surname_road_city",
+        "forename_surname_postcode_countryCode",
+        "forename_surname_road_city_countryCode",
+        "forename_surname_road_city_state_countryCode",
+        "forename_surname_flatAndHouseNumberOrNameOrPOBox_postcode",
+        "forenameMetaphone1_surnameMetaphone1_postcode",
+        "forenameMetaphone1_surnameMetaphone1_city_countryCode",
+        "forenameMetaphone1_surnameMetaphone1_city_state_countryCode",
+        "forenameMetaphone1_surnameMetaphone1_flatAndHouseNumberOrNameOrPOBox_postcode",
+        "forename_middlename_surname_postcode",
+        "primaryAccountNumber",
+        "forename_surname_dob",
+        "surname_dob",
+        "forename_middlename_surname_dob",
+        "forenameMetaphone1_surnameMetaphone1_dob",
+        "forename_surname_dobMMYYYY",
+        "forename_surname_dobYear",
+        "forename_middlename_surname_dobYear",
+        "forename_postcode_dob",
+        "surname_postcode_dob",
+        "houseNumberOrHouseNameOrPOBox_postcode_dob",
+        "flatAndHouseNumberOrNameOrPOBox_postcode_dob",
+        "road_city_country_dob",
+        "forenameMetaphone1_surnameMetaphone1_houseNumberOrHouseNameOrPOBox_postcode_dobYear",
+        "forename_surname_houseNumberOrHouseNameOrPOBox_postcode_dobYear",
+        "forename_surname_postcode_dobMMYYYY",
+        "forename_surname_telephone",
+        "forename_surname_businessNameClean",
+        "forename_middlename_surname_businessNameClean",
+        "forenameMetaphone1_businessNameClean",
+        "forenameMetaphone1_surnameMetaphone1_businessNameClean",
+        "forename_businessNameClean_dob",
+        "surname_dob_businessName",
+        "initial_dob_businessNameClean",
+        "forename_surname",
+        "forename_middlename_surname",
+        "personalNationalIdNumber",
+        "customerIdNumber"
+      ],
+      "attributeDefinitions": {
+        "fullName": {
+          "aggregation": "MostCommon"
+        },
+        "personalNationalIdNumber": {
+          "aggregation": "Count"
+        },
+        "distinctPersonalNationalIdNumber": {
+          "aggregation": "DistinctValues",
+          "variableName": "personalNationalIdNumber"
+        },
+        "gender": {
+          "aggregation": "MostCommon"
+        },
+        "nationality": {
+          "aggregation": "MostCommon"
+        },
+        "customerRiskRating": {
+          "aggregation": "MostCommon"
+        },
+        "customerStartDateLong": {
+          "aggregation": "MostCommon"
+        },
+        "customerEndDateLong": {
+          "aggregation": "MostCommon"
+        },
+        "employeeFlag": {
+          "aggregation": "Count"
+        },
+        "residenceCountry": {
+          "aggregation": "MostCommon"
+        },
+        "customerIdNumber": {
+          "aggregation": "MostCommon"
+        },
+        "customerStatus": {
+          "aggregation": "MostCommon"
+        }
+      },
+      "linkAttributeDefinitions": {
+        "individualOnHotlist": {
+          "variableName": "individualOnHotlist",
+          "aggregation": "Max"
+        }
+      },
+      "exclusionCriteria": [
+        {
+          "analysisType": "entityAttributes",
+          "variableName": "total_documents",
+          "condition": "GreaterThan",
+          "value": "15"
+        }
+      ]
+    },
+    "telephone": {
+      "label": "telephoneDisplay",
+      "icon": "Telephone.png",
+      "compoundDefinitions": ["telephoneClean"],
+      "documentDefinitions": ["customer", "hotlist"],
+      "attributeDefinitions": {
+        "telephoneDisplay": {
+          "aggregation": "MostCommon"
+        }
+      },
+      "exclusionCriteria": [
+        {
+          "analysisType": "entityAttributes",
+          "variableName": "total_documents",
+          "condition": "GreaterThan",
+          "value": "10"
+        }
+      ]
+    },
+    "account": {
+      "label": "label",
+      "icon": "Account.png",
+      "validFrom": "accountOpenedDate",
+      "validTo": "accountClosedDate",
+      "documentDefinitions": ["customer"],
+      "compoundDefinitions": [
+        "primaryAccountNumber"
+      ],
+      "attributeDefinitions": {
+        "label": {
+          "aggregation": "MostCommon"
+        },
+        "compositeAccountName": {
+          "aggregation": "MostCommon"
+        },
+        "accountRiskRating": {
+          "aggregation": "MostCommon"
+        },
+        "fullName": {
+          "aggregation": "Count"
+        },
+        "accountOpenedDate": {
+          "aggregation": "MostCommon"
+        },
+        "accountClosedDate": {
+          "aggregation": "MostCommon"
+        }
+      },
+      "exclusionCriteria": [
+        {
+          "analysisType": "entityAttributes",
+          "variableName": "total_documents",
+          "condition": "GreaterThan",
+          "value": "10"
+        }
+      ]
+    }
+  },
+  "resolutionTemplateDefinitions": {
+    "address": {
+      "default": {
+        "compoundDefinitions": [
+          {
+            "compounds": [
+              "houseNumberOrHouseNameOrPOBox_postcode",
+              "flatAndHouseNumberOrNameOrPOBox_postcode",
+              "houseNumberOrHouseNameOrPOBox_postcode_countryCode",
+              "flatAndHouseNumberOrNameOrPOBox_postcode_countryCode",
+              "houseNumberOrHouseNameOrPOBox_road_postcode",
+              "flatAndHouseNumberOrNameOrPOBox_road_postcode",
+              "houseNumberOrHouseNameOrPOBox_road_city_state",
+              "houseNumberOrHouseNameOrPOBox_road_city_countryCode",
+              "houseNumberOrHouseNameOrPOBox_road_city",
+              "flatAndHouseNumberOrNameOrPOBox_road_city_state",
+              "flatAndHouseNumberOrNameOrPOBox_road_city_countryCode",
+              "flatAndHouseNumberOrNameOrPOBox_road_city",
+              "businessNameClean_postcode",
+              "businessNameClean_city",
+              "businessNameClean_road",
+              "businessNameClean_road_postcode",
+              "businessName_countryCode"
+            ]
+          }
+        ]
+      }
+    },
+    "business": {
+      "default": {
+        "compoundDefinitions": [
+          {
+            "compounds": [
+              "businessNameClean_postcode",
+              "businessNameClean_city",
+              "businessNameClean_road",
+              "businessNameClean_road_postcode",
+              "businessName_countryCode",
+              "businessNameClean_telephone",
+              "company_clean",
+              "company_name",
+              "registeredBusinessNumber"
+            ]
+          }
+        ]
+      }
+    },
+    "individual": {
+      "default": {
+        "compoundDefinitions": [
+          {
+            "compounds": [
+              "forename_surname_road_postcode",
+              "forename_surname_city",
+              "forename_surname_postcode",
+              "forename_surname_houseNumberOrHouseNameOrPOBox_postcode",
+              "forename_surname_road_city",
+              "forename_surname_postcode_countryCode",
+              "forename_surname_road_city_countryCode",
+              "forename_surname_road_city_state_countryCode",
+              "forename_surname_flatAndHouseNumberOrNameOrPOBox_postcode",
+              "forenameMetaphone1_surnameMetaphone1_postcode",
+              "forenameMetaphone1_surnameMetaphone1_city_countryCode",
+              "forenameMetaphone1_surnameMetaphone1_city_state_countryCode",
+              "forenameMetaphone1_surnameMetaphone1_flatAndHouseNumberOrNameOrPOBox_postcode",
+              "forename_middlename_surname_postcode",
+              "primaryAccountNumber",
+              "forename_surname_dob",
+              "surname_dob",
+              "forename_middlename_surname_dob",
+              "forenameMetaphone1_surnameMetaphone1_dob",
+              "forename_surname_dobMMYYYY",
+              "forename_surname_dobYear",
+              "forename_middlename_surname_dobYear",
+              "forename_postcode_dob",
+              "surname_postcode_dob",
+              "houseNumberOrHouseNameOrPOBox_postcode_dob",
+              "flatAndHouseNumberOrNameOrPOBox_postcode_dob",
+              "road_city_country_dob",
+              "forenameMetaphone1_surnameMetaphone1_houseNumberOrHouseNameOrPOBox_postcode_dobYear",
+              "forename_surname_houseNumberOrHouseNameOrPOBox_postcode_dobYear",
+              "forename_surname_postcode_dobMMYYYY",
+              "forename_surname_telephone",
+              "forename_surname_businessNameClean",
+              "forename_middlename_surname_businessNameClean",
+              "forenameMetaphone1_businessNameClean",
+              "forenameMetaphone1_surnameMetaphone1_businessNameClean",
+              "forename_businessNameClean_dob",
+              "surname_dob_businessName",
+              "initial_dob_businessNameClean",
+              "forename_surname",
+              "forename_middlename_surname",
+              "personalNationalIdNumber",
+              "customerIdNumber"
+            ]
+          }
+        ]
+      }
+    },
+    "telephone": {
+      "default": {
+        "compoundDefinitions": [
+          {
+            "compounds": ["telephoneClean"]
+          }
+        ]
+      }
+    },
+    "account": {
+      "default": {
+        "compoundDefinitions": [
+          {
+            "compounds": ["primaryAccountNumber"]
+          }
+        ]
+      }
+    }
+  },
+  "expansionTemplates": {
+    "documentExpansionTemplates": {
+      "default-document": {
+        "selectors": [
+          {
+            "documentSelector": "true",
+            "resolutionTemplates": {
+              "individual": "default",
+              "address": "default",
+              "business": "default",
+              "telephone": "default",
+              "account": "default"
+            }
+          }
+        ]
+      },
+      "twodegree-document": {
+        "selectors": [
+          {
+            "documentSelector": "true",
+            "resolutionTemplates": {
+              "individual": "default",
+              "address": "default",
+              "business": "default",
+              "telephone": "default",
+              "account": "default"
+            }
+          }
+        ],
+        "expansion": {
+          "selectors": [
+            {
+              "entitySelector": "true"
+            }
+          ]
+        }
+      }
+    },
+    "entityExpansionTemplates": {
+      "default-entity": {
+        "selectors": [
+          {
+            "entitySelector": "true"
+          }
+        ]
+      },
+      "twodegree-entity": {
+        "selectors": [
+          {
+            "entitySelector": "true"
+          }
+        ],
+        "expansion": {
+          "selectors": [
+            {
+              "documentSelector": "true",
+              "resolutionTemplates": {
+                "individual": "default",
+                "address": "default",
+                "business": "default",
+                "telephone": "default",
+                "account": "default"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "searchDefinitions": {
+    "fiu-smoke": {
+      "dataSources": {
+        "customer": {
+          "displayName": "FIU Smoke Data - Customer",
+          "entitySearchLimit": 50,
+          "facets": {
+            "Gender": {
+              "key": "Gender",
+              "fields": ["gender"]
+            },
+            "Residence Country": {
+              "key": "Residence Country",
+              "fields": ["residenceCountry"]
+            }
+          },
+          "fieldGroups": {
+            "Address": {
+              "fieldSets": {
+                "Address Lines": {
+                  "key": "addressLines",
+                  "fields": [
+                    "*.parsedAddress.houseNumber",
+                    "*.parsedAddress.houseName",
+                    "*.parsedAddress.road",
+                    "*.addressLineOne"
+                  ]
+                },
+                "City": {
+                  "key": "city",
+                  "fields": ["*.city", "*.parsedAddress.city"]
+                },
+                "Postcode": {
+                  "key": "postcode",
+                  "fields": ["*.parsedAddress.postcode", "*.postcode"]
+                },
+                "State": {
+                  "key": "state",
+                  "fields": ["*.parsedAddress.stateDistrict", "*.state"]
+                }
+              }
+            },
+            "Business": {
+              "fieldSets": {
+                "Business Name": {
+                  "key": "companyName",
+                  "fields": [
+                    "*.parsedBusinessName.businessDisplay",
+                    "*.parsedBusinessName.businessName",
+                    "*.parsedBusinessName.businessNameClean"
+                  ]
+                },
+                "Customer ID": {
+                  "key": "customerIdNumber",
+                  "fields": ["customerIdNumber"]
+                }
+              }
+            },
+            "Account": {
+              "fieldSets": {
+                "Customer ID": {
+                  "key": "customerIdNumber",
+                  "fields": ["customerIdNumber"]
+                }
+              }
+            },
+            "Individual": {
+              "fieldSets": {
+                "Forenames": {
+                  "key": "forenames",
+                  "fields": [
+                    "*.parsedCustomerName.forename",
+                    "*.parsedCustomerName.middlename",
+                    "*.forename",
+                    "*.fullName"
+                  ]
+                },
+                "Surname": {
+                  "key": "surname",
+                  "fields": ["*.surname", "*.familyName", "*.fullName"]
+                },
+                "Customer ID": {
+                  "key": "customerIdNumber",
+                  "fields": ["customerIdNumber"]
+                }
+              }
+            },
+            "Telephone": {
+              "fieldSets": {
+                "Telephone": {
+                  "key": "telephone",
+                  "fields": [
+                    "*.telephoneNumber",
+                    "*.cleansedTelephoneNumber.telephoneDisplay",
+                    "*.cleansedTelephoneNumber.telephoneClean"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "hotlist": {
+          "displayName": "FIU Smoke Data - Hotlist",
+          "entitySearchLimit": 50,
+          "fieldGroups": {
+            "Address": {
+              "fieldSets": {
+                "Address Lines": {
+                  "key": "addressLines",
+                  "fields": [
+                    "*.parsedAddress.houseNumber",
+                    "*.parsedAddress.houseName",
+                    "*.parsedAddress.road"
+                  ]
+                },
+                "City": {
+                  "key": "city",
+                  "fields": ["*.parsedAddress.city"]
+                },
+                "Postcode": {
+                  "key": "postcode",
+                  "fields": ["*.parsedAddress.postcode"]
+                },
+                "State": {
+                  "key": "state",
+                  "fields": ["*.parsedAddress.stateDistrict"]
+                }
+              }
+            },
+            "Business": {
+              "fieldSets": {
+                "Business Name": {
+                  "key": "companyName",
+                  "fields": [
+                    "*.parsedBusinessName.businessDisplay",
+                    "*.parsedBusinessName.businessName",
+                    "*.parsedBusinessName.businessNameClean"
+                  ]
+                },
+                "Hotlist ID": {
+                  "key": "hotlistId",
+                  "fields": ["hotlistId"]
+                }
+              }
+            },
+            "Individual": {
+              "fieldSets": {
+                "Forenames": {
+                  "key": "forenames",
+                  "fields": [
+                    "*.parsedCustomerName.forename",
+                    "*.parsedCustomerName.middlename",
+                    "*.fullName"
+                  ]
+                },
+                "Surname": {
+                  "key": "surname",
+                  "fields": ["*.surname", "*.fullName"]
+                },
+                "Hotlist ID": {
+                  "key": "hotlistId",
+                  "fields": ["hotlistId"]
+                }
+              }
+            },
+            "Telephone": {
+              "fieldSets": {
+                "Telephone": {
+                  "key": "telephone",
+                  "fields": [
+                    "*.telephoneNumber",
+                    "*.cleansedTelephoneNumber.telephoneDisplay",
+                    "*.cleansedTelephoneNumber.telephoneClean"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "entities": {
+        "address": {
+          "displayName": "Address"
+        },
+        "business": {
+          "displayName": "Business",
+          "resolveByDefault": true,
+          "collectSubRecords": {
+            "all": false
+          }
+        },
+        "individual": {
+          "displayName": "Individual",
+          "resolveByDefault": true
+        },
+        "telephone": {
+          "displayName": "Telephone"
+        },
+        "account": {
+          "displayName": "Account"
+        }
+      }
+    }
+  }
+}

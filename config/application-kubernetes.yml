@@ -1,0 +1,13 @@
+#Configures spring boot actuator to allow anonymous scraping of prometheus metrics from the quantexa apps
+endpoints.prometheus.sensitive: false
+
+quantexa.security:
+  authentication.jwt.secret: ${JWT_TOKEN}
+
+quadit4j:
+  handlers:
+    - org.audit4j.handler.db.DatabaseAuditHandler
+    - org.audit4j.core.handler.file.FileAuditHandler
+  file:
+    dir: /var/log
+    prefix: quadit.${container.name}

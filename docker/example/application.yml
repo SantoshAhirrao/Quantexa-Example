@@ -1,0 +1,2 @@
+spring.cloud.config.server.overrides:
+  quantexa.security.authentication.jwt.secret: $^CvDXv^_$X+E%#G%CadD#$x%rh$8*HNF4_e%2np+*SbqaBL87

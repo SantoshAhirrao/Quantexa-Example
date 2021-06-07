@@ -1,0 +1,73 @@
+{
+  "name": "example",
+  "projectNameShort": "example",
+  "version": "1.0.5",
+  "useIntelligence": true,
+  "generatePlaceholderCode": false,
+  "dataSources": [
+    "customer",
+    "hotlist",
+    "intelligence",
+    "transaction"
+  ],
+  "subProjects": [
+    {
+      "type": "AppInvestigateMemento"
+    },
+    {
+      "type": "AppResolveMemento"
+    },
+    {
+      "type": "AppSearchMemento"
+    },
+    {
+      "type": "AppSecurityMemento"
+    },
+    {
+      "type": "AppGraphScriptMemento"
+    },
+    {
+      "type": "GatewayProjectMemento"
+    },
+    {
+      "type": "ConfigServiceProjectMemento"
+    },
+    {
+      "type": "UIProjectMemento"
+    },
+    {
+      "type": "ScoringProjectMemento"
+    },
+    {
+      "type": "ScoringBatchProjectMemento"
+    },
+    {
+      "type": "DataGeneratorProjectMemento"
+    },
+    {
+      "name": "example-graph-scripting",
+      "serviceNameShort": "",
+      "type": "GraphScriptingProjectMemento"
+    }
+  ],
+  "hostingEnvironments": [
+    {
+      "name": "project-example",
+      "version": "0.7.4-SNAPSHOT",
+      "cloudProvider": "azure",
+      "useCloudPostgres": true
+    },
+    {
+      "name": "green-1-project-example",
+      "version": "0.7.4-SNAPSHOT",
+      "cloudProvider": "google",
+      "useCloudPostgres": true
+    },
+    {
+      "name": "green-1-accelerators-1",
+      "version": "0.7.4-SNAPSHOT",
+      "cloudProvider": "google",
+      "useCloudPostgres": true
+    }
+  ]
+}

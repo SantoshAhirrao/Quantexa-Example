@@ -1,0 +1,6 @@
+---
+
+node_master: true
+
+# Mount Persistent data disk for Dedicated Master Node only
+dedicated_master_data_disk_mount_device: sdc

@@ -1,0 +1,81 @@
+server:
+  port: 8083
+  
+logging:
+  level:
+    com.quantexa.scoring: INFO
+    
+scoring:
+  mode:
+  postcode.lookup: ${config-files.dir}/postcode-lookup.csv
+  model-providers:
+    model: com.quantexa.example.scoring.model.RealtimeModelProvider
+  parameters:
+    sources:
+      scorecard:
+        sourceconfiguration:
+          path: ..\..\..\config\ScorecardCustomerParameters.csv
+          sourcetype: csv
+          paramtype: scorecardParameter
+      scorecardGroup:
+        sourceconfiguration:
+          path: ..\..\..\config\ScorecardCustomerGroups.csv
+          sourcetype: csv
+          paramtype: scorecardGroupParameter
+          namespace: scoreCardGroup
+      standardParams:
+        sourceconfiguration:
+          path: ..\..\..\config\parameterFile.xlsx
+          sourcetype: excel
+          paramtype: scoreParameter
+quadit4j:
+  file:
+    dir: .
+    prefix: app-resolve
+
+---
+
+spring:
+  profiles: docker
+
+scoring:
+  mode:
+  postcode.lookup: ${config-files.dir}/postcode-lookup.csv
+  model-providers:
+    model: com.quantexa.example.scoring.model.RealtimeModelProvider
+  parameters:
+    sources:
+      scorecard:
+        sourceconfiguration:
+          path: ./config-files/ScorecardCustomerParameters.csv
+          sourcetype: csv
+          paramtype: scorecardParameter
+      scorecardGroup:
+        sourceconfiguration:
+          path: ./config-files/ScorecardCustomerGroups.csv
+          sourcetype: csv
+          paramtype: scorecardGroupParameter
+          namespace: scoreCardGroup
+      standardParams:
+        sourceconfiguration:
+          path: ./config-files/parameterFile.xlsx
+          sourcetype: excel
+          paramtype: scoreParameter
+
+quadit4j:
+  file:
+    dir: /var/log
+
+---
+
+spring:
+  profiles: docker-production
+
+quantexa.security.authentication.instance-role: user
+
+---
+
+spring.profiles: kubernetes
+
+ldap:
+  url: ldap://gateway-ldap:8388/

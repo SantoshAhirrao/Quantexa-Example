@@ -1,0 +1,36 @@
+<div class="main" *ngIf="entity">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab header="Entity Info" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngIf="entity.addressDisplay">
+                    <dt class="ui-g-4">Address:</dt><dd class="ui-g-8" [innerHTML]="entity.addressDisplay|keepHtml"></dd>
+                </ng-container>
+                <!-- Work out how to add google street view here-->
+            </dl>
+        </p-accordionTab>
+        <p-accordionTab header="Score Details" *ngIf="scores" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngFor="let score of scores | keyvalue">
+                    <ng-container *ngIf="score.key !== 'Total Score'">
+                        <dt class="ui-g-6">{{score.key}}:</dt>
+                        <dd class="ui-g-6">
+                            <qe-lozenge [color]="getScoreColor(score.value)" [text]="score.value"></qe-lozenge>
+                        </dd>
+                    </ng-container>
+                </ng-container>
+                <dt class="ui-g-6"><strong>Total Score:</strong></dt>
+                <dd class="ui-g-6">
+                    <qe-lozenge [color]="getScoreColor(totalScore)" [text]="totalScore"></qe-lozenge>
+                </dd>
+            </dl>
+        </p-accordionTab>
+        <p-accordionTab header="Additional Information" [selected]="true">
+            <dl class="ui-g">
+                <dt class="ui-g-4">Total Documents:</dt>
+                <dd class="ui-g-8" [innerHTML]="entity.total_documents|keepHtml"></dd>
+                <dt class="ui-g-4">Total Records:</dt>
+                <dd class="ui-g-8" [innerHTML]="entity.total_records|keepHtml"></dd>
+            </dl>
+        </p-accordionTab>
+    </p-accordion>
+</div>

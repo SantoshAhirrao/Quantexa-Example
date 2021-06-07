@@ -1,0 +1,177 @@
+---
+
+# Configuration files
+fluentd_config:
+
+ # This configuration reads elasticsearch, nginx, fail2ban, and yum logs, then sends them to azure storage
+ - name: "services"
+   content: |
+     <worker 0>
+       <source>
+         @type          tail
+         @id            in_tail_container
+
+         # The path of the logs is taken from the elasticsearch Ansible role
+         path           {{ es_log_dir }}/{{ inventory_hostname }}-{{ es_instance_name }}/{{ project_name }}.log
+         pos_file       {{ fluentd_path }}/var/db/fluentd-elasticsearch-{{ es_instance_name }}.pos
+
+         # Tag ElasticSearch logs as service.elasticsearch. This will be used by the
+         # output plugin to store service logs in the appropriate location
+         tag            service.elasticsearch.*
+
+         # Options
+         read_from_head true
+
+         # Don't care about the log format
+         <parse>
+           @type none
+         </parse>
+       </source>
+     </worker>
+
+     <worker 0>
+       <source>
+         @type          tail
+
+         # The path of the logs is taken from the nginx Ansible role
+         path           {{ nginx_log_dir }}/*.log
+         pos_file       {{ fluentd_path }}/var/db/fluentd-nginx.pos
+
+         # Tag Nginx logs as service.nginx. This will be used by
+         # the output plugin to store service logs in the appropriate location
+         tag            service.nginx.*
+
+         # Options
+         read_from_head true
+
+         <parse>
+           @type none
+         </parse>
+       </source>
+     </worker>
+
+     <worker 0>
+       <source>
+         @type          tail
+
+         path           /var/log/yum.*
+         pos_file       {{ fluentd_path }}/var/db/fluentd-yum.pos
+
+         # Tag yum logs as service.yum. This will be used by
+         # the output plugin to store service logs in the appropriate location
+         tag            service.yum.*
+
+         # Options
+         read_from_head true
+
+         <parse>
+           @type none
+         </parse>
+       </source>
+     </worker>
+
+     <worker 0>
+       <source>
+         @type          tail
+
+         path           /var/log/fail2ban.*
+         pos_file       {{ fluentd_path }}/var/db/fluentd-fail2ban.pos
+
+         # Tag fail2ban logs as service.fail2ban. This will be used by
+         # the output plugin to store service logs in the appropriate location
+         tag            service.fail2ban.*
+
+         # Options
+         read_from_head true
+
+         <parse>
+           @type none
+         </parse>
+       </source>
+     </worker>
+
+     <filter service.**>
+       @type record_transformer
+       @id filter_service_name
+       enable_ruby true
+       <record>
+         log_type service
+         service ${tag_parts[1]}
+       </record>
+     </filter>
+
+     # Count number of incoming records per service tag
+     <filter service.**>
+       @type prometheus
+       <metric>
+         name fluentd_input_status_num_service_records_total
+         type counter
+         desc The total number of incoming records
+         <labels>
+           tag      ${tag}
+           hostname ${hostname}
+           project  {{ project_name }}
+           log_type service
+           service  ${service}
+         </labels>
+       </metric>
+     </filter>
+
+     <worker 0>
+       # This output is for logs marked with service.* tags only
+       <match service.**>
+         @type copy
+
+         <store **>
+           @type azurestorage
+           @id out_service_azure
+
+           # Access to Azure
+           azure_storage_account    {{ storage_account_logs_name }}
+           azure_storage_access_key {{ storage_account_logs_access_key }}
+           azure_container          logs
+           azure_storage_type       blob
+
+           # Path of the logs inside the Azure container
+           time_slice_format        %Y%m%d-%H%M
+           path                     ${tag[1]}/{{ inventory_hostname }}/%Y/%m/%d/
+           azure_object_key_format  %{path}${tag[1]}_{{ project_name }}_%{time_slice}_%{index}.%{file_extension}
+
+           # Options
+           store_as                 gzip
+           auto_create_container    true
+
+           # Buffering. To safeguard the file system we flush logs either every hour or
+           # after 5GB of logging
+           <buffer tag,time>
+             @type            file
+             total_limit_size 5G
+             path             {{ fluentd_path }}/var/db/fluentd-buffers/azure/service
+             timekey          600s
+             timekey_wait     15s
+             timekey_use_utc  true
+           </buffer>
+
+           <format>
+             @type json
+           </format>
+         </store>
+
+         # Prometheus to count how many output events happen on this output
+         <store>
+           @type prometheus
+           <metric>
+             name fluentd_output_status_num_service_records_total
+             type counter
+             desc The total number of outgoing records
+             <labels>
+               tag      ${tag}
+               hostname ${hostname}
+               project  {{ project_name }}
+               log_type   ${log_type}
+               service    ${service}
+             </labels>
+           </metric>
+         </store>
+       </match>
+     </worker>

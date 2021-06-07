@@ -1,0 +1,18 @@
+<svg width="214" height="200" viewBox="0 0 214 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-8013 -3344)">
+<g id="Group">
+<g id="Union">
+<use xlink:href="#path0_fill" transform="translate(8013 3344)" fill="#607994" fill-opacity="0.3"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(8141.14 3449.89)" fill="#607994" fill-opacity="0.3"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 105.866 0L 60.874 0C 20.2881 0 0 14.0566 0 42.1699L 0 94.8193C 0 122.417 20.0479 136.196 60.1543 136.196L 85.3789 136.196L 115.867 136.193L 115.867 115.502L 81.0391 115.502L 57.5049 115.505C 34.2456 115.505 22.6211 108.613 22.6211 94.8145L 22.6211 42.165C 22.6211 27.6687 34.2505 20.4231 57.5049 20.4231L 109.471 20.4231C 130.968 20.4231 141.715 26.9714 141.715 40.0681L 141.714 64.8899L 141.714 94.6301L 164.805 94.6301L 164.806 73.1938L 164.806 41.9023C 164.806 13.9707 145.156 0 105.866 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 85.1953 68.2623C 75.9856 78.2617 65.3974 86.9776 53.7882 94.107L -7.78989e-08 8.22584C 3.70636 5.93695 7.06047 3.16806 9.97042 0L 85.1953 68.2623Z"/>
+</defs>
+</svg>

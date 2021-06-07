@@ -1,0 +1,27 @@
+server:
+  port: 8081
+
+banner.image.location: classpath:explorer-ui.png
+banner.image.invert: true
+banner.image.width: 150
+
+logging:
+  level:
+    org.springframework: WARN
+zuul:
+  host:
+    socket-timeout-millis: 20000
+
+quadit4j:
+  file:
+    dir: .
+    prefix: explorer-ui
+
+---
+
+spring:
+  profiles: docker
+
+quadit4j:
+  file:
+    dir: /var/log

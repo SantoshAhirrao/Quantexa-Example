@@ -1,0 +1,23 @@
+{
+    "investigations": [
+        {
+            "id": {
+                "value": "d60eaa89-104e-466f-93f7-179f4ed2b1ef"
+            },
+            "createdDateTime": "2018-04-12T13:17:15.000Z",
+            "createdBy": "rubenmoreno",
+            "name": null,
+            "state": "Active"
+        },
+        {
+            "id": {
+                "value": "c17a3e4d-5e6c-46c3-9f35-2fc0e5a75354"
+            },
+            "createdDateTime": "2018-04-12T13:12:31.000Z",
+            "createdBy": "rubenmoreno",
+            "name": null,
+            "state": "Active"
+        }
+    ],
+    "totalSize": 2
+}

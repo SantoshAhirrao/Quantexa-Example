@@ -1,0 +1,18 @@
+google_fluent_active_configs:
+- syslog
+- syslog_endpoint
+- accesslog
+- elasticsearch
+- fail2ban
+- nginx
+- yum
+
+
+google_fluent_custom_config_templates:
+- accesslog.conf.j2
+- syslog.conf.j2
+- syslog_endpoint.conf.j2
+- elasticsearch.conf.j2
+- fail2ban.conf.j2
+- nginx.conf.j2
+- yum.conf.j2

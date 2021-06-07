@@ -1,0 +1,12 @@
+DROP DATABASE acl;
+DROP DATABASE connect;
+DROP DATABASE bulk_search;
+DROP DATABASE security;
+DROP DATABASE explorer_investigation;
+DROP DATABASE transaction_explorer;
+CREATE DATABASE acl;
+CREATE DATABASE connect;
+CREATE DATABASE bulk_search;
+CREATE DATABASE security;
+CREATE DATABASE explorer_investigation;
+CREATE DATABASE transaction_explorer;

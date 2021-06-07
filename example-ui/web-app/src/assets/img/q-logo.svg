@@ -1,0 +1,18 @@
+<svg width="32" height="30" viewBox="0 0 32 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>q-logo</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-8890 -2897)">
+<g id="q-logo">
+<g id="Union">
+<use xlink:href="#path0_fill" transform="translate(8890 2897)" fill="#FFFFFF"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(8909.22 2912.88)" fill="#59978A"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 15.8799 0L 9.13086 0C 3.04297 0 0 2.1084 0 6.32544L 0 14.2227C 0 18.3625 3.00684 20.4292 9.02344 20.4292L 12.8066 20.4292L 17.3799 20.4287L 17.3799 17.3252L 12.1562 17.3252L 8.62598 17.3257C 5.13672 17.3257 3.39355 16.2917 3.39355 14.2219L 3.39355 6.32471C 3.39355 4.15015 5.1377 3.06348 8.62598 3.06348L 16.4199 3.06348C 19.6455 3.06348 21.2568 4.04565 21.2568 6.01025L 21.2568 9.7334L 21.2568 10.979L 21.2568 14.1943L 24.7207 14.1943L 24.7207 10.979L 24.7207 9.7334L 24.7207 6.28516C 24.7207 2.0957 21.7734 0 15.8799 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 12.7792 10.2392C 11.3977 11.7391 9.80952 13.0465 8.06815 14.1159L -1.16847e-08 1.23386C 0.555949 0.890534 1.05906 0.475204 1.49555 0L 12.7792 10.2392Z"/>
+</defs>
+</svg>

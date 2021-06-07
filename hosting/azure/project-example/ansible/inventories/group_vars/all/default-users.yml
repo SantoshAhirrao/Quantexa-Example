@@ -1,0 +1,36 @@
+---
+users_fetch_keys: []
+users_local_store: /quantexa/users-data
+users_uid_offset: 1000
+
+users_allowed_multiple_keys:
+  - daveburt
+
+users_system_groups:
+  - name: quantexa
+  - name: quantexa-sudo
+
+all_default_users:
+  - username: daveburt
+    group:    quantexa
+    groups:   [quantexa-sudo]
+
+  - username: jamiehutton
+    group:    quantexa
+    groups:   [quantexa-sudo]
+
+  - username: adampitt
+    group:    quantexa
+    groups:   [quantexa-sudo]
+
+  - username: daveburt-admin
+    group:    quantexa
+    groups:   [quantexa-sudo]
+
+  - username: jamiehutton-admin
+    group:    quantexa
+    groups:   [quantexa-sudo]
+
+  - username: adampitt-admin
+    group:    quantexa
+    groups:   [quantexa-sudo]

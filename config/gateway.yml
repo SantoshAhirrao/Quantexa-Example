@@ -1,0 +1,279 @@
+server.port: 8080
+
+banner.image.location: classpath:gateway.png
+banner.image.invert: false
+banner.image.width: 120
+
+auth.module: ldap
+
+logging:
+  level:
+    org.springframework: WARN
+security:
+  sessions: ALWAYS
+zuul:
+  ignoredPatterns: /,/api-root/**,/user,/saveTotp/**,/login,/login/,/health,/metrics,/prometheus # Ignore routes served by gateway application controller
+  routes:
+    app-graph-script:
+      sensitive-headers: # Do not strip any HTTP headers
+    app-investigate:
+      sensitive-headers: # Do not strip any HTTP headers
+    app-resolve:
+      sensitive-headers: # Do not strip any HTTP headers
+    app-search:
+      sensitive-headers: # Do not strip any HTTP headers
+    app-security:
+      sensitive-headers: # Do not strip any HTTP headers
+    acl:
+      stripPrefix: false
+      serviceId: app-security
+      sensitive-headers:
+    ui:
+      serviceId: example-ui
+      sensitive-headers:
+    bulk:
+      serviceId: app-search
+      sensitive-headers:
+    search:
+      stripPrefix: false
+      serviceId: app-search
+      sensitive-headers:
+    entity-search:
+      stripPrefix: false
+      serviceId: app-search
+      sensitive-headers:
+    explorer:
+      serviceId: app-investigate
+      sensitive-headers:
+    intelligence:
+      stripPrefix: false
+      serviceId: app-investigate
+      sensitive-headers:
+    security:
+      stripPrefix: false
+      serviceId: app-security
+      sensitive-headers:
+    resolver:
+      stripPrefix: false
+      serviceId: app-resolve
+      sensitive-headers:
+    connect:
+      stripPrefix: false
+      serviceId: app-investigate
+      sensitive-headers:
+    ui-redirect: # Any additional routes will be redirected to the ui service
+      path: "/**"
+      serviceId: example-ui
+      sensitive-headers:
+      stripPrefix: false
+  host:
+    socket-timeout-millis: 200000
+
+ribbon:
+  MaxConnectionsPerHost: 100
+  MaxTotalConnections: 1000
+  ReadTimeout: 182000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 180000
+
+ldap:
+  url: ldap://localhost:8388/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+
+quadit4j:
+  file:
+    dir: .
+    prefix: gateway
+
+---
+
+# add this to run config
+# -Dspring.profiles.active=dev,secure-gateway
+spring:
+  profiles: secure-gateway
+
+server.ssl:
+  enabled: true
+  key-alias: "ip435-saml-app.quantexa.com"
+  key-store: classpath:quantexa.p12
+  key-store-type: PKCS12
+  key-store-password: Sp@rk123
+  key-password: Sp@rk123
+
+---
+
+spring:
+  profiles: ldap
+
+# manager dn should have privileges in LDAP to
+# perform a 'bind' operation.
+ldap:
+  url: ldaps://10.0.1.4:636
+  base-dn: dc=quantexa,dc=com
+  manager.dn: svc-tomgeary@quantexa.com
+  manager.password: xxxxxxx
+
+# example mappings.
+# here the customer would have a group in Active Directory
+# called 'accelerators'. We define a mapping to 'user' here.
+role:
+  mappings:
+    ROLE_ACCELERATORS: ROLE_USER
+    ROLE_CONTRACTORS: ROLE_READER
+    ROLE_ANALYSTS: ROLE_GRAPH-SCRIPT
+
+---
+
+spring:
+  profiles: dev
+
+spring.ldap.embedded.ldif: classpath:dev-server.ldif
+spring.ldap.embedded.base-dn: dc=quantexa,dc=com
+spring.ldap.embedded.port: 8388
+
+---
+
+spring:
+  profiles: docker
+
+spring.ldap.embedded.ldif: classpath:dev-server.ldif
+spring.ldap.embedded.base-dn: dc=quantexa,dc=com
+spring.ldap.embedded.port: 8388
+
+quadit4j.file.dir: /var/log
+
+server.tomcat.accesslog.directory: "/tmp/docker/quantexa-gateway/logs"
+server.tomcat.accesslog.enabled: true
+server.tomcat.accesslog.pattern: common
+
+---
+
+spring:
+  profiles: docker-production
+
+quantexa.security.authentication.instance-role: user
+
+spring.ldap.embedded.port: 389
+
+totp.enabled: true
+
+server.ssl:
+  enabled: true
+  key-alias: "*.quantexa.com"
+  key-store: /var/lib/sslcertificate/_.quantexa.com_private_key.pfx
+  key-store-type: PKCS12
+  key-store-password: Sp@rk123
+  key-password: Sp@rk123
+
+ldap:
+  url: ldap://ldap-host:389/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+  manager:
+    dn: cn=admin,dc=quantexa,dc=com
+    password: Sp@rkh@d00p!
+
+---
+
+spring:
+  profiles: kubernetes
+
+server.ssl:
+  enabled: true
+  key-alias: ${key.alias}
+  key-store: /var/lib/sslcertificate/quantexa.pfx
+  key-store-type: PKCS12
+  key-store-password: ${key.store.password}
+  key-password: ${key.password}
+
+quantexa.security.authentication.instance-role: user
+totp.enabled: false
+
+server.tomcat.accesslog.enabled: true
+server.tomcat.accesslog.pattern: common
+server.tomcat.accesslog.directory: "/var/log/tomcat"
+
+ldap:
+  url: ldap://gateway-ldap:8388/
+
+zuul:
+  ignoredPatterns: /,/api-root/**,/user,/saveTotp/**,/login,/health,/metrics,/prometheus # Ignore routes served by gateway application controller
+  routes:
+    app-graph-script:
+      url: http://app-graph-script.${NAMESPACE}.svc.cluster.local:8421
+      sensitive-headers:
+      serviceId:
+    ui:
+      url: http://explorer-ui.${NAMESPACE}.svc.cluster.local:8081
+      sensitive-headers:
+      serviceId:
+    bulk:
+      url: http://app-search.${NAMESPACE}.svc.cluster.local:8082
+      serviceId:
+      sensitive-headers:
+    search:
+      stripPrefix: false
+      url: http://app-search.${NAMESPACE}.svc.cluster.local:8082
+      serviceId:
+      sensitive-headers:
+    entity-search:
+      stripPrefix: false
+      url: http://app-search.${NAMESPACE}.svc.cluster.local:8082
+      serviceId:
+      sensitive-headers:
+    explorer:
+      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9001
+      serviceId:
+      sensitive-headers:
+    security:
+      stripPrefix: false
+      url: http://app-security.${NAMESPACE}.svc.cluster.local:8085
+      serviceId:
+      sensitive-headers:
+    acl:
+      stripPrefix: false
+      url: http://app-security.${NAMESPACE}.svc.cluster.local:8085
+      serviceId:
+      sensitive-headers:
+    intelligence:
+      stripPrefix: false
+      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9001
+      serviceId:
+      sensitive-headers:
+    connect:
+      stripPrefix: false
+      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9001
+      serviceId:
+      sensitive-headers:
+    resolver:
+      stripPrefix: false
+      serviceId: http://app-resolve.${NAMESPACE}.svc.cluster.local:8083
+      sensitive-headers:
+    ui-redirect: # Any additional routes will be redirected to the ui service
+      path: "/**"
+      url: http://explorer-ui.${NAMESPACE}.svc.cluster.local:8081
+      serviceId:
+      sensitive-headers:
+      stripPrefix: false
+
+---
+
+spring:
+  profiles: saml
+
+saml:
+  protocol: https
+  hostname-and-port: ip435-saml-app.quantexa.com:8080
+  base-path: /
+  mapRoles: false
+
+security.saml2.metadata-path: https://login.microsoftonline.com/67b38e99-fa79-4e92-9a49-4f49d3464568/federationmetadata/2007-06/federationmetadata.xml?appid=1abc6017-111d-4a08-9a05-ee3c736c35a3
+server.port: 8080
+

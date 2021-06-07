@@ -1,0 +1,17 @@
+<div class="content">
+    <h1>{{ context.data.investigation.metadata.name }}</h1>
+    <div *ngIf="this.hits.length > 0">
+        <table>
+            <tr>
+                <th>DATE</th>
+                <th>AMOUNT</th>
+                <th>DESCRIPTION</th>
+            </tr>
+            <tr *ngFor="let transaction of this.hits">
+                <td>{{ transaction.run_dt }}</td>
+                <td>{{ transaction.txn_amt_base }}£</td>
+                <td>{{ transaction.txn_desc }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

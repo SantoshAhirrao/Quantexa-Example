@@ -1,0 +1,38 @@
+---
+
+#
+# Configuration for the Hadoop Master nodes
+#
+- hosts: qcp-core-green-1:&dataproc-master
+  become: yes
+  pre_tasks:
+    - name: 'Attach Persistent Disk on DataProc Master Nodes'
+      script: '../file_store/dataproc_scripts/attachPD.sh'
+  roles:
+    - role: data-volume
+    # Security
+    - role: base-security
+    # Users and their environment
+    - role: users
+    - role: sudo
+    # Logging and Monitoring
+    - role: node-exporter
+  tasks:
+    - name: 'Update Permission on Mounted device'
+      file:
+        path:  "{{ data_volume_mount_path }}"
+        state: directory
+        mode:  0775
+        owner: root
+        group: hadoop
+
+#
+# Configuration for the Hadoop Worker nodes
+#
+- hosts: qcp-core-green-1:&dataproc-worker
+  become: yes
+  roles:
+   # Security
+   - role: base-security
+   # Logging and Monitoring
+   - role: node-exporter

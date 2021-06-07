@@ -1,0 +1,80 @@
+---
+
+#
+# Project specific configuration
+#
+# NOTE: Update this section with the project's specific details. Put the
+# associated access key in the encrypted secrets file.
+#
+
+# Name of the project
+project_name:              qcp-core-green-1
+
+internal_repositories_enabled: yes
+
+#
+# ElasticSearch configuration
+#
+
+es_java_install:           false
+es_plugins_reinstall:      false
+es_instance_name:          "{{ ansible_hostname }}"
+es_log_dir:                "/var/log/elasticsearch"
+es_network_host:           "[_local_, {{ ansible_eth0.ipv4.address }}]"
+es_data_dirs:              "/var/data/elasticsearch"
+es_plugins:
+ - plugin:                 "{{ internal_repositories_url }}/binaries/elasticsearch-discovery-gce-{{ es_version }}.zip"
+ - plugin:                 "{{ internal_repositories_url }}/binaries/elasticsearch-repository-gcs-{{ es_version }}.zip"
+es_config:
+  cluster.name:            "{{ project_name }}"
+  node.name:               node1
+  http.port:               9200
+  transport.tcp.port:      9300
+  node.data:               "{{ node_data }}"
+  node.master:             "{{ node_master }}"
+  bootstrap.memory_lock:   true
+  discovery.zen.hosts_provider: gce
+  cloud.gce.project_id:    "{{ gcp_project_id }}"
+  cloud.gce.zone:          "{{ gcp_default_zone }}"
+  # To avoid Split brain: discovery.zen.minimum_master_nodes = (NUMBER_OF_ES_MASTER_ELIGIBLE_NODES/2 + 1)
+  discovery.zen.minimum_master_nodes: "{{ ((((groups['elastic-master'] | length)/2) | int) + 1) }}"
+  http.publish_port:       "{{ nginx_http_template_listen }}"
+# Heap Size uses the recommendations from:
+#   https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html
+# Reserve 1GB for the operating system and allocate no more than half of the
+# available memory. Always allocate at least 256MB and never more that 31GB.
+es_heap_size:              "{{ [31766, [256, (ansible_memtotal_mb - 1024) / 2] | max] | min | int }}m"
+
+# ES Shard Awareness with Google Instance group
+es_shard_awareness:    false
+
+#
+# Persistent and Encrypted data & log volumes
+# You will always have 2 disks apart from Boot Disk:
+#       (1) Log Disk:  This will be a persistent disk, mounted on 'sdb'
+#       (2) Data Disk: This can be a Local SSD (375 GB) or a persistent disk.
+#                      If it is Local SSD it is mounted on 'nvme0n1'
+#                      If it is Persistent disk it is mounted on 'sdc'
+#
+
+# Path where the log device will be mounted
+log_volume_mount_device_id: sdb
+log_volume_mount_full_path: /logs
+# Symlinks from standard system location to log directories
+log_volume_dir_symlinks:
+  - src:   elasticsearch
+    dest:  /var/log/elasticsearch
+    force: yes
+  - src:   nginx
+    dest:  /var/log/nginx
+    force: yes
+
+# Path where the data device will be mounted
+# Change "data_volume_mount_device_id" to "sdc" if your don't use Local SSD and instead use persistent data disk
+data_volume_mount_device_id: nvme0n1
+data_volume_mount_full_path: /data
+# Symlinks from standard system location to data directories
+data_volume_dir_symlinks:
+  - src:   elasticsearch
+    dest:  "{{ es_data_dirs }}"
+    force: yes

@@ -1,0 +1,2 @@
+score,description,group,weight
+AT100_FirstPartyAggregatedTransaction,Score weight for FirstPartyAggregatedTransaction,FirstPartyAggregatedTransactionGroup,-10

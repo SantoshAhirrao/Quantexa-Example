@@ -1,0 +1,74 @@
+package com.quantexa.example.scoring.scores.fiu.rollup
+
+import com.quantexa.example.scoring.model.fiu.RollupModel.{CustomerRollup, TransactionScoreOutput}
+import com.quantexa.example.scoring.model.fiu.ScoringModel.{CustomerKey, TransactionKeys}
+import com.quantexa.example.scoring.scores.fiu.transaction.UnusualOriginatingCountryForCustomer
+import com.quantexa.scoring.framework.model.ScoreModel.ScoreInput
+import com.quantexa.scoring.framework.parameters.{IntegerScoreParameter, ParameterIdentifier}
+import monocle.Prism
+import monocle.macros.GenLens
+import org.scalatest.{FlatSpec, Matchers}
+
+class CustomerRollupUnusualOriginatingCountryForCustomerBatchTest extends FlatSpec with Matchers {
+  private val maximalSeverityScore = Some(100)
+  private val customerIDUnderTest = "Cust002"
+  private val scoreId =  UnusualOriginatingCountryForCustomer.id
+  private val analysisDate = java.sql.Date.valueOf("2018-01-30")
+  private val scoreToTest  = CustomerRollupUnusualOriginatingCountryForCustomerBatch(runDate = analysisDate)
+  private val scoreTrigger = TransactionScoreOutput(
+    keys=TransactionKeys(
+      "Txn002",
+      customerIDUnderTest,
+      analysisDate),
+    severity=Some(99),
+    band=None,
+    description=None)
+  private val noScoresInOutcomePeriod: CustomerRollup[TransactionScoreOutput] = CustomerRollup(
+    subject =customerIDUnderTest,
+    keys = CustomerKey(customerIDUnderTest),
+    customScoreOutputMap = Map.empty
+  )
+  private val analysisDateLens = GenLens[TransactionScoreOutput](_.keys.analysisDate)
+  private val severityLens = GenLens[TransactionScoreOutput](_.severity)
+  private val customerRollupCustomScoreOutputMapLens = GenLens[CustomerRollup[TransactionScoreOutput]](_.customScoreOutputMap)
+  private val customerRollupCustomScoreOutputMapPrism = Prism[CustomerRollup[TransactionScoreOutput], Seq[TransactionScoreOutput]]
+    {_.customScoreOutputMap.get(scoreId)}
+    {s:Seq[TransactionScoreOutput] => customerRollupCustomScoreOutputMapLens.set(Map(scoreId -> s))(noScoresInOutcomePeriod)}
+
+  implicit val scoreInput: ScoreInput = ScoreInput.empty.copy(
+    parameters = Map(
+      ParameterIdentifier(None,"outcomePeriodMonths") -> IntegerScoreParameter("outcomePeriodMonths","Outcome Period in months",1),
+      ParameterIdentifier(None, "CustomerRollupUnusualCountryScores_maxNumberOfCountriesInDescription") -> IntegerScoreParameter("CustomerRollupUnusualCountryScores_maxNumberOfCountriesInDescription", "Max number of countries to show in the description", 10)
+    )
+  )
+
+  "CustomerRollupUnusualOriginatingCountryForCustomer" should
+    """take the maximum severity from three scores within the outcome period,
+      |and puts the relevant dependent triggers of "Unusual originating country for customer" into underlying scores """.stripMargin in {
+    val rollupToTest = customerRollupCustomScoreOutputMapPrism.reverseGet(
+      Seq(
+        scoreTrigger,
+        (analysisDateLens.set(java.sql.Date.valueOf("2018-01-13")) andThen severityLens.set(Some(50))) (scoreTrigger),
+        (analysisDateLens.set(java.sql.Date.valueOf("2018-01-01")) andThen severityLens.set(maximalSeverityScore)) (scoreTrigger)
+      ))
+    val result = scoreToTest.score(rollupToTest)
+    result.get.severity shouldBe maximalSeverityScore
+    result.get.underlyingScores should have size 3
+  }
+
+  it should  """not trigger if there are triggers for the "Unusual originating country for customer" but not in the outcome period """ in {
+    val rollupToTest = customerRollupCustomScoreOutputMapPrism.reverseGet(
+      Seq(
+        (analysisDateLens.set(java.sql.Date.valueOf("2017-01-13")) andThen severityLens.set(Some(50))) (scoreTrigger),
+        (analysisDateLens.set(java.sql.Date.valueOf("2017-01-01")) andThen severityLens.set(maximalSeverityScore)) (scoreTrigger)
+      ))
+    val result = scoreToTest.score(rollupToTest)
+    result should not be defined
+  }
+
+  it should """not trigger if there are no triggers for  "Unusual originating country for customer" """ in {
+    val rollupToTest = customerRollupCustomScoreOutputMapPrism.reverseGet(Seq.empty)
+    val result = scoreToTest.score(rollupToTest)
+    result should not be defined
+  }
+}

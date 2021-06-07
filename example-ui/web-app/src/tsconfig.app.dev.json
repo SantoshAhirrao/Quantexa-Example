@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.app.json",
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "paths": {
+            "@quantexa/explorer-web-core": ["node_modules/@quantexa/explorer-web-core"],
+            "@quantexa/explorer-web-core/*": ["node_modules/@quantexa/explorer-web-core/*"],
+            "@angular/*": ["node_modules/@angular/*"],
+            "sigma": ["node_modules/sigma"],
+            "leaflet": ["node_modules/leaflet"],
+            "leaflet.markercluster": ["node_modules/leaflet.markercluster"]
+        }
+    }
+}

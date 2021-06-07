@@ -1,0 +1,14 @@
+<div class="main" *ngIf="item">
+    <dl class="ui-g">
+        <dt class="ui-g-4">Telephone Number:</dt>
+        <dd class="ui-g-8" [innerHTML]="entity.telephoneDisplay|keepHtml"></dd>
+        <dt class="ui-g-4">Total Documents:</dt>
+        <dd class="ui-g-8" [innerHTML]="entity.total_documents|keepHtml"></dd>
+        <dt class="ui-g-4">Total Records:</dt>
+        <dd class="ui-g-8" [innerHTML]="entity.total_records|keepHtml"></dd>
+        <dt class="ui-g-4">Entity Score:</dt>
+        <dd class="ui-g-8">
+            <qe-lozenge [color]="getScoreColor(totalScore)" [text]="totalScore"></qe-lozenge>
+        </dd>
+    </dl>
+</div>

@@ -1,0 +1,50 @@
+{
+  "privilegeSets": [
+    {
+      "name": "INVESTIGATION_READ",
+      "privileges": [
+        "GetCompoundGraph",
+        "GetInvestigationDocuments",
+        "GetGraph",
+        "GetTaggedGraph"
+      ]
+    }
+  ],
+  "defaultPrivilegeSet": {
+    "name": "INVESTIGATION_ALL",
+    "privileges": [
+      "AddInvestigationDocumentPolicies",
+      "AddItems",
+      "AddNatures",
+      "ApplyExpandPreview",
+      "ApplyRebuildGraph",
+      "CloneInvestigation",
+      "CountFilterExpandPreview",
+      "CreateTask",
+      "DeleteInvestigationRequest",
+      "DumpExpandPreview",
+      "ExpandGraph",
+      "GetCompoundGraph",
+      "GetGraph",
+      "GetInvestigationDocuments",
+      "GetInvestigationPolicies",
+      "GetTaggedGraph",
+      "GetUserPrivileges",
+      "GraphRedoRequest",
+      "GraphUndoRequest",
+      "InitialiseGraph",
+      "ReadPrivileges",
+      "RebuildCompoundGraph",
+      "RefreshGraph",
+      "RemoveInvestigationDocumentPolicies",
+      "RemoveNatureTypes",
+      "RemoveNodes",
+      "RenameInvestigation",
+      "RevertToTag",
+      "SaveGraphLayoutRequest",
+      "ScoreGraph",
+      "TagInvestigation",
+      "UpdatePrivileges"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+---
+
+#
+# Configuration for all the machines
+#
+- hosts: project-example:&elastic
+  become: yes
+  roles:
+   # Security
+   - role: encrypt-disk
+   - role: data-volume
+   - role: base-security
+   # Users and their environment
+   - role: users
+     users_system_users:    "{{ all_default_users }}"
+   - role: sudo
+   # ElasticSearch
+   - role: java
+   - role: quantexa-elastic-os-settings
+   - role: elasticsearch
+   - role: quantexa-elastic-synonyms
+   # Logging and Monitoring
+   - role: node-exporter
+   - role: ansible-es-cluster-exporter
+   - role: nginx
+   - role: nginx-exporter

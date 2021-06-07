@@ -1,0 +1,27 @@
+<div class="main">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab header="Entity account" *ngIf="model" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngIf="model.attributes.label">
+                    <dt class="ui-g-4">Account Number:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.label|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.fullName">
+                    <dt class="ui-g-4">Account Name:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.fullName|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.accountOpenedDate">
+                    <dt class="ui-g-4">Opened Date:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.accountOpenedDate|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.accountClosedDate">
+                    <dt class="ui-g-4">Closed Date:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.accountClosedDate|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.accountRiskRating">
+                    <dt class="ui-g-4">Risk Rating:</dt><dd class="ui-g-8" [innerHTML]="model.attributes.accountRiskRating| number : '1.0-0'"></dd>
+                </ng-container>
+                <dt class="ui-g-4">Documents:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_documents}}</dd>
+                <dt class="ui-g-4">Records:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_records}}</dd>
+            </dl>
+        </p-accordionTab>
+    </p-accordion>
+</div>

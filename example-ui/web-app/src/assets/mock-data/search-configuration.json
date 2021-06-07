@@ -1,0 +1,68 @@
+{
+    "documents": [
+        {
+            "id": "aggregatedwire",
+            "name": "Transactions",
+            "default": false,
+            "listOrder": 1,
+            "tabOrder": 1,
+            "entitySearchLimit": 50
+        },
+        {
+            "id": "customerbusiness",
+            "name": "Customer (Business)",
+            "default": true,
+            "listOrder": 2,
+            "tabOrder": 2,
+            "entitySearchLimit": 50
+        },
+        {
+            "id": "customerindividual",
+            "name": "Customer (Individual)",
+            "default": true,
+            "listOrder": 3,
+            "tabOrder": 3,
+            "entitySearchLimit": 50
+        }
+    ],
+    "entities": [
+        {
+            "id": "business",
+            "name": "Business",
+            "default": true,
+            "listOrder": 1,
+            "tabOrder": 1,
+            "fields": [
+                "Industry",
+                "Incorporation Date YYYYMMDD",
+                "Business Name",
+                "Identification Numbers",
+                "Booking Country"
+            ]
+        },
+        {
+            "id": "transaction",
+            "name": "Transaction",
+            "default": false,
+            "listOrder": 2,
+            "tabOrder": 2,
+            "fields": [
+                "Amount",
+                "Code",
+                "Account"
+            ]
+        },
+        {
+            "id": "individual",
+            "name": "Individual",
+            "default": true,
+            "listOrder": 3,
+            "tabOrder": 3,
+            "fields": [
+                "Surname",
+                "DOB YYYYMMDD",
+                "Forenames"
+            ]
+        }
+    ]
+}

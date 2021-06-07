@@ -1,0 +1,23 @@
+global:
+  environment: google
+  fluentd:
+    image:
+      registry: eu.gcr.io/quantexa-core
+      tag: 0.3.0
+    output:
+      google:
+        enabled: true
+        projectName: example
+        bucketName: quantexa-green-1-accelerators-1-sink-archive
+        buffer:
+          path: /var/fluentd-buffers/gcs.buffer
+          sizeLimit: 10G
+
+nginx-ingress:
+  controller:
+    image:
+      repository:  eu.gcr.io/quantexa-core/nginx-ingress-controller
+
+kube-state-metrics:
+  image:
+    repository: eu.gcr.io/quantexa-core/kube-state-metrics

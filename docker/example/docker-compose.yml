@@ -1,0 +1,155 @@
+version: "2.1"
+services:
+  app-investigate:
+    image: quantexacontainerregistry.azurecr.io/project-example/app-investigate:0.7.3
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+      db-connect:
+        condition: service_started
+      db-investigation:
+        condition: service_started
+      db-security:
+        condition: service_started
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+  app-resolve:
+    image: quantexacontainerregistry.azurecr.io/project-example/app-resolve:0.7.3
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+  app-search:
+    image: quantexacontainerregistry.azurecr.io/project-example/app-search:0.7.3
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+  app-transaction:
+    image: quantexacontainerregistry.azurecr.io/project-example/app-transaction:0.7.3
+    networks:
+     - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+  explorer-ui:
+    image: quantexacontainerregistry.azurecr.io/project-example/example-ui:0.7.3
+    networks:
+      - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+  gateway:
+    image: quantexacontainerregistry.azurecr.io/project-example/gateway:$quantexaLibraries
+    ports:
+     - 44431:8080
+    networks:
+      - quantexa-internal
+    depends_on:
+      etcd:
+        condition: service_started
+      config-server:
+        condition: service_healthy
+    volumes:
+      - ./logs:/var/log:rw
+    # restart: always
+  config-server:
+    image: quantexacontainerregistry.azurecr.io/project-example/config-service:0.7.3
+    networks:
+      - quantexa-internal
+    depends_on:
+     - etcd
+    healthcheck:
+      #test: ["CMD", "curl", "-f", "http://etcd:2379/v2/quantexa/explorer/configserver/configserver:native:8888"]
+      test: ["CMD", "sleep", "25"]
+      interval: 5ms
+      timeout: 30s
+      retries: 5
+    volumes:
+      - ./logs:/var/log:rw
+      - ./config:/config
+    # restart: always
+
+  etcd:
+    image: quay.io/coreos/etcd
+    command:
+      /usr/local/bin/etcd
+      -name etcd
+      -advertise-client-urls http://etcd:2379,http://etcd:4001
+      -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:4001
+      -initial-advertise-peer-urls http://etcd:2380
+      -listen-peer-urls http://0.0.0.0:2380
+      -initial-cluster-token etcd-cluster-1
+      -initial-cluster etcd=http://etcd:2380
+      -initial-cluster-state new
+    networks:
+      - quantexa-internal
+    # restart: always
+  db-connect:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_DB=connect
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=Qu@ntexaD3mo
+    volumes:
+      - db-connect:/var/lib/postgresql/data
+    networks:
+      - quantexa-internal
+    # restart: always
+  db-investigation:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_DB=explorer_investigation
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=Qu@ntexaD3mo
+    volumes:
+      - db-investigation:/var/lib/postgresql/data
+    networks:
+      - quantexa-internal
+    # restart: always
+  db-security:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_DB=security
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=Qu@ntexaD3mo
+    volumes:
+      - db-security:/var/lib/postgresql/data
+    networks:
+      - quantexa-internal
+    mem_limit: 500M
+    # restart: always
+networks:
+  quantexa-internal:
+
+volumes:
+  db-connect:
+  db-investigation:
+  db-security:

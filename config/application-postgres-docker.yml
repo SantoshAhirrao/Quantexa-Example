@@ -1,0 +1,80 @@
+database.type: postgres
+
+acl.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://db-acl:5432/acl?user=postgres&password=Qu@ntexaD3mo
+      driver: org.postgresql.Driver
+      numThreads: 10
+      connectionTimeout: 10000
+      maxConnections: 10
+      minConnections: 5
+
+connect.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://db-connect:5432/connect?user=postgres&password=postgres
+      driver: org.postgresql.Driver
+      numThreads: 10
+      connectionTimeout: 10000
+      maxConnections: 10
+      minConnections: 5
+
+security.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://db-security:5432/security?user=postgres&password=Qu@ntexaD3mo
+      driver: org.postgresql.Driver
+      numThreads: 10
+      connectionTimeout: 10000
+      maxConnections: 10
+      minConnections: 5
+
+intelligence.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://db-investigation:5432/explorer_investigation?user=postgres&password=Qu@ntexaD3mo
+      driver: org.postgresql.Driver
+      numThreads: 10
+      connectionTimeout: 10000
+      maxConnections: 10
+      minConnections: 5
+
+investigation.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://db-investigation:5432/explorer_investigation?user=postgres&password=Qu@ntexaD3mo
+      driver: org.postgresql.Driver
+      numThreads: 10
+      connectionTimeout: 10000
+      maxConnections: 10
+      minConnections: 5
+
+task.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://db-investigation:5432/explorer_investigation?user=postgres&password=Qu@ntexaD3mo
+      driver: org.postgresql.Driver
+      numThreads: 10
+      connectionTimeout: 10000
+      maxConnections: 10
+      minConnections: 5
+

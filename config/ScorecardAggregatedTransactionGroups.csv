@@ -1,0 +1,2 @@
+group,description,chooseInGroupFunction
+FirstPartyAggregatedTransactionGroup,Configuration for FirstPartyAggregatedTransaction group,highestWeightSeverity

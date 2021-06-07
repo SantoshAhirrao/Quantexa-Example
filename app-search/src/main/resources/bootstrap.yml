@@ -1,0 +1,51 @@
+spring.application.name: app-search
+
+spring.profiles.active: dev
+
+spring:
+  cloud:
+    config:
+      discovery.enabled: true
+      failFast: true
+      retry:
+        maxAttempts: 30
+        initialInterval: 1000
+        multiplier: 1
+        maxInterval: 1000
+    etcd:
+      discovery.discoveryPrefix: /quantexa/explorer
+
+logging.level:
+  org.springframework: WARN
+
+---
+
+spring.profiles: dev
+
+spring.profiles.include:
+  - elastic-dev
+
+spring.cloud.etcd.uris: http://localhost:2379
+
+---
+
+spring.profiles: docker
+
+spring.profiles.include:
+  - elastic-docker
+  - akka-docker
+
+spring.cloud.etcd.uris: http://etcd:2379
+
+---
+
+spring.profiles: kubernetes
+
+spring:
+  cloud:
+    config:
+      discovery.enabled: false
+      uri: http://config-server.${NAMESPACE}.svc.cluster.local:8888
+    etcd:
+      discovery.enabled: false
+      uris:  http://etcd.${NAMESPACE}.svc.cluster.local:2379

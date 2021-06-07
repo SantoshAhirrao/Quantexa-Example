@@ -1,0 +1,37 @@
+<div class="main" *ngIf="document && document.source">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab [header]="document.source.fullName || document.source.registeredBusinessName" [selected]="true">
+            <dl class="ui-g">
+                <dt class="ui-g-4">Document Type:</dt>
+                <dd class="ui-g-8" [innerHTML]="document.documentType|keepHtml"></dd>
+                <dt class="ui-g-4">Hotlist ID:</dt>
+                <dd class="ui-g-8" [innerHTML]="document.source.hotlistId|keepHtml"></dd>
+                <dt class="ui-g-4">Date Added:</dt>
+                <dd class="ui-g-8" [innerHTML]="document.source.dateAdded|parseDate"></dd>
+                <ng-container *ngIf="document.source.fullName">
+                    <dt class="ui-g-4">Name:</dt><dd class="ui-g-8" [innerHTML]="document.source.fullName|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.registeredBusinessName">
+                    <dt class="ui-g-4">Name:</dt><dd class="ui-g-8" [innerHTML]="document.source.registeredBusinessName|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.registeredBusinessNumber">
+                    <dt class="ui-g-4">Registration no:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.registeredBusinessNumber|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.countryOfRegisteredBusiness">
+                    <dt class="ui-g-4">Registered Country:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.countryOfRegisteredBusiness|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.dateOfBirth">
+                    <dt class="ui-g-4">Date of Birth:</dt><dd class="ui-g-8" [innerHTML]="document.source.dateOfBirth|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.consolidatedAddress">
+                    <dt class="ui-g-4">Address:</dt><dd class="ui-g-8" [innerHTML]="document.source.consolidatedAddress|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.telephoneNumber">
+                    <dt class="ui-g-4">Phone Number:</dt><dd class="ui-g-8" [innerHTML]="document.source.telephoneNumber|keepHtml"></dd>
+                </ng-container>
+            </dl>
+        </p-accordionTab>
+    </p-accordion>
+</div>

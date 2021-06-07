@@ -1,0 +1,28 @@
+pipeline {
+    agent{
+        label 'accelerators-analyst-no-cache'
+    }
+
+    options {
+         gitLabConnection('gitlab.com')
+    }
+
+    stages {
+        stage('Build'){
+            steps {
+                updateGitlabCommitStatus state: 'pending'
+                echo "Building"
+		        sh(returnStdout: true, script: "cd $WORKSPACE/cicd/features; ./compile.sh")
+            }
+        }
+    }
+
+    post {
+        failure {
+            updateGitlabCommitStatus state: 'failed'
+        }
+        success {
+            updateGitlabCommitStatus state: 'success'
+        }
+    }
+}

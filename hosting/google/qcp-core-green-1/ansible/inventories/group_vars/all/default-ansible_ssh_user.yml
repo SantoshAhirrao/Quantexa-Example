@@ -1,0 +1,4 @@
+---
+
+# Make sure to always use the "*-admin" user
+ansible_ssh_user: "{{ lookup('env', 'USER') }}{% if not lookup('env', 'USER').endswith('-admin') %}-admin{% endif %}"

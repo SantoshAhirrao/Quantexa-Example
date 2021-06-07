@@ -1,0 +1,14 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+apply plugin: 'nu.studer.credentials'
+
+task dockerLogin(type: Exec) {
+  description 'Logs into docker container registry'
+  group = 'Docker'
+  workingDir './scripts'
+
+  if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+    commandLine 'cmd', '/c', 'docker-login.bat', docker_registry, docker_username, "\"${credentials.docker_password}\""
+  } else {
+    commandLine 'sh', './docker-login.sh', docker_registry, docker_username, credentials.docker_password
+  }
+}

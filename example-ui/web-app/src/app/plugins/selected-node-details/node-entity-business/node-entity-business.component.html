@@ -1,0 +1,32 @@
+<div class="main">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab header="Entity business" *ngIf="model" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngIf="model.attributes.registeredBusinessName">
+                    <dt class="ui-g-4">Business Name:</dt>
+                    <dd class="ui-g-8" [innerHTML]="model.attributes.registeredBusinessName|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.individualDisplay">
+                    <dt class="ui-g-4">Business Name:</dt>
+                    <dd class="ui-g-8" [innerHTML]="model.attributes.individualDisplay|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.countryOfRegisteredBusiness">
+                    <dt class="ui-g-4">Nationality:</dt>
+                    <dd class="ui-g-8" [innerHTML]="model.attributes.countryOfRegisteredBusiness|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.businessJoinedDate">
+                    <dt class="ui-g-4">Date Created:</dt>
+                    <dd class="ui-g-8" [innerHTML]="model.attributes.businessJoinedDate|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="model.attributes.businessJoinedDate">
+                    <dt class="ui-g-4">Date Ended:</dt>
+                    <dd class="ui-g-8" [innerHTML]="model.attributes.businessLeftDate|parseDate"></dd>
+                </ng-container>
+                <dt class="ui-g-4">Documents:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_documents}}</dd>
+                <dt class="ui-g-4">Records:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_records}}</dd>
+            </dl>
+        </p-accordionTab>
+    </p-accordion>
+</div>

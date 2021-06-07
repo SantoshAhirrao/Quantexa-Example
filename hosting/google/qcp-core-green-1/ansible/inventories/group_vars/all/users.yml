@@ -1,0 +1,13 @@
+---
+
+users_system_users: "{{ all_default_users + service_users}}"
+
+# Users configured on the system
+# NOTE: sudo is configured to give root access to the group "quantexa-sudo"
+service_users: []
+# Example
+#  - username: example-sudo-user
+#    group:    quantexa
+#    groups:   [quantexa-sudo]
+#  - username: example-user
+#    group:    quantexa

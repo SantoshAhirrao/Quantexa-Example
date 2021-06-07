@@ -1,0 +1,38 @@
+---
+
+nginx_main_template_enable:      true
+nginx_http_template_enable:      true
+nginx_http_template_proxy:       true
+nginx_status_enable:             true
+nginx_http_template_listen:      39200
+nginx_http_template_server_name: "{{ project_name }}-elastic-data-vm.quantexa.com"
+nginx_http_template_proxy_pass:  http://localhost:9200
+nginx_http_template_proxy_redirect: "off"
+nginx_http_client_max_body_size: 16M
+
+#
+# Use SSL
+#
+
+ssl_store_base:                  ../file_store/ssl_certificates
+
+nginx_http_ssl_template_enabled: true
+
+# What certificates/keys to use
+nginx_http_ssl_template_conf:
+  ssl_certificate:        /etc/nginx/ssl_certs/server-chain.crt
+  ssl_certificate_key:    /etc/nginx/ssl_certs/server.key
+  ssl_client_certificate: /etc/nginx/ssl_certs/trusted_certs.crt
+
+# What certificates/keys to install
+nginx_ssl_install:
+  ssl_certificate:        "{{ ssl_store_base }}/crt/{{ project_name }}-server-elasticsearch-chain.crt"
+  ssl_certificate_key:    "{{ ssl_store_base }}/key/{{ project_name }}-server-elasticsearch.key"
+  ssl_client_certificate: "{{ ssl_store_base }}/crt/{{ project_name }}-trusted_certs-chain.crt"
+
+# Enable the SSL ACLs and list the allowed certificates
+nginx_ssl_client_acl_enabled:    true
+nginx_ssl_client_acl:
+ - "emailAddress=info@quantexa.com,CN=Quantexa Applications for project {{ project_name }},OU=Quantexa Hosting Team,O=Quantexa Ltd,L=London,ST=London,C=GB"
+
+nginx_log_dir: "/var/log/nginx"

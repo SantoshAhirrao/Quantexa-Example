@@ -1,0 +1,27 @@
+<div class="main" *ngIf="model">
+    <section class="main" *ngIf="model">
+        <dl class="ui-g">
+            <dt class="ui-g-4">Address:</dt>
+            <dd class="ui-g-8" [innerHTML]="model.attributes.addressDisplay|keepHtml"></dd>
+            <dt class="ui-g-4">Documents:</dt>
+            <dd class="ui-g-8">{{model.attributes.total_documents}}</dd>
+            <dt class="ui-g-4">Records:</dt>
+            <dd class="ui-g-8">{{model.attributes.total_records}}</dd>
+        </dl>
+    </section>
+
+    <section class="main" *ngIf="model">
+        <iframe
+            class="googleMaps"
+            frameborder="0" style="border:0"
+            [src]="googleMapsUrl" allowfullscreen>
+        </iframe>
+
+        <iframe
+            class="googleMaps"
+            frameborder="0" style="border:0"
+            [src]="googleStreetViewUrl" allowfullscreen>
+        </iframe>
+    </section>
+
+</div>

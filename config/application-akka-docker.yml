@@ -1,0 +1,4 @@
+quantexa:
+  etcd:
+    host: etcd
+    port: 2379

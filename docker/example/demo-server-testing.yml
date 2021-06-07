@@ -1,0 +1,59 @@
+version: "2.1"
+services:
+  config-server:
+    environment:
+      - OTHER_SPRING_PROFILES_ACTIVE=docker-production
+  gateway:
+    networks:
+      - ldap-internal
+    environment:
+      - OTHER_SPRING_PROFILES_ACTIVE=docker-production
+    volumes:
+      - /quantexa/install/docker/sslcertificate:/var/lib/sslcertificate:ro
+  app-security:
+    networks:
+      - ldap-internal
+    environment:
+      - OTHER_SPRING_PROFILES_ACTIVE=docker-production
+  app-resolve:
+    depends_on:
+      quantexa-elastic:
+        condition: service_started
+      app-security:
+        condition: service_healthy
+  app-search:
+    depends_on:
+      quantexa-elastic:
+        condition: service_started
+      app-security:
+        condition: service_healthy
+  app-investigate:
+    depends_on:
+      quantexa-elastic:
+        condition: service_started
+      app-security:
+        condition: service_healthy
+    networks:
+      - ldap-internal
+    environment:
+      - OTHER_SPRING_PROFILES_ACTIVE=docker-production
+
+  quantexa-elastic:
+    build: /quantexa/install/docker/quantexa-elastic/
+    ulimits:
+      nofile: 65536
+    environment:
+      - ES_JAVA_OPTS=-Xms4G -Xmx4G
+    ports:
+     - "19200:9200"
+     - "19300:9300"
+    volumes:
+      - /quantexa/data/elastic/example:/usr/share/elasticsearch/data/quantexa
+    networks:
+      - quantexa-internal
+
+#This assumes that ldap is running has been started in a separate docker compose. This existing network will be shared by the gateway services of all demoes running on the server. Also defining a network specific to this docker-compose to be used by all other services.
+networks:
+  ldap-internal:
+    external:
+      name: ldap_ldap

@@ -1,0 +1,4 @@
+limited,ltd
+organisation,org
+company,comp
+&,and

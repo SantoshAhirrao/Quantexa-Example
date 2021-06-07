@@ -1,0 +1,12 @@
+id,entId,docId,string_blank
+E1,subject11_1,CUST11_1,
+E2,subject11_1,TRADE11_1,
+E3,subject11_1,TRADE11_2,
+E4,subject11_1,TRADE11_3,
+E5,acc11_1,TRADE11_1,
+E6,acc11_1,TRADE11_2,
+E7,acc11_2,TRADE11_2,
+E8,acc11_2,TRADE11_3,
+E9,addr11_1,TRADE11_1,
+E10,addr11_1,TRADE11_2,
+E11,addr11_1,TRADE11_3,

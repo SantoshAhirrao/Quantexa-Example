@@ -1,0 +1,2113 @@
+def checkUserProperty(String propertyName) {
+  if (!project.hasProperty(propertyName)) {
+    throw new GradleException('Property "' + propertyName + '" not defined, this should be defined in your "<USER_HOME>/.gradle/gradle.properties" file or on the command line using the -P flag.')
+  }
+}
+
+checkUserProperty('maven_url')
+
+ext.set('quantexa_explorer_releases', maven_url + "/quantexa-explorer-releases/")
+ext.set('quantexa_explorer_snapshots', maven_url + "/quantexa-explorer-snapshots/")
+ext.set('quantexa_accelerators_releases', maven_url + "/quantexa-accelerators-releases/")
+ext.set('quantexa_accelerators_snapshots', maven_url + "/quantexa-accelerators-snapshots/")
+
+def isDevMode() {
+  return project.hasProperty('dev') && project.getProperty('dev') == 'true'
+}
+
+if (isDevMode()) {
+  println "Development profile active, project jars will not be packed into containers"
+}
+
+buildscript {
+  ext {
+    if (gradle.startParameter.gradleHomeDir.getPath().contains("wrapper")) {
+      print('Gradle wrapper version: ')
+    } else {
+      print('Gradle version: ')
+    }
+    println(gradle.gradleVersion)
+    // Our custom gradle task (below) takes its version from gradle.properties
+    propertiesGradleVersion = gradleVersion
+
+    springBootVersion = '1.5.20.RELEASE'
+    moowork = '1.2.0'
+    gradleCredentials = '1.0.4'
+    gradleRelease = '2.8.0'
+    docker = '0.21.0'
+    nexusPlugin = '2.3.1'
+    quantexaPluginsVersion = "0.7.1"
+    scalaTestPlugin = '0.23'
+    gitInfoPlugin = "2.0.0"
+  }
+  ext.set('quantexa_gradle_plugins_releases', maven_url + "/quantexa-gradle-plugins-releases/")
+  ext.set('quantexa_gradle_plugins_snapshots', maven_url + "/quantexa-gradle-plugins-snapshots/")
+  ext.set('quantexa_releases', maven_url + "/quantexa-releases/")
+
+  repositories {
+    mavenCentral()
+    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url quantexa_gradle_plugins_releases }
+    maven { url quantexa_releases }
+    jcenter()
+  }
+
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    classpath("com.moowork.gradle:gradle-node-plugin:$moowork")
+    classpath("net.researchgate:gradle-release:$gradleRelease")
+    classpath("gradle.plugin.com.palantir.gradle.docker:gradle-docker:$docker")
+    classpath("com.bmuschko:gradle-nexus-plugin:$nexusPlugin")
+    classpath("com.quantexa:shadow:$quantexaPluginsVersion")
+    classpath("com.quantexa:docker-integration-testing:$quantexaPluginsVersion")
+    classpath("gradle.plugin.com.github.maiflai:gradle-scalatest:$scalaTestPlugin")
+    classpath("nu.studer:gradle-credentials-plugin:$gradleCredentials")
+    classpath("gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:$gitInfoPlugin")
+    classpath "com.github.ben-manes:gradle-versions-plugin:0.21.0"
+    classpath "se.patrikerdes:gradle-use-latest-versions-plugin:0.2.9"
+  }
+}
+
+apply from: file("./gradle/dependency-versions-scala-" + "$scalaVersion" + ".gradle")
+apply from: file("./gradle/dependency-versions.gradle")
+apply from: file("./gradle/helm-deployment.gradle")
+apply from: file("./gradle/release.gradle")
+
+configure(subprojects) { subproject ->
+  apply plugin: 'scala'
+  apply plugin: 'eclipse'
+  apply plugin: 'com.github.maiflai.scalatest'
+  apply plugin: 'nu.studer.credentials'
+
+  if (!project.hasProperty('NO_GIT_PROPS')) {
+    apply plugin: "com.gorylenko.gradle-git-properties"
+  }
+
+  ext.echoGitCommit = { ->
+    def someout = new ByteArrayOutputStream()
+    exec {
+      commandLine 'git', 'rev-parse', '--short', 'HEAD'
+      standardOutput = someout
+    }
+
+    return someout.toString().trim()
+  }
+
+  checkUserProperty('maven_user')
+  String maven_password = credentials.maven_password
+
+  ext.set('nexusUsername', maven_user)
+  ext.set('nexusPassword', maven_password)
+
+  // upgrade jackson in Spring bom
+  ext.set('jackson.version', "$jackson")
+
+  repositories {
+    jcenter()
+
+    maven {
+      url quantexa_releases
+
+    }
+    maven {
+      url quantexa_gradle_plugins_releases
+    }
+
+
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "https://artifacts.elastic.co/maven" }
+    maven { url "https://dl.bintray.com/spark-packages/maven/" }
+
+
+    maven { url "https://build.shibboleth.net/nexus/content/repositories/releases/" }
+    maven { url "http://repository.mulesoft.org/releases/"}
+  }
+
+  dependencies {
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("junit:junit:$junit")
+    // scalatest plugin needs this to work with scalatest
+    testCompile("org.pegdown:pegdown:1.4.2")
+  }
+
+  tasks.withType(ScalaCompile) {
+    configure(scalaCompileOptions.forkOptions) {
+      jvmArgs = ['-Xss4m']
+    }
+    scalaCompileOptions.additionalParameters = [
+       "-target:jvm-1.8"
+    ]
+  }
+
+  jar {
+    baseName = "${subproject.name}_$scalaVersion"
+    version = "$version"
+
+    manifest.attributes["Implementation-Title"] = subproject.name
+    manifest.attributes["Implementation-Version"] = subproject.version
+    manifest.attributes["Created-By"] = "Gradle ${gradle.gradleVersion}"
+    manifest.attributes["Build-Jdk"] = "${System.getProperty("java.version")} (${System.getProperty("java.specification.vendor")})"
+  }
+
+  eclipse {
+    classpath {
+      containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+      containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/'
+    }
+  }
+
+  configurations.all {
+    resolutionStrategy {
+      force "org.apache.logging.log4j:log4j-api:$log4j"
+      force "org.apache.logging.log4j:log4j-core:$log4j"
+    }
+  }
+
+  test {
+    tags {
+      exclude 'SlowTest'
+      exclude 'com.quantexa.graph.script.tags.GraphScriptTest'
+      exclude 'BrokenTest'
+      exclude 'com.quantexa.analytics.test.tags.SparkTest'
+      exclude 'com.quantexa.etl.test.tags.CICDTest'
+    }
+    doFirst {
+      def cp = org.gradle.util.CollectionUtils.join(File.pathSeparator, classpath.getFiles())
+      environment 'CLASSPATH', cp
+      classpath = classpath.filter { false }
+    }
+  }
+
+  task slowTest(type: Test) {
+    tags {
+      include 'SlowTest'
+    }
+    doFirst {
+      def cp = org.gradle.util.CollectionUtils.join(File.pathSeparator, classpath.getFiles())
+      environment 'CLASSPATH', cp
+      classpath = classpath.filter { false }
+    }
+  }
+
+  task graphScriptTest(type: Test) {
+    tags {
+      include 'com.quantexa.graph.script.tags.GraphScriptTest'
+    }
+    doFirst {
+      def cp = org.gradle.util.CollectionUtils.join(File.pathSeparator, classpath.getFiles())
+      environment 'CLASSPATH', cp
+      classpath = classpath.filter { false }
+    }
+    systemProperty 'gateway.location', System.getProperty('gateway.location')
+  }
+
+  task sparkTest(type: Test) {
+    tags {
+      include 'com.quantexa.analytics.test.tags.SparkTest'
+    }
+    doFirst {
+      def cp = org.gradle.util.CollectionUtils.join(File.pathSeparator, classpath.getFiles())
+      environment 'CLASSPATH', cp
+      classpath = classpath.filter { false }
+    }
+  }
+
+  task cicdTest(type: Test) {
+    tags {
+      include 'com.quantexa.etl.test.tags.CICDTest'
+    }
+    doFirst {
+      def cp = org.gradle.util.CollectionUtils.join(File.pathSeparator, classpath.getFiles())
+      environment 'CLASSPATH', cp
+      classpath = classpath.filter { false }
+    }
+  }
+}
+
+project("app-investigate") {
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+  dependencies {
+    compile("com.quantexa:quantexa-spring-boot_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:resource-server-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:clustering_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resolver-core_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:investigation-service_$scalaVersion:$quantexaLibraries") {
+      exclude group: 'org.springframework.boot', module: 'spring-boot-starter-actuator'
+    }
+
+    compile("com.quantexa:elastic-loader-service_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:investigation-rest-api_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:security-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:task-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:task-coordinator-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:task-rest-api_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:task-loader-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:task-loader-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:graph-layout-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:graph-layout-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:intelligence-api_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-client_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models-spring_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-spring-serialization_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-rest-api_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:$elasticsearch-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:$elasticsearch-writer-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    // Required because Spring tries to downgrade the dependency brought in by the autoconfigure project
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+
+    if (!isDevMode()) {
+      compile project(':data-source-customer:model-customer')
+      compile project(':data-source-hotlist:model-hotlist')
+      compile project(':data-source-intelligence:model-intelligence')
+      compile project(':data-source-spring-config')  
+      compile project(':data-source-transaction:model-transaction')
+    }
+
+    compile libraries.quantexa_boot
+    runtime("org.postgresql:postgresql:$postgreSQL")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.retry:spring-retry")
+
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-etcd-config:$springCloudEtcd")
+
+    compile("io.springfox:springfox-swagger2:$springfoxSwagger")
+    compile("io.springfox:springfox-swagger-ui:$springfoxSwagger")
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  task pathingJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'bootrun'
+
+    doFirst {
+      manifest {
+        attributes "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' ')
+      }
+    }
+  }
+
+  bootRun {
+    dependsOn pathingJar
+    doFirst {
+      classpath = files("$buildDir/classes/scala/main", "$buildDir/resources/main", pathingJar.archivePath)
+    }
+  }
+  // The following block excludes the postgres jar from the explorer-resource built jar
+  // but keeps it in for development
+  task clientBoot(type: BootRepackage, dependsOn: jar) {
+    withJarTask = jar
+  }
+
+  springBoot {
+    //Makes the PropertiesLauncher the main class
+    layout = 'ZIP'
+  }
+
+  build.dependsOn clientBoot
+}
+
+project("app-resolve") {
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+  dependencies {
+    compile("com.quantexa:quantexa-spring-boot_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:acl-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resource-server-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:clustering_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resolver-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resolver-security-acl_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-utils_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:scoring-service_$scalaVersion:$quantexaLibraries") {
+      //TODO remove exclusion once scoring-service is tidied up
+      exclude group: 'com.quantexa', module: 'project-scoring_2.11'
+      exclude group: 'com.quantexa', module: 'project-models_2.11'
+    }
+
+    compile("com.quantexa:document-service_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:security-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models-spring_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-spring-serialization_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:scoring-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:$elasticsearch-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    // Required because Spring tries to downgrade the dependency brought in by the autoconfigure project
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+
+    if (!isDevMode()) {
+      compile project(':data-source-customer:model-customer')
+      compile project(':data-source-hotlist:model-hotlist')
+      compile project(':data-source-intelligence:model-intelligence')
+      compile project(':data-source-transaction:model-transaction')
+      compile project(':data-source-spring-config')
+      compile project(':example-scoring')
+    }
+
+    compile libraries.quantexa_boot
+    runtime("org.postgresql:postgresql:$postgreSQL")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.retry:spring-retry")
+
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-etcd-config:$springCloudEtcd")
+
+    compile("io.springfox:springfox-swagger2:$springfoxSwagger")
+    compile("io.springfox:springfox-swagger-ui:$springfoxSwagger")
+    compile("io.netty:netty-all:4.1.11.Final")
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  task pathingJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'bootrun'
+
+    doFirst {
+      manifest {
+        attributes "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' ')
+      }
+    }
+  }
+
+  bootRun {
+    dependsOn pathingJar
+    doFirst {
+      classpath = files("$buildDir/classes/scala/main", "$buildDir/resources/main", pathingJar.archivePath)
+    }
+  }
+  // The following block excludes the postgres jar from the explorer-resource built jar
+  // but keeps it in for development
+  task clientBoot(type: BootRepackage, dependsOn: jar) {
+    withJarTask = jar
+  }
+
+  springBoot {
+    //Makes the PropertiesLauncher the main class
+    layout = 'ZIP'
+  }
+
+  build.dependsOn clientBoot
+}
+
+project("app-search") {
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+  dependencies {
+    compile("com.quantexa:quantexa-spring-boot_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:resource-server-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:search-rest-api_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:clustering_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:search-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:entity-search-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:entity-search-rest-api_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:task-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:task-coordinator-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:investigation-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:intelligence-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models-spring_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-spring-serialization_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:$elasticsearch-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    // Required because Spring tries to downgrade the dependency brought in by the autoconfigure project
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+
+    if (!isDevMode()) {
+      compile project(':data-source-customer:model-customer')
+      compile project(':data-source-hotlist:model-hotlist')
+      compile project(':data-source-intelligence:model-intelligence') 
+      compile project(':data-source-spring-config')
+      compile project(':data-source-transaction:model-transaction')
+    }
+
+    compile libraries.quantexa_boot
+    runtime("org.postgresql:postgresql:$postgreSQL")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.retry:spring-retry")
+
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-etcd-config:$springCloudEtcd")
+
+    compile("io.springfox:springfox-swagger2:$springfoxSwagger")
+    compile("io.springfox:springfox-swagger-ui:$springfoxSwagger")
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  task pathingJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'bootrun'
+
+    doFirst {
+      manifest {
+        attributes "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' ')
+      }
+    }
+  }
+
+  bootRun {
+    dependsOn pathingJar
+    doFirst {
+      classpath = files("$buildDir/classes/scala/main", "$buildDir/resources/main", pathingJar.archivePath)
+    }
+  }
+  // The following block excludes the postgres jar from the explorer-resource built jar
+  // but keeps it in for development
+  task clientBoot(type: BootRepackage, dependsOn: jar) {
+    withJarTask = jar
+  }
+
+  springBoot {
+    //Makes the PropertiesLauncher the main class
+    layout = 'ZIP'
+  }
+
+  build.dependsOn clientBoot
+}
+
+project("app-security") {
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+  dependencies {
+    compile("com.quantexa:quantexa-spring-boot_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:resource-server-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:clustering_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:quanfiguration-service_$scalaVersion:$quantexaLibraries")
+
+    compile("com.quantexa:acl-rest-api_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:acl-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-rest-api_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-service_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models_$scalaVersion:$quantexaLibraries")
+
+    compile libraries.quantexa_boot
+    runtime("org.postgresql:postgresql:$postgreSQL")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.retry:spring-retry")
+
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-etcd-config:$springCloudEtcd")
+
+    compile("io.springfox:springfox-swagger2:$springfoxSwagger")
+    compile("io.springfox:springfox-swagger-ui:$springfoxSwagger")
+
+    compile project(':data-source-customer:model-customer')
+    compile project(':data-source-hotlist:model-hotlist')
+    compile project(':data-source-intelligence:model-intelligence')
+    compile project(':data-source-transaction:model-transaction')
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  task pathingJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'bootrun'
+
+    doFirst {
+      manifest {
+        attributes "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' ')
+      }
+    }
+  }
+
+  bootRun {
+    dependsOn pathingJar
+    doFirst {
+      classpath = files("$buildDir/classes/scala/main", "$buildDir/resources/main", pathingJar.archivePath)
+    }
+  }
+  // The following block excludes the postgres jar from the explorer-resource built jar
+  // but keeps it in for development
+  task clientBoot(type: BootRepackage, dependsOn: jar) {
+    withJarTask = jar
+  }
+
+  springBoot {
+    //Makes the PropertiesLauncher the main class
+    layout = 'ZIP'
+  }
+
+  build.dependsOn clientBoot
+}
+
+project("app-graph-script") {
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+  dependencies {
+    compile("com.quantexa:quantexa-spring-boot_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resource-server-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:clustering_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:clustering-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resolver-core_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:resolver-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:scoring-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:document-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:task-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:task-loader-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:task-v2-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:task-coordinator-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:investigation-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile ("com.quantexa:quanfiguration-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    compile libraries.quantexa_boot
+    runtime("org.postgresql:postgresql:$postgreSQL")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    compile("org.springframework.cloud:spring-cloud-starter-config:$springCloudStarterConfig")
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootStarterWeb")
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-etcd-config:$springCloudEtcd")
+    compile("org.springframework.retry:spring-retry")
+
+    compile("io.springfox:springfox-swagger2:$springfoxSwagger")
+    compile("io.springfox:springfox-swagger-ui:$springfoxSwagger")
+    compile("com.quantexa:security-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    compile project(":example-graph-scripting:graph-script-rest-api")
+    compile project(':data-source-customer:model-customer')
+    compile project(':data-source-hotlist:model-hotlist')
+    compile project(':data-source-intelligence:model-intelligence')
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  task pathingJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'bootrun'
+
+    doFirst {
+      manifest {
+        attributes "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' ')
+      }
+    }
+  }
+
+  bootRun {
+    dependsOn pathingJar
+    doFirst {
+      classpath = files("$buildDir/classes/scala/main", "$buildDir/resources/main", pathingJar.archivePath)
+    }
+  }
+  // The following block excludes the postgres jar from the explorer-resource built jar
+  // but keeps it in for development
+  task clientBoot(type: BootRepackage, dependsOn: jar) {
+    withJarTask = jar
+  }
+
+  springBoot {
+    //Makes the PropertiesLauncher the main class
+    layout = 'ZIP'
+  }
+
+  build.dependsOn clientBoot
+}
+
+project("gateway") {
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+  dependencies {
+    compile("com.quantexa:auth-schemes_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:gateway-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:quantexa-spring-boot_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:gateway-metrics-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    runtime("org.postgresql:postgresql:$postgreSQL")
+
+    compile("org.scala-lang:scala-library:$scalaLibVersion")
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-actuator-docs')
+    compile('org.springframework.cloud:spring-cloud-starter-zuul')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.session:spring-session')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("com.unboundid:unboundid-ldapsdk:$unboundIdLdapSdk")
+
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-etcd-config:$springCloudEtcd")
+
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.retry:spring-retry")
+
+    compile("io.dropwizard.metrics:metrics-core")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile("org.springframework.security:spring-security-test")
+    testCompile("org.scalamock:scalamock-scalatest-support_$scalaVersion:$scalamock")
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  task pathingJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'bootrun'
+
+    doFirst {
+      manifest {
+        attributes "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' ')
+      }
+    }
+  }
+
+  bootRun {
+    dependsOn pathingJar
+    doFirst {
+      classpath = files("$buildDir/classes/scala/main", "$buildDir/resources/main", pathingJar.archivePath)
+    }
+  }
+}
+
+project("config-service") {
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+
+// THE FOLLOWING IS A BIT OF A HACK/WORKAROUND DUE TO GRADLE NOT FINDING THE SCALA COMPILER FOR THIS PROJECT
+  configurations {
+    scalaCompiler
+  }
+
+  dependencies {
+    scalaCompiler "org.scala-lang:scala-compiler:$scalaLibVersion"
+  }
+
+  tasks.withType(ScalaCompile) {
+    scalaClasspath = configurations.scalaCompiler
+  }
+  dependencies {
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-config-server:$springCloudConfigServer")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.cloud:spring-cloud-config-client:$springCloudConfigClient")
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test') {
+      exclude(module: 'commons-logging')
+    }
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  jar {
+    baseName = "config-service"
+    version = "$version"
+    manifest {
+      attributes(
+        "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' '),
+        "Main-Class": "com.quantexa.configserver.ConfigServiceApplication"
+      )
+    }
+  }
+}
+
+project("example-ui") {
+  apply from: 'ui-build.gradle'
+  apply plugin: 'org.springframework.boot'
+  apply from: file("../gradle/docker-template.gradle")
+
+  docker {
+    dockerfile project.file('docker/Dockerfile')
+    files 'docker'
+  }
+
+  sourceSets {
+    main {
+      scala {
+        srcDirs = ['scala-app']
+      }
+      resources {
+        srcDirs = ['scala-app/main/resources']
+      }
+    }
+  }
+
+  jar {
+    baseName = "${project.name}_$scalaVersion"
+    version = "$version"
+    from("web-app/dist/") {
+      into("static")
+    }
+    from("web-app/dist-login/") {
+      into("static/login")
+    }
+  }
+
+  bootRepackage {
+    mainClass = 'com.quantexa.example.UIApplication'
+  }
+
+  dependencies {
+    compile("com.quantexa:quantexa-spring-boot_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resource-server-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:security-autoconfigure_$scalaVersion:$quantexaLibraries")
+
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile libraries.spring_boot
+
+    runtime("org.postgresql:postgresql:$postgreSQL")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile("org.springframework.cloud:spring-cloud-etcd-discovery:$springCloudEtcd")
+    compile("org.springframework.cloud:spring-cloud-etcd-config:$springCloudEtcd")
+
+    compile("io.micrometer:micrometer-spring-legacy:$micrometer")
+    compile("io.micrometer:micrometer-registry-prometheus:$micrometer")
+
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("junit:junit:$junit")
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+      mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.SR5")
+    }
+  }
+
+  task pathingJar(type: Jar) {
+    dependsOn configurations.runtime
+    appendix = 'bootrun'
+    doFirst {
+      manifest {
+        attributes "Class-Path": configurations.runtime.files.collect {
+          it.toURL().toString().replaceFirst("/file:/+/", '/')
+        }.join(' ')
+      }
+    }
+  }
+
+  bootRun {
+    dependsOn pathingJar
+    doFirst {
+      classpath = files("$buildDir/classes/scala/main", "$buildDir/resources/main", pathingJar.archivePath)
+    }
+  }
+
+  task uberClean {
+    doFirst {
+      delete "${projectDir}/web-app/node_modules"
+      delete "${projectDir}/bin"
+      delete "${projectDir}/.gradle"
+      delete "${projectDir}/.settings"
+      delete "${projectDir}/.cache-main"
+      delete "${projectDir}/.classpath"
+      delete "${projectDir}/.project"
+    }
+  }
+
+  uberClean.dependsOn(clean)
+}
+
+project("example-scoring") {
+
+  apply plugin: 'com.quantexa.plugins.shadow'
+  
+  configurations {
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+    compile.extendsFrom provided
+
+    compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
+    compile.exclude group:"log4j", module:"log4j"
+  }
+
+  dependencies {
+    compile("com.quantexa:resolver-core_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:resolver-data-ingestion_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:quanfiguration-core_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:scoring-framework-scala_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:quantexa-analytics-scala_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:address-parser_$scalaVersion:${quantexaAddressParser}")
+
+    compile("com.typesafe:config:1.3.1")
+    compile("com.iheart:ficus_$scalaVersion:1.4.1")
+
+    compile project(":data-source-customer:model-customer")
+    compile project(":data-source-hotlist:model-hotlist")
+    compile project(":data-source-transaction:model-transaction")
+    compile project(":data-source-intelligence:model-intelligence")
+    compile project(":example-models-common")
+
+    compile("com.chuusai:shapeless_$scalaVersion:$shapeless")
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("org.scalacheck:scalacheck_$scalaVersion:$scalacheck")
+    testCompile("com.danielasfregola:random-data-generator-magnolia_$scalaVersion:$randomDataGenerator")
+    testCompile("com.github.julien-truffaut:monocle-core_$scalaVersion:$monocle")
+    testCompile("com.github.julien-truffaut:monocle-macro_$scalaVersion:$monocle")
+
+    testCompile("junit:junit:$junit")
+	testCompile("com.quantexa:quantexa-analytics-test_$scalaVersion:$quantexaIncubators")
+  }
+}
+
+project("example-scoring-batch") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  apply plugin: 'com.quantexa.plugins.docker-integration-testing'
+  apply plugin: 'io.spring.dependency-management'
+    sourceSets {
+        test {
+            resources {
+                srcDirs += [
+                        project(':example-scoring').sourceSets.main.resources
+                ]
+            }
+        }
+      main {
+        resources {
+          srcDirs += [
+                  "../config"
+          ]
+          includes = ["Scorecard*"]
+        }
+      }
+    }
+
+
+  configurations {
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+    compile.extendsFrom provided
+
+    runtime.exclude module: "spark-core_$scalaVersion"
+    runtime.exclude module: "spark-sql_$scalaVersion"
+    runtime.exclude module: "spark-yarn_$scalaVersion"
+    runtime.exclude module: "spark-hive_$scalaVersion"
+    runtime.exclude module: "spark-graphx_$scalaVersion"
+    runtime.exclude module: "spark-mllib_$scalaVersion"
+
+    /* We don't want the storm-core dependency in our shadowJar */
+    runtime.exclude module: "scoring-framework-macros_$scalaVersion"
+
+    /*slf4j-log4j12 and log4j-over-slf4j cant both be on classpath (each one diverts slft4j logging to log4j and vice versa, into infinite loop*/
+    compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
+    compile.exclude group:"log4j", module:"log4j"
+  }
+
+  dependencies {
+    compile project(':example-scoring')
+    compile project(":data-source-transaction:model-transaction")
+    compile project(":data-source-transaction:etl-transaction")
+
+    compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:quantexa-analytics-scala_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:quantexa-analytics-test_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:etl-core-${elasticsearch}_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:quantexa-etl-spark_$scalaVersion:$quantexaIncubators")
+
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+    compile("org.elasticsearch:elasticsearch-spark-20_$scalaVersion:$elasticSearchExternal") {
+      exclude group: 'org.apache.spark'
+    }
+    compile("com.quantexa:scoring-framework-spark_$scalaVersion:$quantexaLibraries") {
+      exclude group: 'org.scalameta'
+      exclude group: 'org.json4s'
+      exclude module: 'scoring-framework-macros_$scalaVersion'
+    }
+
+    compile("com.quantexa:quantexa-analytics-spark_$scalaVersion:$quantexaIncubators") {
+      exclude module: 'slf4j-log4j12'
+    }
+
+    compile("org.codehaus.janino:janino:$janino")
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+
+    compile("org.typelevel:frameless-dataset_$scalaVersion:$frameless")
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'
+    compile("org.apache.poi:poi-ooxml:$apachePoi")
+
+    compile("saurfang:spark-knn:$sparkKNN")
+    compile("mrpowers:spark-daria:${sparkDaria}_$scalaVersion")
+
+    testCompile("com.quantexa:quantexa-analytics-test_$scalaVersion:$quantexaIncubators")
+    testCompile("com.quantexa:address-parser_$scalaVersion:$quantexaAddressParser") //Used for generating test data / ISO2 countries
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("com.github.julien-truffaut:monocle-core_$scalaVersion:$monocle")
+    testCompile("com.github.julien-truffaut:monocle-macro_$scalaVersion:$monocle")
+    testCompile("junit:junit:$junit")
+    testCompile("com.danielasfregola:random-data-generator-magnolia_$scalaVersion:$randomDataGenerator")
+    testCompile("com.holdenkarau:spark-testing-base_$scalaVersion:${spark}_$sparkTestingBase"){
+      exclude module: 'slf4j-log4j12'
+      exclude module: 'commons-lang3'
+    }
+    testCompile project(":example-scoring").sourceSets.test.output
+  }
+
+  tasks.withType(Test)  {
+    maxParallelForks = 1
+    minHeapSize = "512M"
+    maxHeapSize = "4G"
+    
+    jvmArgs = ["-Xmx4G","-XX:+CMSClassUnloadingEnabled","-XX:MetaspaceSize=2G"]
+  }
+
+  test {
+    tags {
+      exclude 'BrokenTest'
+      exclude 'com.quantexa.analyticalutils.test.tags.SparkTest'
+    }
+    classpath += configurations.compile
+    testLogging {
+      exceptionFormat = 'full'
+    }
+  }
+
+  slowTest {
+    classpath += configurations.compile
+  }
+
+  sparkTest {
+    classpath += configurations.compile
+  }
+
+  cicdTest {
+    classpath += configurations.compile
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+    }
+  }
+
+  def customShadowJars = [
+    "example-scoring_$scalaVersion-${version}.jar",
+    "model-transaction_$scalaVersion-${version}.jar"
+  ]
+
+  dependencyShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'org.joda', 'com.quantexa.shadow.joda'
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+    //TODO: Upgarde shadow plugin to 2.0.2.
+    // Exclusions required due to bug in Jengelman plugin that causes errors when Java 9 classes are present.
+    exclude 'META-INF/versions/9/org/elasticsearch/monitor/jvm/JvmPid.class'
+    exclude 'META-INF/versions/9/org/elasticsearch/core/internal/io/Streams.class'
+
+    excludedJars = customShadowJars
+  }
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'org.joda', 'com.quantexa.shadow.joda'
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+    // Exclusions required due to bug in Jengelman plugin that causes errors when Java 9 classes are present.
+    exclude 'META-INF/versions/9/org/elasticsearch/monitor/jvm/JvmPid.class'
+    exclude 'META-INF/versions/9/org/elasticsearch/core/internal/io/Streams.class'
+
+    additionalJars = customShadowJars
+  }
+}
+
+project("example-data-generator") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+
+  configurations {
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+    compile.extendsFrom provided
+  }
+
+  dependencies {
+    compile("org.scala-lang:scala-library:$scalaLibVersion")
+    compile("org.scala-lang:scala-compiler:$scalaLibVersion")
+
+    compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:data-generator-core_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:quantexa-etl-spark_$scalaVersion:$quantexaIncubators")
+    compile(project(":data-source-customer:model-customer")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+
+    compile(project(":data-source-hotlist:model-hotlist")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+
+    compile(project(":data-source-transaction:model-transaction")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+  }
+
+  def customShadowJars = [
+    "model-customer_${scalaVersion}-${version}.jar",
+    "model-hotlist_${scalaVersion}-${version}.jar",
+    "model-transaction_${scalaVersion}-${version}.jar",
+  ]
+
+  dependencyShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'org.apache.http', 'com.quantexa.shadow.apache.http'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+    exclude 'META-INF/versions/9/org/elasticsearch/monitor/jvm/JvmPid.class'
+    exclude 'META-INF/versions/9/org/elasticsearch/core/internal/io/Streams.class'
+    excludedJars = customShadowJars
+  }
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'org.apache.http', 'com.quantexa.shadow.apache.http'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+
+    additionalJars = customShadowJars
+  }
+}
+
+project("example-graph-scripting:graph-script") {
+
+  dependencies {
+    compile ("com.quantexa:graph-scripting-scala-utils_$scalaVersion:$quantexaIncubators"){
+    exclude group: 'org.slf4j'}
+  }
+}
+
+project("example-graph-scripting:graph-script-batch") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+
+  dependencies {
+    def exclusions = {
+      exclude group: 'org.slf4j'
+      exclude group: 'org.apache.logging.log4j'
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+
+    configurations {
+      provided {
+        dependencies.all { dep ->
+          configurations.default.exclude group: dep.group, module: dep.name
+        }
+      }
+      runtime.exclude module: "spark-core_$scalaVersion"
+      runtime.exclude module: "spark-sql_$scalaVersion"
+      runtime.exclude module: "spark-yarn_$scalaVersion"
+      runtime.exclude module: "spark-hive_$scalaVersion"
+      runtime.exclude module: "spark-graphx_$scalaVersion"
+      runtime.exclude module: "spark-mllib_$scalaVersion"
+      runtime.exclude module: "netty_$scalaVersion"
+      runtime.exclude module: "scala_$scalaVersion"
+      compile.extendsFrom provided
+    }
+
+    compile (project(":example-graph-scripting:graph-script"),exclusions)
+    compile ("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile ("com.quantexa:graph-scripting-spark-utils_$scalaVersion:$quantexaIncubators"){
+      exclude group: 'org.slf4j'}
+
+    compile(project(":data-source-customer:model-customer")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+
+    compile(project(":data-source-hotlist:model-hotlist")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+
+    compile(project(":data-source-transaction:model-transaction")) {
+        exclude group: 'org.json4s'
+        exclude group: 'com.fasterxml.jackson.datatype'
+        exclude group: 'com.fasterxml.jackson.core'
+        exclude group: 'com.fasterxml.jackson.module'
+    }
+
+    compile("org.elasticsearch:elasticsearch-spark-20_$scalaVersion:$elasticSearchExternal") {
+        exclude group: 'org.apache.spark'
+    }
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+  }
+
+  def customShadowJars = [
+    "model-customer_${scalaVersion}-${version}.jar",
+    "model-hotlist_${scalaVersion}-${version}.jar",
+    "model-transaction_${scalaVersion}-${version}.jar",
+    "graph-script_${scalaVersion}-${version}.jar"
+  ]
+
+  dependencyShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+    relocate 'com.google.protobuf', 'com.quantexa.shadow.google.protobuf'
+    exclude 'META-INF/versions/9/org/elasticsearch/monitor/jvm/JvmPid.class'
+    exclude 'META-INF/versions/9/org/elasticsearch/core/internal/io/Streams.class'
+    transform(new com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer(resource: "reference.conf"))
+
+    dependencies {
+      exclude(dependency('com.typesafe.akka:akka-remote_$scalaVersion'))
+      exclude(dependency('com.typesafe.akka:akka-actor_$scalaVersion'))
+      exclude(dependency('com.typesafe.akka:akka-stream_$scalaVersion'))
+      exclude(dependency('com.typesafe.akka:akka-persistance_$scalaVersion'))
+      exclude(dependency('com.typesafe.akka:akka-protobuf_$scalaVersion'))
+    }
+
+    excludedJars = customShadowJars
+  }
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+    transform(new com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer(resource: "reference.conf"))
+
+    additionalJars = customShadowJars
+  }
+
+  graphScriptTest {
+    classpath += configurations.compile
+  }
+
+}
+
+project("example-graph-scripting:graph-script-rest-api") {
+  dependencies {
+    compile ("com.quantexa:investigation-rest-api_$scalaVersion:$quantexaLibraries")
+    compile ("com.github.cb372:scalacache-guava_$scalaVersion:$scalaCache")
+    compile project(":example-graph-scripting:graph-script")
+  }
+}
+
+project("example-adhoc") {
+  configurations {
+    provided {
+        dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+	  }
+    }
+    compile.extendsFrom provided
+  }
+
+  dependencies {
+    compile project(':example-scoring-batch')
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+
+    compile("org.typelevel:frameless-dataset_$scalaVersion:$frameless")
+
+  }
+}
+
+project("data-source-customer:model-customer") {
+
+  dependencies {
+    compile("com.quantexa:quantexa-etl-scala_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:quantexa-script-runner-model_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:resolver-data-ingestion_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:project-models-core_$scalaVersion:$quantexaDataModels")
+    compile("com.quantexa:security-model-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:scoring-framework-scala_$scalaVersion:$quantexaLibraries")
+    compile("io.scalaland:chimney_$scalaVersion:0.2.1")
+
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+  }
+}
+
+project("data-source-customer:etl-customer") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  apply plugin: 'com.quantexa.plugins.docker-integration-testing'
+
+
+
+  configurations {
+    all*.exclude group: "org.slf4j", module: "slf4j-log4j12"
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+    compile.extendsFrom provided
+
+    runtime.exclude module: "spark-core_$scalaVersion"
+    runtime.exclude module: "spark-sql_$scalaVersion"
+    runtime.exclude module: "spark-yarn_$scalaVersion"
+    runtime.exclude module: "spark-hive_$scalaVersion"
+    runtime.exclude module: "spark-graphx_$scalaVersion"
+    runtime.exclude module: "spark-mllib_$scalaVersion"
+  }
+
+  dependencies {
+    compile(project(":data-source-customer:model-customer")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+    compile project(':example-etl-common')
+
+    compile("com.quantexa:quantexa-etl-spark_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:etl-core-${elasticsearch}_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:address-parser_$scalaVersion:$quantexaAddressParser")
+    compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:task-rest-api_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:data-anonymizer_$scalaVersion:$quantexaIncubators")
+    compile("org.iban4j:iban4j:$iban4j")
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+    compile("com.sksamuel.elastic4s:elastic4s-embedded_$scalaVersion:$elastic4sCore")
+    compile("com.chuusai:shapeless_$scalaVersion:$shapeless")
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+
+
+    testCompile project(':example-etl-common').sourceSets.test.output
+
+    // Needed to create embedded elastic cluster.
+    testCompile("org.apache.logging.log4j:log4j-core:$log4jCore")
+    testCompile("io.netty:netty-all:4.1.16.Final")
+
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("junit:junit:$junit")
+    testRuntime("org.apache.spark:spark-core_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+  }
+
+  test {
+    classpath += configurations.compile
+  }
+
+  slowTest {
+    classpath += configurations.compile
+  }
+
+  sparkTest {
+    classpath += configurations.compile
+  }
+
+  integrationTesting {
+    jarTasks {
+      etl {
+        jarProject = ":data-source-customer:etl-customer"
+        isShadow = true
+      }
+    }
+  }
+
+  def customShadowJars = [
+          "model-customer_${scalaVersion}-${version}.jar",
+  ]
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'org.apache.http', 'com.quantexa.shadow.apache.http'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+
+    additionalJars = customShadowJars
+  }
+}
+
+project("data-source-hotlist:model-hotlist") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+
+  dependencies {
+    compile project(":example-models-common")
+
+    compile("com.quantexa:resolver-data-ingestion_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:project-models-core_$scalaVersion:$quantexaDataModels")
+    compile("com.quantexa:security-model-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:scoring-framework-scala_$scalaVersion:$quantexaLibraries")
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+  }
+}
+
+project("data-source-hotlist:etl-hotlist") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  apply plugin: 'com.quantexa.plugins.docker-integration-testing'
+
+  configurations {
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+
+    compile.extendsFrom provided
+
+    runtime.exclude module: "spark-core_$scalaVersion"
+    runtime.exclude module: "spark-sql_$scalaVersion"
+    runtime.exclude module: "spark-yarn_$scalaVersion"
+    runtime.exclude module: "spark-hive_$scalaVersion"
+    runtime.exclude module: "spark-graphx_$scalaVersion"
+    runtime.exclude module: "spark-mllib_$scalaVersion"
+  }
+
+  dependencies {
+    compile(project(":data-source-hotlist:model-hotlist")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+    compile project(':example-etl-common')
+
+    compile("com.quantexa:quantexa-etl-spark_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:etl-core-${elasticsearch}_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:address-parser_$scalaVersion:$quantexaAddressParser")
+    compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:data-anonymizer_$scalaVersion:$quantexaIncubators")
+    compile("org.iban4j:iban4j:$iban4j")
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+    compile("com.sksamuel.elastic4s:elastic4s-embedded_$scalaVersion:$elastic4sCore")
+    compile("com.chuusai:shapeless_$scalaVersion:$shapeless")
+
+    compile("org.elasticsearch:elasticsearch-spark-20_$scalaVersion:$elasticSearchExternal") {
+      exclude group: 'org.apache.spark'
+    }
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+
+    testCompile project(':example-etl-common').sourceSets.test.output
+    // Needed to create embedded elastic cluster.
+    testCompile("org.apache.logging.log4j:log4j-core:$log4jCore")
+    testCompile("io.netty:netty-all:4.1.16.Final")
+
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("junit:junit:$junit")
+    testRuntime("org.apache.spark:spark-core_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+  }
+
+  test {
+    classpath += configurations.compile
+  }
+
+  slowTest {
+    classpath += configurations.compile
+  }
+
+  sparkTest {
+    classpath += configurations.compile
+  }
+
+  cicdTest {
+    classpath += configurations.compile
+  }
+
+  integrationTesting {
+    jarTasks {
+      etl {
+        jarProject = ":data-source-hotlist:etl-hotlist"
+        isShadow = true
+      }
+    }
+  }
+
+  def customShadowJars = [
+          "model-hotlist_${scalaVersion}-${version}.jar",
+  ]
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'org.apache.http', 'com.quantexa.shadow.apache.http'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+    additionalJars = customShadowJars
+  }
+}
+
+project("data-source-transaction:model-transaction") {
+
+  dependencies {
+    compile project(":example-models-common")
+    
+    compile("com.quantexa:quantexa-etl-scala_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:quantexa-script-runner-model_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:resolver-data-ingestion_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:project-models-core_$scalaVersion:$quantexaDataModels")
+    compile("com.quantexa:security-model-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:scoring-framework-scala_$scalaVersion:$quantexaLibraries")
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+  }
+}
+
+project("data-source-transaction:etl-transaction") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  apply plugin: 'com.quantexa.plugins.docker-integration-testing'
+
+  configurations {
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+    compile.extendsFrom provided
+
+    runtime.exclude module: "spark-core_$scalaVersion"
+    runtime.exclude module: "spark-sql_$scalaVersion"
+    runtime.exclude module: "spark-yarn_$scalaVersion"
+    runtime.exclude module: "spark-hive_$scalaVersion"
+    runtime.exclude module: "spark-graphx_$scalaVersion"
+    runtime.exclude module: "spark-mllib_$scalaVersion"
+  }
+
+  dependencies {
+    compile(project(":data-source-transaction:model-transaction")) {
+      exclude group: 'org.json4s'
+      exclude group: 'com.fasterxml.jackson.datatype'
+      exclude group: 'com.fasterxml.jackson.core'
+      exclude group: 'com.fasterxml.jackson.module'
+    }
+    compile project(':example-etl-common')
+    compile project(":data-source-customer:model-customer")
+
+    compile("com.quantexa:quantexa-etl-spark_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:etl-core-${elasticsearch}_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:address-parser_$scalaVersion:$quantexaAddressParser")
+    compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile("org.iban4j:iban4j:$iban4j")
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+    compile("com.sksamuel.elastic4s:elastic4s-embedded_$scalaVersion:$elastic4sCore")
+    compile("com.chuusai:shapeless_$scalaVersion:$shapeless")
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+
+    testCompile project(':example-etl-common').sourceSets.test.output
+    // Needed to create embedded elastic cluster.
+    testCompile("org.apache.logging.log4j:log4j-core:$log4jCore")
+    testCompile("io.netty:netty-all:4.1.16.Final")
+
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("junit:junit:$junit")
+    testRuntime("org.apache.spark:spark-core_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+  }
+
+  test {
+    classpath += configurations.compile
+  }
+
+  slowTest {
+    classpath += configurations.compile
+  }
+
+  sparkTest {
+    classpath += configurations.compile
+  }
+
+  cicdTest {
+    classpath += configurations.compile
+  }
+
+  integrationTesting {
+    jarTasks {
+      etl {
+        jarProject = ":data-source-transaction:etl-transaction"
+        isShadow = true
+      }
+    }
+  }
+
+  def customShadowJars = [
+          "model-transaction_${scalaVersion}-${version}.jar",
+          "model-customer_${scalaVersion}-${version}.jar"
+  ]
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'org.apache.http', 'com.quantexa.shadow.apache.http'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+
+    additionalJars = customShadowJars
+  }
+}
+
+project("data-source-intelligence:model-intelligence") {
+  dependencies {
+    compile("com.quantexa:intelligence-models_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-spring-serialization_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-models-spring_$scalaVersion:$quantexaLibraries")
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+  }
+}
+
+project("data-source-spring-config") {
+  apply plugin: 'io.spring.dependency-management'
+
+  dependencies {
+    compile project(":data-source-intelligence:model-intelligence")
+    compile("com.quantexa:intelligence-models-spring_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:intelligence-spring-serialization_$scalaVersion:$quantexaLibraries")
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootStarterWeb")
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+    }
+  }
+}
+
+project("data-source-intelligence:etl-intelligence") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  apply plugin: 'com.quantexa.plugins.docker-integration-testing'
+  
+  configurations {
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+    compile.extendsFrom provided
+
+    runtime.exclude module: "spark-core_$scalaVersion"
+    runtime.exclude module: "spark-sql_$scalaVersion"
+    runtime.exclude module: "spark-yarn_$scalaVersion"
+    runtime.exclude module: "spark-hive_$scalaVersion"
+    runtime.exclude module: "spark-graphx_$scalaVersion"
+    runtime.exclude module: "spark-mllib_$scalaVersion"
+  }
+
+  dependencies {
+    compile project(":data-source-intelligence:model-intelligence")
+
+    compile("com.quantexa:quantexa-etl-spark_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:etl-core-${elasticsearch}_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:elastic-loader-utils_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:${elasticsearch}-client-autoconfigure_$scalaVersion:$quantexaLibraries")
+    compile("org.iban4j:iban4j:$iban4j")
+    compile("org.elasticsearch:elasticsearch:$elasticSearchExternal")
+    compile("com.sksamuel.elastic4s:elastic4s-embedded_$scalaVersion:$elastic4sCore")
+    compile("com.chuusai:shapeless_$scalaVersion:$shapeless")
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+
+    testCompile project(':example-etl-common').sourceSets.test.output
+    // Needed to create embedded elastic cluster.
+    testCompile("org.apache.logging.log4j:log4j-core:$log4jCore")
+    testCompile("io.netty:netty-all:4.1.16.Final")
+
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("junit:junit:$junit")
+    testRuntime("org.apache.spark:spark-core_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-hive_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+  }
+
+  test {
+    classpath += configurations.compile
+  }
+
+  slowTest {
+    classpath += configurations.compile
+  }
+
+  sparkTest {
+    classpath += configurations.compile
+  }
+
+  integrationTesting {
+    jarTasks {
+      etl {
+        jarProject = ":data-source-intelligence:etl-intelligence"
+        isShadow = true
+      }
+    }
+  }
+
+  def customShadowJars = [
+          "model-intelligence_${scalaVersion}-${version}.jar",
+  ]
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'org.apache.http', 'com.quantexa.shadow.apache.http'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+
+    additionalJars = customShadowJars
+  }
+
+}
+
+project("example-models-common") {
+  dependencies {
+    compile("com.quantexa:resolver-data-ingestion_$scalaVersion:$quantexaLibraries")
+    compile("com.quantexa:scoring-framework-scala_$scalaVersion:$quantexaLibraries")
+  }
+}
+
+project("example-etl-common") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  apply plugin: 'com.quantexa.plugins.docker-integration-testing'
+
+  configurations {
+    provided {
+      dependencies.all { dep ->
+        configurations.default.exclude group: dep.group, module: dep.name
+      }
+    }
+    compile.extendsFrom provided
+
+    runtime.exclude module: "spark-core_$scalaVersion"
+    runtime.exclude module: "spark-sql_$scalaVersion"
+    runtime.exclude module: "spark-yarn_$scalaVersion"
+    runtime.exclude module: "spark-hive_$scalaVersion"
+    runtime.exclude module: "spark-graphx_$scalaVersion"
+    runtime.exclude module: "spark-mllib_$scalaVersion"
+  }
+
+  dependencies {
+    compile("com.quantexa:quantexa-etl-spark_$scalaVersion:$quantexaIncubators")
+    compile("com.quantexa:address-parser_$scalaVersion:$quantexaAddressParser")
+    compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+    compile("org.iban4j:iban4j:$iban4j")
+    compile("com.sksamuel.elastic4s:elastic4s-embedded_$scalaVersion:$elastic4sCore")
+    compile("com.quantexa:graph-scripting-spark-utils_$scalaVersion:$quantexaIncubators"){
+      exclude group: 'org.slf4j'
+      exclude group: 'org.apache.commons'}
+
+    compile project(":example-models-common")
+
+    provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+
+    testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+    testCompile("junit:junit:$junit")
+    // Needed to create embedded elastic cluster.
+    testCompile("org.apache.logging.log4j:log4j-core:$log4jCore")
+    testRuntime("org.apache.spark:spark-core_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-sql_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+    testRuntime("org.apache.spark:spark-hive_$scalaVersion:$spark")
+  }
+
+  test {
+    classpath += configurations.compile
+  }
+
+  slowTest {
+    classpath += configurations.compile
+  }
+
+  sparkTest {
+    classpath += configurations.compile
+  }
+
+  cicdTest {
+    classpath += configurations.compile
+  }
+}
+
+project("data-source-all:etl-all") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  
+  dependencies {
+    compile project(":data-source-customer:etl-customer")
+    compile project(":data-source-hotlist:etl-hotlist")
+    compile project(":data-source-transaction:etl-transaction")
+    compile project(":data-source-intelligence:etl-intelligence")
+  }
+
+  artifacts {
+    archives shadowJar
+  }
+
+  def customShadowJars = []
+
+  shadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+    relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+    relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+    relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+    relocate 'org.apache.http', 'com.quantexa.shadow.apache.http'
+    relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+    exclude 'META-INF/versions/9/org/elasticsearch/monitor/jvm/JvmPid.class'
+    exclude 'META-INF/versions/9/org/elasticsearch/core/internal/io/Streams.class'
+    additionalJars = customShadowJars
+  }
+
+}
+
+project("data-source-all:model-all") {
+  apply plugin: 'com.quantexa.plugins.shadow'
+  
+  dependencies {
+    compile project(":data-source-customer:model-customer")
+    compile project(":data-source-hotlist:model-hotlist")
+    compile project(":data-source-transaction:model-transaction")
+    compile project(":data-source-intelligence:model-intelligence")
+  }
+
+  def customShadowJars = ["model-customer_${scalaVersion}-${version}.jar",
+                          "model-hotlist_${scalaVersion}-${version}.jar",
+                          "model-transaction_${scalaVersion}-${version}.jar",
+                          "model-intelligence_${scalaVersion}-${version}.jar"]
+
+  projectShadowJar {
+    zip64 = true
+    mergeServiceFiles()
+    baseName = "${project.name}-shadow"
+    version = "$version"
+    additionalJars = customShadowJars
+  }
+
+}
+
+project("example-task-loading:task-loading") {
+
+    dependencies {
+        compile ("com.quantexa:task-rest-api_$scalaVersion:$quantexaLibraries")
+		compile ("com.quantexa:graph-scripting-scala-utils_$scalaVersion:$quantexaIncubators"){exclude group: 'org.slf4j'}
+		compile("com.quantexa:scoring-framework-scala_$scalaVersion:$quantexaLibraries"){
+		  exclude group: 'org.json4s'
+		  exclude group: 'com.fasterxml.jackson.datatype'
+		  exclude group: 'com.fasterxml.jackson.core'
+		  exclude group: 'com.fasterxml.jackson.module'
+		}
+    }
+}
+
+project("example-task-loading:task-loading-batch") {
+    apply plugin: 'com.quantexa.plugins.shadow'
+  
+    dependencies {
+
+        def exclusions = {
+            exclude group: 'org.slf4j'
+            exclude group: 'org.apache.logging.log4j'
+            exclude group: 'org.json4s'
+            exclude group: 'com.fasterxml.jackson.datatype'
+            exclude group: 'com.fasterxml.jackson.core'
+            exclude group: 'com.fasterxml.jackson.module'
+        }
+
+        configurations {
+            provided {
+                dependencies.all { dep ->
+                    configurations.default.exclude group: dep.group, module:dep.name
+                }
+            }
+            compile.extendsFrom provided
+
+            runtime.exclude module: "spark-core_$scalaVersion"
+            runtime.exclude module: "spark-sql_$scalaVersion"
+            runtime.exclude module: "spark-yarn_$scalaVersion"
+            runtime.exclude module: "spark-hive_$scalaVersion"
+            runtime.exclude module: "spark-graphx_$scalaVersion"
+            runtime.exclude module: "spark-mllib_$scalaVersion"
+        }
+
+        compile(project(":example-task-loading:task-loading"),exclusions)
+        compile("com.quantexa:quantexa-script-runner-${elasticsearch}_$scalaVersion:$quantexaIncubators")
+		compile(project(":data-source-customer:model-customer")) {
+		  exclude group: 'org.json4s'
+		  exclude group: 'com.fasterxml.jackson.datatype'
+		  exclude group: 'com.fasterxml.jackson.core'
+		  exclude group: 'com.fasterxml.jackson.module'
+		}
+
+        testCompile("org.scalatest:scalatest_$scalaVersion:$scalatest")
+        testCompile("junit:junit:$junit")
+
+        provided("org.apache.spark:spark-core_$scalaVersion:$spark")
+        provided("org.apache.spark:spark-sql_$scalaVersion:$spark")
+        provided("org.apache.spark:spark-yarn_$scalaVersion:$spark")
+        provided("org.apache.spark:spark-hive_$scalaVersion:$spark")
+        provided("org.apache.spark:spark-graphx_$scalaVersion:$spark")
+        provided("org.apache.spark:spark-mllib_$scalaVersion:$spark")
+
+    }
+
+    def taskShadowJars = ["task-loading_$scalaVersion-${version}.jar"]
+
+    dependencyShadowJar {
+        zip64 = true
+        mergeServiceFiles()
+        baseName = "${project.name}-shadow"
+        version = "$version"
+        relocate 'org.joda', 'com.quantexa.shadow.joda'
+        relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+        relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+        relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+        relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+        relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+        exclude 'META-INF/versions/9/org/elasticsearch/monitor/jvm/JvmPid.class'
+        exclude 'META-INF/versions/9/org/elasticsearch/core/internal/io/Streams.class'
+        transform(new com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer(resource: "reference.conf"))
+
+        excludedJars = taskShadowJars
+    }
+
+    projectShadowJar {
+        zip64 = true
+        mergeServiceFiles()
+        baseName = "${project.name}-shadow"
+        version = "$version"
+        relocate 'org.joda', 'com.quantexa.shadow.joda'
+        relocate 'com.google.guava', 'com.quantexa.shadow.google.guava'
+        relocate 'com.google.common', 'com.quantexa.shadow.google.common'
+        relocate 'com.google.thirdparty', 'com.quantexa.shadow.google.thirdparty'
+        relocate 'com.fasterxml.jackson', 'com.quantexa.shadow.fasterxml.jackson'
+        relocate 'shapeless', 'com.quantexa.shadow.shapeless'
+
+        additionalJars = taskShadowJars
+
+    }
+
+}
+
+
+project("example-cicd-testing") {
+
+  dependencies {
+    compile project(":example-models-common")
+
+    testCompile("com.quantexa:etl-core-${elasticsearch}_$scalaVersion:$quantexaLibraries")
+    testCompile("io.circe:circe-config_$scalaVersion:$circeConfig")
+    testCompile("io.circe:circe-generic_$scalaVersion:$circeGeneric")
+    testCompile("io.circe:circe-generic-extras_$scalaVersion:$circeGeneric")
+    testCompile("com.quantexa:quantexa-etl-scala_$scalaVersion:$quantexaIncubators")
+  }
+}
+
+wrapper {
+  gradleVersion = "$propertiesGradleVersion"
+}

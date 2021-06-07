@@ -1,0 +1,14 @@
+<div class="main">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab header="Entity telephone" class="main" *ngIf="model" [selected]="true">
+            <dl class="ui-g">
+                <dt class="ui-g-4">Telephone number:</dt>
+                <dd class="ui-g-8">{{model.attributes.telephoneDisplay}}</dd>
+                <dt class="ui-g-4">Documents:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_documents}}</dd>
+                <dt class="ui-g-4">Records:</dt>
+                <dd class="ui-g-8">{{model.attributes.total_records}}</dd>
+            </dl>
+        </p-accordionTab>
+    </p-accordion>
+</div>

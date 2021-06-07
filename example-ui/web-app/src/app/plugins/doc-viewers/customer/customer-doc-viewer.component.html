@@ -1,0 +1,92 @@
+<div class="main" *ngIf="document && document.source">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab [header]="document.source.registeredBusinessName || document.source.fullName" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngIf="document.source.customerIdNumber">
+                    <dt class="ui-g-4">Customer ID:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.customerIdNumber|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.dateOfBirth">
+                    <dt class="ui-g-4">Date of Birth:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.dateOfBirth| parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.personalNationalIdNumber">
+                    <dt class="ui-g-4">National ID:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.personalNationalIdNumber|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.customerStatus">
+                    <dt class="ui-g-4">Status:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.customerStatus|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.customerStartDate">
+                    <dt class="ui-g-4">Start date:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.customerStartDate | parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.customerStartDate">
+                    <dt class="ui-g-4">End date:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.customerEndDate | parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.registeredBusinessNumber">
+                    <dt class="ui-g-4">Registration no:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.registeredBusinessNumber|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.countryOfRegisteredBusiness">
+                    <dt class="ui-g-4">Registered Country:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.countryOfRegisteredBusiness|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.nationality">
+                    <dt class="ui-g-4">Nationality:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.nationality|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.residenceCountry">
+                    <dt class="ui-g-4">Residence Country:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.residenceCountry|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.employeeFlag">
+                    <dt class="ui-g-4">Employee?:</dt>
+                    <dd><i *ngIf="account.employeeFlag" class="fa fa-check" aria-hidden="true"></i></dd>
+                </ng-container>
+                <ng-container *ngIf="document.source.customerRiskRating">
+                    <dt class="ui-g-4">Risk rating:</dt>
+                    <dd class="ui-g-8" [innerHTML]="document.source.customerRiskRating|keepHtml"></dd>
+                </ng-container>
+            </dl>
+        </p-accordionTab>
+        <p-accordionTab header="Accounts" *ngIf="document.source.accounts?.length>0" [selected]="true">
+            <qe-autoheight-scrollpanel>
+                <div class="ui-scrollpanel ui-widget ui-widget-content ui-corner-all" ng-reflect-ng-class="ui-scrollpanel ui-widget ui-wi" style="width: 100%; height: 100%; overflow: hidden;">
+                    <div class="ui-scrollpanel-wrapper">
+                        <div class="ui-scrollpanel-content" style="width: 100%; height: 100%;">
+                            <table class="qe-table new-style compact">
+                                <thead>
+                                    <tr>
+                                        <th>Account Number</th>
+                                        <th>Status</th>
+                                        <th>Opened Date</th>
+                                        <th>Closed Date</th>
+                                        <th>Risk Rating</th>
+                                        <th>Alerts?</th>
+                                        <th>Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngFor="let account of document.source.accounts">
+                                        <tr>
+                                            <td class="nowrap">{{account.primaryAccountNumber}} </td>
+                                            <td class="nowrap">{{account.accountStatus}} </td>
+                                            <td class="nowrap">{{account.accountOpenedDate | parseDate}} </td>
+                                            <td class="nowrap">{{account.accountClosedDate | parseDate}} </td>
+                                            <td class="nowrap">{{account.accountRiskRating}} </td>
+                                            <td><i class="fa fa-exclamation-triangle" *ngIf="account.amlALRFlag=='t'" aria-hidden="true" pTooltip="Account has AML Alerts" tooltipPosition="bottom"></i></td>
+                                            <td class="nowrap">{{account.consolidatedAccountAddress}} </td>
+                                        </tr>
+                                    </ng-container>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </qe-autoheight-scrollpanel>
+        </p-accordionTab>
+    </p-accordion>
+</div>

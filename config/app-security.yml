@@ -1,0 +1,58 @@
+server:
+  port: 8085
+
+quantexa.security:
+  models:
+
+#security:
+#  bootstrap.location: classpath:security-populate.json
+
+# ENABLE THE LINE BELOW ONCE THE MIGRATOR HAS BEEN RUN
+# acl.persistence.compression.mode: full
+
+ldap:
+  url: ldap://localhost:8388/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+
+quadit4j:
+  file:
+    dir: .
+    prefix: app-security
+
+---
+
+spring:
+  profiles: docker
+
+ldap:
+  url: ldap://gateway:8388/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+
+quadit4j:
+  file:
+    dir: /var/log
+
+---
+
+spring:
+  profiles: docker-production
+
+quantexa.security.authentication.instance-role: user
+
+ldap:
+  url: ldap://ldap-host:389/
+  base-dn: dc=quantexa,dc=com
+  password.encoder: bcrypt
+  manager:
+    dn: cn=admin,dc=quantexa,dc=com
+    password: Sp@rkh@d00p!
+
+---
+
+spring:
+  profiles: kubernetes
+
+ldap:
+  url: ldap://gateway-ldap:8388/

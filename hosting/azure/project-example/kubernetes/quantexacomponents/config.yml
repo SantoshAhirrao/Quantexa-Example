@@ -1,0 +1,10 @@
+global:
+  environment: azure
+  fluentd:
+    image:
+      registry: containerregprojectexamp.azurecr.io
+      tag: 0.3.0
+    output:
+      azure:
+        enabled: true
+        accountName: akslogarchiveprojectexam

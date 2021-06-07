@@ -1,0 +1,22 @@
+pipeline {
+    agent{
+        label 'accelerators-analyst-no-cache'
+    }
+
+    stages {
+        stage('Add records to indices'){
+            steps {
+                echo "Adding documents/records to indices"
+                sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/onehop; ./add_records_to_indices.sh")
+            }
+        }
+        stage('Run graph scripts'){
+            steps {
+                withCredentials([file(credentialsId: 'default-trust-store', variable: 'TRUST_STORE')]) {
+                    echo "Running the graph script"
+                    sh(returnStdout: true, script: "cd $WORKSPACE/cicd/graphscripts/onehop; ./run_graph_scripts.sh")
+                }
+            }
+        }
+    }
+}

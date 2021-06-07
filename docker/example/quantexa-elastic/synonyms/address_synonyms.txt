@@ -1,0 +1,4 @@
+close,cls
+street,st,str
+road,rd
+avenue,ave,av

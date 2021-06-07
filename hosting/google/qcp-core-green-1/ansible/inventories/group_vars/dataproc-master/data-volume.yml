@@ -1,0 +1,4 @@
+---
+
+data_volume_mount_device: sdb
+data_volume_mount_path: /quantexa

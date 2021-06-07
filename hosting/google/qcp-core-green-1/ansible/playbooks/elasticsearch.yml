@@ -1,0 +1,39 @@
+---
+
+#
+# Configuration for all the machines
+#
+- hosts: qcp-core-green-1:&elastic
+  become: yes
+  roles:
+   # Security
+   - role: data-volume
+     # Mounts Log Disk
+     vars:
+       data_volume_mount_device: "{{ log_volume_mount_device_id }}"
+       data_volume_mount_path:   "{{ log_volume_mount_full_path }}"
+       data_volume_symlinks:     "{{ log_volume_dir_symlinks }}"
+   - role: data-volume
+     vars:
+       # Mounts Data Disk
+       # The following will check if we are using Dedicated Master Node or not
+       #    If 'yes', it mounts device defined by 'dedicated_master_data_disk_mount_device'
+       #    If 'no', it mounts device defined by 'data_volume_mount_device_id'
+       data_volume_mount_device: "{{ data_volume_mount_device_id if es_config['node.data'] else dedicated_master_data_disk_mount_device }}"
+       data_volume_mount_path:   "{{ data_volume_mount_full_path }}"
+       data_volume_symlinks:     "{{ data_volume_dir_symlinks }}"
+   - role: base-security
+   # Users and their environment
+   - role: users
+     users_system_users:    "{{ all_default_users }}"
+   - role: sudo
+   # ElasticSearch
+   - role: java
+   - role: quantexa-elastic-os-settings
+   - role: elasticsearch
+   - role: quantexa-elastic-synonyms
+   # Logging and Monitoring
+   - role: node-exporter
+   - role: ansible-es-cluster-exporter
+   - role: nginx
+   - role: nginx-exporter

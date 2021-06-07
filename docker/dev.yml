@@ -1,0 +1,22 @@
+version: "2.1"
+services:
+  config-server:
+    image: example/config-service
+    # The following two lines can be toggled to make config files dynamic in development (../ for dev), they shouldn't really be used in deployment
+    # volumes:
+    #   - ../config:/config-yml-files
+  gateway:
+    image: example/gateway
+  explorer-ui:
+    image: example/example-ui
+  app-investigate:
+    image: example/app-investigate
+  app-resolve:
+    image: example/app-resolve
+  app-search:
+    image: example/app-search
+  app-security:
+    image: example/app-security
+networks:
+  quantexa-internal:
+    driver: bridge

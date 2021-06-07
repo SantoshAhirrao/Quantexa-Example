@@ -1,0 +1,10 @@
+@import "~@quantexa/explorer-web-core/styles/variables/typography";
+
+.icon {
+    width: $font-size-icon;
+    height: $font-size-icon;
+}
+
+.nowrap {
+    white-space: nowrap;
+}

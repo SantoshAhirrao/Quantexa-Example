@@ -1,0 +1,4 @@
+id,type,label,date_valid_from,date_valid_to,string_label,int_account_count
+D4_1,customer,SourcePlant,01/01/1960,01/02/1970,SourcePlant,1
+D4_2,trade,12 Trades,12/09/1969,01/02/1970,12 Trades,
+D4_3,trade,13 Trades,12/09/1969,01/02/1970,13 Trades,

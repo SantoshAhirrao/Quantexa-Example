@@ -1,0 +1,64 @@
+spring.session.store-type: none
+
+security:
+  sessions: NEVER
+  privilege:
+    config.location: ${config-files.dir}/privilege-mappings.json
+    dependencies.location: ${config-files.dir}/example-privilege-dependencies.json
+
+resolver.config:
+  name: resolver-config-fiu-smoke.json
+  location: ${config-files.dir}/${resolver.config.name}
+
+quantexa.security:
+  authentication.jwt.secret: hxF^yDQNnA4/M'94_*\BnT7sN`8X]GS%^z#C8?zdwJ'2L6{(G%D"QkmSWEte-;@N
+
+scoring:
+  model: fiu-smoke
+
+#quadit4j.enabled: false
+quadit4j:
+  handlers:
+    - org.audit4j.core.handler.ConsoleAuditHandler
+    - org.audit4j.core.handler.file.FileAuditHandler
+#    - org.audit4j.handler.db.DatabaseAuditHandler
+  db:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/audit4j
+    user: postgres
+    password: postgres
+
+quantexa.security.authentication.instance-role: USER
+
+# Application Container Health
+endpoints.health.time-to-live: 1000 # One second
+endpoints.health.sensitive: false
+management.security.roles: SUPER-ADMINS
+management.health.defaults.enabled: false
+management.health.status.order: INITIALISING, DOWN, DEGRADED, UP
+endpoints.health.mapping.INITIALISING: IM_USED
+endpoints.health.mapping.DEGRADED: SEE_OTHER
+
+management.metrics.export.prometheus.enabled: true
+management.metrics.distribution:
+  percentiles[http.server.requests]: 0.5, 0.75, 0.9, 0.95, 0.99
+  percentiles-histogram[http.server.requests]: true
+  sla[http.server.requests]: 10ms, 100ms
+  percentiles[elastic.search.server.time]: 0.5, 0.75, 0.9, 0.95, 0.99
+  percentiles-histogram[elastic.search.server.time]: true
+  percentiles[resolver.resolve.compound]: 0.5, 0.75, 0.9, 0.95, 0.99
+  percentiles-histogram[resolver.resolve.compound]: true
+  percentiles[graph.custodian.initialise.investigation]: 0.5, 0.75, 0.9, 0.95, 0.99
+  percentiles-histogram[graph.custodian.initialise.investigation]: true
+  percentiles[bulk.queue.task.load]: 0.5, 0.75, 0.9, 0.95, 0.99
+  percentiles-histogram[bulk.queue.task.load]: true
+
+
+---
+
+spring:
+  profiles: kubernetes
+
+endpoints:
+  info.enabled: false
+  docs.enabled: false

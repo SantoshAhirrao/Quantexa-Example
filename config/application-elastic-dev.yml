@@ -1,0 +1,27 @@
+search:
+  config: fiu-smoke
+  elastic.datasources:
+    customer:
+      index: search-fiu-smoke-dummy-customer-yourName
+      type: customer
+    hotlist:
+      index: search-fiu-smoke-dummy-hotlist-yourName
+      type: hotlist
+
+resolver.elastic:
+  datasources:
+    customer:
+      indexPrefix: resolver-fiu-smoke-dummy-customer-yourName
+    hotlist:
+      indexPrefix: resolver-fiu-smoke-dummy-hotlist-yourName
+
+elastic:
+  instances:
+    default:
+      uri: elasticsearch://localhost:9200
+
+elastic.instances:
+  my-instance:
+    uri: elasticsearch://localhost:9200
+
+scoring.elastic.instance: my-instance

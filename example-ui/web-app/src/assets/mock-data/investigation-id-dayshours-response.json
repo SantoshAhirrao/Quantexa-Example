@@ -1,0 +1,3348 @@
+{
+    "id": "154ba315-dfca-4a0c-a4c8-528a867899ed",
+    "name": null,
+    "graph": {
+        "nodes": [
+            {
+                "id": "account-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]",
+                "label": "84116802215111\nMICHAEL GREENE",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Account.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]",
+                    "type": "account",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|21088381091049331|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 58,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 58,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 58,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 58,
+                                "txn_sum": 58,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_min_sent": 58,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[39239917066466|84116802215111|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 222,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "MADY ALTHOFF",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "841168",
+                                "orig_bene": "bene",
+                                "account_number": "02215111",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 222,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 222,
+                                "txn_sum": 222,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 222,
+                                "account_country": "GB",
+                                "txn_max_received": 222,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/cus_id_no[45078203947]/prim_acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "customerindividual"
+                            },
+                            "attributes": {
+                                "acc_opened_dt": "1999-01-19",
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "full_name": "Michael Greene",
+                                "acc_risk_rtng": "7733.0",
+                                "label": "84116802215111",
+                                "aml_alr_flg": "t",
+                                "account_number": "84116802215111",
+                                "rel_mngr_name": "HA TUTINO",
+                                "account_id": "84116802215111",
+                                "account_name": "Michael Greene",
+                                "composite_acc_name": "MICHAEL GREENE",
+                                "acc_stat": "Active",
+                                "personal_national_id_no": "612632251"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|76253757417642|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 118,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 118,
+                                "txn_sum_3m": 118,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 118,
+                                "other_account_ctry": "AU",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 118,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 118,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 118,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 118,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 118,
+                                "txn_sum": 118,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 118,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 118,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78705676965651|84116802215111|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 124,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 5,
+                                "txn_sum_6m": 24990,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "841168",
+                                "txn_cnt_6m": 3,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 9990,
+                                "account_number": "02215111",
+                                "cross_border_flg": false,
+                                "txn_sum_received": 31114,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 7000,
+                                "txn_cnt_received": 5,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 9990,
+                                "txn_sum": 31114,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 124,
+                                "account_country": "GB",
+                                "txn_max_received": 9990,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|131171014656225|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 85,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 4,
+                                "txn_sum_sent": 472,
+                                "txn_sum_3m": 211,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 309,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 2,
+                                "txn_cnt_6m": 3,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 126,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 85,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 85,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 162,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 162,
+                                "txn_sum": 472,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 4,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 126,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 85,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|21821480544840|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 40,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 336,
+                                "txn_sum_3m": 296,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 296,
+                                "other_account_ctry": "HU",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 296,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 296,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 296,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 296,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 296,
+                                "txn_sum": 336,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 2,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 296,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 40,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|17844162365717|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 10,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 142,
+                                "txn_sum_6m": 131,
+                                "other_account_ctry": "KI",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 131,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 131,
+                                "txn_max_sent": 131,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 131,
+                                "txn_sum": 142,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 2,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 10,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|40116839522373|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 86,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 86,
+                                "other_account_ctry": "IT",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 86,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 86,
+                                "txn_sum": 86,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_min_sent": 86,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|78705676965651|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 441,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 5,
+                                "txn_sum_sent": 30431,
+                                "txn_sum_3m": 9990,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 14990,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "account_sort": "841168",
+                                "txn_cnt_6m": 2,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 9990,
+                                "account_number": "02215111",
+                                "cross_border_flg": false,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 9990,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 5000,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 9990,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 9990,
+                                "txn_sum": 30431,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 5,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "GB",
+                                "txn_max_3m": 9990,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 441,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|31668860045283|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 60,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 142,
+                                "other_account_ctry": "AU",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 81,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 81,
+                                "txn_sum": 142,
+                                "txn_cnt_sent": 2,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_min_sent": 60,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|48578640438853|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 37,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 37,
+                                "other_account_ctry": "FJ",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 37,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 37,
+                                "txn_sum": 37,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_min_sent": 37,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|68417065173167|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 45,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 45,
+                                "txn_sum_3m": 45,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 45,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 45,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 45,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 45,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 45,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 45,
+                                "txn_sum": 45,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 45,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 45,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|18909647518268|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 43,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 43,
+                                "txn_sum_3m": 43,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 43,
+                                "other_account_ctry": "AU",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 43,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 43,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 43,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 43,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 43,
+                                "txn_sum": 43,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 43,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 43,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6015,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "841168",
+                                "orig_bene": "bene",
+                                "account_number": "02215111",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 6015,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 6015,
+                                "txn_sum": 6015,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 6015,
+                                "account_country": "GB",
+                                "txn_max_received": 6015,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|28019940854663|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 4,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 3,
+                                "txn_sum_sent": 41,
+                                "txn_sum_6m": 4,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 4,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 4,
+                                "txn_max_sent": 21,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 21,
+                                "txn_sum": 41,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 3,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 4,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|87647927948537|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 50,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 332,
+                                "txn_sum_3m": 282,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 282,
+                                "other_account_ctry": "US",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 282,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 282,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 282,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 282,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 282,
+                                "txn_sum": 332,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 2,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 282,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 50,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|22712244139851|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 3867,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 3867,
+                                "txn_sum_6m": 3867,
+                                "other_account_ctry": "US",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 3867,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 3867,
+                                "txn_max_sent": 3867,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 3867,
+                                "txn_sum": 3867,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 3867,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 143,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_3m": 143,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 143,
+                                "other_account_ctry": "Tape World Sahis",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_min_1m": 143,
+                                "account_sort": "841168",
+                                "txn_max_1m": 143,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 143,
+                                "account_number": "02215111",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 143,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 143,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 143,
+                                "round_amount_pct_3m": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_sum_1m": 143,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 143,
+                                "txn_sum": 143,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "round_amount_flag_received": false,
+                                "txn_cnt_1m": 1,
+                                "txn_min_received": 143,
+                                "account_country": "GB",
+                                "txn_max_received": 143,
+                                "txn_max_3m": 143,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|77098800406314|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 79,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 79,
+                                "txn_sum_6m": 79,
+                                "other_account_ctry": "AU",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 79,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 79,
+                                "txn_max_sent": 79,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 79,
+                                "txn_sum": 79,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 79,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6538,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 6538,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "account_sort": "841168",
+                                "orig_bene": "orig",
+                                "account_number": "02215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 6538,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 6538,
+                                "txn_sum": 6538,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "GB",
+                                "txn_min_sent": 6538,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|45558931798216|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 2,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 2,
+                                "other_account_ctry": "CH",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 2,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 2,
+                                "txn_sum": 2,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_min_sent": 2,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|35598276415383|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 19,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 102,
+                                "txn_sum_3m": 19,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 102,
+                                "other_account_ctry": "NO",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 2,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 82,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 19,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 19,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 82,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 82,
+                                "txn_sum": 102,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 2,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 19,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 19,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78751770517870|84116802215111|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 4050,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 12206,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 12206,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "txn_cnt_3m": 3,
+                                "txn_min_1m": 4067,
+                                "account_sort": "841168",
+                                "txn_max_1m": 4067,
+                                "txn_cnt_6m": 3,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 4088,
+                                "account_number": "02215111",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 12206,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 4050,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 4050,
+                                "round_amount_pct_3m": 0,
+                                "txn_cnt_received": 3,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_sum_1m": 4067,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 4088,
+                                "txn_sum": 12206,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "round_amount_flag_received": false,
+                                "txn_cnt_1m": 1,
+                                "txn_min_received": 4050,
+                                "account_country": "GB",
+                                "txn_max_received": 4088,
+                                "txn_max_3m": 4088,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|1313578084856|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 82,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 82,
+                                "txn_sum_6m": 82,
+                                "other_account_ctry": "AT",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 82,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 82,
+                                "txn_max_sent": 82,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 82,
+                                "txn_sum": 82,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 82,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|58383839748280|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 42,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 42,
+                                "other_account_ctry": "NL",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 42,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 42,
+                                "txn_sum": 42,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_min_sent": 42,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|272230591405|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 16,
+                                "round_amount_flag_sent": false,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 118,
+                                "txn_sum_3m": 16,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 16,
+                                "other_account_ctry": "AU",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 16,
+                                "account_number": "84116802215111",
+                                "cross_border_flg": true,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 16,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 16,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 102,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 102,
+                                "txn_sum": 118,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 2,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "MICHAEL GREENE",
+                                "txn_max_3m": 16,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 16,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[89466998767505|84116802215111|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 1064,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 1,
+                                "txn_sum_6m": 1064,
+                                "other_account_ctry": "PETZEL CHICHLOWSKA",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "841168",
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 1064,
+                                "account_number": "02215111",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 1064,
+                                "account_id": "84116802215111",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 1064,
+                                "txn_cnt_received": 1,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 1064,
+                                "txn_sum": 1064,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 1064,
+                                "account_country": "GB",
+                                "txn_max_received": 1064,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[90177234532362|84116802215111|D]/acc_no[84116802215111]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 25,
+                                "account_label": "84116802215111\nMICHAEL GREENE",
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 57,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 57,
+                                "other_account_ctry": "JINXIA YEPEZ",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "txn_cnt_3m": 1,
+                                "account_sort": "841168",
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 57,
+                                "account_number": "02215111",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 129,
+                                "account_id": "84116802215111",
+                                "txn_min_3m": 57,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 57,
+                                "round_amount_pct_3m": 0,
+                                "txn_cnt_received": 3,
+                                "account_name": "MICHAEL GREENE",
+                                "txn_max": 57,
+                                "txn_sum": 129,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 25,
+                                "account_country": "GB",
+                                "txn_max_received": 57,
+                                "txn_max_3m": 57,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 29,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 51,
+                        "acc_opened_dt": "1999-01-19",
+                        "total_records": 29,
+                        "account_label": "84116802215111\nMICHAEL GREENE",
+                        "full_name": "Michael Greene",
+                        "acc_risk_rtng": "7733.0",
+                        "account_number": "84116802215111",
+                        "account_id": "84116802215111",
+                        "composite_acc_name": "MICHAEL GREENE",
+                        "transaction_value": 94006,
+                        "total_documents": 29
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": -1.5069061552695706,
+                    "y": -0.4611088394099173
+                }
+            },
+            {
+                "id": "account-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                "label": "96565178705676\nJack Robinson",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Account.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                    "type": "account",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[96565178705676]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6406,
+                                "round_amount_flag_sent": false,
+                                "account_label": "96565178705676\nJack Robinson",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 6406,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "96565178705676",
+                                "cross_border_flg": false,
+                                "account_id": "96565178705676",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 6406,
+                                "account_name": "Jack Robinson",
+                                "txn_max": 6406,
+                                "txn_sum": 6406,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "GBR",
+                                "txn_min_sent": 6406,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6538,
+                                "account_label": "96565178705676\nJack Robinson",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "orig_bene": "bene",
+                                "account_number": "96565178705676",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 6538,
+                                "account_id": "96565178705676",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "Jack Robinson",
+                                "txn_max": 6538,
+                                "txn_sum": 6538,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 6538,
+                                "account_country": "GBR",
+                                "txn_max_received": 6538,
+                                "round_amount_pct": 0
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 2,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 2,
+                        "total_records": 2,
+                        "account_label": "96565178705676\nJack Robinson",
+                        "account_number": "96565178705676",
+                        "account_id": "96565178705676",
+                        "transaction_value": 12944,
+                        "total_documents": 2
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": 0.6849495419255526,
+                    "y": -1.4187839978820287
+                }
+            },
+            {
+                "id": "account-/agg_wire_id[34688697565366|78496238580062|D]/acc_no[78496238580062]",
+                "label": "78496238580062\nLINDSAY DAVID",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Account.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[34688697565366|78496238580062|D]/acc_no[78496238580062]",
+                    "type": "account",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[87721596075509|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 10,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "FUKASHI MALENGREZ",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "784962",
+                                "orig_bene": "bene",
+                                "account_number": "38580062",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 10,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 10,
+                                "txn_sum": 10,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 10,
+                                "account_country": "GB",
+                                "txn_max_received": 10,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|99476440350818|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 144,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 471,
+                                "txn_sum_3m": 471,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 471,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 2,
+                                "txn_cnt_6m": 2,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 327,
+                                "account_number": "78496238580062",
+                                "cross_border_flg": true,
+                                "account_id": "78496238580062",
+                                "txn_min_3m": 144,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 144,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 327,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 327,
+                                "txn_sum": 471,
+                                "round_amount_flag_6m": false,
+                                "txn_cnt_sent": 2,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "LINDSAY DAVID",
+                                "txn_max_3m": 327,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 144,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[4586568358521|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 119,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 2,
+                                "txn_sum_6m": 244,
+                                "other_account_ctry": "ANGELINE HARJI",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "784962",
+                                "txn_cnt_6m": 2,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 124,
+                                "account_number": "38580062",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 244,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 119,
+                                "txn_cnt_received": 2,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 124,
+                                "txn_sum": 244,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 119,
+                                "account_country": "GB",
+                                "txn_max_received": 124,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[34688697565366|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 82,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "Monk Real Estate Service Imports PLC",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "784962",
+                                "orig_bene": "bene",
+                                "account_number": "38580062",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 82,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 82,
+                                "txn_sum": 82,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 82,
+                                "account_country": "GB",
+                                "txn_max_received": 82,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|7137398715272|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 31,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 31,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "78496238580062",
+                                "cross_border_flg": true,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 31,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 31,
+                                "txn_sum": 31,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "LINDSAY DAVID",
+                                "txn_min_sent": 31,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|90533611448211|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 63,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 63,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "78496238580062",
+                                "cross_border_flg": true,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 63,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 63,
+                                "txn_sum": 63,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "LINDSAY DAVID",
+                                "txn_min_sent": 63,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78751770517870|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 3986,
+                                "account_label": "78496238580062\nLindsay David",
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 11994,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 11994,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "txn_cnt_3m": 3,
+                                "txn_min_1m": 3998,
+                                "txn_max_1m": 3998,
+                                "txn_cnt_6m": 3,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 4009,
+                                "account_number": "78496238580062",
+                                "cross_border_flg": false,
+                                "txn_sum_received": 11994,
+                                "account_id": "78496238580062",
+                                "txn_min_3m": 3986,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 3986,
+                                "round_amount_pct_3m": 0,
+                                "txn_cnt_received": 3,
+                                "account_name": "Lindsay David",
+                                "txn_sum_1m": 3998,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 4009,
+                                "txn_sum": 11994,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "round_amount_flag_received": false,
+                                "txn_cnt_1m": 1,
+                                "txn_min_received": 3986,
+                                "account_country": "GBR",
+                                "txn_max_received": 4009,
+                                "txn_max_3m": 4009,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|89121468421861|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 106,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 3,
+                                "txn_sum_sent": 2298,
+                                "txn_sum_3m": 2057,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 2163,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_min_1m": 2057,
+                                "txn_max_1m": 2057,
+                                "txn_cnt_6m": 2,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 2057,
+                                "account_number": "78496238580062",
+                                "cross_border_flg": true,
+                                "account_id": "78496238580062",
+                                "txn_min_3m": 2057,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 106,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 2057,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_sum_1m": 2057,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 2057,
+                                "txn_sum": 2298,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "txn_cnt_sent": 3,
+                                "txn_cnt_1m": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "LINDSAY DAVID",
+                                "txn_max_3m": 2057,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 106,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[83719427434641|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 1,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 159,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 159,
+                                "other_account_ctry": "ANUD BETHRY",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "txn_cnt_3m": 1,
+                                "account_sort": "784962",
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 159,
+                                "account_number": "38580062",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 189,
+                                "account_id": "78496238580062",
+                                "txn_min_3m": 159,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 159,
+                                "round_amount_pct_3m": 0,
+                                "txn_cnt_received": 3,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 159,
+                                "txn_sum": 189,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 1,
+                                "account_country": "GB",
+                                "txn_max_received": 159,
+                                "txn_max_3m": 159,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|19728990587863|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 85,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 85,
+                                "other_account_ctry": "FR",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "78496238580062",
+                                "cross_border_flg": true,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 85,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 85,
+                                "txn_sum": 85,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "LINDSAY DAVID",
+                                "txn_min_sent": 85,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6144,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLindsay David",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 6144,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "78496238580062",
+                                "cross_border_flg": false,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 6144,
+                                "account_name": "Lindsay David",
+                                "txn_max": 6144,
+                                "txn_sum": 6144,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "GBR",
+                                "txn_min_sent": 6144,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6406,
+                                "account_label": "78496238580062\nLindsay David",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "orig_bene": "bene",
+                                "account_number": "78496238580062",
+                                "cross_border_flg": false,
+                                "txn_sum_received": 6406,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "Lindsay David",
+                                "txn_max": 6406,
+                                "txn_sum": 6406,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 6406,
+                                "account_country": "GBR",
+                                "txn_max_received": 6406,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[85875598212079|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 53,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "Farrell's Ice Cream Parlour Imports Cor",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "784962",
+                                "orig_bene": "bene",
+                                "account_number": "38580062",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 53,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 53,
+                                "txn_sum": 53,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 53,
+                                "account_country": "GB",
+                                "txn_max_received": 53,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[36316926391325|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 3,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "txn_sum_6m": 3,
+                                "other_account_ctry": "Plan Future VOF",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_6m": 0,
+                                "round_amount_cnt_received": 0,
+                                "account_sort": "784962",
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "bene",
+                                "txn_max_6m": 3,
+                                "account_number": "38580062",
+                                "cross_border_flg": true,
+                                "txn_sum_received": 3,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 3,
+                                "txn_cnt_received": 1,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 3,
+                                "txn_sum": 3,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 3,
+                                "account_country": "GB",
+                                "txn_max_received": 3,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|81399853011407|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 101,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 101,
+                                "other_account_ctry": "AU",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "78496238580062",
+                                "cross_border_flg": true,
+                                "account_id": "78496238580062",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 101,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_max": 101,
+                                "txn_sum": 101,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "LINDSAY DAVID",
+                                "txn_min_sent": 101,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|8410830106372414|D]/acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 7,
+                                "round_amount_flag_sent": false,
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "txn_cnt": 2,
+                                "txn_sum_sent": 79,
+                                "txn_sum_3m": 7,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 7,
+                                "other_account_ctry": "RO",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_min_1m": 7,
+                                "txn_max_1m": 7,
+                                "txn_cnt_6m": 1,
+                                "orig_bene": "orig",
+                                "txn_max_6m": 7,
+                                "account_number": "78496238580062",
+                                "cross_border_flg": true,
+                                "account_id": "78496238580062",
+                                "txn_min_3m": 7,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 7,
+                                "round_amount_pct_3m": 0,
+                                "txn_max_sent": 71,
+                                "account_name": "LINDSAY DAVID",
+                                "txn_sum_1m": 7,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 71,
+                                "txn_sum": 79,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "txn_cnt_sent": 2,
+                                "txn_cnt_1m": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "LINDSAY DAVID",
+                                "txn_max_3m": 7,
+                                "round_amount_pct_6m": 0,
+                                "txn_min_sent": 7,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/cus_id_no[91606192934]/prim_acc_no[78496238580062]",
+                                "entityType": "account",
+                                "documentType": "customerindividual"
+                            },
+                            "attributes": {
+                                "acc_opened_dt": "1999-11-13",
+                                "account_label": "78496238580062\nLINDSAY DAVID",
+                                "full_name": "LINDSAY DAVID",
+                                "acc_risk_rtng": "3360.0",
+                                "label": "78496238580062",
+                                "aml_alr_flg": "t",
+                                "account_number": "78496238580062",
+                                "account_id": "78496238580062",
+                                "account_name": "LINDSAY DAVID",
+                                "composite_acc_name": "LINDSAY DAVID",
+                                "acc_stat": "Active",
+                                "personal_national_id_no": "376776090"
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 17,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 25,
+                        "acc_opened_dt": "1999-11-13",
+                        "total_records": 17,
+                        "account_label": "78496238580062\nLINDSAY DAVID",
+                        "full_name": "LINDSAY DAVID",
+                        "acc_risk_rtng": "3360.0",
+                        "account_number": "78496238580062",
+                        "account_id": "78496238580062",
+                        "composite_acc_name": "LINDSAY DAVID",
+                        "transaction_value": 28253,
+                        "total_documents": 17
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": 1.8695649956940608,
+                    "y": 0.7985530226635023
+                }
+            },
+            {
+                "id": "address-/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                "label": "7 Rue du Sermon, Sark, GY90SF, Guernsey",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Address.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                    "type": "address",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                                "entityType": "address",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "postcode": "GY90SF",
+                                "address_display": "7 Rue du Sermon, Sark, GY90SF, Guernsey"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/cus_id_no[91606192934]/prim_acc_no[78496238580062]",
+                                "entityType": "address",
+                                "documentType": "customerindividual"
+                            },
+                            "attributes": {
+                                "postcode": "GY90SF",
+                                "address_display": "7 Rue du Sermon, Sark, GY90SF, Guernsey"
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 2,
+                    "datetime": 0,
+                    "attributes": {
+                        "total_records": 2,
+                        "postcode": "GY90SF",
+                        "address_display": "7 Rue du Sermon, Sark, GY90SF, Guernsey",
+                        "doctotal": 2,
+                        "total_documents": 2
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": 2.980943151062165,
+                    "y": -1.2365223744654341
+                }
+            },
+            {
+                "id": "individual-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]/party_id[96565178705676]/node_id[1]",
+                "label": "JACK ROBINSON",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Individual.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]/party_id[96565178705676]/node_id[1]",
+                    "type": "individual",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]/party_id[96565178705676]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6538,
+                                "txn_cnt": 1,
+                                "round_amount_flag": false,
+                                "round_amount_cnt": 0,
+                                "txn_max": 6538,
+                                "txn_sum": 6538,
+                                "individual_display": "JACK ROBINSON",
+                                "round_amount_pct": 0
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 1,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 1,
+                        "total_records": 1,
+                        "transaction_value": 6538,
+                        "total_documents": 1,
+                        "individual_display": "JACK ROBINSON"
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": -1.1791087408538383,
+                    "y": -2.697999681488822
+                }
+            },
+            {
+                "id": "individual-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                "label": "MICHAEL GREENE",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Individual.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                    "type": "individual",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78751770517870|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 4050,
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 12206,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 12206,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 3,
+                                "txn_min_1m": 4067,
+                                "txn_max_1m": 4067,
+                                "txn_cnt_6m": 3,
+                                "txn_max_6m": 4088,
+                                "txn_min_3m": 4050,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 4050,
+                                "round_amount_pct_3m": 0,
+                                "txn_sum_1m": 4067,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 4088,
+                                "txn_sum": 12206,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "txn_cnt_1m": 1,
+                                "individual_display": "MICHAEL GREENE",
+                                "txn_max_3m": 4088,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[89466998767505|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 1064,
+                                "txn_cnt": 1,
+                                "txn_sum_6m": 1064,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 1,
+                                "txn_max_6m": 1064,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 1064,
+                                "txn_max": 1064,
+                                "txn_sum": 1064,
+                                "round_amount_flag_6m": false,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[8bfEAWA1Ky9lpG8hzPKodg]/director_id[v4yVsfcXBNngRLG6vyRqXg]/profile_id[2]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Employee",
+                                "individual_job_category": "Administration department",
+                                "disqualified": false,
+                                "dob_display": "19710624",
+                                "bvd_uci": "v4yVsfcXBNngRLG6vyRqXg",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Administration - Admin Contact"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[KuMOGkjxfL65LRYR0wRdjQ]/node_id[-918864214]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1100131200000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[atWhVvWc7PqIGaVQvwWLzQ]/node_id[1252683947]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1100736000000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[DvaUUFR3pvioCBNsmhPyeA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1107129600000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "valid_to": 1140393600000,
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Business Administrator)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[PdxP5Xx5aBbVn95gVqaSYQ]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1118620800000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "valid_to": 1150156800000,
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[vB9s_WjSrfjIfZL8aUu7eA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 897523200000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Producer)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[COcu6mB6TVqj2Yec6jgs8Q]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1116288000000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Music Producer)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[90177234532362|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 25,
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 57,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 57,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "txn_max_6m": 57,
+                                "txn_min_3m": 57,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 57,
+                                "round_amount_pct_3m": 0,
+                                "txn_max": 57,
+                                "txn_sum": 129,
+                                "round_amount_flag_6m": false,
+                                "individual_display": "MICHAEL GREENE",
+                                "txn_max_3m": 57,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[8bfEAWA1Ky9lpG8hzPKodg]/director_id[v4yVsfcXBNngRLG6vyRqXg]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710624",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1110412800000,
+                                "bvd_uci": "v4yVsfcXBNngRLG6vyRqXg",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Administration)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[2H-txaaIsLfWHNaOTvGDQA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 948326400000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Producer Music)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78705676965651|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 124,
+                                "txn_cnt": 5,
+                                "txn_sum_6m": 24990,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 3,
+                                "txn_max_6m": 9990,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 7000,
+                                "txn_max": 9990,
+                                "txn_sum": 31114,
+                                "round_amount_flag_6m": false,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/cus_id_no[45078203947]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "customerindividual"
+                            },
+                            "attributes": {
+                                "individual_start_dt": "2012-10-11",
+                                "cus_risk_rtng": "497",
+                                "full_name": "Michael Greene",
+                                "employee": "false",
+                                "cus_stat": "A",
+                                "individual_end_dt": "1994-03-13",
+                                "nationality": "GB",
+                                "customer_id_no": "45078203947",
+                                "residence_country": "US",
+                                "personal_national_id_no": "612632251",
+                                "individual_display": "Michael Greene",
+                                "gender": "M"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6015,
+                                "txn_cnt": 1,
+                                "round_amount_flag": false,
+                                "round_amount_cnt": 0,
+                                "txn_max": 6015,
+                                "txn_sum": 6015,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[GfKVa9sJ9p15SV3YUIWG1w]/node_id[1252683947]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1100131200000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[w0Vjy3K4cdAspDVT4HLb2w]/node_id[-918864214]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1092873600000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[39239917066466|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 222,
+                                "txn_cnt": 1,
+                                "round_amount_flag": false,
+                                "round_amount_cnt": 0,
+                                "txn_max": 222,
+                                "txn_sum": 222,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 143,
+                                "txn_cnt": 1,
+                                "txn_sum_3m": 143,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 143,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_min_1m": 143,
+                                "txn_max_1m": 143,
+                                "txn_cnt_6m": 1,
+                                "txn_max_6m": 143,
+                                "txn_min_3m": 143,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 143,
+                                "round_amount_pct_3m": 0,
+                                "txn_sum_1m": 143,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 143,
+                                "txn_sum": 143,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "txn_cnt_1m": 1,
+                                "individual_display": "MICHAEL GREENE",
+                                "txn_max_3m": 143,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[iGZvwjBTvitHXMjxdPfj_g]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 934329600000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Producer)"
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 19,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 15,
+                        "total_records": 20,
+                        "individual_role": "Director",
+                        "individual_start_dt": "2012-10-11",
+                        "dob_display": "19710813",
+                        "cus_risk_rtng": "497",
+                        "dob_count": 2,
+                        "full_name": "Michael Greene",
+                        "individual_end_dt": "1994-03-13",
+                        "dob_values": "19710813, 19710624",
+                        "nationality": "GB",
+                        "is_disqualified": false,
+                        "is_customer_individual": true,
+                        "transaction_value": 50893,
+                        "personal_national_id_no": "612632251",
+                        "total_documents": 19,
+                        "is_on_offshore": true,
+                        "individual_display": "MICHAEL GREENE",
+                        "is_on_bvd": true,
+                        "gender": "M"
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": -2.9330631593734653,
+                    "y": 1.3474512926806375
+                }
+            },
+            {
+                "id": "individual-/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]/party_id[56769656517870]/node_id[1]",
+                "label": "MOLLY JENNINGS",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Individual.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]/party_id[56769656517870]/node_id[1]",
+                    "type": "individual",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]/party_id[56769656517870]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6144,
+                                "txn_cnt": 1,
+                                "round_amount_flag": false,
+                                "round_amount_cnt": 0,
+                                "txn_max": 6144,
+                                "txn_sum": 6144,
+                                "individual_display": "MOLLY JENNINGS",
+                                "round_amount_pct": 0
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 1,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 1,
+                        "total_records": 1,
+                        "transaction_value": 6144,
+                        "total_documents": 1,
+                        "individual_display": "MOLLY JENNINGS"
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": 1.3854695554782517,
+                    "y": 3.171638967121188
+                }
+            },
+            {
+                "id": "account-/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                "label": "56769656517870\nMolly Jennings",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Account.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                    "type": "account",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6144,
+                                "account_label": "56769656517870\nMolly Jennings",
+                                "txn_cnt": 1,
+                                "other_account_ctry": "GBR",
+                                "round_amount_flag": false,
+                                "round_amount_pct_received": 0,
+                                "round_amount_cnt_received": 0,
+                                "orig_bene": "bene",
+                                "account_number": "56769656517870",
+                                "cross_border_flg": false,
+                                "txn_sum_received": 6144,
+                                "account_id": "56769656517870",
+                                "round_amount_cnt": 0,
+                                "txn_cnt_received": 1,
+                                "account_name": "Molly Jennings",
+                                "txn_max": 6144,
+                                "txn_sum": 6144,
+                                "round_amount_flag_received": false,
+                                "txn_min_received": 6144,
+                                "account_country": "GBR",
+                                "txn_max_received": 6144,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                                "entityType": "account",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6015,
+                                "round_amount_flag_sent": false,
+                                "account_label": "56769656517870\nMolly Jennings",
+                                "txn_cnt": 1,
+                                "txn_sum_sent": 6015,
+                                "other_account_ctry": "GB",
+                                "round_amount_flag": false,
+                                "round_amount_cnt_sent": 0,
+                                "orig_bene": "orig",
+                                "account_number": "56769656517870",
+                                "cross_border_flg": true,
+                                "account_id": "56769656517870",
+                                "round_amount_cnt": 0,
+                                "txn_max_sent": 6015,
+                                "account_name": "Molly Jennings",
+                                "txn_max": 6015,
+                                "txn_sum": 6015,
+                                "txn_cnt_sent": 1,
+                                "round_amount_pct_sent": 0,
+                                "account_country": "GBR",
+                                "txn_min_sent": 6015,
+                                "round_amount_pct": 0
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 2,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 2,
+                        "total_records": 2,
+                        "account_label": "56769656517870\nMolly Jennings",
+                        "account_number": "56769656517870",
+                        "account_id": "56769656517870",
+                        "transaction_value": 12159,
+                        "total_documents": 2
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": -0.6847241603197894,
+                    "y": 1.9145814822105738
+                }
+            },
+            {
+                "id": "address-/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                "label": "27 THE BROADWAY, SUNDERLAND, SR48NX",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Address.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                    "type": "address",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                                "entityType": "address",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "postcode": "SR48NX",
+                                "address_display": "27 THE BROADWAY, SUNDERLAND, SR48NX"
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 1,
+                    "datetime": 0,
+                    "attributes": {
+                        "total_records": 1,
+                        "postcode": "SR48NX",
+                        "address_display": "27 THE BROADWAY, SUNDERLAND, SR48NX",
+                        "doctotal": 1,
+                        "total_documents": 1
+                    },
+                    "profligate": false
+                },
+                "coordinates": {
+                    "x": 0.4609119931514171,
+                    "y": 1.055563967684853
+                }
+            },
+            {
+                "id": "aggregatedwire-84116802215111|96565178705676|D",
+                "label": "$6538.7 (1 txn)",
+                "valid_from": 1479686400000,
+                "valid_to": 1479686400000,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/transaction.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Document",
+                    "recordIDs": [
+                        {
+                            "id": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]/party_id[96565178705676]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[84116802215111|96565178705676|D]/acc_no[84116802215111]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        }
+                    ],
+                    "documentIdValue": "84116802215111|96565178705676|D",
+                    "documentType": "aggregatedwire",
+                    "datetime": 0,
+                    "attributes": {
+                        "txn_min": "6538",
+                        "txn_cnt": "1",
+                        "wire_id": "84116802215111|96565178705676|D",
+                        "round_amount_flag": "false",
+                        "wire_label": "$6538.7 (1 txn)",
+                        "bene_name": "Jack Robinson",
+                        "cross_border_flg": "true",
+                        "round_amount_cnt": "0",
+                        "valid_from": "1479686400000",
+                        "credit_debit": "D",
+                        "txn_max": "6538",
+                        "txn_sum": "6538",
+                        "valid_to": "1479686400000",
+                        "orig_name": "MICHAEL GREENE",
+                        "round_amount_pct": "0"
+                    }
+                },
+                "coordinates": {
+                    "x": -0.6504440739527758,
+                    "y": -1.488039223070332
+                }
+            },
+            {
+                "id": "aggregatedwire-96565178705676|78496238580062|D",
+                "label": "$6406.3 (1 txn)",
+                "valid_from": 1479772800000,
+                "valid_to": 1479772800000,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/transaction.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Document",
+                    "recordIDs": [
+                        {
+                            "id": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]/party_id[78496238580062]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                            "entityType": "address",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[96565178705676]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        }
+                    ],
+                    "documentIdValue": "96565178705676|78496238580062|D",
+                    "documentType": "aggregatedwire",
+                    "datetime": 0,
+                    "attributes": {
+                        "txn_min": "6406",
+                        "txn_cnt": "1",
+                        "wire_id": "96565178705676|78496238580062|D",
+                        "round_amount_flag": "false",
+                        "wire_label": "$6406.3 (1 txn)",
+                        "bene_name": "Lindsay David",
+                        "cross_border_flg": "false",
+                        "round_amount_cnt": "0",
+                        "valid_from": "1479772800000",
+                        "credit_debit": "D",
+                        "txn_max": "6406",
+                        "txn_sum": "6406",
+                        "valid_to": "1479772800000",
+                        "orig_name": "Jack Robinson",
+                        "round_amount_pct": "0"
+                    }
+                },
+                "coordinates": {
+                    "x": 1.9265607627513677,
+                    "y": -0.5531297013604757
+                }
+            },
+            {
+                "id": "aggregatedwire-78496238580062|56769656517870|D",
+                "label": "$6144.8 (1 txn)",
+                "valid_from": 1479945600000,
+                "valid_to": 1479945600000,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/transaction.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Document",
+                    "recordIDs": [
+                        {
+                            "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]/party_id[56769656517870]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                            "entityType": "address",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[78496238580062]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        }
+                    ],
+                    "documentIdValue": "78496238580062|56769656517870|D",
+                    "documentType": "aggregatedwire",
+                    "datetime": 0,
+                    "attributes": {
+                        "txn_min": "6144",
+                        "txn_cnt": "1",
+                        "wire_id": "78496238580062|56769656517870|D",
+                        "round_amount_flag": "false",
+                        "wire_label": "$6144.8 (1 txn)",
+                        "bene_name": "Molly Jennings",
+                        "cross_border_flg": "false",
+                        "round_amount_cnt": "0",
+                        "valid_from": "1479945600000",
+                        "credit_debit": "D",
+                        "txn_max": "6144",
+                        "txn_sum": "6144",
+                        "valid_to": "1479945600000",
+                        "orig_name": "Lindsay David",
+                        "round_amount_pct": "0"
+                    }
+                },
+                "coordinates": {
+                    "x": 0.9124796282110564,
+                    "y": 2.0890703412946987
+                }
+            },
+            {
+                "id": "aggregatedwire-56769656517870|84116802215111|D",
+                "label": "$6015.5 (1 txn)",
+                "valid_from": 1480204800000,
+                "valid_to": 1480204800000,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/transaction.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Document",
+                    "recordIDs": [
+                        {
+                            "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                            "entityType": "individual",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[84116802215111]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        },
+                        {
+                            "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                            "entityType": "account",
+                            "documentType": "aggregatedwire"
+                        }
+                    ],
+                    "documentIdValue": "56769656517870|84116802215111|D",
+                    "documentType": "aggregatedwire",
+                    "datetime": 0,
+                    "attributes": {
+                        "txn_min": "6015",
+                        "txn_cnt": "1",
+                        "wire_id": "56769656517870|84116802215111|D",
+                        "round_amount_flag": "false",
+                        "wire_label": "$6015.5 (1 txn)",
+                        "bene_name": "MICHAEL GREENE",
+                        "cross_border_flg": "true",
+                        "round_amount_cnt": "0",
+                        "valid_from": "1480204800000",
+                        "credit_debit": "D",
+                        "txn_max": "6015",
+                        "txn_sum": "6015",
+                        "valid_to": "1480204800000",
+                        "orig_name": "Molly Jennings",
+                        "round_amount_pct": "0"
+                    }
+                },
+                "coordinates": {
+                    "x": -1.7152497478092303,
+                    "y": 1.0380639068086508
+                }
+            }
+        ],
+        "edges": [
+            {
+                "id": "aggregatedwire-84116802215111|96565178705676|D account-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                "source": "aggregatedwire-84116802215111|96565178705676|D",
+                "target": "account-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "bene",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6538,
+                        "account_country": "GBR"
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-96565178705676|78496238580062|D account-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                "source": "aggregatedwire-96565178705676|78496238580062|D",
+                "target": "account-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "orig",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6406,
+                        "account_country": "GBR"
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-84116802215111|96565178705676|D individual-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]/party_id[96565178705676]/node_id[1]",
+                "source": "aggregatedwire-84116802215111|96565178705676|D",
+                "target": "individual-/agg_wire_id[84116802215111|96565178705676|D]/acc_no[96565178705676]/party_id[96565178705676]/node_id[1]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6538,
+                        "txn_cnt": 1
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-96565178705676|78496238580062|D account-/agg_wire_id[34688697565366|78496238580062|D]/acc_no[78496238580062]",
+                "source": "aggregatedwire-96565178705676|78496238580062|D",
+                "target": "account-/agg_wire_id[34688697565366|78496238580062|D]/acc_no[78496238580062]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "bene",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6406,
+                        "account_country": "GBR"
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-96565178705676|78496238580062|D address-/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                "source": "aggregatedwire-96565178705676|78496238580062|D",
+                "target": "address-/agg_wire_id[96565178705676|78496238580062|D]/acc_no[78496238580062]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {}
+                }
+            },
+            {
+                "id": "aggregatedwire-84116802215111|96565178705676|D account-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]",
+                "source": "aggregatedwire-84116802215111|96565178705676|D",
+                "target": "account-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "orig",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6538,
+                        "account_country": "GB"
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-78496238580062|56769656517870|D address-/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                "source": "aggregatedwire-78496238580062|56769656517870|D",
+                "target": "address-/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {}
+                }
+            },
+            {
+                "id": "aggregatedwire-78496238580062|56769656517870|D account-/agg_wire_id[34688697565366|78496238580062|D]/acc_no[78496238580062]",
+                "source": "aggregatedwire-78496238580062|56769656517870|D",
+                "target": "account-/agg_wire_id[34688697565366|78496238580062|D]/acc_no[78496238580062]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "orig",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6144,
+                        "account_country": "GBR"
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-78496238580062|56769656517870|D individual-/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]/party_id[56769656517870]/node_id[1]",
+                "source": "aggregatedwire-78496238580062|56769656517870|D",
+                "target": "individual-/agg_wire_id[78496238580062|56769656517870|D]/acc_no[56769656517870]/party_id[56769656517870]/node_id[1]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6144,
+                        "txn_cnt": 1
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-78496238580062|56769656517870|D account-/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                "source": "aggregatedwire-78496238580062|56769656517870|D",
+                "target": "account-/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "bene",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6144,
+                        "account_country": "GBR"
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-56769656517870|84116802215111|D account-/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                "source": "aggregatedwire-56769656517870|84116802215111|D",
+                "target": "account-/agg_wire_id[56769656517870|84116802215111|D]/acc_no[56769656517870]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "orig",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6015,
+                        "account_country": "GBR"
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-56769656517870|84116802215111|D individual-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                "source": "aggregatedwire-56769656517870|84116802215111|D",
+                "target": "individual-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6015,
+                        "txn_cnt": 1
+                    }
+                }
+            },
+            {
+                "id": "aggregatedwire-56769656517870|84116802215111|D account-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]",
+                "source": "aggregatedwire-56769656517870|84116802215111|D",
+                "target": "account-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]",
+                "color": "rgba(0,0,0,0.75)",
+                "valid_from": null,
+                "valid_to": null,
+                "type": null,
+                "size": 1.0,
+                "attributes": {
+                    "attributes": {
+                        "txn_cnt": 1,
+                        "orig_bene": "bene",
+                        "round_amount_cnt": 0,
+                        "txn_sum": 6015,
+                        "account_country": "GB"
+                    }
+                }
+            }
+        ]
+    },
+    "isAtTag": false,
+    "natures": {},
+    "tag": 0,
+    "tags": [
+        {
+            "tag": 0,
+            "natures": {},
+            "createdBy": "rubenmoreno",
+            "createdDateTime": "2018-08-02T09:57:42.000Z"
+        }
+    ],
+    "privileges": [
+        {
+            "name": "Investigation.GetGraphAsData"
+        },
+        {
+            "name": "Investigation.AddRolePrivilege"
+        },
+        {
+            "name": "Investigation.RenameInvestigation"
+        },
+        {
+            "name": "Investigation.GetUIPrivileges"
+        },
+        {
+            "name": "Investigation.RemoveRolePrivilege"
+        },
+        {
+            "name": "Investigation.RebuildCompoundGraph"
+        },
+        {
+            "name": "Investigation.GetUserPrivileges"
+        },
+        {
+            "name": "Investigation.GetTaggedGraph"
+        },
+        {
+            "name": "Investigation.GetTaggedGraphAsData"
+        },
+        {
+            "name": "Investigation.ExpandGraph"
+        },
+        {
+            "name": "Investigation.GetGraph"
+        },
+        {
+            "name": "Investigation.AddUser"
+        },
+        {
+            "name": "Investigation.GetPrivileges"
+        },
+        {
+            "name": "Investigation.DeleteInvestigationRequest"
+        },
+        {
+            "name": "Investigation.ApplyRebuildGraph"
+        },
+        {
+            "name": "Investigation.CountFilterExpandPreview"
+        },
+        {
+            "name": "Investigation.RemoveRole"
+        },
+        {
+            "name": "Investigation.RemoveUser"
+        },
+        {
+            "name": "Investigation.AddNatures"
+        },
+        {
+            "name": "Investigation.AddRole"
+        },
+        {
+            "name": "Investigation.GetInvestigationDocuments"
+        },
+        {
+            "name": "Investigation.GetCompoundGraph"
+        },
+        {
+            "name": "Investigation.ScoreGraph"
+        },
+        {
+            "name": "Investigation.InitialiseGraph"
+        },
+        {
+            "name": "Investigation.DumpExpandPreview"
+        },
+        {
+            "name": "Investigation.RemoveUserPrivilege"
+        },
+        {
+            "name": "Investigation.RemoveNatureTypes"
+        },
+        {
+            "name": "Investigation.SaveGraphLayoutRequest"
+        },
+        {
+            "name": "Investigation.AddItems"
+        },
+        {
+            "name": "Investigation.AddUserPrivilege"
+        },
+        {
+            "name": "Investigation.TagInvestigation"
+        },
+        {
+            "name": "Investigation.GraphRedoRequest"
+        },
+        {
+            "name": "Investigation.RemoveNodes"
+        },
+        {
+            "name": "Investigation.RevertToTag"
+        },
+        {
+            "name": "Investigation.GraphUndoRequest"
+        },
+        {
+            "name": "Investigation.ApplyExpandPreview"
+        }
+    ]
+}

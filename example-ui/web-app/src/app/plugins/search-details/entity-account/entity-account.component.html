@@ -1,0 +1,47 @@
+<div class="main" *ngIf="entity">
+    <p-accordion [multiple]="true" expandIcon="qe-icon-chevron-right" collapseIcon="qe-icon-chevron-down">
+        <p-accordionTab header="Entity Info" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngIf="entity.label">
+                    <dt class="ui-g-4">Account Number:</dt><dd class="ui-g-8" [innerHTML]="entity.label|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="entity.fullName">
+                    <dt class="ui-g-4">Account Name:</dt><dd class="ui-g-8" [innerHTML]="entity.fullName|keepHtml"></dd>
+                </ng-container>
+                <ng-container *ngIf="entity.accountOpenedDate">
+                    <dt class="ui-g-4">Opened Date:</dt><dd class="ui-g-8" [innerHTML]="entity.accountOpenedDate|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="entity.accountClosedDate">
+                    <dt class="ui-g-4">Closed Date:</dt><dd class="ui-g-8" [innerHTML]="entity.accountClosedDate|parseDate"></dd>
+                </ng-container>
+                <ng-container *ngIf="entity.accountRiskRating">
+                    <dt class="ui-g-4">Risk Rating:</dt><dd class="ui-g-8" [innerHTML]="entity.accountRiskRating| number : '1.0-0'"></dd>
+                </ng-container>
+            </dl>
+        </p-accordionTab>
+        <p-accordionTab header="Score Details" *ngIf="scores" [selected]="true">
+            <dl class="ui-g">
+                <ng-container *ngFor="let score of scores | keyvalue">
+                    <ng-container *ngIf="score.key !== 'Total Score'">
+                        <dt class="ui-g-6">{{score.key}}:</dt>
+                        <dd class="ui-g-6">
+                            <qe-lozenge [color]="getScoreColor(score.value)" [text]="score.value"></qe-lozenge>
+                        </dd>
+                    </ng-container>
+                </ng-container>
+                <dt class="ui-g-6"><strong>Total Score:</strong></dt>
+                <dd class="ui-g-6">
+                    <qe-lozenge [color]="getScoreColor(totalScore)" [text]="totalScore"></qe-lozenge>
+                </dd>
+            </dl>
+        </p-accordionTab>
+        <p-accordionTab header="Additional Information" [selected]="true">
+            <dl class="ui-g">
+                <dt class="ui-g-4">Total Documents:</dt>
+                <dd class="ui-g-8" [innerHTML]="entity.total_documents|keepHtml"></dd>
+                <dt class="ui-g-4">Total Records:</dt>
+                <dd class="ui-g-8" [innerHTML]="entity.total_records|keepHtml"></dd>
+            </dl>
+        </p-accordionTab>
+    </p-accordion>
+</div>

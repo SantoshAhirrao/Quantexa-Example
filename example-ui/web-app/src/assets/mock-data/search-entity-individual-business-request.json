@@ -1,0 +1,29 @@
+{
+    "queryString": "michael greene",
+    "scoreSetName": "default",
+    "expansionForScoring": "default-entity",
+    "scoresFilters": {
+        "scoreIds": [],
+        "scoreTags": [
+            "ui-entity-search"
+        ]
+    },
+    "entitiesToResolve": [
+        "business",
+        "individual"
+    ],
+    "dataSources": [
+        "customerindividual"
+    ],
+    "isPartial": true,
+    "searchFacets": {
+        "aggregatedwire": [],
+        "uploadaggregatedwire": [],
+        "bvd": [],
+        "uploadcustomer": [],
+        "customerindividual": [],
+        "offshore": [],
+        "dowjones": [],
+        "customerbusiness": []
+    }
+}

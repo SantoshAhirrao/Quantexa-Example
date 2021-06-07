@@ -1,0 +1,14 @@
+---
+
+#
+# Sudo configuration
+#
+
+sudo_sudoers_d:
+ - name: quantexa
+   sudoers_entries:
+    - who:      '%quantexa-sudo'
+      as_who:   [ ALL ]
+      commands: [ ALL ]
+      options:  NOPASSWD
+

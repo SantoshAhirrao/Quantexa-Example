@@ -1,0 +1,5 @@
+id,type,label,string_label
+CUST11_1,customer,SourcePlant,01/01/1960,01/02/1970,SourcePlant,1
+TRADE11_1,trade,12 Trades,12 Trades
+TRADE11_2,trade,13 Trades,13 Trades,
+TRADE11_3,trade,14 Trades,13 Trades,

@@ -1,0 +1,5 @@
+id,type,label,date_valid_from,date_valid_to,string_label,int_account_count
+50000001,customer,SourcePlant,01/01/1960,01/02/1970,SourcePlant,1
+TRADE5_1,trade,12 Trades,12/09/1969,01/02/1970,12 Trades,
+TRADE5_2,trade,13 Trades,12/09/1969,01/02/1970,13 Trades,
+BVD1,orbis,Counterparties R Us,01/01/1960,01/02/1970,Counterparties R Us,0

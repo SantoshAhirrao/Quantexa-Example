@@ -1,0 +1,41 @@
+server:
+  port: 9001
+
+expansionMaxNodesThreshold: 200
+
+intel.config:
+  name: intel-config-example.json
+  location: ${config-files.dir}/${intel.config.name}
+
+investigation.config:
+  name: investigation-config-example.json
+  location: ${config-files.dir}/${investigation.config.name}
+
+# ENABLE THE LINE BELOW ONCE THE MIGRATOR HAS BEEN RUN
+# intelligence.persistence.compression.mode: full
+
+quadit4j:
+  file:
+    dir: .
+    prefix: app-investigate
+
+spring:
+  mvc:
+    async:
+      request-timeout: 300000
+
+---
+
+spring:
+  profiles: docker
+
+quadit4j:
+  file:
+    dir: /var/log
+
+---
+
+spring:
+  profiles: docker-production
+
+quantexa.security.authentication.instance-role: user

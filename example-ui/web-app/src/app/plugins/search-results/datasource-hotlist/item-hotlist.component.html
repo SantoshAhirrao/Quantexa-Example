@@ -1,0 +1,19 @@
+<div class="main" *ngIf="item">
+    <h3 *ngIf="item.source.fullName" [innerHTML]="item.source.fullName|keepHtml"></h3>
+    <h3 *ngIf="item.source.registeredBusinessName" [innerHTML]="item.source.registeredBusinessName|keepHtml"></h3>
+    <dl class="ui-g">
+        <dt class="ui-g-4">Document Type:</dt><dd class="ui-g-8" [innerHTML]="item.documentType|keepHtml"></dd>
+        <dt class="ui-g-4">Hotlist ID:</dt><dd class="ui-g-8" [innerHTML]="item.source.hotlistId|keepHtml"></dd>
+        <dt class="ui-g-4">Date Added:</dt><dd class="ui-g-8" [innerHTML]="item.source.dateAdded|parseDate"></dd>
+        <ng-container *ngIf="item.source.fullName">
+            <dt class="ui-g-4">Name:</dt><dd class="ui-g-8" [innerHTML]="item.source.fullName|keepHtml"></dd>
+        </ng-container>
+        <ng-container *ngIf="item.source.registeredBusinessName">
+            <dt class="ui-g-4">Name:</dt><dd class="ui-g-8" [innerHTML]="item.source.registeredBusinessName|keepHtml"></dd>
+        </ng-container>
+        <ng-container *ngIf="item.source.dateOfBirth">
+            <dt class="ui-g-4">Date of Birth:</dt><dd class="ui-g-8" [innerHTML]="item.source.dateOfBirth|parseDate"></dd>
+        </ng-container>
+        <dt class="ui-g-4">Search Relevance:</dt><dd class="ui-g-8" [innerHTML]="item.score|keepHtml"></dd>
+    </dl>
+</div>

@@ -1,0 +1,104 @@
+---
+#
+# Ansible requirements file to include roles. To install the requirements run
+# the following:
+#   ansible-galaxy install -r requirements.yml
+#
+# To update the existing roles run:
+#   ansible-galaxy install --force -r requirements.yml
+#
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/base-security.git
+  name: base-security
+  version: 0.2.8
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/sophos-av.git
+  name: sophos-av
+  version: 0.1.1
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/data-volume.git
+  name: data-volume
+  version: 0.2.5
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/external-ansible-roles/elasticsearch.git
+  name: elasticsearch
+  version: 0.3.0
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/fail2ban.git
+  name: fail2ban
+  version: 0.2.3
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/external-ansible-roles/google-fluentd.git
+  name: google-fluentd
+  version: 0.1.0
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/gcloud-cli.git
+  name: gcloud-cli
+  version: 0.2.0
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/java.git
+  name: java
+  version: 0.2.0
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/external-ansible-roles/node-exporter.git
+  name: node-exporter
+  version: 0.1.3
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/external-ansible-roles/nginx.git
+  name: nginx
+  version: 0.2.7
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/nginx-exporter.git
+  name: nginx-exporter
+  version: 0.1.2
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/os-hardening.git
+  name: os-hardening
+  version: 0.1.2
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/quantexa-elastic-os-settings.git
+  name: quantexa-elastic-os-settings
+  version: 0.2.0
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/quantexa-elastic-synonyms.git
+  name: quantexa-elastic-synonyms
+  version: 0.2.0
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/sendgrid.git
+  name: sendgrid
+  version: 0.2.3
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/external-ansible-roles/role-sudo.git
+  name: sudo
+  version: 0.2.1
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/external-ansible-roles/role-users.git
+  name: users
+  version: 0.2.4
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/external-ansible-roles/ansible-es-cluster-exporter.git
+  name: ansible-es-cluster-exporter
+  version: 0.1.3
+  scm: git
+
+- src: git@gitlab.com:Quantexa/dev-ops/ansible-roles/quantexa-internal-repositories.git
+  name: quantexa-internal-repositories
+  version: 0.2.1
+  scm: git

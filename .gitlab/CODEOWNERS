@@ -1,0 +1,83 @@
+/.gitlab/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/airflow/  @ryanamiri @tomgeary @tomeastgate @willtun
+
+/app-graph-script/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/app-investigate/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/app-resolve/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/app-search/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/app-security/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/build/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/buildSrc/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/cicd/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/config/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/config-service/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/data-source-all/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/data-source-customer/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/data-source-hotlist/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/data-source-intelligence/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/data-source-spring-config/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/data-source-transaction/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/docker/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/eng-spark-core-shadow/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-adhoc/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-cicd-testing/ @aaronlee
+
+/example-config/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-data-generator/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-etl-common/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-graph-scripting/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-metadata/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-models-common/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-notebooks/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-scoring/ @nicksutcliffe
+
+/example-scoring-batch/ @nicksutcliffe
+
+/example-scripts/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-task-loading/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/example-ui/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/gateway/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/gcp-upload-scripts/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/gradle/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/hosting/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/metastore_db/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/qa/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/scripts/ @ryanamiri @tomgeary @tomeastgate @willtun
+
+/spark-warehouse/ @ryanamiri @tomgeary @tomeastgate @willtun

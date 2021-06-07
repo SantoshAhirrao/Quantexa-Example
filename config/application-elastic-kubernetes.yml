@@ -1,0 +1,48 @@
+search:
+  config: fiu-smoke
+  elastic.datasources:
+    customer:
+        index: ci-test-search-customer
+        type: customer
+    hotlist:
+        index: ci-test-search-hotlist
+        type: hotlist
+    research:
+        index: ci-test-search-research
+        type: research
+    transaction:
+      index: ci-test-search-transaction
+      type: transaction
+
+resolver.elastic:
+  datasources:
+    customer:
+      indexPrefix: ci-test-resolver-customer
+    hotlist:
+      indexPrefix: ci-test-resolver-hotlist
+    research:
+      indexPrefix: ci-test-resolver-research
+    transaction:
+      indexPrefix: ci-test-resolver-transaction
+
+elastic:
+  instances:
+    default:
+      uri: elasticsearch://elastic.toothless.svc.cluster.local:9200
+  xpack:
+    enabled: true
+    https:
+      enabled: true
+      truststore:
+        path: ${truststore.path}
+        instance: JKS
+        password: ${truststore.password}
+      keystore:
+        path: ${keystore.path}
+        instance: JKS
+        password: ${keystore.password}
+elastic.instances:
+  my-instance:
+    uri: elasticsearch://elastic.toothless.svc.cluster.local:9200
+
+scoring.elastic.instance: my-instance

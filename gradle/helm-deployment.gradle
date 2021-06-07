@@ -1,0 +1,209 @@
+/*
+HELM Deployment
+
+This Gradle script takes care of managing the release of the Quantexa's Helm Charts
+
+Requirements: GIT, gradle, Kubectl, and Helm installed on the system.
+*/
+
+import org.apache.tools.ant.taskdefs.condition.Os
+import org.apache.tools.ant.filters.*
+import java.nio.file.Paths
+
+apply plugin: 'nu.studer.credentials'
+
+/** Hosting-environment to use */
+propertyOrDefault "hosting_environment", ""
+
+/** Cloud provider being used for the hosting-environment */
+propertyOrDefault "hosting_cloud_provider", ""
+
+/** Name of the Helm Chart to install */
+propertyOrDefault "helm_chart_name", ""
+
+/** Load environment-specific properties */
+if ( (hosting_cloud_provider != "") && (hosting_environment != "") && (helm_chart_name != "") ){
+  loadExtraProperties("hosting/$hosting_cloud_provider/$hosting_environment/kubernetes/${helm_chart_name.toLowerCase()}/gradle.properties")
+}
+
+/** Version of the Chart to install */
+propertyOrDefault "helm_chart_version", ""
+
+/** Name of the target Kubernetes Namespace */
+propertyOrDefault "helm_deploy_namespace", ""
+
+/** Name of the Project User Tiller's Namespace */
+propertyOrDefault "tiller_namespace", "tiller"
+
+/** Username */
+propertyOrDefault "jenkins_username", "username"
+
+/** password */
+propertyOrDefault "jenkins_password", "password"
+
+/** Helm values file */
+propertyOrDefault "helm_values_file", "config.yml"
+helm_values_file = \
+  Paths.get("hosting", "$hosting_cloud_provider", "$hosting_environment", "kubernetes", "${helm_chart_name.toLowerCase()}", helm_values_file).toString()
+
+/** Name of the release (non alphanumeric characters create problems) */
+propertyOrDefault "helm_release_name", \
+  "${helm_chart_name.toLowerCase()}${helm_deploy_namespace.toLowerCase()}"
+        .replaceAll( /\W/, '' )
+
+/** Path of the Helm executable */
+propertyOrDefault "helm_executable", "helm"
+
+/** Path of the Kubectl executable */
+propertyOrDefault "kubectl_executable", "kubectl"
+
+/** URL of the Helm Repository */
+checkUserProperty "maven_url"
+
+/**
+ * Runs a shell command using Exec
+ */
+def runCommand( String... args ) {
+  def stdout = new ByteArrayOutputStream()
+  // To debug. Be aware that it also prints command-line passwords:
+  //println args.join(' ').replace("\\", "\\\\")
+  try {
+    exec {
+      commandLine args
+      standardOutput = stdout
+      errorOutput = stdout
+    }
+  }
+  catch (Exception e){
+    println stdout.toString()
+    throw e
+  }
+  println stdout.toString()
+  return stdout.toString()
+}
+
+/**
+ * Loads a new gradle.properties file into user properties
+ * If a specific property is pre-existing, it is not overwritten by ones in this file
+ */
+def loadExtraProperties(String fileName) {
+  def props = new Properties()
+  file(fileName).withInputStream {
+    stream -> props.load(stream)
+  }
+
+  props.each { key, val ->
+    if (!project.ext.has(key)) { project.ext.set(key, val) }
+  }
+}
+
+/**
+ * Gets an external property and if not found it sets it to default
+ */
+def propertyOrDefault( String property_name, String default_value = "" ) {
+  if( !project.hasProperty(property_name) ) {
+    ext[property_name] = default_value
+  }
+}
+
+/**
+ * Throw exception if property is empty
+ */
+def ensurePropertyDefined( String property_key, String property_value) {
+  if ( property_value == "" ) {
+    throw new GradleException('Property ' + property_key + ' not defined, this should be defined in your properties file or on the command line using the -P flag.')
+  }
+}
+
+/**
+ * Deploys a Helm release
+ */
+task helmInstallOrUpgrade() {
+  description "Deploy the Helm chart to a release. If the release is already present it will be upgraded"
+  group = 'Helm'
+
+  // Use a temporary file as value file, after some processing
+  def tempDir = getTemporaryDir().toString()
+  def tempValuesFile = Paths.get( tempDir, "values.yml" ).toString()
+
+  def dockerTag = 'git rev-parse HEAD'.execute().text.trim()
+
+  if (project.hasProperty('docker_tag')) {
+    dockerTag = project.property('docker_tag')
+  } else if (!project.version.endsWith('-SNAPSHOT')) {
+    dockerTag = project.version
+  }
+
+  copy {
+    from file( helm_values_file )
+    into tempDir
+    rename ".*", "values.yml"
+    filter( ReplaceTokens, tokens: [
+            imageTag: dockerTag
+    ] )
+  }
+
+  doFirst {
+    ensurePropertyDefined("hosting_cloud_provider", hosting_cloud_provider)
+    ensurePropertyDefined("hosting_environment", hosting_environment)
+    ensurePropertyDefined("helm_chart_name", helm_chart_name)
+    ensurePropertyDefined("helm_deploy_namespace", helm_deploy_namespace)
+    ensurePropertyDefined("helm_chart_version", helm_chart_version)
+    ensurePropertyDefined("tiller_namespace", tiller_namespace)
+
+    println "\nDeploying the Helm chart '$helm_chart_name' to release '$helm_release_name' on environment '$hosting_environment'"
+
+    // Manage repository (adding multiple times doesn't duplicate it)
+    println "\nInstall or update Helm repository reference:"
+    runCommand helm_executable, "repo", "add", \
+      "--username", jenkins_username, \
+      "--tiller-namespace", tiller_namespace, \
+      "--password", jenkins_password, \
+      "quantexa-helm-repo", \
+      "$maven_url/quantexa-helm/"
+
+    runCommand helm_executable, "repo", "update", "--tiller-namespace", tiller_namespace
+
+    // Install or update a release
+    println "Install or upgrade Helm release '$helm_release_name'"
+    runCommand helm_executable, "upgrade", \
+      "--install", \
+      "--namespace", helm_deploy_namespace, \
+      "--tiller-namespace", tiller_namespace, \
+      "--version", helm_chart_version, \
+      "--values", tempValuesFile, \
+      helm_release_name, "quantexa-helm-repo/$helm_chart_name"
+
+    println "Done."
+  }
+}
+
+/**
+ * Deletes a Helm release
+ */
+task helmDelete() {
+  description "Remove a Helm release and the namespace containing it"
+  group = 'Helm'
+
+  doFirst {
+    ensurePropertyDefined("hosting_cloud_provider", hosting_cloud_provider)
+    ensurePropertyDefined("hosting_environment", hosting_environment)
+    ensurePropertyDefined("helm_chart_name", helm_chart_name)
+    ensurePropertyDefined("helm_deploy_namespace", helm_deploy_namespace)
+    ensurePropertyDefined("helm_chart_version", helm_chart_version)
+    ensurePropertyDefined("tiller_namespace", tiller_namespace)
+
+    println "\nNow removing the release '$helm_release_name' from '$helm_deploy_namespace'"
+
+    // Check if the release has been deployed
+    def releases = runCommand helm_executable, "list", "--tiller-namespace", tiller_namespace
+    if( (releases =~ /(?m)^${helm_release_name}\b/).size() > 0 ) {
+      runCommand(helm_executable, "delete", "--purge", helm_release_name, "--tiller-namespace", tiller_namespace)
+    }
+    else {
+      println "The release is not present, nothing to be done."
+    }
+
+    println "Done."
+  }
+}

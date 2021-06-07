@@ -1,0 +1,74 @@
+database.type: postgres
+
+acl.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}.postgres.database.azure.com:5432/acl?user=postgres@${postgres.servername}&password=${postgres.password}&ssl=true
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+security.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}.postgres.database.azure.com:5432/security?user=postgres@${postgres.servername}&password=${postgres.password}&ssl=true
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+investigation.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}.postgres.database.azure.com:5432/explorer_investigation?user=postgres@${postgres.servername}&password=${postgres.password}&ssl=true
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+task.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}.postgres.database.azure.com:5432/task?user=postgres@${postgres.servername}&password=${postgres.password}&ssl=true
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+intelligence.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}.postgres.database.azure.com:5432/intelligence?user=postgres@${postgres.servername}&password=${postgres.password}&ssl=true
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+quadit4j:
+  db:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://${postgres.servername}.postgres.database.azure.com:5432/quadit?ssl=true
+    user: postgres@${postgres.servername}
+    password: ${postgres.password}
+    table-name: quadit

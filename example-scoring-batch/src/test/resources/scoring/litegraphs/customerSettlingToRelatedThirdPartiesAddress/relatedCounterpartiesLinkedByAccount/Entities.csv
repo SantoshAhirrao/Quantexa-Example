@@ -1,0 +1,5 @@
+id,entity_type,document_type,label,string_role
+subject11_1,business,,subject11_1,subject
+acc11_1,account,,acc11_1,
+acc11_2,account,,acc11_2,
+addr11_1,address,,acc11_2,

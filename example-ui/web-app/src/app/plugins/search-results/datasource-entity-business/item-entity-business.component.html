@@ -1,0 +1,30 @@
+<div class="main" *ngIf="entity">
+    <h3 *ngIf="entity.registeredBusinessName" [innerHTML]="entity.registeredBusinessName|keepHtml"></h3>
+    <h3 *ngIf="entity.individualDisplay" [innerHTML]="entity.individualDisplay|keepHtml"></h3>
+    <dl class="ui-g">
+        <ng-container *ngIf="entity.registeredBusinessNumber">
+            <dt class="ui-g-4">Registered Business Number:</dt>
+            <dd class="ui-g-8" [innerHTML]="entity.registeredBusinessNumber|keepHtml"></dd>
+        </ng-container>
+        <ng-container *ngIf="entity.countryOfRegisteredBusiness">
+            <dt class="ui-g-4">Nationality:</dt>
+            <dd class="ui-g-8" [innerHTML]="entity.countryOfRegisteredBusiness|keepHtml"></dd>
+        </ng-container>
+        <ng-container *ngIf="entity.id.indexOf('Tran') !== -1">
+            <dt class="ui-g-4">Transaction ID:</dt>
+            <dd class="ui-g-8" [innerHTML]="entity.id.split('[')[1].split(']')[0]|keepHtml"></dd>
+        </ng-container>
+        <ng-container *ngIf="entity.txnSum12Month">
+            <dt class="ui-g-4">Transaction Volume:</dt>
+            <dd class="ui-g-8" [innerHTML]="entity.txnSum12Month| number : '1.2-2'"></dd>
+        </ng-container>
+        <dt class="ui-g-4">Number of Documents:</dt>
+        <dd class="ui-g-8" [innerHTML]="entity.total_documents|keepHtml"></dd>
+        <dt class="ui-g-4">Number of Records:</dt>
+        <dd class="ui-g-8" [innerHTML]="entity.total_records|keepHtml"></dd>
+        <dt class="ui-g-4">Entity Score:</dt>
+        <dd class="ui-g-8">
+            <qe-lozenge [color]="getScoreColor(totalScore)" [text]="totalScore"></qe-lozenge>
+        </dd>
+    </dl>
+</div>

@@ -1,0 +1,169 @@
+import java.text.SimpleDateFormat
+
+pipeline {
+    agent none
+
+    stages {
+        stage('Build jars, run ETL and scoring, create Docker images and push to registry') {
+            agent {
+                label 'accelerators-analyst-no-cache'
+            }
+            stages {
+                stage('Update Version') {
+                    steps {
+                        echo "Updating the version of Q dependencies"
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./update_versions.sh ${params.IS_NIGHTLY_BUILD} ${todaysVersionSuffix()}")
+                    }
+                }
+
+                stage('Build') {
+                    steps {
+                        dir ("$WORKSPACE/example-ui/web-app") {
+                           withNPM(npmrcConfig: 'bc43f645-9c02-4e84-9cbb-75f36b2b0eaf') {}
+                           sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./compile.sh")
+                        }
+                    }
+                }
+
+                stage('Copy jars') {
+                    steps {
+                        echo "copying over jars to containers..."
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./copy_jars.sh")
+                    }
+                }
+
+                stage('Preparing test environment') {
+                    steps {
+                        echo "Removing ci-test indices"
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./deleteIndicesIfExist.sh")
+                    }
+                }
+
+                stage('Run ETL and ENG') {
+                    steps {
+                        echo "Starting the docker containers and running ETL and ENG..."
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./run_etl.sh")
+                    }
+                }
+
+                stage('Run CICD Tests') {
+                    steps {
+                        echo "Run CICD Tests..."
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./load_and_run_tests.sh cicdtests")
+                    }
+
+                }
+                stage('Run Batch Scoring Pipeline') {
+                    steps {
+                        echo "Starting the scoring pipeline"
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./run_scoring.sh")
+                    }
+                }
+
+                stage('ETL Tests') {
+                    steps {
+                        echo "Running ETL tests..."
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./load_and_run_tests.sh etltests")
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./check_results.sh etltests")
+                    }
+                }
+                stage('ENG Tests') {
+                    steps {
+                        echo "Running ENG tests..."
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./load_and_run_tests.sh engtests")
+                        sh "cd $WORKSPACE/cicd; ./check_results.sh engtests"
+                    }
+                }
+                stage('Spark Tests') {
+                    steps {
+                        echo "Running Spark tests..."
+                        sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./load_and_run_tests.sh sparktests")
+                    }
+                }
+                stage("Create, tag and push docker images") {
+                     when { expression { return params.RUN_DOCKER_AND_HELM } }
+                     steps {
+                         dir ("$WORKSPACE/example-ui/web-app") {
+                            withNPM(npmrcConfig: 'bc43f645-9c02-4e84-9cbb-75f36b2b0eaf') {}
+                            echo "Creating and pushing docker images..."
+                            sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./deployment_docker.sh")
+                         }
+                     }
+                }
+                stage("Cleanup") {
+                     steps {
+                         sh "cd $WORKSPACE/cicd; ./cleanup.sh"
+                     }
+                }
+            }
+        }
+        stage('Helm Deployment') {
+            agent {
+                label 'accelerators-helm'
+            }
+            when { expression { return params.RUN_DOCKER_AND_HELM } }
+            stages {
+               stage("Run Helm") {
+                   environment {
+                        SECRET_FILE     = credentials('nx-jenkins-accelerators-credentials')
+                   }
+                   steps {
+                       echo "Deploying helm charts..."
+                       sh "cd $WORKSPACE/cicd; ./deployment_helm.sh ${params.Q_VERSION}"
+                   }
+               }
+            }
+        }
+
+        /*stage('Service Tests') {
+            steps {
+                echo "Running deployment tests..."
+                sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./load_and_run_tests.sh servicetests")
+                sh(returnStdout: true, script: "cd $WORKSPACE/cicd; ./check_results.sh servicetests")
+            }
+        }*/
+
+        stage('Release Stage') {
+            agent {
+                label 'accelerators-analyst-no-cache'
+            }
+            stages {
+                stage('Release') {
+                    steps {
+                        sshagent(credentials: ['jenkins-accelerators-gitlab-key']) {
+                            dir ("$WORKSPACE/example-ui/web-app") {
+                                withNPM(npmrcConfig: 'bc43f645-9c02-4e84-9cbb-75f36b2b0eaf') {}
+                                    sh(returnStdout: true, script: """cd $WORKSPACE/cicd; ./release.sh \
+                                        ${params.Q_VERSION} \
+                                        ${params.Q_NEW_VERSION} \
+                                        ${params.Q_DEPENDENCY_VERSION} \
+                                        ${params.Q_NEW_DEPENDENCY_VERSION} \
+                                        ${params.Q_INCUBATORS_DEPENDENCY_VERSION} \
+                                        ${params.Q_NEW_INCUBATORS_DEPENDENCY_VERSION} \
+                                        ${params.BRANCH} \
+                                        ${params.RELEASE_PROJECT} \
+                                        ${params.IS_NIGHTLY_BUILD} \
+                                        ${todaysVersionSuffix()}""")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    post {
+        success {
+            slackSend (baseUrl: 'https://quantexa.slack.com/services/hooks/jenkins-ci/', color: '#00FF00', message: "Daily Build Succeeded Today (${env.BUILD_URL})")
+        }
+
+        failure {
+            slackSend (baseUrl: 'https://quantexa.slack.com/services/hooks/jenkins-ci/', color: '#FF0000', message: "Daily Build Failed Today (${env.BUILD_URL})")
+        }
+    }
+}
+
+def String todaysVersionSuffix() {
+  format = new SimpleDateFormat("dd-MM-yy")
+  "nightly-" + format.format(new Date())
+}
+

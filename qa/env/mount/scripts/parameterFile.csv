@@ -1,0 +1,44 @@
+﻿Name,Description,Value
+outcomePeriodMonths,"Outcome period for all scores, expressed in months",6
+MediumRiskThresholdCorruptionScore,"Medium risk threshold for corruption perception index (index 1 is highest risk)",77
+HighRiskThresholdCorruptionScore,"High risk threshold for corruption perception index (index 1 is highest risk)",44
+HighRiskCustomer_HighRiskRatingThreshold,High risk parameter for HighRiskCustomer score,5000
+HighRiskCustomer_HighSeverityRating,High severity parameter for HighRiskCustomer score,100
+HighRisk_DescriptionString,"Text for 'high' risk level, to be used alongside high risk banding in score descriptions",high
+NewCustomer_newDateThreshold,Earliest date for a customer to be considered a 'new' customer,2006/01/01
+RecentlyJoinedBusiness_VeryHighSeverity,Very high severity parameter for RecentlyJoinedBusiness score,100
+RecentlyJoinedBusiness_HighSeverity,High severity parameter for RecentlyJoinedBusiness score,77
+RecentlyJoinedBusiness_MediumSeverity,Medium severity parameter for RecentlyJoinedBusiness score,50
+RecentlyJoinedBusiness_LowSeverity,Low severity parameter for RecentlyJoinedBusiness score,34
+RecentlyJoinedBusiness_VeryLowSeverity,Very low severity parameter for RecentlyJoinedBusiness score,17
+HighRiskCustomerIndividual_riskRatingThreshold,"Exclusive risk rating threshold, which if exceeded, will trigger the 'HighRiskCustomerIndividual' scenario",4500
+CustomerAddressInLowValuePostcode_PriceThreshold,Upper inclusive price threshold for low value area,80000.0
+UnusuallyHigh1DayValueForCustomer_numberOfStdDevsUnusualMediumSeverity,Number of standard deviations for medium severity for 'UnusuallyHigh1DayValueForCustomer',2.0
+UnusuallyHigh1DayValueForCustomer_numberOfStdDevsUnusualHighSeverity,Number of standard deviations for high severity for 'UnusuallyHigh1DayValueForCustomer',2.3
+UnusuallyHigh7DaysValueForCustomer_numberOfStdDevsUnusualMediumSeverity,Number of standard deviations for medium severity for 'UnusuallyHigh7DaysValueForCustomer',2.0
+UnusuallyHigh7DaysValueForCustomer_numberOfStdDevsUnusualHighSeverity,Number of standard deviations for high severity for 'UnusuallyHigh7DaysValueForCustomer',2.3
+UnusuallyHigh30DaysValueForCustomer_numberOfStdDevsUnusualMediumSeverity,Number of standard deviations for medium severity for 'UnusuallyHigh30DaysValueForCustomer',2.0
+UnusuallyHigh30DaysValueForCustomer_numberOfStdDevsUnusualHighSeverity,Number of standard deviations for high severity for 'UnusuallyHigh30DaysValueForCustomer',2.3
+UnusuallyHigh1DayTransactionVolume_numberOfStdDevsUnusualMediumSeverity,Number of standard deviations for medium severity for 'UnusuallyHigh1DayTransactionVolume',2.0
+UnusuallyHigh1DayTransactionVolume_numberOfStdDevsUnusualHighSeverity,Number of standard deviations for high severity for 'UnusuallyHigh1DayTransactionVolume',2.3
+UnusuallyHigh7DaysTransactionVolume_numberOfStdDevsUnusualMediumSeverity,Number of standard deviations for medium severity for 'UnusuallyHigh7DaysTransactionVolume',2.0
+UnusuallyHigh7DaysTransactionVolume_numberOfStdDevsUnusualHighSeverity,Number of standard deviations for high severity for 'UnusuallyHigh7DaysTransactionVolume',2.3
+UnusuallyHigh30DaysTransactionVolume_numberOfStdDevsUnusualMediumSeverity,Number of standard deviations for medium severity for 'UnusuallyHigh30DaysTransactionVolume',2.0
+UnusuallyHigh30DaysTransactionVolume_numberOfStdDevsUnusualHighSeverity,Number of standard deviations for high severity for 'UnusuallyHigh30DaysTransactionVolume',2.3
+CustomerRollupUnusualCountryScores_maxNumberOfCountriesInDescription,"Max number of countries in description",10
+PastNumberOfMonthsForFactAggregation,"Number of months before runDate to calculate Customer Date level statistics for",24
+NumberHotlistMaleUSCustomersThreshold,"Minimum inclusive limit for number of US males connected to hotlist documents for rule to trigger",2
+NumberMaleAUCustomersThreshold,"Minimum inclusive limit for number of AU males for rule to trigger",2
+NumberHotlistDocsThreshold,"Minimum inclusive limit for number of hotlist documents entity must connect to for rule to trigger",2
+NumberRecentlyJoinedIndividualCustomersThreshold,"Minimum inclusive limit for number of recently joined individual customers for rule to trigger",2
+ThresholdJoinDate,"Date after which a customer is treated as a new joiner",2017/01/01
+CountryCorruption_MediumRiskThreshold,"Country corruption perception index threshold for medium risk (index 1 is highest risk)",77
+CountryCorruption_HighRiskThreshold,"Country corruption perception index threshold for high risk (index 1 is highest risk)",31
+AccountCountryRisk_MediumRiskSeverity,"Account country risk score medium risk severity threshold",50
+AccountCountryRisk_HighRiskSeverity,"Account country risk score high risk severity threshold",100
+MediumRisk_DescriptionString,"Text for 'medium' risk level, to be used alongside medium risk banding in score descriptions",medium
+HighRisk_DescriptionString,"Text for 'high' risk level, to be used alongside high risk banding in score descriptions",high
+AccountCountryRisk_Description,"Description for Account Country Risk scores,"${customerOrCounterparty} account on transaction is associated with ${descriptionCountry}, which is a ${riskLevel} risk country"
+Customer_DescriptionString,"Text for 'Customer' to be used in score descriptions",Customer
+Counterparty_DescriptionString,"Text for 'CounterParty' to be used in score descriptions",Counterparty
+CustomerNetworkLevel_riskRatingThreshold,"Parameter for HighRiskCustomer score",4500

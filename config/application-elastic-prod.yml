@@ -1,0 +1,33 @@
+search:
+  config: fiu-smoke
+  elastic.datasources:
+    customer:
+        index: search-fiu-smoke-customer-1.0.3
+        type: customer
+    hotlist:
+        index: search-fiu-smoke-hotlist-1.0.3
+        type: hotlist
+    research:
+        index: search-fiu-smoke-research-1.0.3
+        type: research
+    transaction:
+      index: search-fiu-smoke-transaction-1.0.3
+      type: transaction
+
+resolver.elastic:
+  datasources:
+    customer:
+      indexPrefix: resolver-fiu-smoke-customer-1.0.3
+    hotlist:
+      indexPrefix: resolver-fiu-smoke-hotlist-1.0.3
+    research:
+      indexPrefix: resolver-fiu-smoke-research-1.0.3
+    transaction:
+      indexPrefix: resolver-fiu-smoke-transaction-1.0.3
+
+elastic:
+  instances:
+    default:
+      uri: elasticsearch://toothless:9200
+
+scoring.elastic.url: elasticsearch://toothless:9200

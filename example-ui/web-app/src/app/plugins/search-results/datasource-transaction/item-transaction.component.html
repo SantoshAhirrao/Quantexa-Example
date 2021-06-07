@@ -1,0 +1,7 @@
+<div class="main" *ngIf="item">
+    <dl class="ui-g">
+        <dt class="ui-g-4">Document Type:</dt><dd class="ui-g-8" [innerHTML]="item.documentType|keepHtml"></dd>
+        <dt class="ui-g-4">Transaction ID:</dt><dd class="ui-g-8" [innerHTML]="item.id|keepHtml"></dd>
+        <dt class="ui-g-4">Search Relevance:</dt><dd class="ui-g-8" [innerHTML]="item.score|keepHtml"></dd>
+    </dl>
+</div>

@@ -1,0 +1,136 @@
+#
+# Helm configuration that:
+#  - uses GKE
+#
+# You can deploy this configuration using gradle from the repository root:
+#
+#  gradle helmInstallOrUpgrade -Phosting_cloud_provider=google -Phosting_environment=green-1-accelerators-1 -Phelm_chart_name=QuantexaExplorer
+
+app-investigate:
+  enabled: true
+  replicaCount: 2
+  appInvestigate:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      tag: @imageTag@
+    googleCloudSQLSideCart:
+      enabled: true
+      command:
+      - "/cloud_sql_proxy"
+      - "-instances=green-1-accelerators-1:europe-west1:postgres-green-1-accelerators-1=tcp:5432"
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes-cloudsql
+
+app-resolve:
+  enabled: true
+  replicaCount: 2
+  appResolve:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      tag: @imageTag@
+    googleCloudSQLSideCart:
+      enabled: true
+      command:
+      - "/cloud_sql_proxy"
+      - "-instances=green-1-accelerators-1:europe-west1:postgres-green-1-accelerators-1=tcp:5432"
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-kubernetes-cloudsql
+
+app-search:
+  enabled: true
+  replicaCount: 2
+  appSearch:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      tag: @imageTag@
+    googleCloudSQLSideCart:
+      enabled: true
+      command:
+      - "/cloud_sql_proxy"
+      - "-instances=green-1-accelerators-1:europe-west1:postgres-green-1-accelerators-1=tcp:5432"
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-kubernetes-cloudsql
+
+app-security:
+  enabled: true
+  replicaCount: 2
+  appSecurity:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      tag: @imageTag@
+    googleCloudSQLSideCart:
+      enabled: true
+      command:
+      - "/cloud_sql_proxy"
+      - "-instances=green-1-accelerators-1:europe-west1:postgres-green-1-accelerators-1=tcp:5432"
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes-cloudsql
+
+app-graph-script:
+  enabled: true
+  replicaCount: 2
+  appGraphScript:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      tag: @imageTag@
+    googleCloudSQLSideCart:
+      enabled: true
+      command:
+      - "/cloud_sql_proxy"
+      - "-instances=green-1-accelerators-1:europe-west1:postgres-green-1-accelerators-1=tcp:5432"
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-kubernetes-cloudsql
+
+config-server:
+  replicaCount: 2
+  configServer:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      tag: @imageTag@
+
+front-end:
+  replicaCount: 2
+  explorerUI:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      name: example-ui
+      tag: @imageTag@
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes-cloudsql
+  gateway:
+    image:
+      registry: eu.gcr.io/green-1-accelerators-1/example
+      tag: @imageTag@
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes-cloudsql
+  googleCloudSQLSideCart:
+    enabled: true
+    command:
+    - "/cloud_sql_proxy"
+    - "-instances=green-1-accelerators-1:europe-west1:postgres-green-1-accelerators-1=tcp:5432"
+
+
+etcd:
+  replicaCount: 3
+  etcd:
+    image:
+      registry: eu.gcr.io/quantexa-core
+      tag: 0.1.0
+    storage:
+      class: standard
+
+global:
+  tls:
+    quantexa:
+      hostname: "*.quantexa.com"
+  fluentd:
+    image:
+      registry: eu.gcr.io/quantexa-core
+      tag: 0.3.0
+    output:
+      google:
+        enabled: true
+        projectName: example
+        bucketName: quantexa-green-1-accelerators-1-sink-archive
+        buffer:
+          path: /var/fluentd-buffers/gcs.buffer

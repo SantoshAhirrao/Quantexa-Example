@@ -1,0 +1,112 @@
+{
+    "privileges": [
+        {
+            "name": "Investigation.GetGraphAsData"
+        },
+        {
+            "name": "Investigation.AddRolePrivilege"
+        },
+        {
+            "name": "Investigation.RenameInvestigation"
+        },
+        {
+            "name": "Investigation.GetUIPrivileges"
+        },
+        {
+            "name": "Investigation.RemoveRolePrivilege"
+        },
+        {
+            "name": "Investigation.RebuildCompoundGraph"
+        },
+        {
+            "name": "Investigation.GetUserPrivileges"
+        },
+        {
+            "name": "Investigation.GetTaggedGraph"
+        },
+        {
+            "name": "Investigation.GetTaggedGraphAsData"
+        },
+        {
+            "name": "Investigation.ExpandGraph"
+        },
+        {
+            "name": "Investigation.GetGraph"
+        },
+        {
+            "name": "Investigation.AddUser"
+        },
+        {
+            "name": "Investigation.GetPrivileges"
+        },
+        {
+            "name": "Investigation.DeleteInvestigationRequest"
+        },
+        {
+            "name": "Investigation.ApplyRebuildGraph"
+        },
+        {
+            "name": "Investigation.CountFilterExpandPreview"
+        },
+        {
+            "name": "Investigation.RemoveRole"
+        },
+        {
+            "name": "Investigation.RemoveUser"
+        },
+        {
+            "name": "Investigation.AddNatures"
+        },
+        {
+            "name": "Investigation.AddRole"
+        },
+        {
+            "name": "Investigation.GetInvestigationDocuments"
+        },
+        {
+            "name": "Investigation.GetCompoundGraph"
+        },
+        {
+            "name": "Investigation.ScoreGraph"
+        },
+        {
+            "name": "Investigation.InitialiseGraph"
+        },
+        {
+            "name": "Investigation.DumpExpandPreview"
+        },
+        {
+            "name": "Investigation.RemoveUserPrivilege"
+        },
+        {
+            "name": "Investigation.RemoveNatureTypes"
+        },
+        {
+            "name": "Investigation.SaveGraphLayoutRequest"
+        },
+        {
+            "name": "Investigation.AddItems"
+        },
+        {
+            "name": "Investigation.AddUserPrivilege"
+        },
+        {
+            "name": "Investigation.TagInvestigation"
+        },
+        {
+            "name": "Investigation.GraphRedoRequest"
+        },
+        {
+            "name": "Investigation.RemoveNodes"
+        },
+        {
+            "name": "Investigation.RevertToTag"
+        },
+        {
+            "name": "Investigation.GraphUndoRequest"
+        },
+        {
+            "name": "Investigation.ApplyExpandPreview"
+        }
+    ]
+}

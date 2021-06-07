@@ -1,0 +1,27 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "module": "es2015",
+        "paths": {
+            "@quantexa/explorer-web-core": ["node_modules/@quantexa/explorer-web-core"],
+            "@quantexa/explorer-web-core/*": ["node_modules/@quantexa/explorer-web-core/*"],
+            "@angular/*": ["node_modules/@angular/*"],
+            "sigma": ["node_modules/sigma"]
+        }
+    }
+}

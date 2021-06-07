@@ -1,0 +1,3920 @@
+{
+    "totalHits": 38,
+    "pageSize": 20,
+    "page": 0,
+    "hits": [
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "5140085345",
+            "source": {
+                "cus_id_no": 5140085345,
+                "cus_stat": "A",
+                "bus_registered_name": "Greene & Co",
+                "parsed_bus_name": {
+                    "business_display": "Greene & Co",
+                    "business_name": "GREENE AND CO",
+                    "business_name_clean": [
+                        "GREENE"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 487610935,
+                "bus_ctry_registration": "GBR",
+                "cus_start_dt": "2008-03-07",
+                "cus_end_dt": "2003-05-25",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "AT",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 5140085345,
+                        "prim_acc_no": 48182504346557,
+                        "acc_opened_dt": "1990-06-23",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1990-06-23",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "AT",
+                        "composite_acc_name": "Greene & Co",
+                        "consolidated_acc_address": "8 AYLESTONE AVENUE, ",
+                        "parsed_address": {
+                            "address_display": "8 AYLESTONE AVENUE, ",
+                            "flatno_houseno_housename": "|8",
+                            "houseno_housename": "8",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "8",
+                            "po_box": null,
+                            "road": "AYLESTONE AVENUE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": null,
+                            "state": null,
+                            "state_district": null,
+                            "postcode": null,
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "LONDON",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Greene & Co",
+                        "addr_line_one": null,
+                        "city": "LONDON",
+                        "state": null,
+                        "postal_cde": "NW6 7AE",
+                        "ctry": "GBR",
+                        "acc_risk_rtng": 3224.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 5140085345,
+                        "prim_acc_no": 19326621952142,
+                        "acc_opened_dt": "1993-03-01",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1993-03-01",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "AT",
+                        "composite_acc_name": "Greene & Co",
+                        "consolidated_acc_address": "17 GUILDHALL YARD, LONDON LONDON, EC2V5AE",
+                        "parsed_address": {
+                            "address_display": "17 GUILDHALL YARD, LONDON LONDON, EC2V5AE",
+                            "flatno_houseno_housename": "|17",
+                            "houseno_housename": "17",
+                            "flat_number": null,
+                            "house_name": "BLACKWELL HOUSE",
+                            "house_number": "17",
+                            "po_box": null,
+                            "road": "GUILDHALL YARD",
+                            "suburb": "LONDON",
+                            "city_district": null,
+                            "city": "LONDON",
+                            "state": null,
+                            "state_district": null,
+                            "postcode": "EC2V5AE",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": null,
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Greene & Co",
+                        "addr_line_one": null,
+                        "city": "LONDON",
+                        "state": null,
+                        "postal_cde": "EC2V5AE",
+                        "ctry": "GBR",
+                        "acc_risk_rtng": 2171.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "bus_registered_name": [
+                    "<em class=\"hlt1\">Greene</em> & Co"
+                ],
+                "parsed_bus_name.business_display": [
+                    "<em class=\"hlt1\">Greene</em> & Co"
+                ]
+            },
+            "score": 10.619196891784668,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": []
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "83283600208",
+            "source": {
+                "cus_id_no": 83283600208,
+                "cus_stat": "A",
+                "bus_registered_name": "Merry-Go-Round Imports gomei-kaisha",
+                "parsed_bus_name": {
+                    "business_display": "Merry-Go-Round Imports gomei-kaisha",
+                    "business_name": "MERRY GO ROUND IMPORTS GOMEI KAISHA",
+                    "business_name_clean": [
+                        "MERRY GO ROUND IMPORTS GOMEI KAISHA"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 49043468,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "2003-07-20",
+                "cus_end_dt": "2003-07-24",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 83283600208,
+                        "prim_acc_no": 26891116563124,
+                        "acc_opened_dt": "2007-10-24",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2007-10-24",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Merry-Go-Round Imports gomei-kaisha",
+                        "consolidated_acc_address": "9 MICHAEL STREET, HOUSTON, 77063",
+                        "parsed_address": {
+                            "address_display": "9 MICHAEL STREET, HOUSTON, 77063",
+                            "flatno_houseno_housename": "|9",
+                            "houseno_housename": "9",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "9",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77063",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "SUNNY DELAURA",
+                        "raw_acc_name": "Merry-Go-Round Imports gomei-kaisha",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77063",
+                        "ctry": "US",
+                        "acc_risk_rtng": 1425.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-784-1604",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-784-1604",
+                            "telephone_clean": "7137841604",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "9 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                ]
+            },
+            "score": 9.734282493591309,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1193184000000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 83283600208,
+                                "tel_no": "713-784-1604",
+                                "state": "TX",
+                                "raw_acc_name": "Merry-Go-Round Imports gomei-kaisha",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77063",
+                                "acc_risk_rtng": 1425.0,
+                                "consolidated_acc_address": "9 MICHAEL STREET, HOUSTON, 77063",
+                                "ctry": "US",
+                                "prim_acc_no": 26891116563124,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "9",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77063",
+                                    "address_display": "9 MICHAEL STREET, HOUSTON, 77063",
+                                    "houseno_housename": "9",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|9"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-784-1604",
+                                    "telephone_clean": "7137841604"
+                                },
+                                "rel_mngr_name": "SUNNY DELAURA",
+                                "composite_acc_name": "Merry-Go-Round Imports gomei-kaisha",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1193184000000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "9 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                                ]
+                            },
+                            "score": 9.734317,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "68320263897",
+            "source": {
+                "cus_id_no": 68320263897,
+                "cus_stat": "A",
+                "bus_registered_name": "Delchamps Imports NV",
+                "parsed_bus_name": {
+                    "business_display": "Delchamps Imports NV",
+                    "business_name": "DELCHAMPS IMPORTS NV",
+                    "business_name_clean": [
+                        "DELCHAMPS IMPORTS"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 66477713,
+                "bus_ctry_registration": "NC",
+                "cus_start_dt": "2007-11-21",
+                "cus_end_dt": "1991-10-12",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 68320263897,
+                        "prim_acc_no": 80398476408232,
+                        "acc_opened_dt": "1997-12-13",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1997-12-13",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Delchamps Imports NV",
+                        "consolidated_acc_address": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                        "parsed_address": {
+                            "address_display": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                            "flatno_houseno_housename": "|42",
+                            "houseno_housename": "42",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "42",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "SUGAR LAND",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77478",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Sugar Land",
+                        "rel_mngr_name": "JOSEFINE GUTCHES",
+                        "raw_acc_name": "Delchamps Imports NV",
+                        "addr_line_one": null,
+                        "city": "Sugar Land",
+                        "state": "TX",
+                        "postal_cde": "77478",
+                        "ctry": "US",
+                        "acc_risk_rtng": 2837.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-763-9527",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-763-9527",
+                            "telephone_clean": "7137639527",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 68320263897,
+                        "prim_acc_no": 69476929392164,
+                        "acc_opened_dt": "2004-12-16",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2004-12-16",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Delchamps Imports NV",
+                        "consolidated_acc_address": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                        "parsed_address": {
+                            "address_display": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                            "flatno_houseno_housename": "|42",
+                            "houseno_housename": "42",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "42",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "SUGAR LAND",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77478",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Sugar Land",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Delchamps Imports NV",
+                        "addr_line_one": null,
+                        "city": "Sugar Land",
+                        "state": "TX",
+                        "postal_cde": "77478",
+                        "ctry": "US",
+                        "acc_risk_rtng": 4259.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-763-9527",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-763-9527",
+                            "telephone_clean": "7137639527",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET",
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "42 <em class=\"hlt1\">MICHAEL</em> STREET, SUGAR LAND, 77478",
+                    "42 <em class=\"hlt1\">MICHAEL</em> STREET, SUGAR LAND, 77478"
+                ]
+            },
+            "score": 8.937058448791504,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1103155200000,
+                                "city": "Sugar Land",
+                                "acc_cus_id_no": 68320263897,
+                                "tel_no": "713-763-9527",
+                                "state": "TX",
+                                "raw_acc_name": "Delchamps Imports NV",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77478",
+                                "acc_risk_rtng": 4259.0,
+                                "consolidated_acc_address": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                                "ctry": "US",
+                                "prim_acc_no": 69476929392164,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "42",
+                                    "city": "SUGAR LAND",
+                                    "state": "TEXAS",
+                                    "postcode": "77478",
+                                    "address_display": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                                    "houseno_housename": "42",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|42"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-763-9527",
+                                    "telephone_clean": "7137639527"
+                                },
+                                "composite_acc_name": "Delchamps Imports NV",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1103155200000,
+                                "acc_district": "Sugar Land"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "42 <em class=\"hlt1\">MICHAEL</em> STREET, SUGAR LAND, 77478"
+                                ]
+                            },
+                            "score": 8.937072,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 1
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 881971200000,
+                                "city": "Sugar Land",
+                                "acc_cus_id_no": 68320263897,
+                                "tel_no": "713-763-9527",
+                                "state": "TX",
+                                "raw_acc_name": "Delchamps Imports NV",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77478",
+                                "acc_risk_rtng": 2837.0,
+                                "consolidated_acc_address": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                                "ctry": "US",
+                                "prim_acc_no": 80398476408232,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "42",
+                                    "city": "SUGAR LAND",
+                                    "state": "TEXAS",
+                                    "postcode": "77478",
+                                    "address_display": "42 MICHAEL STREET, SUGAR LAND, 77478",
+                                    "houseno_housename": "42",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|42"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-763-9527",
+                                    "telephone_clean": "7137639527"
+                                },
+                                "rel_mngr_name": "JOSEFINE GUTCHES",
+                                "composite_acc_name": "Delchamps Imports NV",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 881971200000,
+                                "acc_district": "Sugar Land"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "42 <em class=\"hlt1\">MICHAEL</em> STREET, SUGAR LAND, 77478"
+                                ]
+                            },
+                            "score": 8.937072,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "12485340639",
+            "source": {
+                "cus_id_no": 12485340639,
+                "cus_stat": "A",
+                "bus_registered_name": "Klopfenstein's FI",
+                "parsed_bus_name": {
+                    "business_display": "Klopfenstein's FI",
+                    "business_name": "KLOPFENSTEINS FI",
+                    "business_name_clean": [
+                        "KLOPFENSTEINS FI"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 112879,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "2008-03-20",
+                "cus_end_dt": "2004-10-12",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 12485340639,
+                        "prim_acc_no": 2797790661385,
+                        "acc_opened_dt": "2001-09-04",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2001-09-04",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Klopfenstein's FI",
+                        "consolidated_acc_address": "73 MICHAEL STREET, HOUSTON, 77063",
+                        "parsed_address": {
+                            "address_display": "73 MICHAEL STREET, HOUSTON, 77063",
+                            "flatno_houseno_housename": "|73",
+                            "houseno_housename": "73",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "73",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77063",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Klopfenstein's FI",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77063",
+                        "ctry": "US",
+                        "acc_risk_rtng": 5926.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-828-1934",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-828-1934",
+                            "telephone_clean": "7138281934",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "73 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                ]
+            },
+            "score": 8.654120445251465,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 999561600000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 12485340639,
+                                "tel_no": "713-828-1934",
+                                "state": "TX",
+                                "raw_acc_name": "Klopfenstein's FI",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77063",
+                                "acc_risk_rtng": 5926.0,
+                                "consolidated_acc_address": "73 MICHAEL STREET, HOUSTON, 77063",
+                                "ctry": "US",
+                                "prim_acc_no": 2797790661385,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "73",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77063",
+                                    "address_display": "73 MICHAEL STREET, HOUSTON, 77063",
+                                    "houseno_housename": "73",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|73"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-828-1934",
+                                    "telephone_clean": "7138281934"
+                                },
+                                "composite_acc_name": "Klopfenstein's FI",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 999561600000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "73 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                                ]
+                            },
+                            "score": 8.65405,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "85308129192",
+            "source": {
+                "cus_id_no": 85308129192,
+                "cus_stat": "A",
+                "bus_registered_name": "Licorice Pizza Imports Corp",
+                "parsed_bus_name": {
+                    "business_display": "Licorice Pizza Imports Corp",
+                    "business_name": "LICORICE PIZZA IMPORTS CORP",
+                    "business_name_clean": [
+                        "LICORICE PIZZA IMPORTS"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 278133,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1993-01-26",
+                "cus_end_dt": "1991-03-21",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 85308129192,
+                        "prim_acc_no": 24360618062887,
+                        "acc_opened_dt": "1995-05-05",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1995-05-05",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Licorice Pizza Imports Corp",
+                        "consolidated_acc_address": "85 MICHAEL STREET, HOUSTON, 77002",
+                        "parsed_address": {
+                            "address_display": "85 MICHAEL STREET, HOUSTON, 77002",
+                            "flatno_houseno_housename": "|85",
+                            "houseno_housename": "85",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "85",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77002",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "MISTIE VICARS",
+                        "raw_acc_name": "Licorice Pizza Imports Corp",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77002",
+                        "ctry": "US",
+                        "acc_risk_rtng": 3129.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 85308129192,
+                        "prim_acc_no": 95068691667314,
+                        "acc_opened_dt": "1995-10-21",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1995-10-21",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Licorice Pizza Imports Corp",
+                        "consolidated_acc_address": "85 MICHAEL STREET, HOUSTON, 77002",
+                        "parsed_address": {
+                            "address_display": "85 MICHAEL STREET, HOUSTON, 77002",
+                            "flatno_houseno_housename": "|85",
+                            "houseno_housename": "85",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "85",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77002",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "CAMMY DUA",
+                        "raw_acc_name": "Licorice Pizza Imports Corp",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77002",
+                        "ctry": "US",
+                        "acc_risk_rtng": 4684.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET",
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "85 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002",
+                    "85 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002"
+                ]
+            },
+            "score": 8.654064178466797,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 814233600000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 85308129192,
+                                "state": "TX",
+                                "raw_acc_name": "Licorice Pizza Imports Corp",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77002",
+                                "acc_risk_rtng": 4684.0,
+                                "consolidated_acc_address": "85 MICHAEL STREET, HOUSTON, 77002",
+                                "ctry": "US",
+                                "prim_acc_no": 95068691667314,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "85",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77002",
+                                    "address_display": "85 MICHAEL STREET, HOUSTON, 77002",
+                                    "houseno_housename": "85",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|85"
+                                },
+                                "rel_mngr_name": "CAMMY DUA",
+                                "composite_acc_name": "Licorice Pizza Imports Corp",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 814233600000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "85 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002"
+                                ]
+                            },
+                            "score": 8.65405,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 1
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 799632000000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 85308129192,
+                                "state": "TX",
+                                "raw_acc_name": "Licorice Pizza Imports Corp",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77002",
+                                "acc_risk_rtng": 3129.0,
+                                "consolidated_acc_address": "85 MICHAEL STREET, HOUSTON, 77002",
+                                "ctry": "US",
+                                "prim_acc_no": 24360618062887,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "85",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77002",
+                                    "address_display": "85 MICHAEL STREET, HOUSTON, 77002",
+                                    "houseno_housename": "85",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|85"
+                                },
+                                "rel_mngr_name": "MISTIE VICARS",
+                                "composite_acc_name": "Licorice Pizza Imports Corp",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 799632000000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "85 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002"
+                                ]
+                            },
+                            "score": 8.65405,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "47652979825",
+            "source": {
+                "cus_id_no": 47652979825,
+                "cus_stat": "A",
+                "bus_registered_name": "K's Merchandise PLC",
+                "parsed_bus_name": {
+                    "business_display": "K's Merchandise PLC",
+                    "business_name": "KS MERCHANDISE PLC",
+                    "business_name_clean": [
+                        "MERCHANDISE"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 8889534,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1998-08-23",
+                "cus_end_dt": "2008-01-04",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 47652979825,
+                        "prim_acc_no": 81165113332021,
+                        "acc_opened_dt": "2002-05-27",
+                        "acc_closed_dt": "2008-01-04",
+                        "acc_link_created_dt": "2002-05-27",
+                        "acc_link_end_dt": "2008-01-04",
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "K's Merchandise PLC",
+                        "consolidated_acc_address": "1 MICHAEL STREET, HOUSTON, 77063",
+                        "parsed_address": {
+                            "address_display": "1 MICHAEL STREET, HOUSTON, 77063",
+                            "flatno_houseno_housename": "|1",
+                            "houseno_housename": "1",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "1",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77063",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "SALLEY FAULKENBUR",
+                        "raw_acc_name": "K's Merchandise PLC",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77063",
+                        "ctry": "US",
+                        "acc_risk_rtng": 505.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-780-6404",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-780-6404",
+                            "telephone_clean": "7137806404",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "1 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                ]
+            },
+            "score": 8.654096603393555,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1022457600000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 47652979825,
+                                "tel_no": "713-780-6404",
+                                "state": "TX",
+                                "raw_acc_name": "K's Merchandise PLC",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77063",
+                                "acc_risk_rtng": 505.0,
+                                "acc_link_end_dt": 1199404800000,
+                                "consolidated_acc_address": "1 MICHAEL STREET, HOUSTON, 77063",
+                                "ctry": "US",
+                                "prim_acc_no": 81165113332021,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "1",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77063",
+                                    "address_display": "1 MICHAEL STREET, HOUSTON, 77063",
+                                    "houseno_housename": "1",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|1"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-780-6404",
+                                    "telephone_clean": "7137806404"
+                                },
+                                "rel_mngr_name": "SALLEY FAULKENBUR",
+                                "acc_closed_dt": 1199404800000,
+                                "composite_acc_name": "K's Merchandise PLC",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1022457600000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "1 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                                ]
+                            },
+                            "score": 8.65405,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "54693402505",
+            "source": {
+                "cus_id_no": 54693402505,
+                "cus_stat": "A",
+                "bus_registered_name": "Ruehl No. 925 Imports Manufacturing",
+                "parsed_bus_name": {
+                    "business_display": "Ruehl No. 925 Imports Manufacturing",
+                    "business_name": "RUEHL NO 925 IMPORTS MANUFACTURING",
+                    "business_name_clean": [
+                        "RUEHL NO 925 IMPORTS MANUFACTURING"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 64533407,
+                "bus_ctry_registration": "MF",
+                "cus_start_dt": "1997-07-15",
+                "cus_end_dt": "1997-03-13",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 54693402505,
+                        "prim_acc_no": 27694368773822,
+                        "acc_opened_dt": "2006-04-23",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2006-04-23",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Ruehl No. 925 Imports Manufacturing",
+                        "consolidated_acc_address": "62 MICHAEL STREET, HOUSTON, 77021",
+                        "parsed_address": {
+                            "address_display": "62 MICHAEL STREET, HOUSTON, 77021",
+                            "flatno_houseno_housename": "|62",
+                            "houseno_housename": "62",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "62",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77021",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Ruehl No. 925 Imports Manufacturing",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77021",
+                        "ctry": "US",
+                        "acc_risk_rtng": 7958.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-747-0723",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-747-0723",
+                            "telephone_clean": "7137470723",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "62 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77021"
+                ]
+            },
+            "score": 8.641947746276855,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1145750400000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 54693402505,
+                                "tel_no": "713-747-0723",
+                                "state": "TX",
+                                "raw_acc_name": "Ruehl No. 925 Imports Manufacturing",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77021",
+                                "acc_risk_rtng": 7958.0,
+                                "consolidated_acc_address": "62 MICHAEL STREET, HOUSTON, 77021",
+                                "ctry": "US",
+                                "prim_acc_no": 27694368773822,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "62",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77021",
+                                    "address_display": "62 MICHAEL STREET, HOUSTON, 77021",
+                                    "houseno_housename": "62",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|62"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-747-0723",
+                                    "telephone_clean": "7137470723"
+                                },
+                                "composite_acc_name": "Ruehl No. 925 Imports Manufacturing",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1145750400000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "62 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77021"
+                                ]
+                            },
+                            "score": 8.641998,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "61521191771",
+            "source": {
+                "cus_id_no": 61521191771,
+                "cus_stat": "A",
+                "bus_registered_name": "Super Duper Entertainment",
+                "parsed_bus_name": {
+                    "business_display": "Super Duper Entertainment",
+                    "business_name": "SUPER DUPER ENTERTAINMENT",
+                    "business_name_clean": [
+                        "SUPER DUPER ENTERTAINMENT"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 480169771,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1991-10-24",
+                "cus_end_dt": "2002-09-26",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 61521191771,
+                        "prim_acc_no": 47130109510566,
+                        "acc_opened_dt": "1998-12-26",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1998-12-26",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Super Duper Entertainment",
+                        "consolidated_acc_address": "30 MICHAEL STREET, HOUSTON, 77002",
+                        "parsed_address": {
+                            "address_display": "30 MICHAEL STREET, HOUSTON, 77002",
+                            "flatno_houseno_housename": "|30",
+                            "houseno_housename": "30",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "30",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77002",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Super Duper Entertainment",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77002",
+                        "ctry": "US",
+                        "acc_risk_rtng": 7059.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-754-2780",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-754-2780",
+                            "telephone_clean": "7137542780",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 61521191771,
+                        "prim_acc_no": 96772295970714,
+                        "acc_opened_dt": "2007-01-17",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2007-01-17",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Super Duper Entertainment",
+                        "consolidated_acc_address": "30 MICHAEL STREET, HOUSTON, 77002",
+                        "parsed_address": {
+                            "address_display": "30 MICHAEL STREET, HOUSTON, 77002",
+                            "flatno_houseno_housename": "|30",
+                            "houseno_housename": "30",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "30",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77002",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "JAMILA TANGREDI",
+                        "raw_acc_name": "Super Duper Entertainment",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77002",
+                        "ctry": "US",
+                        "acc_risk_rtng": 9485.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-754-2780",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-754-2780",
+                            "telephone_clean": "7137542780",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 61521191771,
+                        "prim_acc_no": 30923955278850,
+                        "acc_opened_dt": "2004-12-22",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2004-12-22",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Super Duper Entertainment",
+                        "consolidated_acc_address": "30 MICHAEL STREET, HOUSTON, 77002",
+                        "parsed_address": {
+                            "address_display": "30 MICHAEL STREET, HOUSTON, 77002",
+                            "flatno_houseno_housename": "|30",
+                            "houseno_housename": "30",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "30",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77002",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Super Duper Entertainment",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77002",
+                        "ctry": "US",
+                        "acc_risk_rtng": 3330.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-754-2780",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-754-2780",
+                            "telephone_clean": "7137542780",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET",
+                    "<em class=\"hlt1\">MICHAEL</em> STREET",
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "30 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002",
+                    "30 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002",
+                    "30 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002"
+                ]
+            },
+            "score": 8.641921043395996,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1103673600000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 61521191771,
+                                "tel_no": "713-754-2780",
+                                "state": "TX",
+                                "raw_acc_name": "Super Duper Entertainment",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77002",
+                                "acc_risk_rtng": 3330.0,
+                                "consolidated_acc_address": "30 MICHAEL STREET, HOUSTON, 77002",
+                                "ctry": "US",
+                                "prim_acc_no": 30923955278850,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "30",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77002",
+                                    "address_display": "30 MICHAEL STREET, HOUSTON, 77002",
+                                    "houseno_housename": "30",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|30"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-754-2780",
+                                    "telephone_clean": "7137542780"
+                                },
+                                "composite_acc_name": "Super Duper Entertainment",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1103673600000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "30 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002"
+                                ]
+                            },
+                            "score": 8.641998,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 2
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1168992000000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 61521191771,
+                                "tel_no": "713-754-2780",
+                                "state": "TX",
+                                "raw_acc_name": "Super Duper Entertainment",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77002",
+                                "acc_risk_rtng": 9485.0,
+                                "consolidated_acc_address": "30 MICHAEL STREET, HOUSTON, 77002",
+                                "ctry": "US",
+                                "prim_acc_no": 96772295970714,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "30",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77002",
+                                    "address_display": "30 MICHAEL STREET, HOUSTON, 77002",
+                                    "houseno_housename": "30",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|30"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-754-2780",
+                                    "telephone_clean": "7137542780"
+                                },
+                                "rel_mngr_name": "JAMILA TANGREDI",
+                                "composite_acc_name": "Super Duper Entertainment",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1168992000000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "30 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002"
+                                ]
+                            },
+                            "score": 8.641998,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 1
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 914630400000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 61521191771,
+                                "tel_no": "713-754-2780",
+                                "state": "TX",
+                                "raw_acc_name": "Super Duper Entertainment",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77002",
+                                "acc_risk_rtng": 7059.0,
+                                "consolidated_acc_address": "30 MICHAEL STREET, HOUSTON, 77002",
+                                "ctry": "US",
+                                "prim_acc_no": 47130109510566,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "30",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77002",
+                                    "address_display": "30 MICHAEL STREET, HOUSTON, 77002",
+                                    "houseno_housename": "30",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|30"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-754-2780",
+                                    "telephone_clean": "7137542780"
+                                },
+                                "composite_acc_name": "Super Duper Entertainment",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 914630400000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "30 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77002"
+                                ]
+                            },
+                            "score": 8.641998,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "79664521352",
+            "source": {
+                "cus_id_no": 79664521352,
+                "cus_stat": "A",
+                "bus_registered_name": "Michael Lawson Joinery",
+                "parsed_bus_name": {
+                    "business_display": "Michael Lawson Joinery",
+                    "business_name": "MICHAEL LAWSON JOINERY",
+                    "business_name_clean": [
+                        "MICHAEL LAWSON JOINERY"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 1658824,
+                "bus_ctry_registration": "GBR",
+                "cus_start_dt": "1996-10-15",
+                "cus_end_dt": "2000-10-12",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "AU",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 79664521352,
+                        "prim_acc_no": 26080086683682,
+                        "acc_opened_dt": "2002-10-09",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2002-10-09",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "AU",
+                        "composite_acc_name": "Michael Lawson Joinery",
+                        "consolidated_acc_address": " ALLEE, BLOCK",
+                        "parsed_address": {
+                            "address_display": " ALLEE, BLOCK",
+                            "flatno_houseno_housename": null,
+                            "houseno_housename": null,
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": null,
+                            "po_box": null,
+                            "road": "ALLEE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "BLOCK",
+                            "state": null,
+                            "state_district": null,
+                            "postcode": null,
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "DONCASTER",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Michael Lawson Joinery",
+                        "addr_line_one": null,
+                        "city": "DONCASTER",
+                        "state": null,
+                        "postal_cde": "DN4 8QG",
+                        "ctry": "GBR",
+                        "acc_risk_rtng": 4151.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 79664521352,
+                        "prim_acc_no": 96280724413164,
+                        "acc_opened_dt": "2005-06-26",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2005-06-26",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "AU",
+                        "composite_acc_name": "Michael Lawson Joinery",
+                        "consolidated_acc_address": " ALLEE, BLOCK",
+                        "parsed_address": {
+                            "address_display": " ALLEE, BLOCK",
+                            "flatno_houseno_housename": null,
+                            "houseno_housename": null,
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": null,
+                            "po_box": null,
+                            "road": "ALLEE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "BLOCK",
+                            "state": null,
+                            "state_district": null,
+                            "postcode": null,
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "DONCASTER",
+                        "rel_mngr_name": "ARDELLA KIRSCHMAN",
+                        "raw_acc_name": "Michael Lawson Joinery",
+                        "addr_line_one": null,
+                        "city": "DONCASTER",
+                        "state": null,
+                        "postal_cde": "DN4 8QG",
+                        "ctry": "GBR",
+                        "acc_risk_rtng": 6576.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "bus_registered_name": [
+                    "<em class=\"hlt1\">Michael</em> Lawson Joinery"
+                ],
+                "parsed_bus_name.business_display": [
+                    "<em class=\"hlt1\">Michael</em> Lawson Joinery"
+                ]
+            },
+            "score": 8.49773120880127,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": []
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "69361389419",
+            "source": {
+                "cus_id_no": 69361389419,
+                "cus_stat": "A",
+                "bus_registered_name": "ManPower Imports Inc",
+                "parsed_bus_name": {
+                    "business_display": "ManPower Imports Inc",
+                    "business_name": "MANPOWER IMPORTS INC",
+                    "business_name_clean": [
+                        "MANPOWER IMPORTS"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 337627,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1998-06-15",
+                "cus_end_dt": "2007-04-24",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 69361389419,
+                        "prim_acc_no": 65372606025478,
+                        "acc_opened_dt": "1996-05-27",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1996-05-27",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "ManPower Imports Inc",
+                        "consolidated_acc_address": "31 MICHAEL STREET, HOUSTON, 77030",
+                        "parsed_address": {
+                            "address_display": "31 MICHAEL STREET, HOUSTON, 77030",
+                            "flatno_houseno_housename": "|31",
+                            "houseno_housename": "31",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "31",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77030",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "YEN HOOLEY",
+                        "raw_acc_name": "ManPower Imports Inc",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77030",
+                        "ctry": "US",
+                        "acc_risk_rtng": 2957.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-745-1950",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-745-1950",
+                            "telephone_clean": "7137451950",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "31 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77030"
+                ]
+            },
+            "score": 8.028905868530273,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 833155200000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 69361389419,
+                                "tel_no": "713-745-1950",
+                                "state": "TX",
+                                "raw_acc_name": "ManPower Imports Inc",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77030",
+                                "acc_risk_rtng": 2957.0,
+                                "consolidated_acc_address": "31 MICHAEL STREET, HOUSTON, 77030",
+                                "ctry": "US",
+                                "prim_acc_no": 65372606025478,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "31",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77030",
+                                    "address_display": "31 MICHAEL STREET, HOUSTON, 77030",
+                                    "houseno_housename": "31",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|31"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-745-1950",
+                                    "telephone_clean": "7137451950"
+                                },
+                                "rel_mngr_name": "YEN HOOLEY",
+                                "composite_acc_name": "ManPower Imports Inc",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 833155200000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "31 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77030"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "69431177075",
+            "source": {
+                "cus_id_no": 69431177075,
+                "cus_stat": "A",
+                "bus_registered_name": "Chief Auto Parts Imports FIE",
+                "parsed_bus_name": {
+                    "business_display": "Chief Auto Parts Imports FIE",
+                    "business_name": "CHIEF AUTO PARTS IMPORTS FIE",
+                    "business_name_clean": [
+                        "CHIEF AUTO PARTS IMPORTS"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 7024,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1990-02-10",
+                "cus_end_dt": "2008-03-02",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 69431177075,
+                        "prim_acc_no": 30563287769406,
+                        "acc_opened_dt": "2008-09-01",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2008-09-01",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Chief Auto Parts Imports FIE",
+                        "consolidated_acc_address": "81 MICHAEL STREET, HOUSTON, 77063",
+                        "parsed_address": {
+                            "address_display": "81 MICHAEL STREET, HOUSTON, 77063",
+                            "flatno_houseno_housename": "|81",
+                            "houseno_housename": "81",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "81",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77063",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Chief Auto Parts Imports FIE",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77063",
+                        "ctry": "US",
+                        "acc_risk_rtng": 9490.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-829-2068",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-829-2068",
+                            "telephone_clean": "7138292068",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 69431177075,
+                        "prim_acc_no": 92649070545215,
+                        "acc_opened_dt": "2005-10-02",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2005-10-02",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Chief Auto Parts Imports FIE",
+                        "consolidated_acc_address": "81 MICHAEL STREET, HOUSTON, 77063",
+                        "parsed_address": {
+                            "address_display": "81 MICHAEL STREET, HOUSTON, 77063",
+                            "flatno_houseno_housename": "|81",
+                            "houseno_housename": "81",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "81",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77063",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Chief Auto Parts Imports FIE",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77063",
+                        "ctry": "US",
+                        "acc_risk_rtng": 3614.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-829-2068",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-829-2068",
+                            "telephone_clean": "7138292068",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET",
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "81 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063",
+                    "81 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                ]
+            },
+            "score": 8.028975486755371,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1128211200000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 69431177075,
+                                "tel_no": "713-829-2068",
+                                "state": "TX",
+                                "raw_acc_name": "Chief Auto Parts Imports FIE",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77063",
+                                "acc_risk_rtng": 3614.0,
+                                "consolidated_acc_address": "81 MICHAEL STREET, HOUSTON, 77063",
+                                "ctry": "US",
+                                "prim_acc_no": 92649070545215,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "81",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77063",
+                                    "address_display": "81 MICHAEL STREET, HOUSTON, 77063",
+                                    "houseno_housename": "81",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|81"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-829-2068",
+                                    "telephone_clean": "7138292068"
+                                },
+                                "composite_acc_name": "Chief Auto Parts Imports FIE",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1128211200000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "81 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 1
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1220227200000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 69431177075,
+                                "tel_no": "713-829-2068",
+                                "state": "TX",
+                                "raw_acc_name": "Chief Auto Parts Imports FIE",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77063",
+                                "acc_risk_rtng": 9490.0,
+                                "consolidated_acc_address": "81 MICHAEL STREET, HOUSTON, 77063",
+                                "ctry": "US",
+                                "prim_acc_no": 30563287769406,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "81",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77063",
+                                    "address_display": "81 MICHAEL STREET, HOUSTON, 77063",
+                                    "houseno_housename": "81",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|81"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-829-2068",
+                                    "telephone_clean": "7138292068"
+                                },
+                                "composite_acc_name": "Chief Auto Parts Imports FIE",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1220227200000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "81 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "64809865742",
+            "source": {
+                "cus_id_no": 64809865742,
+                "cus_stat": "A",
+                "bus_registered_name": "Block Distributors Corporation",
+                "parsed_bus_name": {
+                    "business_display": "Block Distributors Corporation",
+                    "business_name": "BLOCK DISTRIBUTORSCORP",
+                    "business_name_clean": [
+                        "BLOCK DISTRIBUTORSCORP"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 694995759,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1994-03-15",
+                "cus_end_dt": "1993-01-15",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 64809865742,
+                        "prim_acc_no": 83930710733976,
+                        "acc_opened_dt": "2000-07-19",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2000-07-19",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Block Distributors Corporation",
+                        "consolidated_acc_address": "67 MICHAEL STREET, HOUSTON, 77006",
+                        "parsed_address": {
+                            "address_display": "67 MICHAEL STREET, HOUSTON, 77006",
+                            "flatno_houseno_housename": "|67",
+                            "houseno_housename": "67",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "67",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77006",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Block Distributors Corporation",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77006",
+                        "ctry": "US",
+                        "acc_risk_rtng": 7687.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-831-1512",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-831-1512",
+                            "telephone_clean": "7138311512",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "67 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77006"
+                ]
+            },
+            "score": 8.028980255126953,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 963964800000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 64809865742,
+                                "tel_no": "713-831-1512",
+                                "state": "TX",
+                                "raw_acc_name": "Block Distributors Corporation",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77006",
+                                "acc_risk_rtng": 7687.0,
+                                "consolidated_acc_address": "67 MICHAEL STREET, HOUSTON, 77006",
+                                "ctry": "US",
+                                "prim_acc_no": 83930710733976,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "67",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77006",
+                                    "address_display": "67 MICHAEL STREET, HOUSTON, 77006",
+                                    "houseno_housename": "67",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|67"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-831-1512",
+                                    "telephone_clean": "7138311512"
+                                },
+                                "composite_acc_name": "Block Distributors Corporation",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 963964800000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "67 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77006"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "17157575867",
+            "source": {
+                "cus_id_no": 17157575867,
+                "cus_stat": "A",
+                "bus_registered_name": "Bold Ideas Imports Entertainment",
+                "parsed_bus_name": {
+                    "business_display": "Bold Ideas Imports Entertainment",
+                    "business_name": "BOLD IDEAS IMPORTS ENTERTAINMENT",
+                    "business_name_clean": [
+                        "BOLD IDEAS IMPORTS ENTERTAINMENT"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 57551,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1992-08-15",
+                "cus_end_dt": "1997-04-15",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 17157575867,
+                        "prim_acc_no": 1977754879317,
+                        "acc_opened_dt": "2003-03-11",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2003-03-11",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Bold Ideas Imports Entertainment",
+                        "consolidated_acc_address": "74 MICHAEL STREET, HOUSTON, 77063",
+                        "parsed_address": {
+                            "address_display": "74 MICHAEL STREET, HOUSTON, 77063",
+                            "flatno_houseno_housename": "|74",
+                            "houseno_housename": "74",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "74",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77063",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Bold Ideas Imports Entertainment",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "MI",
+                        "postal_cde": "48209",
+                        "ctry": "US",
+                        "acc_risk_rtng": 1434.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-824-3500",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-824-3500",
+                            "telephone_clean": "7138243500",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "74 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                ]
+            },
+            "score": 8.02888011932373,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1047340800000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 17157575867,
+                                "tel_no": "713-824-3500",
+                                "state": "MI",
+                                "raw_acc_name": "Bold Ideas Imports Entertainment",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "48209",
+                                "acc_risk_rtng": 1434.0,
+                                "consolidated_acc_address": "74 MICHAEL STREET, HOUSTON, 77063",
+                                "ctry": "US",
+                                "prim_acc_no": 1977754879317,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "74",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77063",
+                                    "address_display": "74 MICHAEL STREET, HOUSTON, 77063",
+                                    "houseno_housename": "74",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|74"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-824-3500",
+                                    "telephone_clean": "7138243500"
+                                },
+                                "composite_acc_name": "Bold Ideas Imports Entertainment",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1047340800000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "74 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77063"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "71414449786",
+            "source": {
+                "cus_id_no": 71414449786,
+                "cus_stat": "A",
+                "bus_registered_name": "Cloth World Ltd",
+                "parsed_bus_name": {
+                    "business_display": "Cloth World Ltd",
+                    "business_name": "CLOTH WORLD LTD",
+                    "business_name_clean": [
+                        "CLOTH WORLD"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 34337288,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1994-09-22",
+                "cus_end_dt": "2000-04-19",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 71414449786,
+                        "prim_acc_no": 38711054196015,
+                        "acc_opened_dt": "1995-01-07",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1995-01-07",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Cloth World Ltd",
+                        "consolidated_acc_address": "34 MICHAEL STREET, HOUSTON, 77074",
+                        "parsed_address": {
+                            "address_display": "34 MICHAEL STREET, HOUSTON, 77074",
+                            "flatno_houseno_housename": "|34",
+                            "houseno_housename": "34",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "34",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77074",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "EMMANUEL PEGRAM",
+                        "raw_acc_name": "Cloth World Ltd",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77074",
+                        "ctry": "US",
+                        "acc_risk_rtng": 7050.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-771-2305",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-771-2305",
+                            "telephone_clean": "7137712305",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 71414449786,
+                        "prim_acc_no": 75568822506737,
+                        "acc_opened_dt": "1992-09-06",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1992-09-06",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Cloth World Ltd",
+                        "consolidated_acc_address": "34 MICHAEL STREET, HOUSTON, 77074",
+                        "parsed_address": {
+                            "address_display": "34 MICHAEL STREET, HOUSTON, 77074",
+                            "flatno_houseno_housename": "|34",
+                            "houseno_housename": "34",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "34",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77074",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Cloth World Ltd",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77074",
+                        "ctry": "US",
+                        "acc_risk_rtng": 3070.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-771-2305",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-771-2305",
+                            "telephone_clean": "7137712305",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET",
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "34 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77074",
+                    "34 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77074"
+                ]
+            },
+            "score": 8.0289306640625,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 715737600000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 71414449786,
+                                "tel_no": "713-771-2305",
+                                "state": "TX",
+                                "raw_acc_name": "Cloth World Ltd",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77074",
+                                "acc_risk_rtng": 3070.0,
+                                "consolidated_acc_address": "34 MICHAEL STREET, HOUSTON, 77074",
+                                "ctry": "US",
+                                "prim_acc_no": 75568822506737,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "34",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77074",
+                                    "address_display": "34 MICHAEL STREET, HOUSTON, 77074",
+                                    "houseno_housename": "34",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|34"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-771-2305",
+                                    "telephone_clean": "7137712305"
+                                },
+                                "composite_acc_name": "Cloth World Ltd",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 715737600000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "34 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77074"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 1
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 789436800000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 71414449786,
+                                "tel_no": "713-771-2305",
+                                "state": "TX",
+                                "raw_acc_name": "Cloth World Ltd",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77074",
+                                "acc_risk_rtng": 7050.0,
+                                "consolidated_acc_address": "34 MICHAEL STREET, HOUSTON, 77074",
+                                "ctry": "US",
+                                "prim_acc_no": 38711054196015,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "34",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77074",
+                                    "address_display": "34 MICHAEL STREET, HOUSTON, 77074",
+                                    "houseno_housename": "34",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|34"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-771-2305",
+                                    "telephone_clean": "7137712305"
+                                },
+                                "rel_mngr_name": "EMMANUEL PEGRAM",
+                                "composite_acc_name": "Cloth World Ltd",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 789436800000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "34 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77074"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "39928687195",
+            "source": {
+                "cus_id_no": 39928687195,
+                "cus_stat": "A",
+                "bus_registered_name": "Morrie Mages Firma",
+                "parsed_bus_name": {
+                    "business_display": "Morrie Mages Firma",
+                    "business_name": "MORRIE MAGES FIRMA",
+                    "business_name_clean": [
+                        "MORRIE MAGES FIRMA"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 505089,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1991-10-12",
+                "cus_end_dt": "1999-11-14",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 39928687195,
+                        "prim_acc_no": 11654864164525,
+                        "acc_opened_dt": "2001-07-27",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2001-07-27",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Morrie Mages Firma",
+                        "consolidated_acc_address": "60 MICHAEL STREET, HOUSTON, 77030",
+                        "parsed_address": {
+                            "address_display": "60 MICHAEL STREET, HOUSTON, 77030",
+                            "flatno_houseno_housename": "|60",
+                            "houseno_housename": "60",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "60",
+                            "po_box": null,
+                            "road": "MICHAEL STREET",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "HOUSTON",
+                            "state": "TEXAS",
+                            "state_district": null,
+                            "postcode": "77030",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Houston",
+                        "rel_mngr_name": "LEEANN FUNARI",
+                        "raw_acc_name": "Morrie Mages Firma",
+                        "addr_line_one": null,
+                        "city": "Houston",
+                        "state": "TX",
+                        "postal_cde": "77030",
+                        "ctry": "US",
+                        "acc_risk_rtng": 8941.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "713-796-4952",
+                        "cleansed_tel_no": {
+                            "telephone_display": "713-796-4952",
+                            "telephone_clean": "7137964952",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "60 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77030"
+                ]
+            },
+            "score": 8.029020309448242,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 996192000000,
+                                "city": "Houston",
+                                "acc_cus_id_no": 39928687195,
+                                "tel_no": "713-796-4952",
+                                "state": "TX",
+                                "raw_acc_name": "Morrie Mages Firma",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "77030",
+                                "acc_risk_rtng": 8941.0,
+                                "consolidated_acc_address": "60 MICHAEL STREET, HOUSTON, 77030",
+                                "ctry": "US",
+                                "prim_acc_no": 11654864164525,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "60",
+                                    "city": "HOUSTON",
+                                    "state": "TEXAS",
+                                    "postcode": "77030",
+                                    "address_display": "60 MICHAEL STREET, HOUSTON, 77030",
+                                    "houseno_housename": "60",
+                                    "road": "MICHAEL STREET",
+                                    "flatno_houseno_housename": "|60"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "713-796-4952",
+                                    "telephone_clean": "7137964952"
+                                },
+                                "rel_mngr_name": "LEEANN FUNARI",
+                                "composite_acc_name": "Morrie Mages Firma",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 996192000000,
+                                "acc_district": "Houston"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "<em class=\"hlt1\">MICHAEL</em> STREET"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "60 <em class=\"hlt1\">MICHAEL</em> STREET, HOUSTON, 77030"
+                                ]
+                            },
+                            "score": 8.02896,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "31789927528",
+            "source": {
+                "cus_id_no": 31789927528,
+                "cus_stat": "A",
+                "bus_registered_name": "TRUSTEES OF MICHAEL J. MELLER",
+                "parsed_bus_name": {
+                    "business_display": "TRUSTEES OF MICHAEL J. MELLER",
+                    "business_name": "TRUSTEES OF MICHAEL J MELLER",
+                    "business_name_clean": [
+                        "TRUSTEES MICHAEL J MELLER"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 3508041,
+                "bus_ctry_registration": "GBR",
+                "cus_start_dt": "1997-10-12",
+                "cus_end_dt": "1990-12-13",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "AU",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 31789927528,
+                        "prim_acc_no": 36198819721932,
+                        "acc_opened_dt": "2009-03-11",
+                        "acc_closed_dt": "1990-12-13",
+                        "acc_link_created_dt": "2009-03-11",
+                        "acc_link_end_dt": "1990-12-13",
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "AU",
+                        "composite_acc_name": "TRUSTEES OF MICHAEL J. MELLER",
+                        "consolidated_acc_address": "95 SHARLANDS ROAD, ",
+                        "parsed_address": {
+                            "address_display": "95 SHARLANDS ROAD, ",
+                            "flatno_houseno_housename": "|95",
+                            "houseno_housename": "95",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "95",
+                            "po_box": null,
+                            "road": "SHARLANDS ROAD",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": null,
+                            "state": null,
+                            "state_district": null,
+                            "postcode": null,
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "FAREHAM",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "TRUSTEES OF MICHAEL J. MELLER",
+                        "addr_line_one": null,
+                        "city": "FAREHAM",
+                        "state": null,
+                        "postal_cde": "PO14 1RD",
+                        "ctry": "GBR",
+                        "acc_risk_rtng": 916.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "bus_registered_name": [
+                    "TRUSTEES OF <em class=\"hlt1\">MICHAEL</em> J. MELLER"
+                ],
+                "parsed_bus_name.business_display": [
+                    "TRUSTEES OF <em class=\"hlt1\">MICHAEL</em> J. MELLER"
+                ]
+            },
+            "score": 7.951073169708252,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": []
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "9025585327",
+            "source": {
+                "cus_id_no": 9025585327,
+                "cus_stat": "A",
+                "bus_registered_name": "Adray Imports S.A",
+                "parsed_bus_name": {
+                    "business_display": "Adray Imports S.A",
+                    "business_name": "ADRAY IMPORTSSA",
+                    "business_name_clean": [
+                        "ADRAY IMPORTSSA"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 66374,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1995-06-02",
+                "cus_end_dt": "2003-07-18",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 9025585327,
+                        "prim_acc_no": 96517093325238,
+                        "acc_opened_dt": "2000-01-04",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2000-01-04",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Adray Imports S.A",
+                        "consolidated_acc_address": "7 WILLOW GREENE DRIVE, MONTGOMERY, 36054",
+                        "parsed_address": {
+                            "address_display": "7 WILLOW GREENE DRIVE, MONTGOMERY, 36054",
+                            "flatno_houseno_housename": "|7",
+                            "houseno_housename": "7",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "7",
+                            "po_box": null,
+                            "road": "WILLOW GREENE DRIVE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "MONTGOMERY",
+                            "state": "AL",
+                            "state_district": null,
+                            "postcode": "36054",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Montgomery",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Adray Imports S.A",
+                        "addr_line_one": null,
+                        "city": "Montgomery",
+                        "state": "AL",
+                        "postal_cde": "36054",
+                        "ctry": "US",
+                        "acc_risk_rtng": 4116.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "334-285-9827",
+                        "cleansed_tel_no": {
+                            "telephone_display": "334-285-9827",
+                            "telephone_clean": "3342859827",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "7 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36054"
+                ]
+            },
+            "score": 7.091804504394531,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 946944000000,
+                                "city": "Montgomery",
+                                "acc_cus_id_no": 9025585327,
+                                "tel_no": "334-285-9827",
+                                "state": "AL",
+                                "raw_acc_name": "Adray Imports S.A",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "36054",
+                                "acc_risk_rtng": 4116.0,
+                                "consolidated_acc_address": "7 WILLOW GREENE DRIVE, MONTGOMERY, 36054",
+                                "ctry": "US",
+                                "prim_acc_no": 96517093325238,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "7",
+                                    "city": "MONTGOMERY",
+                                    "state": "AL",
+                                    "postcode": "36054",
+                                    "address_display": "7 WILLOW GREENE DRIVE, MONTGOMERY, 36054",
+                                    "houseno_housename": "7",
+                                    "road": "WILLOW GREENE DRIVE",
+                                    "flatno_houseno_housename": "|7"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "334-285-9827",
+                                    "telephone_clean": "3342859827"
+                                },
+                                "composite_acc_name": "Adray Imports S.A",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 946944000000,
+                                "acc_district": "Montgomery"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "7 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36054"
+                                ]
+                            },
+                            "score": 7.0918446,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "76374767836",
+            "source": {
+                "cus_id_no": 76374767836,
+                "cus_stat": "A",
+                "bus_registered_name": "House Works SpA",
+                "parsed_bus_name": {
+                    "business_display": "House Works SpA",
+                    "business_name": "HOUSE WORKS SPA",
+                    "business_name_clean": [
+                        "HOUSE WORKS"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 1386136,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "2002-12-11",
+                "cus_end_dt": "2009-05-14",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 76374767836,
+                        "prim_acc_no": 59732348695439,
+                        "acc_opened_dt": "1999-03-17",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1999-03-17",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "House Works SpA",
+                        "consolidated_acc_address": "9 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                        "parsed_address": {
+                            "address_display": "9 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                            "flatno_houseno_housename": "|9",
+                            "houseno_housename": "9",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "9",
+                            "po_box": null,
+                            "road": "WILLOW GREENE DRIVE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "MONTGOMERY",
+                            "state": "AL",
+                            "state_district": null,
+                            "postcode": "36109",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Montgomery",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "House Works SpA",
+                        "addr_line_one": null,
+                        "city": "Montgomery",
+                        "state": "KS",
+                        "postal_cde": "64110",
+                        "ctry": "US",
+                        "acc_risk_rtng": 1717.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "334-273-2991",
+                        "cleansed_tel_no": {
+                            "telephone_display": "334-273-2991",
+                            "telephone_clean": "3342732991",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "9 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36109"
+                ]
+            },
+            "score": 7.091944217681885,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 921628800000,
+                                "city": "Montgomery",
+                                "acc_cus_id_no": 76374767836,
+                                "tel_no": "334-273-2991",
+                                "state": "KS",
+                                "raw_acc_name": "House Works SpA",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "64110",
+                                "acc_risk_rtng": 1717.0,
+                                "consolidated_acc_address": "9 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                                "ctry": "US",
+                                "prim_acc_no": 59732348695439,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "9",
+                                    "city": "MONTGOMERY",
+                                    "state": "AL",
+                                    "postcode": "36109",
+                                    "address_display": "9 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                                    "houseno_housename": "9",
+                                    "road": "WILLOW GREENE DRIVE",
+                                    "flatno_houseno_housename": "|9"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "334-273-2991",
+                                    "telephone_clean": "3342732991"
+                                },
+                                "composite_acc_name": "House Works SpA",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 921628800000,
+                                "acc_district": "Montgomery"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "9 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36109"
+                                ]
+                            },
+                            "score": 7.0918446,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "88112920120",
+            "source": {
+                "cus_id_no": 88112920120,
+                "cus_stat": "A",
+                "bus_registered_name": "Deco Refreshments Inc. Imports Corp",
+                "parsed_bus_name": {
+                    "business_display": "Deco Refreshments Inc. Imports Corp",
+                    "business_name": "DECO REFRESHMENTS INC IMPORTS CORP",
+                    "business_name_clean": [
+                        "DECO REFRESHMENTS IMPORTS"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 6583297,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "1998-06-17",
+                "cus_end_dt": "2001-08-26",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 88112920120,
+                        "prim_acc_no": 5615310454952,
+                        "acc_opened_dt": "1992-11-19",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1992-11-19",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Deco Refreshments Inc. Imports Corp",
+                        "consolidated_acc_address": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                        "parsed_address": {
+                            "address_display": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                            "flatno_houseno_housename": "|16",
+                            "houseno_housename": "16",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "16",
+                            "po_box": null,
+                            "road": "WILLOW GREENE DRIVE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "TROY",
+                            "state": "AL",
+                            "state_district": null,
+                            "postcode": "36079",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Troy",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Deco Refreshments Inc. Imports Corp",
+                        "addr_line_one": null,
+                        "city": "Troy",
+                        "state": "AL",
+                        "postal_cde": "36079",
+                        "ctry": "US",
+                        "acc_risk_rtng": 6469.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 88112920120,
+                        "prim_acc_no": 934361576245,
+                        "acc_opened_dt": "2005-02-26",
+                        "acc_closed_dt": "2001-08-26",
+                        "acc_link_created_dt": "2005-02-26",
+                        "acc_link_end_dt": "2001-08-26",
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "Deco Refreshments Inc. Imports Corp",
+                        "consolidated_acc_address": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                        "parsed_address": {
+                            "address_display": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                            "flatno_houseno_housename": "|16",
+                            "houseno_housename": "16",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "16",
+                            "po_box": null,
+                            "road": "WILLOW GREENE DRIVE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "TROY",
+                            "state": "AL",
+                            "state_district": null,
+                            "postcode": "36079",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Troy",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "Deco Refreshments Inc. Imports Corp",
+                        "addr_line_one": null,
+                        "city": "Troy",
+                        "state": "AL",
+                        "postal_cde": "36079",
+                        "ctry": "US",
+                        "acc_risk_rtng": 7410.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": null,
+                        "cleansed_tel_no": null,
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE",
+                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "16 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, TROY, 36079",
+                    "16 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, TROY, 36079"
+                ]
+            },
+            "score": 7.091843128204346,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1109376000000,
+                                "city": "Troy",
+                                "acc_cus_id_no": 88112920120,
+                                "state": "AL",
+                                "raw_acc_name": "Deco Refreshments Inc. Imports Corp",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "36079",
+                                "acc_risk_rtng": 7410.0,
+                                "acc_link_end_dt": 998784000000,
+                                "consolidated_acc_address": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                                "ctry": "US",
+                                "prim_acc_no": 934361576245,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "16",
+                                    "city": "TROY",
+                                    "state": "AL",
+                                    "postcode": "36079",
+                                    "address_display": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                                    "houseno_housename": "16",
+                                    "road": "WILLOW GREENE DRIVE",
+                                    "flatno_houseno_housename": "|16"
+                                },
+                                "acc_closed_dt": 998784000000,
+                                "composite_acc_name": "Deco Refreshments Inc. Imports Corp",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1109376000000,
+                                "acc_district": "Troy"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "16 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, TROY, 36079"
+                                ]
+                            },
+                            "score": 7.0918446,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 1
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 722131200000,
+                                "city": "Troy",
+                                "acc_cus_id_no": 88112920120,
+                                "state": "AL",
+                                "raw_acc_name": "Deco Refreshments Inc. Imports Corp",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "36079",
+                                "acc_risk_rtng": 6469.0,
+                                "consolidated_acc_address": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                                "ctry": "US",
+                                "prim_acc_no": 5615310454952,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "16",
+                                    "city": "TROY",
+                                    "state": "AL",
+                                    "postcode": "36079",
+                                    "address_display": "16 WILLOW GREENE DRIVE, TROY, 36079",
+                                    "houseno_housename": "16",
+                                    "road": "WILLOW GREENE DRIVE",
+                                    "flatno_houseno_housename": "|16"
+                                },
+                                "composite_acc_name": "Deco Refreshments Inc. Imports Corp",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 722131200000,
+                                "acc_district": "Troy"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "16 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, TROY, 36079"
+                                ]
+                            },
+                            "score": 7.0918446,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "customerbusiness",
+            "id": "22647032491",
+            "source": {
+                "cus_id_no": 22647032491,
+                "cus_stat": "A",
+                "bus_registered_name": "MacMarr Stores Imports gomei-kaisha",
+                "parsed_bus_name": {
+                    "business_display": "MacMarr Stores Imports gomei-kaisha",
+                    "business_name": "MACMARR STORES IMPORTS GOMEI KAISHA",
+                    "business_name_clean": [
+                        "MACMARR STORES IMPORTS GOMEI KAISHA"
+                    ],
+                    "parent": null
+                },
+                "bus_registration_no": 62354993,
+                "bus_ctry_registration": "US",
+                "cus_start_dt": "2006-07-14",
+                "cus_end_dt": "1995-03-12",
+                "personal_bus_flg": "B",
+                "gender": null,
+                "dt_of_birth": null,
+                "dob_parts": null,
+                "initials": null,
+                "forename": null,
+                "family_name": null,
+                "maiden_name": null,
+                "full_name": null,
+                "parsed_cus_name": [],
+                "nationality": null,
+                "personal_national_id_no": null,
+                "cus_risk_rtng": null,
+                "employee_flag": null,
+                "residence_ctry": "US",
+                "accounts": [
+                    {
+                        "acc_cus_id_no": 22647032491,
+                        "prim_acc_no": 45590645674966,
+                        "acc_opened_dt": "2003-12-15",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "2003-12-15",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                        "consolidated_acc_address": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                        "parsed_address": {
+                            "address_display": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                            "flatno_houseno_housename": "|45",
+                            "houseno_housename": "45",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "45",
+                            "po_box": null,
+                            "road": "WILLOW GREENE DRIVE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "MONTGOMERY",
+                            "state": "AL",
+                            "state_district": null,
+                            "postcode": "36109",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Montgomery",
+                        "rel_mngr_name": null,
+                        "raw_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                        "addr_line_one": null,
+                        "city": "Montgomery",
+                        "state": "AL",
+                        "postal_cde": "36109",
+                        "ctry": "US",
+                        "acc_risk_rtng": 449.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "334-273-9255",
+                        "cleansed_tel_no": {
+                            "telephone_display": "334-273-9255",
+                            "telephone_clean": "3342739255",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    },
+                    {
+                        "acc_cus_id_no": 22647032491,
+                        "prim_acc_no": 70314643027608,
+                        "acc_opened_dt": "1995-11-21",
+                        "acc_closed_dt": null,
+                        "acc_link_created_dt": "1995-11-21",
+                        "acc_link_end_dt": null,
+                        "data_source_cde": "CUST ACCT LINK",
+                        "data_source_ctry": "US",
+                        "composite_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                        "consolidated_acc_address": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                        "parsed_address": {
+                            "address_display": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                            "flatno_houseno_housename": "|45",
+                            "houseno_housename": "45",
+                            "flat_number": null,
+                            "house_name": null,
+                            "house_number": "45",
+                            "po_box": null,
+                            "road": "WILLOW GREENE DRIVE",
+                            "suburb": null,
+                            "city_district": null,
+                            "city": "MONTGOMERY",
+                            "state": "AL",
+                            "state_district": null,
+                            "postcode": "36109",
+                            "country": null,
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "acc_stat": "Active",
+                        "acc_district": "Montgomery",
+                        "rel_mngr_name": "LAMONT BELLEMY",
+                        "raw_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                        "addr_line_one": null,
+                        "city": "Montgomery",
+                        "state": "AL",
+                        "postal_cde": "36109",
+                        "ctry": "US",
+                        "acc_risk_rtng": 3583.0,
+                        "aml_alr_flg": "f",
+                        "tel_no": "334-273-9255",
+                        "cleansed_tel_no": {
+                            "telephone_display": "334-273-9255",
+                            "telephone_clean": "3342739255",
+                            "country_code": null,
+                            "parent": null
+                        },
+                        "parent": null
+                    }
+                ]
+            },
+            "highlights": {
+                "accounts.parsed_address.road": [
+                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE",
+                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                ],
+                "accounts.parsed_address.address_display": [
+                    "45 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36109",
+                    "45 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36109"
+                ]
+            },
+            "score": 7.091817378997803,
+            "innerHits": [
+                {
+                    "innerHitsName": "parsed_cus_name-48c6e337-0090-4a9c-9360-34bed5e670e0",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "accounts-75809f5b-4ac7-4d62-8209-7727bc77c762",
+                    "hits": [
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 816912000000,
+                                "city": "Montgomery",
+                                "acc_cus_id_no": 22647032491,
+                                "tel_no": "334-273-9255",
+                                "state": "AL",
+                                "raw_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "36109",
+                                "acc_risk_rtng": 3583.0,
+                                "consolidated_acc_address": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                                "ctry": "US",
+                                "prim_acc_no": 70314643027608,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "45",
+                                    "city": "MONTGOMERY",
+                                    "state": "AL",
+                                    "postcode": "36109",
+                                    "address_display": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                                    "houseno_housename": "45",
+                                    "road": "WILLOW GREENE DRIVE",
+                                    "flatno_houseno_housename": "|45"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "334-273-9255",
+                                    "telephone_clean": "3342739255"
+                                },
+                                "rel_mngr_name": "LAMONT BELLEMY",
+                                "composite_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 816912000000,
+                                "acc_district": "Montgomery"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "45 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36109"
+                                ]
+                            },
+                            "score": 7.0918446,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 1
+                        },
+                        {
+                            "documentType": "customerbusiness",
+                            "source": {
+                                "acc_opened_dt": 1071446400000,
+                                "city": "Montgomery",
+                                "acc_cus_id_no": 22647032491,
+                                "tel_no": "334-273-9255",
+                                "state": "AL",
+                                "raw_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                                "data_source_ctry": "US",
+                                "data_source_cde": "CUST ACCT LINK",
+                                "postal_cde": "36109",
+                                "acc_risk_rtng": 449.0,
+                                "consolidated_acc_address": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                                "ctry": "US",
+                                "prim_acc_no": 45590645674966,
+                                "aml_alr_flg": "f",
+                                "parsed_address": {
+                                    "house_number": "45",
+                                    "city": "MONTGOMERY",
+                                    "state": "AL",
+                                    "postcode": "36109",
+                                    "address_display": "45 WILLOW GREENE DRIVE, MONTGOMERY, 36109",
+                                    "houseno_housename": "45",
+                                    "road": "WILLOW GREENE DRIVE",
+                                    "flatno_houseno_housename": "|45"
+                                },
+                                "cleansed_tel_no": {
+                                    "telephone_display": "334-273-9255",
+                                    "telephone_clean": "3342739255"
+                                },
+                                "composite_acc_name": "MacMarr Stores Imports gomei-kaisha",
+                                "acc_stat": "Active",
+                                "acc_link_created_dt": 1071446400000,
+                                "acc_district": "Montgomery"
+                            },
+                            "highlights": {
+                                "accounts.parsed_address.road": [
+                                    "WILLOW <em class=\"hlt1\">GREENE</em> DRIVE"
+                                ],
+                                "accounts.parsed_address.address_display": [
+                                    "45 WILLOW <em class=\"hlt1\">GREENE</em> DRIVE, MONTGOMERY, 36109"
+                                ]
+                            },
+                            "score": 7.0918446,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "accounts",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        }
+    ],
+    "aggs": []
+}

@@ -1,0 +1,3059 @@
+{
+    "totalHits": 6590,
+    "pageSize": 20,
+    "page": 0,
+    "hits": [
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "39239917066466|84116802215111|D",
+            "source": {
+                "agg_wire_id": "39239917066466|84116802215111|D",
+                "orig_acc": {
+                    "acc_no": "39239917066466",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "39239917066466",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "MADY ALTHOFF",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "39239917066466",
+                        "party_name": "MADY ALTHOFF",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "M",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "MADY ALTHOFF",
+                "bene_name": "MICHAEL GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_12": {
+                    "wire_sum": 222.06,
+                    "wire_cnt": 1,
+                    "wire_min": 222.06,
+                    "wire_max": 222.06,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 222.06,
+                    "wire_min_base": 222.06,
+                    "wire_max_base": 222.06
+                },
+                "first_dt": "2016-12-26",
+                "last_dt": "2016-12-26"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">MICHAEL</em>"
+                ],
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 32.99128341674805,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "M",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">MICHAEL</em>"
+                                ],
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 15.855566,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "89466998767505|84116802215111|D",
+            "source": {
+                "agg_wire_id": "89466998767505|84116802215111|D",
+                "orig_acc": {
+                    "acc_no": "89466998767505",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "89466998767505",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "PETZEL CHICHLOWSKA",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "89466998767505",
+                        "party_name": "PETZEL CHICHLOWSKA",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "M",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "PETZEL CHICHLOWSKA",
+                "bene_name": "MICHAEL GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": 1064.02,
+                    "wire_cnt": 1,
+                    "wire_min": 1064.02,
+                    "wire_max": 1064.02,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 1064.02,
+                    "wire_min_base": 1064.02,
+                    "wire_max_base": 1064.02
+                },
+                "wire_stats_12": {
+                    "wire_sum": 1064.02,
+                    "wire_cnt": 1,
+                    "wire_min": 1064.02,
+                    "wire_max": 1064.02,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 1064.02,
+                    "wire_min_base": 1064.02,
+                    "wire_max_base": 1064.02
+                },
+                "first_dt": "2017-04-27",
+                "last_dt": "2017-04-27"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">MICHAEL</em>"
+                ],
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 32.68037414550781,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "M",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">MICHAEL</em>"
+                                ],
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 15.781985,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "56769656517870|84116802215111|D",
+            "source": {
+                "agg_wire_id": "56769656517870|84116802215111|D",
+                "orig_acc": {
+                    "acc_no": "56769656517870",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "56769656517870",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "GBR",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "56769656517870",
+                        "party_name": "Molly Jennings",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "M",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "Molly Jennings",
+                "bene_name": "MICHAEL GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_12": {
+                    "wire_sum": 6015.47,
+                    "wire_cnt": 1,
+                    "wire_min": 6015.47,
+                    "wire_max": 6015.47,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 6015.47,
+                    "wire_min_base": 6015.47,
+                    "wire_max_base": 6015.47
+                },
+                "first_dt": "2016-11-27",
+                "last_dt": "2016-11-27"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">MICHAEL</em>"
+                ],
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 32.68020248413086,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "M",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">MICHAEL</em>"
+                                ],
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 15.781985,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "11662392350341|84116802215111|D",
+            "source": {
+                "agg_wire_id": "11662392350341|84116802215111|D",
+                "orig_acc": {
+                    "acc_no": "11662392350341",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "11662392350341",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "Tape World Sahis",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "11662392350341",
+                        "party_name": "Tape World Sahis",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "M",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "Tape World Sahis",
+                "bene_name": "MICHAEL GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": 143.98,
+                    "wire_cnt": 1,
+                    "wire_min": 143.98,
+                    "wire_max": 143.98,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 143.98,
+                    "wire_min_base": 143.98,
+                    "wire_max_base": 143.98
+                },
+                "wire_stats_3": {
+                    "wire_sum": 143.98,
+                    "wire_cnt": 1,
+                    "wire_min": 143.98,
+                    "wire_max": 143.98,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 143.98,
+                    "wire_min_base": 143.98,
+                    "wire_max_base": 143.98
+                },
+                "wire_stats_6": {
+                    "wire_sum": 143.98,
+                    "wire_cnt": 1,
+                    "wire_min": 143.98,
+                    "wire_max": 143.98,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 143.98,
+                    "wire_min_base": 143.98,
+                    "wire_max_base": 143.98
+                },
+                "wire_stats_12": {
+                    "wire_sum": 143.98,
+                    "wire_cnt": 1,
+                    "wire_min": 143.98,
+                    "wire_max": 143.98,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 143.98,
+                    "wire_min_base": 143.98,
+                    "wire_max_base": 143.98
+                },
+                "first_dt": "2017-08-27",
+                "last_dt": "2017-08-27"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">MICHAEL</em>"
+                ],
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 32.249916076660156,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "M",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">MICHAEL</em>"
+                                ],
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 15.546677,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "78751770517870|84116802215111|D",
+            "source": {
+                "agg_wire_id": "78751770517870|84116802215111|D",
+                "orig_acc": {
+                    "acc_no": "78751770517870",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "78751770517870",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "GBR",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "78751770517870",
+                        "party_name": "Offshore Incorporations Ltd",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "M",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "Offshore Incorporations Ltd",
+                "bene_name": "MICHAEL GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": 4067.77,
+                    "wire_cnt": 1,
+                    "wire_min": 4067.77,
+                    "wire_max": 4067.77,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 4067.77,
+                    "wire_min_base": 4067.77,
+                    "wire_max_base": 4067.77
+                },
+                "wire_stats_3": {
+                    "wire_sum": 12206.11,
+                    "wire_cnt": 3,
+                    "wire_min": 4050.15,
+                    "wire_max": 4088.19,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 12206.11,
+                    "wire_min_base": 4050.15,
+                    "wire_max_base": 4088.19
+                },
+                "wire_stats_6": {
+                    "wire_sum": 12206.11,
+                    "wire_cnt": 3,
+                    "wire_min": 4050.15,
+                    "wire_max": 4088.19,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 12206.11,
+                    "wire_min_base": 4050.15,
+                    "wire_max_base": 4088.19
+                },
+                "wire_stats_12": {
+                    "wire_sum": 12206.11,
+                    "wire_cnt": 3,
+                    "wire_min": 4050.15,
+                    "wire_max": 4088.19,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 12206.11,
+                    "wire_min_base": 4050.15,
+                    "wire_max_base": 4088.19
+                },
+                "first_dt": "2017-06-27",
+                "last_dt": "2017-08-27"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">MICHAEL</em>"
+                ],
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 32.24459457397461,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "M",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">MICHAEL</em>"
+                                ],
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 15.603078,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "78705676965651|84116802215111|D",
+            "source": {
+                "agg_wire_id": "78705676965651|84116802215111|D",
+                "orig_acc": {
+                    "acc_no": "78705676965651",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "76965651",
+                    "cleansed_sortcode": "787056",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "78705676965651",
+                        "party_name": "BYRON GREENE",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "M",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "BYRON GREENE",
+                "bene_name": "MICHAEL GREENE",
+                "cross_border_flg": false,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": 24990.0,
+                    "wire_cnt": 3,
+                    "wire_min": 7000.0,
+                    "wire_max": 9990.0,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 24990.0,
+                    "wire_min_base": 7000.0,
+                    "wire_max_base": 9990.0
+                },
+                "wire_stats_12": {
+                    "wire_sum": 31114.4,
+                    "wire_cnt": 5,
+                    "wire_min": 124.4,
+                    "wire_max": 9990.0,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 31114.4,
+                    "wire_min_base": 124.4,
+                    "wire_max_base": 9990.0
+                },
+                "first_dt": "2016-10-12",
+                "last_dt": "2017-06-01"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">MICHAEL</em>"
+                ],
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ],
+                "orig_acc.wireParty.party_name": [
+                    "BYRON <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 32.044029235839844,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "M",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">MICHAEL</em>"
+                                ],
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 15.434042,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "90177234532362|84116802215111|D",
+            "source": {
+                "agg_wire_id": "90177234532362|84116802215111|D",
+                "orig_acc": {
+                    "acc_no": "90177234532362",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "90177234532362",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "JINXIA YEPEZ",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "90177234532362",
+                        "party_name": "JINXIA YEPEZ",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "M",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "JINXIA YEPEZ",
+                "bene_name": "MICHAEL GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": 57.8,
+                    "wire_cnt": 1,
+                    "wire_min": 57.8,
+                    "wire_max": 57.8,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 57.8,
+                    "wire_min_base": 57.8,
+                    "wire_max_base": 57.8
+                },
+                "wire_stats_6": {
+                    "wire_sum": 57.8,
+                    "wire_cnt": 1,
+                    "wire_min": 57.8,
+                    "wire_max": 57.8,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 57.8,
+                    "wire_min_base": 57.8,
+                    "wire_max_base": 57.8
+                },
+                "wire_stats_12": {
+                    "wire_sum": 129.35999999999999,
+                    "wire_cnt": 3,
+                    "wire_min": 25.91,
+                    "wire_max": 57.8,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 129.35999999999999,
+                    "wire_min_base": 25.91,
+                    "wire_max_base": 57.8
+                },
+                "first_dt": "2016-09-10",
+                "last_dt": "2017-07-26"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">MICHAEL</em>"
+                ],
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 32.04405212402344,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "M",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "MICHAEL GREENE",
+                                "forename": "MICHAEL"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">MICHAEL</em>"
+                                ],
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 15.434042,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "84116802215111|78705676965651|D",
+            "source": {
+                "agg_wire_id": "84116802215111|78705676965651|D",
+                "orig_acc": {
+                    "acc_no": "84116802215111",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "02215111",
+                    "cleansed_sortcode": "841168",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "84116802215111",
+                        "party_name": "MICHAEL GREENE",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "78705676965651",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "76965651",
+                    "cleansed_sortcode": "787056",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "78705676965651",
+                        "party_name": "BYRON GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "BYRON GREENE",
+                                "forename": "BYRON",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "B",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "MICHAEL GREENE",
+                "bene_name": "BYRON GREENE",
+                "cross_border_flg": false,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": 9990.0,
+                    "wire_cnt": 1,
+                    "wire_min": 9990.0,
+                    "wire_max": 9990.0,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 9990.0,
+                    "wire_min_base": 9990.0,
+                    "wire_max_base": 9990.0
+                },
+                "wire_stats_6": {
+                    "wire_sum": 14990.0,
+                    "wire_cnt": 2,
+                    "wire_min": 5000.0,
+                    "wire_max": 9990.0,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 14990.0,
+                    "wire_min_base": 5000.0,
+                    "wire_max_base": 9990.0
+                },
+                "wire_stats_12": {
+                    "wire_sum": 30431.0,
+                    "wire_cnt": 5,
+                    "wire_min": 441.0,
+                    "wire_max": 9990.0,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 30431.0,
+                    "wire_min_base": 441.0,
+                    "wire_max_base": 9990.0
+                },
+                "first_dt": "2016-12-22",
+                "last_dt": "2017-06-15"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "BYRON <em class=\"hlt1\">GREENE</em>"
+                ],
+                "orig_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">MICHAEL</em> <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 25.657751083374023,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "B",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "BYRON GREENE",
+                                "forename": "BYRON"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 8.885878,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "66852812515480|21353213651942|D",
+            "source": {
+                "agg_wire_id": "66852812515480|21353213651942|D",
+                "orig_acc": {
+                    "acc_no": "66852812515480",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "66852812515480",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "Foreman & Clark Inc",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "66852812515480",
+                        "party_name": "Foreman & Clark Inc",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "21353213651942",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "21353213651942",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "PR",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "21353213651942",
+                        "party_name": "GREENE COUTELLE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "GREENE COUTELLE",
+                                "forename": "GREENE",
+                                "middlename": null,
+                                "surname": "COUTELLE",
+                                "initial": "G",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": "98 PARK END STREET, BROCKHAMPTON, HR19FJ, GB",
+                    "parsedAddress": {
+                        "address_display": "98 PARK END STREET, BROCKHAMPTON, HR19FJ, GB",
+                        "flatno_houseno_housename": "|98",
+                        "houseno_housename": "98",
+                        "flat_number": null,
+                        "house_name": "ACCOUNTLOOKUPDATA",
+                        "house_number": "98",
+                        "po_box": null,
+                        "road": "PARK END STREET",
+                        "suburb": null,
+                        "city_district": null,
+                        "city": "BROCKHAMPTON",
+                        "state": null,
+                        "state_district": null,
+                        "postcode": "HR19FJ",
+                        "country": "GB",
+                        "country_code": null,
+                        "parent": null
+                    },
+                    "parent": null
+                },
+                "orig_name": "Foreman & Clark Inc",
+                "bene_name": "GREENE COUTELLE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_12": {
+                    "wire_sum": 166.88,
+                    "wire_cnt": 3,
+                    "wire_min": 26.93,
+                    "wire_max": 84.04,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 166.88,
+                    "wire_min_base": 26.93,
+                    "wire_max_base": 84.04
+                },
+                "first_dt": "2016-10-10",
+                "last_dt": "2017-01-26"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">GREENE</em> COUTELLE"
+                ]
+            },
+            "score": 21.25875473022461,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "G",
+                                "node_id": 1,
+                                "surname": "COUTELLE",
+                                "name_display": "GREENE COUTELLE",
+                                "forename": "GREENE"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 11.85703,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "14345938479953|904269235991023|D",
+            "source": {
+                "agg_wire_id": "14345938479953|904269235991023|D",
+                "orig_acc": {
+                    "acc_no": "14345938479953",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "14345938479953",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "CHALLENGE DOREBOIZE",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "14345938479953",
+                        "party_name": "CHALLENGE DOREBOIZE",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "904269235991023",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "904269235991023",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "LR",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "904269235991023",
+                        "party_name": "Greene & Grand Foundation",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 2,
+                                "name_display": " GRAND FOUNDATION",
+                                "forename": "GRAND",
+                                "middlename": null,
+                                "surname": "FOUNDATION",
+                                "initial": "G",
+                                "parent": null
+                            },
+                            {
+                                "node_id": 1,
+                                "name_display": "GREENE ",
+                                "forename": "GREENE",
+                                "middlename": null,
+                                "surname": "FOUNDATION",
+                                "initial": "G",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "CHALLENGE DOREBOIZE",
+                "bene_name": "Greene & Grand Foundation",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_12": {
+                    "wire_sum": 44.47,
+                    "wire_cnt": 1,
+                    "wire_min": 44.47,
+                    "wire_max": 44.47,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 44.47,
+                    "wire_min_base": 44.47,
+                    "wire_max_base": 44.47
+                },
+                "first_dt": "2016-09-25",
+                "last_dt": "2016-09-25"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.forename": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "<em class=\"hlt1\">Greene</em> & Grand Foundation"
+                ]
+            },
+            "score": 19.62839698791504,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "G",
+                                "node_id": 1,
+                                "surname": "FOUNDATION",
+                                "name_display": "GREENE ",
+                                "forename": "GREENE"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.forename": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 11.85703,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 1
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "27508593227384|32974752309786|D",
+            "source": {
+                "agg_wire_id": "27508593227384|32974752309786|D",
+                "orig_acc": {
+                    "acc_no": "27508593227384",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "27508593227384",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "Anthony's Imports Developments",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "27508593227384",
+                        "party_name": "Anthony's Imports Developments",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "32974752309786",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "32974752309786",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "32974752309786",
+                        "party_name": "AZELIO GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "AZELIO GREENE",
+                                "forename": "AZELIO",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "A",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": "39 PONTE DARBI, SIENA, 53010",
+                    "parsedAddress": {
+                        "address_display": "39 PONTE DARBI, SIENA, 53010",
+                        "flatno_houseno_housename": "|39",
+                        "houseno_housename": "39",
+                        "flat_number": null,
+                        "house_name": null,
+                        "house_number": "39",
+                        "po_box": null,
+                        "road": "PONTE DARBI",
+                        "suburb": null,
+                        "city_district": null,
+                        "city": "SIENA",
+                        "state": null,
+                        "state_district": null,
+                        "postcode": "53010",
+                        "country": null,
+                        "country_code": null,
+                        "parent": null
+                    },
+                    "parent": null
+                },
+                "orig_name": "Anthony's Imports Developments",
+                "bene_name": "AZELIO GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": 70.88,
+                    "wire_cnt": 1,
+                    "wire_min": 70.88,
+                    "wire_max": 70.88,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 70.88,
+                    "wire_min_base": 70.88,
+                    "wire_max_base": 70.88
+                },
+                "wire_stats_12": {
+                    "wire_sum": 195.63,
+                    "wire_cnt": 2,
+                    "wire_min": 70.88,
+                    "wire_max": 124.75,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 195.63,
+                    "wire_min_base": 70.88,
+                    "wire_max_base": 124.75
+                },
+                "first_dt": "2017-01-14",
+                "last_dt": "2017-04-27"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "AZELIO <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.771244049072266,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "A",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "AZELIO GREENE",
+                                "forename": "AZELIO"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "83922126472280|79098425602780|D",
+            "source": {
+                "agg_wire_id": "83922126472280|79098425602780|D",
+                "orig_acc": {
+                    "acc_no": "83922126472280",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "83922126472280",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "Strong Life Imports SICAV",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "83922126472280",
+                        "party_name": "Strong Life Imports SICAV",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "79098425602780",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "79098425602780",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "79098425602780",
+                        "party_name": "SOLEYMAAN GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "SOLEYMAAN GREENE",
+                                "forename": "SOLEYMAAN",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "S",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "Strong Life Imports SICAV",
+                "bene_name": "SOLEYMAAN GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": 134.98,
+                    "wire_cnt": 1,
+                    "wire_min": 134.98,
+                    "wire_max": 134.98,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 134.98,
+                    "wire_min_base": 134.98,
+                    "wire_max_base": 134.98
+                },
+                "wire_stats_12": {
+                    "wire_sum": 142.75,
+                    "wire_cnt": 2,
+                    "wire_min": 7.77,
+                    "wire_max": 134.98,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 142.75,
+                    "wire_min_base": 7.77,
+                    "wire_max_base": 134.98
+                },
+                "first_dt": "2016-10-08",
+                "last_dt": "2017-03-03"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "SOLEYMAAN <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.77130126953125,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "S",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "SOLEYMAAN GREENE",
+                                "forename": "SOLEYMAAN"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "42756325913675|96516317754209|D",
+            "source": {
+                "agg_wire_id": "42756325913675|96516317754209|D",
+                "orig_acc": {
+                    "acc_no": "42756325913675",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "42756325913675",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "EDLINE PASTURE",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "42756325913675",
+                        "party_name": "EDLINE PASTURE",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "96516317754209",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "96516317754209",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "96516317754209",
+                        "party_name": "OBERTO GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "OBERTO GREENE",
+                                "forename": "OBERTO",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "O",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "EDLINE PASTURE",
+                "bene_name": "OBERTO GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_12": {
+                    "wire_sum": 244.36999999999998,
+                    "wire_cnt": 2,
+                    "wire_min": 46.23,
+                    "wire_max": 198.14,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 244.36999999999998,
+                    "wire_min_base": 46.23,
+                    "wire_max_base": 198.14
+                },
+                "first_dt": "2016-09-09",
+                "last_dt": "2016-11-02"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "OBERTO <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.771255493164062,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "O",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "OBERTO GREENE",
+                                "forename": "OBERTO"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "8003712289832|77085974922924|D",
+            "source": {
+                "agg_wire_id": "8003712289832|77085974922924|D",
+                "orig_acc": {
+                    "acc_no": "8003712289832",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "8003712289832",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "Phoenix International Supplies and Trading, Ltd.",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "8003712289832",
+                        "party_name": "Phoenix International Supplies and Trading, Ltd.",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "77085974922924",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "77085974922924",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "77085974922924",
+                        "party_name": "GALIP GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "GALIP GREENE",
+                                "forename": "GALIP",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "G",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "Phoenix International Supplies and Trading, Ltd.",
+                "bene_name": "GALIP GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": 32.75,
+                    "wire_cnt": 1,
+                    "wire_min": 32.75,
+                    "wire_max": 32.75,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 32.75,
+                    "wire_min_base": 32.75,
+                    "wire_max_base": 32.75
+                },
+                "wire_stats_12": {
+                    "wire_sum": 32.75,
+                    "wire_cnt": 1,
+                    "wire_min": 32.75,
+                    "wire_max": 32.75,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 32.75,
+                    "wire_min_base": 32.75,
+                    "wire_max_base": 32.75
+                },
+                "first_dt": "2017-05-22",
+                "last_dt": "2017-05-22"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "GALIP <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.771133422851562,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "G",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "GALIP GREENE",
+                                "forename": "GALIP"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "15615814607326|78705676965651|D",
+            "source": {
+                "agg_wire_id": "15615814607326|78705676965651|D",
+                "orig_acc": {
+                    "acc_no": "15615814607326",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "15615814607326",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "HARVMAZE MICHAIL",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "15615814607326",
+                        "party_name": "HARVMAZE MICHAIL",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "78705676965651",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "76965651",
+                    "cleansed_sortcode": "787056",
+                    "acc_bic": null,
+                    "acc_ctry": "GB",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "78705676965651",
+                        "party_name": "BYRON GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "BYRON GREENE",
+                                "forename": "BYRON",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "B",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": "59 VICARAGE CLOSE, ERITH, DA81ET",
+                    "parsedAddress": {
+                        "address_display": "59 VICARAGE CLOSE, ERITH, DA81ET",
+                        "flatno_houseno_housename": "|59",
+                        "houseno_housename": "59",
+                        "flat_number": null,
+                        "house_name": null,
+                        "house_number": "59",
+                        "po_box": null,
+                        "road": "VICARAGE CLOSE",
+                        "suburb": null,
+                        "city_district": null,
+                        "city": "ERITH",
+                        "state": null,
+                        "state_district": "KENT",
+                        "postcode": "DA81ET",
+                        "country": null,
+                        "country_code": null,
+                        "parent": null
+                    },
+                    "parent": null
+                },
+                "orig_name": "HARVMAZE MICHAIL",
+                "bene_name": "BYRON GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": 119.89,
+                    "wire_cnt": 2,
+                    "wire_min": 13.85,
+                    "wire_max": 106.04,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 119.89,
+                    "wire_min_base": 13.85,
+                    "wire_max_base": 106.04
+                },
+                "wire_stats_6": {
+                    "wire_sum": 119.89,
+                    "wire_cnt": 2,
+                    "wire_min": 13.85,
+                    "wire_max": 106.04,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 119.89,
+                    "wire_min_base": 13.85,
+                    "wire_max_base": 106.04
+                },
+                "wire_stats_12": {
+                    "wire_sum": 119.89,
+                    "wire_cnt": 2,
+                    "wire_min": 13.85,
+                    "wire_max": 106.04,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 119.89,
+                    "wire_min_base": 13.85,
+                    "wire_max_base": 106.04
+                },
+                "first_dt": "2017-07-11",
+                "last_dt": "2017-07-30"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "BYRON <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.77118492126465,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "B",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "BYRON GREENE",
+                                "forename": "BYRON"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "23251371827343|93845590390614|D",
+            "source": {
+                "agg_wire_id": "23251371827343|93845590390614|D",
+                "orig_acc": {
+                    "acc_no": "23251371827343",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "23251371827343",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "Jitney Jungle Imports NV",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "23251371827343",
+                        "party_name": "Jitney Jungle Imports NV",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "93845590390614",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "93845590390614",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "93845590390614",
+                        "party_name": "AZELIO GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "AZELIO GREENE",
+                                "forename": "AZELIO",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "A",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "Jitney Jungle Imports NV",
+                "bene_name": "AZELIO GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": 44.58,
+                    "wire_cnt": 1,
+                    "wire_min": 44.58,
+                    "wire_max": 44.58,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 44.58,
+                    "wire_min_base": 44.58,
+                    "wire_max_base": 44.58
+                },
+                "wire_stats_12": {
+                    "wire_sum": 302.84999999999997,
+                    "wire_cnt": 4,
+                    "wire_min": 21.86,
+                    "wire_max": 187.47,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 302.84999999999997,
+                    "wire_min_base": 21.86,
+                    "wire_max_base": 187.47
+                },
+                "first_dt": "2016-12-09",
+                "last_dt": "2017-03-13"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "AZELIO <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.771177291870117,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "A",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "AZELIO GREENE",
+                                "forename": "AZELIO"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "38408355474201|76398627493925|D",
+            "source": {
+                "agg_wire_id": "38408355474201|76398627493925|D",
+                "orig_acc": {
+                    "acc_no": "38408355474201",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "38408355474201",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "RBVD KRAEGEN",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "38408355474201",
+                        "party_name": "RBVD KRAEGEN",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "76398627493925",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "76398627493925",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "76398627493925",
+                        "party_name": "AZELIO GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "AZELIO GREENE",
+                                "forename": "AZELIO",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "A",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "RBVD KRAEGEN",
+                "bene_name": "AZELIO GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": 0.76,
+                    "wire_cnt": 1,
+                    "wire_min": 0.76,
+                    "wire_max": 0.76,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 0.76,
+                    "wire_min_base": 0.76,
+                    "wire_max_base": 0.76
+                },
+                "wire_stats_6": {
+                    "wire_sum": 0.76,
+                    "wire_cnt": 1,
+                    "wire_min": 0.76,
+                    "wire_max": 0.76,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 0.76,
+                    "wire_min_base": 0.76,
+                    "wire_max_base": 0.76
+                },
+                "wire_stats_12": {
+                    "wire_sum": 0.76,
+                    "wire_cnt": 1,
+                    "wire_min": 0.76,
+                    "wire_max": 0.76,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 0.76,
+                    "wire_min_base": 0.76,
+                    "wire_max_base": 0.76
+                },
+                "first_dt": "2017-07-02",
+                "last_dt": "2017-07-02"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "AZELIO <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.771150588989258,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "A",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "AZELIO GREENE",
+                                "forename": "AZELIO"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "39041327483558|91156151690569|D",
+            "source": {
+                "agg_wire_id": "39041327483558|91156151690569|D",
+                "orig_acc": {
+                    "acc_no": "39041327483558",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "39041327483558",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "DEPAK KHAIT",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "39041327483558",
+                        "party_name": "DEPAK KHAIT",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "91156151690569",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "91156151690569",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "91156151690569",
+                        "party_name": "OBERTO GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "OBERTO GREENE",
+                                "forename": "OBERTO",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "O",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "DEPAK KHAIT",
+                "bene_name": "OBERTO GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_12": {
+                    "wire_sum": 52.38,
+                    "wire_cnt": 1,
+                    "wire_min": 52.38,
+                    "wire_max": 52.38,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 52.38,
+                    "wire_min_base": 52.38,
+                    "wire_max_base": 52.38
+                },
+                "first_dt": "2016-11-13",
+                "last_dt": "2016-11-13"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "OBERTO <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.77120590209961,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "O",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "OBERTO GREENE",
+                                "forename": "OBERTO"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "40902404203641|13278037187347|D",
+            "source": {
+                "agg_wire_id": "40902404203641|13278037187347|D",
+                "orig_acc": {
+                    "acc_no": "40902404203641",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "40902404203641",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "Multi Tech Development Imports NV",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "40902404203641",
+                        "party_name": "Multi Tech Development Imports NV",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "13278037187347",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "13278037187347",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "13278037187347",
+                        "party_name": "OBERTO GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "OBERTO GREENE",
+                                "forename": "OBERTO",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "O",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "Multi Tech Development Imports NV",
+                "bene_name": "OBERTO GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_12": {
+                    "wire_sum": 159.08,
+                    "wire_cnt": 1,
+                    "wire_min": 159.08,
+                    "wire_max": 159.08,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 159.08,
+                    "wire_min_base": 159.08,
+                    "wire_max_base": 159.08
+                },
+                "first_dt": "2017-02-24",
+                "last_dt": "2017-02-24"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "OBERTO <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.771244049072266,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "O",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "OBERTO GREENE",
+                                "forename": "OBERTO"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        },
+        {
+            "htmlTemplateKey": null,
+            "documentType": "aggregatedwire",
+            "id": "93977440621575|99867269871848|D",
+            "source": {
+                "agg_wire_id": "93977440621575|99867269871848|D",
+                "orig_acc": {
+                    "acc_no": "93977440621575",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "93977440621575",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "JESSCICA ROSS WOOD",
+                    "orig_bene": "orig",
+                    "wireParty": {
+                        "party_id": "93977440621575",
+                        "party_name": "JESSCICA ROSS WOOD",
+                        "parsed_ind_names": [],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "bene_acc": {
+                    "acc_no": "99867269871848",
+                    "acc_sort": null,
+                    "acc_iban": null,
+                    "cleansed_acc_no": "99867269871848",
+                    "cleansed_sortcode": null,
+                    "acc_bic": null,
+                    "acc_ctry": "IT",
+                    "orig_bene": "bene",
+                    "wireParty": {
+                        "party_id": "99867269871848",
+                        "party_name": "HUISHAN GREENE",
+                        "parsed_ind_names": [
+                            {
+                                "node_id": 1,
+                                "name_display": "HUISHAN GREENE",
+                                "forename": "HUISHAN",
+                                "middlename": null,
+                                "surname": "GREENE",
+                                "initial": "H",
+                                "parent": null
+                            }
+                        ],
+                        "parsed_bus_name": null,
+                        "parent": null
+                    },
+                    "rawAddress": null,
+                    "parsedAddress": null,
+                    "parent": null
+                },
+                "orig_name": "JESSCICA ROSS WOOD",
+                "bene_name": "HUISHAN GREENE",
+                "cross_border_flg": true,
+                "external_cp_flg": null,
+                "credit_debit": "D",
+                "currencies": [],
+                "wire_stats_1": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_3": {
+                    "wire_sum": null,
+                    "wire_cnt": null,
+                    "wire_min": null,
+                    "wire_max": null,
+                    "wire_rnd_cnt": null,
+                    "wire_sum_base": null,
+                    "wire_min_base": null,
+                    "wire_max_base": null
+                },
+                "wire_stats_6": {
+                    "wire_sum": 9.77,
+                    "wire_cnt": 1,
+                    "wire_min": 9.77,
+                    "wire_max": 9.77,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 9.77,
+                    "wire_min_base": 9.77,
+                    "wire_max_base": 9.77
+                },
+                "wire_stats_12": {
+                    "wire_sum": 9.77,
+                    "wire_cnt": 1,
+                    "wire_min": 9.77,
+                    "wire_max": 9.77,
+                    "wire_rnd_cnt": 0,
+                    "wire_sum_base": 9.77,
+                    "wire_min_base": 9.77,
+                    "wire_max_base": 9.77
+                },
+                "first_dt": "2017-03-30",
+                "last_dt": "2017-03-30"
+            },
+            "highlights": {
+                "bene_acc.wireParty.parsed_ind_names.surname": [
+                    "<em class=\"hlt1\">GREENE</em>"
+                ],
+                "bene_acc.wireParty.party_name": [
+                    "HUISHAN <em class=\"hlt1\">GREENE</em>"
+                ]
+            },
+            "score": 18.771286010742188,
+            "innerHits": [
+                {
+                    "innerHitsName": "orig_acc.wireParty.parsed_ind_names-4008af34-3654-4293-8ed7-6eefe84a5b91",
+                    "hits": []
+                },
+                {
+                    "innerHitsName": "bene_acc.wireParty.parsed_ind_names-6659eb63-8e83-4c23-a810-1c150cbb6eaa",
+                    "hits": [
+                        {
+                            "documentType": "aggregatedwire",
+                            "source": {
+                                "initial": "H",
+                                "node_id": 1,
+                                "surname": "GREENE",
+                                "name_display": "HUISHAN GREENE",
+                                "forename": "HUISHAN"
+                            },
+                            "highlights": {
+                                "bene_acc.wireParty.parsed_ind_names.surname": [
+                                    "<em class=\"hlt1\">GREENE</em>"
+                                ]
+                            },
+                            "score": 9.013552,
+                            "innerHits": null,
+                            "records": [],
+                            "nestedField": "bene_acc.wireParty.parsed_ind_names",
+                            "nestedOffset": 0
+                        }
+                    ]
+                }
+            ],
+            "records": []
+        }
+    ],
+    "aggs": []
+}

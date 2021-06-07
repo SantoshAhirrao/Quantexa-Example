@@ -1,0 +1,28 @@
+version: "2.1"
+services:
+  app-resolve:
+    environment:
+      - OTHER_SPRING_PROFILES_ACTIVE=elastic-docker-embedded
+    depends_on:
+      quantexa-elastic:
+        condition: service_started
+  app-search:
+    environment:
+      - OTHER_SPRING_PROFILES_ACTIVE=elastic-docker-embedded
+    depends_on:
+      quantexa-elastic:
+        condition: service_started
+  quantexa-elastic:
+    build: quantexa-elastic
+    ulimits:
+      nofile: 65536
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - OTHER_SPRING_PROFILES_ACTIVE=elastic-docker-embedded
+# Uncomment below for host access to elastic, eg via elastic head
+    # ports:
+      # - "19200:9200"
+    volumes:
+      - C:/dev/docker/share/example/elastic:/usr/share/elasticsearch/data/quantexa
+    networks:
+      - quantexa-internal

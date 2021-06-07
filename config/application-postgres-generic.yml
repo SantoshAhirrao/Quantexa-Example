@@ -1,0 +1,87 @@
+database.type: postgres
+
+acl.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}:5432/quantexa_acl?user=postgres&password=${postgres.password}&ssl=true&sslmode=verify-ca&sslrootcert=/var/lib/sslcertificate/sql/sql-ca.pem&sslcert=/var/lib/sslcertificate/sql/client-cert.pem&sslkey=/var/lib/sslcertificate/sql/client-key.der
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+connect.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}:5432/quantexa_connect?user=postgres&password=${postgres.password}&ssl=true&sslmode=verify-ca&sslrootcert=/var/lib/sslcertificate/sql/sql-ca.pem&sslcert=/var/lib/sslcertificate/sql/client-cert.pem&sslkey=/var/lib/sslcertificate/sql/client-key.der
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+security.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}:5432/quantexa_security?user=postgres&password=${postgres.password}&ssl=true&sslmode=verify-ca&sslrootcert=/var/lib/sslcertificate/sql/sql-ca.pem&sslcert=/var/lib/sslcertificate/sql/client-cert.pem&sslkey=/var/lib/sslcertificate/sql/client-key.der
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+investigation.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}:5432/quantexa_investigation?user=postgres&password=${postgres.password}&ssl=true&sslmode=verify-ca&sslrootcert=/var/lib/sslcertificate/sql/sql-ca.pem&sslcert=/var/lib/sslcertificate/sql/client-cert.pem&sslkey=/var/lib/sslcertificate/sql/client-key.der
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+task.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}:5432/quantexa_investigation?user=postgres&password=${postgres.password}&ssl=true&sslmode=verify-ca&sslrootcert=/var/lib/sslcertificate/sql/sql-ca.pem&sslcert=/var/lib/sslcertificate/sql/client-cert.pem&sslkey=/var/lib/sslcertificate/sql/client-key.der
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+intelligence.database:
+  autocreate: true
+  type: postgres
+  slick:
+    profile: slick.jdbc.PostgresProfile$
+    db:
+      url: jdbc:postgresql://${postgres.servername}:5432/quantexa_investigation?user=postgres&password=${postgres.password}&ssl=true&sslmode=verify-ca&sslrootcert=/var/lib/sslcertificate/sql/sql-ca.pem&sslcert=/var/lib/sslcertificate/sql/client-cert.pem&sslkey=/var/lib/sslcertificate/sql/client-key.der
+      driver: org.postgresql.Driver
+      numThreads: 4
+      connectionTimeout: 10000
+      maxConnections: 8
+      minConnections: 4
+
+quadit4j:
+  db:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://${postgres.servername}:5432/quantexa_quadit?ssl=true&sslmode=verify-ca&sslrootcert=/var/lib/sslcertificate/sql/sql-ca.pem&sslcert=/var/lib/sslcertificate/sql/client-cert.pem&sslkey=/var/lib/sslcertificate/sql/client-key.der
+    user: postgres
+    password: ${postgres.password}
+    table-name: quadit

@@ -1,0 +1,190 @@
+#
+# Helm configuration that:
+#  - uses GKE
+#
+# You can deploy this configuration using gradle from the repository root:
+#
+#  gradle helmInstallOrUpgrade -Phosting_cloud_provider=google -Phosting_environment=qcp-core-green-1 -Phelm_chart_name=QuantexaExplorer
+
+app-investigate:
+  enabled: true
+  replicaCount: 1
+  appInvestigate:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    resources:
+      requests:
+        memory: 4Gi
+        cpu: 500m
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes
+    httpProbe:
+      enabled: false
+
+app-resolve:
+  enabled: true
+  replicaCount: 1
+  appResolve:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: 500m
+
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-kubernetes
+
+app-search:
+  enabled: true
+  replicaCount: 1
+  appSearch:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: 500m
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-kubernetes
+
+app-security:
+  enabled: true
+  replicaCount: 1
+  appSecurity:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: 500m
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes
+
+app-graph-script:
+  enabled: true
+  replicaCount: 1
+  appGraphScript:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: 500m
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,elastic-kubernetes,postgres-kubernetes
+    httpProbe:
+      enabled: false
+
+config-server:
+  replicaCount: 1
+  configServer:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    resources:
+      requests:
+        memory: 3Gi
+        cpu: 500m
+
+front-end:
+  ingress:
+    enabled: false
+  replicaCount: 1
+  explorerUI:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      name: example-ui
+      tag: @imageTag@
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes
+    httpProbe:
+      enabled: false
+  explorerUIService:
+    name: explorer-ui
+  gateway:
+    image:
+      registry: eu.gcr.io/qcp-core-green-1/example
+      tag: @imageTag@
+    env:
+      OTHER_SPRING_PROFILES_ACTIVE: kubernetes,postgres-kubernetes
+    httpProbe:
+      enabled: false
+  gatewayService:
+    type: NodePort
+    ports:
+      http:
+        port: 8080
+        nodePort: 31961
+      https:
+        port: 443
+        targetPort: 8080
+        nodePort: 30287
+
+
+etcd:
+  replicaCount: 1
+  etcd:
+    image:
+      registry: eu.gcr.io/quantexa-core
+      tag: 0.1.0
+    storage:
+      class: standard
+
+global:
+  postgres:
+    enabled: true
+  tls:
+    quantexa:
+      hostname: "*.quantexa.com"
+    elastic:
+      enabled: false
+  fluentd:
+    image:
+      registry: eu.gcr.io/quantexa-core
+      tag: 0.3.0
+    output:
+      google:
+        enabled: true
+        projectName: qcp-core-green-1
+        bucketName: quantexa-qcp-core-green-1-sink-archive
+        buffer:
+          path: /var/fluentd-buffers/gcs.buffer
+
+postgres-acl:
+  postgres:
+    storage:
+      class: standard
+postgres-bulk-search:
+  postgres:
+    storage:
+      class: standard
+postgres-connect:
+  postgres:
+    storage:
+      class: standard
+postgres-intelligence:
+  postgres:
+    storage:
+      class: standard
+postgres-investigation:
+  postgres:
+    storage:
+      class: standard
+postgres-quadit:
+  postgres:
+    storage:
+      class: standard
+postgres-security:
+  postgres:
+    storage:
+      class: standard
+postgres-task:
+  postgres:
+    storage:
+      class: standard

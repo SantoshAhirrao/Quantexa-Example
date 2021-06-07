@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  config-server:
+    image: project-example/config-service
+    volumes:
+      - ../../config:/config-files
+  gateway:
+    image: project-example/gateway
+  explorer-ui:
+    image: project-example/example-ui
+  app-investigate:
+    image: project-example/app-investigate
+  app-resolve:
+    image: project-example/app-resolve
+  app-search:
+    image: project-example/app-search
+networks:
+  quantexa-internal:
+    driver: bridge

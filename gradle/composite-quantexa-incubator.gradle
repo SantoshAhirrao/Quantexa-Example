@@ -1,0 +1,18 @@
+includeBuild('../quantexa-incubators') {
+    dependencySubstitution {
+        substitute module("com.quantexa:quantexa-script-runner-elastic6_$scalaVersion") with project(":quantexa-script-runner-elastic6")
+        substitute module("com.quantexa:quantexa-script-runner-model_$scalaVersion") with project(":quantexa-script-runner-model")
+        substitute module("com.quantexa:quantexa-script-runner_$scalaVersion") with project(":quantexa-script-runner")
+        substitute module("com.quantexa:quantexa-etl-scala_$scalaVersion") with project(":quantexa-etl-scala")
+        substitute module("com.quantexa:quantexa-etl-spark_$scalaVersion") with project(":quantexa-etl-spark")
+        substitute module("com.quantexa:data-generator-core_$scalaVersion") with project(":data-generator-core")
+        substitute module("com.quantexa:task-loading-scala-utils_$scalaVersion") with project(":task-loading-scala-utils")
+        substitute module("com.quantexa:task-loading-spark-utils_$scalaVersion") with project(":task-loading-spark-utils")
+
+        substitute module("com.quantexa.graph.script:graph-scripting-spark-utils_$scalaVersion") with project(":graph-scripting-spark-utils")
+        substitute module("com.quantexa.graph.script:graph-scripting-scala-utils_$scalaVersion") with project(":graph-scripting-scala-utils")
+
+        substitute module("com.quantexa:quantexa-analytics-spark_$scalaVersion") with project(":quantexa-analytics-spark")
+        substitute module("com.quantexa:quantexa-analytics-scala_$scalaVersion") with project(":quantexa-analytics-scala")
+    }
+}

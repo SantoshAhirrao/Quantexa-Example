@@ -1,0 +1,584 @@
+{
+    "id": "092aca9a-9360-4c50-94f2-7654b1587807",
+    "name": null,
+    "graph": {
+        "nodes": [
+            {
+                "id": "individual-/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                "label": "MICHAEL GREENE",
+                "valid_from": null,
+                "valid_to": null,
+                "topLabel": null,
+                "type": "circle",
+                "size": 6.0,
+                "color": "rgba(255,255,255,0)",
+                "image": {
+                    "url": "../ui/icons/Individual.png",
+                    "scale": 1.1,
+                    "clip": 1.1
+                },
+                "attributes": {
+                    "typeType": "Entity",
+                    "entityIdValue": "/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                    "type": "individual",
+                    "recordIDs": [
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78751770517870|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 4050,
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 12206,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 12206,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 3,
+                                "txn_min_1m": 4067,
+                                "txn_max_1m": 4067,
+                                "txn_cnt_6m": 3,
+                                "txn_max_6m": 4088,
+                                "txn_min_3m": 4050,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 4050,
+                                "round_amount_pct_3m": 0,
+                                "txn_sum_1m": 4067,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 4088,
+                                "txn_sum": 12206,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "txn_cnt_1m": 1,
+                                "individual_display": "MICHAEL GREENE",
+                                "txn_max_3m": 4088,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[89466998767505|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 1064,
+                                "txn_cnt": 1,
+                                "txn_sum_6m": 1064,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 1,
+                                "txn_max_6m": 1064,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 1064,
+                                "txn_max": 1064,
+                                "txn_sum": 1064,
+                                "round_amount_flag_6m": false,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[8bfEAWA1Ky9lpG8hzPKodg]/director_id[v4yVsfcXBNngRLG6vyRqXg]/profile_id[2]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Employee",
+                                "individual_job_category": "Administration department",
+                                "disqualified": false,
+                                "dob_display": "19710624",
+                                "bvd_uci": "v4yVsfcXBNngRLG6vyRqXg",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Administration - Admin Contact"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[KuMOGkjxfL65LRYR0wRdjQ]/node_id[-918864214]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1100131200000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[atWhVvWc7PqIGaVQvwWLzQ]/node_id[1252683947]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1100736000000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[DvaUUFR3pvioCBNsmhPyeA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1107129600000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "valid_to": 1140393600000,
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Business Administrator)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[PdxP5Xx5aBbVn95gVqaSYQ]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1118620800000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "valid_to": 1150156800000,
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[vB9s_WjSrfjIfZL8aUu7eA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 897523200000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Producer)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[COcu6mB6TVqj2Yec6jgs8Q]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1116288000000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Music Producer)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[90177234532362|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 25,
+                                "txn_cnt": 3,
+                                "txn_sum_3m": 57,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 57,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_cnt_6m": 1,
+                                "txn_max_6m": 57,
+                                "txn_min_3m": 57,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 57,
+                                "round_amount_pct_3m": 0,
+                                "txn_max": 57,
+                                "txn_sum": 129,
+                                "round_amount_flag_6m": false,
+                                "individual_display": "MICHAEL GREENE",
+                                "txn_max_3m": 57,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[8bfEAWA1Ky9lpG8hzPKodg]/director_id[v4yVsfcXBNngRLG6vyRqXg]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710624",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 1110412800000,
+                                "bvd_uci": "v4yVsfcXBNngRLG6vyRqXg",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Administration)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[2H-txaaIsLfWHNaOTvGDQA]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 948326400000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Producer Music)"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[78705676965651|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 124,
+                                "txn_cnt": 5,
+                                "txn_sum_6m": 24990,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_6m": 3,
+                                "txn_max_6m": 9990,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 7000,
+                                "txn_max": 9990,
+                                "txn_sum": 31114,
+                                "round_amount_flag_6m": false,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/cus_id_no[45078203947]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "customerindividual"
+                            },
+                            "attributes": {
+                                "individual_start_dt": "2012-10-11",
+                                "cus_risk_rtng": "497",
+                                "full_name": "Michael Greene",
+                                "employee": "false",
+                                "cus_stat": "A",
+                                "individual_end_dt": "1994-03-13",
+                                "nationality": "GB",
+                                "customer_id_no": "45078203947",
+                                "residence_country": "US",
+                                "personal_national_id_no": "612632251",
+                                "individual_display": "Michael Greene",
+                                "gender": "M"
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[56769656517870|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 6015,
+                                "txn_cnt": 1,
+                                "round_amount_flag": false,
+                                "round_amount_cnt": 0,
+                                "txn_max": 6015,
+                                "txn_sum": 6015,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[GfKVa9sJ9p15SV3YUIWG1w]/node_id[1252683947]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1100131200000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[w0Vjy3K4cdAspDVT4HLb2w]/node_id[-918864214]/node_id[-1672130795]",
+                                "entityType": "individual",
+                                "documentType": "offshore"
+                            },
+                            "attributes": {
+                                "individual_role": "director",
+                                "individual_display": "MICHAEL GREENE",
+                                "valid_from": 1092873600000
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[39239917066466|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "txn_min": 222,
+                                "txn_cnt": 1,
+                                "round_amount_flag": false,
+                                "round_amount_cnt": 0,
+                                "txn_max": 222,
+                                "txn_sum": 222,
+                                "individual_display": "MICHAEL GREENE",
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/agg_wire_id[11662392350341|84116802215111|D]/acc_no[84116802215111]/party_id[84116802215111]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "aggregatedwire"
+                            },
+                            "attributes": {
+                                "round_amount_pct_1m": 0,
+                                "txn_min": 143,
+                                "txn_cnt": 1,
+                                "txn_sum_3m": 143,
+                                "round_amount_cnt_3m": 0,
+                                "round_amount_flag_3m": false,
+                                "txn_sum_6m": 143,
+                                "round_amount_flag": false,
+                                "round_amount_cnt_6m": 0,
+                                "txn_cnt_3m": 1,
+                                "txn_min_1m": 143,
+                                "txn_max_1m": 143,
+                                "txn_cnt_6m": 1,
+                                "txn_max_6m": 143,
+                                "txn_min_3m": 143,
+                                "round_amount_cnt": 0,
+                                "txn_min_6m": 143,
+                                "round_amount_pct_3m": 0,
+                                "txn_sum_1m": 143,
+                                "round_amount_cnt_1m": 0,
+                                "txn_max": 143,
+                                "txn_sum": 143,
+                                "round_amount_flag_6m": false,
+                                "round_amount_flag_1m": false,
+                                "txn_cnt_1m": 1,
+                                "individual_display": "MICHAEL GREENE",
+                                "txn_max_3m": 143,
+                                "round_amount_pct_6m": 0,
+                                "round_amount_pct": 0
+                            }
+                        },
+                        {
+                            "record": {
+                                "id": "/document_id[iGZvwjBTvitHXMjxdPfj_g]/director_id[Fp9yiscOrVIqSK46bGjE9A]/profile_id[1]/node_id[1]",
+                                "entityType": "individual",
+                                "documentType": "bvd"
+                            },
+                            "attributes": {
+                                "individual_role": "Director",
+                                "individual_job_category": "Board of Directors; Senior management",
+                                "disqualified": false,
+                                "dob_display": "19710813",
+                                "address_display": "59 VICARAGE CLOSE, ERITH KENT, DA81ET",
+                                "valid_from": 934329600000,
+                                "bvd_uci": "Fp9yiscOrVIqSK46bGjE9A",
+                                "individual_display": "MICHAEL GREENE",
+                                "job_title_display": "Director (Occupation: Producer)"
+                            }
+                        }
+                    ],
+                    "template": {
+                        "type": "ResolutionTemplateName",
+                        "name": "default"
+                    },
+                    "nodeDegrees": 19,
+                    "datetime": 0,
+                    "attributes": {
+                        "transaction_volume": 15,
+                        "total_records": 20,
+                        "individual_role": "Director",
+                        "individual_start_dt": "2012-10-11",
+                        "dob_display": "19710813",
+                        "cus_risk_rtng": "497",
+                        "dob_count": 2,
+                        "full_name": "Michael Greene",
+                        "individual_end_dt": "1994-03-13",
+                        "dob_values": "19710813, 19710624",
+                        "nationality": "GB",
+                        "is_disqualified": false,
+                        "is_customer_individual": true,
+                        "transaction_value": 50893,
+                        "personal_national_id_no": "612632251",
+                        "total_documents": 19,
+                        "is_on_offshore": true,
+                        "individual_display": "MICHAEL GREENE",
+                        "is_on_bvd": true,
+                        "gender": "M"
+                    },
+                    "profligate": false
+                },
+                "coordinates": null
+            }
+        ],
+        "edges": []
+    },
+    "isAtTag": true,
+    "natures": {},
+    "tag": 0,
+    "tags": [
+        {
+            "tag": 0,
+            "natures": {},
+            "createdBy": "rubenmoreno",
+            "createdDateTime": "2018-04-26T14:26:56.971Z"
+        }
+    ],
+    "privileges": [
+        {
+            "name": "Investigation.GetGraphAsData"
+        },
+        {
+            "name": "Investigation.AddRolePrivilege"
+        },
+        {
+            "name": "Investigation.RenameInvestigation"
+        },
+        {
+            "name": "Investigation.GetUIPrivileges"
+        },
+        {
+            "name": "Investigation.RemoveRolePrivilege"
+        },
+        {
+            "name": "Investigation.RebuildCompoundGraph"
+        },
+        {
+            "name": "Investigation.GetUserPrivileges"
+        },
+        {
+            "name": "Investigation.GetTaggedGraph"
+        },
+        {
+            "name": "Investigation.GetTaggedGraphAsData"
+        },
+        {
+            "name": "Investigation.ExpandGraph"
+        },
+        {
+            "name": "Investigation.GetGraph"
+        },
+        {
+            "name": "Investigation.AddUser"
+        },
+        {
+            "name": "Investigation.GetPrivileges"
+        },
+        {
+            "name": "Investigation.DeleteInvestigationRequest"
+        },
+        {
+            "name": "Investigation.ApplyRebuildGraph"
+        },
+        {
+            "name": "Investigation.CountFilterExpandPreview"
+        },
+        {
+            "name": "Investigation.RemoveRole"
+        },
+        {
+            "name": "Investigation.RemoveUser"
+        },
+        {
+            "name": "Investigation.AddNatures"
+        },
+        {
+            "name": "Investigation.AddRole"
+        },
+        {
+            "name": "Investigation.GetInvestigationDocuments"
+        },
+        {
+            "name": "Investigation.GetCompoundGraph"
+        },
+        {
+            "name": "Investigation.ScoreGraph"
+        },
+        {
+            "name": "Investigation.InitialiseGraph"
+        },
+        {
+            "name": "Investigation.DumpExpandPreview"
+        },
+        {
+            "name": "Investigation.RemoveUserPrivilege"
+        },
+        {
+            "name": "Investigation.RemoveNatureTypes"
+        },
+        {
+            "name": "Investigation.SaveGraphLayoutRequest"
+        },
+        {
+            "name": "Investigation.AddItems"
+        },
+        {
+            "name": "Investigation.AddUserPrivilege"
+        },
+        {
+            "name": "Investigation.TagInvestigation"
+        },
+        {
+            "name": "Investigation.GraphRedoRequest"
+        },
+        {
+            "name": "Investigation.RemoveNodes"
+        },
+        {
+            "name": "Investigation.RevertToTag"
+        },
+        {
+            "name": "Investigation.GraphUndoRequest"
+        },
+        {
+            "name": "Investigation.ApplyExpandPreview"
+        }
+    ]
+}
