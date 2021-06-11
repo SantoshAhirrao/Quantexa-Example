@@ -229,7 +229,7 @@ zuul:
       serviceId:
       sensitive-headers:
     explorer:
-      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9001
+      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9002
       serviceId:
       sensitive-headers:
     security:
@@ -244,12 +244,12 @@ zuul:
       sensitive-headers:
     intelligence:
       stripPrefix: false
-      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9001
+      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9002
       serviceId:
       sensitive-headers:
     connect:
       stripPrefix: false
-      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9001
+      url: http://app-investigate.${NAMESPACE}.svc.cluster.local:9002
       serviceId:
       sensitive-headers:
     resolver:

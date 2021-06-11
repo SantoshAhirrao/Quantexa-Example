@@ -7,7 +7,7 @@ security:
     dependencies.location: ${config-files.dir}/example-privilege-dependencies.json
 
 resolver.config:
-  name: resolver-config-fiu-smoke.json
+  name: resolver-config-training.json
   location: ${config-files.dir}/${resolver.config.name}
 
 quantexa.security:

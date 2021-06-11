@@ -1,0 +1,339 @@
+{
+  "documentDefinitions" : {
+    "customer": {
+        "icon": "documents1.png",
+        "displayName": "Customer",
+        "labelAttribute": "label",
+        "validFromAttribute": "customerStartDate",
+        "validToAttribute": "customerEndDate",
+        "dataLocation": "/home/training-admin/Data/customer/2019-09-17_15-24-19-791/Compounds/DocumentIndexInput.parquet",
+        "dataModelRootClass": "com.quantexa.example.model.fiu.customer.CustomerModel.Customer",
+        "dataModelRecordExtractor":"com.quantexa.example.model.fiu.customer.CustomerExtractor"
+    }
+  },
+    "elementDefinitions": {
+        "forename": {
+            "exclusionCriteria": []
+        },
+        "surname": {
+            "exclusionCriteria": []
+        },
+        "dob": {
+            "exclusionCriteria": [
+		    {
+			    "analysisType" : "maxCount",
+			    "value" : 100
+		    }
+	    ]
+        },
+        "personalNationalIdNumber": {
+            "exclusionCriteria": [
+		    {
+			    "analysisType" : "minLength",
+			    "value" : 8
+		    },
+		    {
+			    "analysisType" : "maxPercent",
+			    "value" : 0.025
+		    }
+	    ]
+        },
+        "houseNumberOrHouseNameOrPOBox": {
+            "exclusionCriteria": []
+        },
+        "road": {
+            "exclusionCriteria": []
+        },
+        "city": {
+            "exclusionCriteria": []
+        },
+        "postcode": {
+            "exclusionCriteria": []
+        },
+        "telephone": {
+            "exclusionCriteria": []
+        }
+    },
+      "compoundDefinitions": {
+        "forename_surname_dob": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "forename",
+                "surname",
+                "dob"
+            ],
+	    "exclusionCriteria" : [ {
+          	"analysisType" : "Count",
+        	"variableName" : "personalNationalIdNumber",
+        	"value" : "2.0"
+	    } ]
+        },
+        "personalNationalIdNumber": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "personalNationalIdNumber"
+            ]
+        },
+        "forename_surname_postcode": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "forename",
+                "surname",
+                "postcode"
+            ],
+	    "exclusionCriteria" : [ {
+          	"analysisType" : "Count",
+        	"variableName" : "dob",
+        	"value" : "2.0"
+	    },
+	    {
+		"analysisType" : "Count",
+        	"variableName" : "personalNationalIdNumber",
+        	"value" : "2.0"
+	    } ]
+        },
+        "forename_surname_road_city": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "forename",
+                "surname",
+                "road",
+                "city"
+            ],
+	    "exclusionCriteria" : [ {
+          	"analysisType" : "Count",
+        	"variableName" : "dob",
+        	"value" : "2.0"
+	    },
+	    {
+		"analysisType" : "Count",
+        	"variableName" : "personalNationalIdNumber",
+        	"value" : "2.0"
+	    } ]
+        },
+        "forename_surname_telephone": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "forename",
+                "surname",
+                "telephone"
+            ],
+	    "exclusionCriteria" : [ {
+          	"analysisType" : "Count",
+        	"variableName" : "dob",
+        	"value" : "2.0"
+	    },
+	    {
+		"analysisType" : "Count",
+        	"variableName" : "personalNationalIdNumber",
+        	"value" : "2.0"
+	    } ]
+        },
+        "houseNumberOrHouseNameOrPOBox_postcode": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "houseNumberOrHouseNameOrPOBox",
+                "postcode"
+            ]
+        },
+        "houseNumberOrHouseNameOrPOBox_road_city": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "houseNumberOrHouseNameOrPOBox",
+                "road",
+                "city"
+            ]
+        },
+        "telephoneClean": {
+            "documentDefinitions": [
+                "customer"
+            ],
+            "elementDefinitions": [
+                "telephone"
+            ]
+        }
+      },
+      "entityDefinitions": {
+        "telephone": {
+                "label": "telephoneDisplay",
+                "icon": "Telephone.png",
+                "compoundDefinitions": [
+                    "telephoneClean"
+                ],
+                "attributeDefinitions": {
+                    "telephoneDisplay": {
+                        "aggregation": "MostCommon"
+                    }
+                },
+                "exclusionCriteria": [{
+                        "analysisType": "entityAttributes",
+                        "variableName": "total_documents",
+                        "condition": "GreaterThan",
+                        "value": "3"
+                    }
+                ]
+        },
+        "address": {
+                "label": "addressDisplay",
+                "icon": "Address.png",
+                "compoundDefinitions": [
+                    "houseNumberOrHouseNameOrPOBox_postcode",
+                    "houseNumberOrHouseNameOrPOBox_road_city"
+                ],
+                "attributeDefinitions": {
+                    "addressDisplay": {
+                        "aggregation": "MostCommon"
+                    }
+                },
+                "exclusionCriteria": [{
+                        "analysisType": "entityAttributes",
+                        "variableName": "total_documents",
+                        "condition": "GreaterThan",
+                        "value": "3"
+                    }
+                ]
+        },
+        "individual": {
+                "label": "fullName",
+                "icon": "Individual.png",
+                "compoundDefinitions": [
+                    "personalNationalIdNumber",
+                    "forename_surname_postcode",
+                    "forename_surname_road_city",
+                    "forename_surname_telephone"
+                ],
+                "attributeDefinitions": {
+                    "fullName": {
+                        "aggregation": "MostCommon"
+                    },
+                    "distinctPersonalNationalIdNumber": {
+                        "aggregation": "DistinctValues",
+                        "variableName": "personalNationalIdNumber"
+                    },
+                    "personalNationalIdNumber": {
+                    		"aggregation": "DistinctValues"
+            	      }
+                },
+                "exclusionCriteria": [{
+                        "analysisType": "entityAttributes",
+                        "variableName": "total_documents",
+                        "condition": "GreaterThan",
+                        "value": "10"
+                    }
+                ]
+        }
+    },
+    "resolutionTemplateDefinitions": {
+            "telephone": {
+                "default": {
+                    "compoundDefinitions": [{
+                            "compounds": ["telephoneClean"]
+                        }
+                    ]
+                }
+            },
+            "individual": {
+                "default": {
+                    "compoundDefinitions": [{
+                            "compounds": [
+                              "personalNationalIdNumber",
+                              "forename_surname_postcode",
+                              "forename_surname_road_city",
+                              "forename_surname_telephone"
+                          ]
+                        }
+                    ]
+                },
+                "strict": {
+                    "compoundDefinitions": [{
+                            "compounds": [
+                              "personalNationalIdNumber"
+                          ]
+                        }
+                    ]
+                }
+            },
+            "address": {
+                "default": {
+                    "compoundDefinitions": [{
+                            "compounds": [
+                              "houseNumberOrHouseNameOrPOBox_postcode",
+                              "houseNumberOrHouseNameOrPOBox_road_city"
+                            ]
+                        }
+                    ]
+                }
+            }
+    },
+"expansionTemplates": {
+    "documentExpansionTemplates": {
+        "default-document": {
+            "selectors": [{
+                    "documentSelector": "true",
+                    "resolutionTemplates": {
+                        "individual": "default",
+                        "address": "default",
+                        "telephone": "default"
+                    }
+                }
+            ]
+        }
+    },
+    "entityExpansionTemplates": {
+        "default-entity": {
+            "selectors": [{
+                    "entitySelector": "true"
+                }
+            ]
+        }
+    }
+},
+  "searchDefinitions": {
+      "training": {
+          "dataSources": {
+              "customer": {
+                  "displayName": "Customer",
+                  "entitySearchLimit": 50,
+                  "fieldGroups": {
+                      "Individual": {
+                          "fieldSets": {
+                              "Customer ID": {
+                                  "key": "customerId",
+                                  "fields": [
+                                      "customerIdNumber"
+                                  ]
+                              }
+                          }
+                      }
+                  }
+              }
+          },
+          "entities": {
+              "address": {
+                  "displayName": "Address"
+              },
+              "individual": {
+                  "displayName": "Individual",
+                  "resolveByDefault": true
+              },
+              "telephone": {
+                  "displayName": "Telephone"
+              }
+          }
+      }
+    }
+}

@@ -1,27 +1,27 @@
 search:
-  config: fiu-smoke
+  config: training
   elastic.datasources:
     customer:
-      index: search-fiu-smoke-dummy-customer-yourName
+      index: search-test-customer
       type: customer
     hotlist:
-      index: search-fiu-smoke-dummy-hotlist-yourName
+      index: search-test-hotlist
       type: hotlist
 
 resolver.elastic:
   datasources:
     customer:
-      indexPrefix: resolver-fiu-smoke-dummy-customer-yourName
+      indexPrefix: resolver-test-customer
     hotlist:
-      indexPrefix: resolver-fiu-smoke-dummy-hotlist-yourName
+      indexPrefix: resolver-test-hotlist
 
 elastic:
   instances:
     default:
-      uri: elasticsearch://localhost:9200
+      uri: elasticsearch://localhost:19200
 
 elastic.instances:
   my-instance:
-    uri: elasticsearch://localhost:9200
+    uri: elasticsearch://localhost:19200
 
 scoring.elastic.instance: my-instance

@@ -948,7 +948,7 @@ project("example-scoring") {
 	testCompile("com.quantexa:quantexa-analytics-test_$scalaVersion:$quantexaIncubators")
   }
 }
-
+/*
 project("example-scoring-batch") {
   apply plugin: 'com.quantexa.plugins.shadow'
   apply plugin: 'com.quantexa.plugins.docker-integration-testing'
@@ -987,10 +987,10 @@ project("example-scoring-batch") {
     runtime.exclude module: "spark-graphx_$scalaVersion"
     runtime.exclude module: "spark-mllib_$scalaVersion"
 
-    /* We don't want the storm-core dependency in our shadowJar */
+    // We don't want the storm-core dependency in our shadowJar
     runtime.exclude module: "scoring-framework-macros_$scalaVersion"
 
-    /*slf4j-log4j12 and log4j-over-slf4j cant both be on classpath (each one diverts slft4j logging to log4j and vice versa, into infinite loop*/
+    //slf4j-log4j12 and log4j-over-slf4j cant both be on classpath (each one diverts slft4j logging to log4j and vice versa, into infinite loop
     compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
     compile.exclude group:"log4j", module:"log4j"
   }
@@ -1129,7 +1129,7 @@ project("example-scoring-batch") {
     additionalJars = customShadowJars
   }
 }
-
+*/
 project("example-data-generator") {
   apply plugin: 'com.quantexa.plugins.shadow'
 
@@ -1343,7 +1343,7 @@ project("example-graph-scripting:graph-script-rest-api") {
     compile project(":example-graph-scripting:graph-script")
   }
 }
-
+/*
 project("example-adhoc") {
   configurations {
     provided {
@@ -1368,7 +1368,7 @@ project("example-adhoc") {
 
   }
 }
-
+*/
 project("data-source-customer:model-customer") {
 
   dependencies {
